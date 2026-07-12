@@ -1,0 +1,924 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  12 JUL 2026 16:15
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**V2.tex
+(./V2.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+(/usr/local/texlive/2026/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2026/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count275
+\c@section=\count276
+\c@subsection=\count277
+\c@subsubsection=\count278
+\c@paragraph=\count279
+\c@subparagraph=\count280
+\c@figure=\count281
+\c@table=\count282
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen148
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen149
+\Gin@req@width=\dimen150
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+))
+\Gm@cnth=\count283
+\Gm@cntv=\count284
+\c@Gm@tempcnt=\count285
+\Gm@bindingoffset=\dimen151
+\Gm@wd@mp=\dimen152
+\Gm@odd@mp=\dimen153
+\Gm@even@mp=\dimen154
+\Gm@layoutwidth=\dimen155
+\Gm@layoutheight=\dimen156
+\Gm@layouthoffset=\dimen157
+\Gm@layoutvoffset=\dimen158
+\Gm@dimlist=\toks18
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/biblatex.sty
+Package: biblatex 2025/07/10 v3.21 programmable bibliographies (PK/MW)
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count286
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/logreq/logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count287
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/logreq/logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+\c@tabx@nest=\count288
+\c@listtotal=\count289
+\c@listcount=\count290
+\c@liststart=\count291
+\c@liststop=\count292
+\c@citecount=\count293
+\c@citetotal=\count294
+\c@multicitecount=\count295
+\c@multicitetotal=\count296
+\c@instcount=\count297
+\c@maxnames=\count298
+\c@minnames=\count299
+\c@maxitems=\count300
+\c@minitems=\count301
+\c@citecounter=\count302
+\c@maxcitecounter=\count303
+\c@savedcitecounter=\count304
+\c@uniquelist=\count305
+\c@uniquename=\count306
+\c@refsection=\count307
+\c@refsegment=\count308
+\c@maxextratitle=\count309
+\c@maxextratitleyear=\count310
+\c@maxextraname=\count311
+\c@maxextradate=\count312
+\c@maxextraalpha=\count313
+\c@abbrvpenalty=\count314
+\c@highnamepenalty=\count315
+\c@lownamepenalty=\count316
+\c@maxparens=\count317
+\c@parenlevel=\count318
+\blx@tempcnta=\count319
+\blx@tempcntb=\count320
+\blx@tempcntc=\count321
+\c@blx@maxsection=\count322
+\blx@maxsegment@0=\count323
+\blx@notetype=\count324
+\blx@parenlevel@text=\count325
+\blx@parenlevel@foot=\count326
+\blx@sectionciteorder@0=\count327
+\blx@sectionciteorderinternal@0=\count328
+\blx@entrysetcounter=\count329
+\blx@biblioinstance=\count330
+\labelnumberwidth=\skip51
+\labelalphawidth=\skip52
+\biblabelsep=\skip53
+\bibitemsep=\skip54
+\bibnamesep=\skip55
+\bibinitsep=\skip56
+\bibparsep=\skip57
+\bibhang=\skip58
+\blx@bcfin=\read2
+\blx@bcfout=\write3
+\blx@langwohyphens=\language91
+\c@mincomprange=\count331
+\c@maxcomprange=\count332
+\c@mincompwidth=\count333
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/blx-dm.def
+File: blx-dm.def 2025/07/10 v3.21 biblatex datamodel (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'numeric.dbx' not found.
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count334
+\c@savedafterword=\count335
+\c@annotator=\count336
+\c@savedannotator=\count337
+\c@author=\count338
+\c@savedauthor=\count339
+\c@bookauthor=\count340
+\c@savedbookauthor=\count341
+\c@commentator=\count342
+\c@savedcommentator=\count343
+\c@editor=\count344
+\c@savededitor=\count345
+\c@editora=\count346
+\c@savededitora=\count347
+\c@editorb=\count348
+\c@savededitorb=\count349
+\c@editorc=\count350
+\c@savededitorc=\count351
+\c@foreword=\count352
+\c@savedforeword=\count353
+\c@holder=\count354
+\c@savedholder=\count355
+\c@introduction=\count356
+\c@savedintroduction=\count357
+\c@namea=\count358
+\c@savednamea=\count359
+\c@nameb=\count360
+\c@savednameb=\count361
+\c@namec=\count362
+\c@savednamec=\count363
+\c@translator=\count364
+\c@savedtranslator=\count365
+\c@shortauthor=\count366
+\c@savedshortauthor=\count367
+\c@shorteditor=\count368
+\c@savedshorteditor=\count369
+\c@labelname=\count370
+\c@savedlabelname=\count371
+\c@institution=\count372
+\c@savedinstitution=\count373
+\c@lista=\count374
+\c@savedlista=\count375
+\c@listb=\count376
+\c@savedlistb=\count377
+\c@listc=\count378
+\c@savedlistc=\count379
+\c@listd=\count380
+\c@savedlistd=\count381
+\c@liste=\count382
+\c@savedliste=\count383
+\c@listf=\count384
+\c@savedlistf=\count385
+\c@location=\count386
+\c@savedlocation=\count387
+\c@organization=\count388
+\c@savedorganization=\count389
+\c@origlocation=\count390
+\c@savedoriglocation=\count391
+\c@origpublisher=\count392
+\c@savedorigpublisher=\count393
+\c@publisher=\count394
+\c@savedpublisher=\count395
+\c@language=\count396
+\c@savedlanguage=\count397
+\c@origlanguage=\count398
+\c@savedoriglanguage=\count399
+\c@pageref=\count400
+\c@savedpageref=\count401
+\shorthandwidth=\skip59
+\shortjournalwidth=\skip60
+\shortserieswidth=\skip61
+\shorttitlewidth=\skip62
+\shortauthorwidth=\skip63
+\shorteditorwidth=\skip64
+\locallabelnumberwidth=\skip65
+\locallabelalphawidth=\skip66
+\localshorthandwidth=\skip67
+\localshortjournalwidth=\skip68
+\localshortserieswidth=\skip69
+\localshorttitlewidth=\skip70
+\localshortauthorwidth=\skip71
+\localshorteditorwidth=\skip72
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/biblatex.def
+File: biblatex.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
+\c@textcitecount=\count402
+\c@textcitetotal=\count403
+\c@textcitemaxnames=\count404
+\c@biburlbigbreakpenalty=\count405
+\c@biburlbreakpenalty=\count406
+\c@biburlnumpenalty=\count407
+\c@biburlucpenalty=\count408
+\c@biburllcpenalty=\count409
+\biburlbigskip=\muskip18
+\biburlnumskip=\muskip19
+\biburlucskip=\muskip20
+\biburllcskip=\muskip21
+\c@smartand=\count410
+)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+File: numeric.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+File: standard.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count411
+\c@bbx:relatedtotal=\count412
+))
+Package biblatex Info: Trying to load citation style 'numeric'...
+Package biblatex Info: ... file 'numeric.cbx' found.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx
+File: numeric.cbx 2025/07/10 v3.21 biblatex citation style (PK/MW)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/biblatex.cfg
+File: biblatex.cfg 
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Document encoding is UTF8 ....
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2026-01-19 L3 programming layer (loader) 
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count413
+))
+Package biblatex Info: ... and expl3
+(biblatex)             2026-01-19 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2025-10-09 L3 Experimental document command parser
+)
+Package: blx-case-expl3 2025/07/10 v3.21 expl3 case changing code for biblatex
+))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2025/07/09 v2.17z AMS math features
+\@mathmargin=\skip73
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2024/11/17 v2.01 AMS text
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks19
+\ex@=\dimen159
+))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen160
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count414
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count415
+\leftroot@=\count416
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count417
+\DOTSCASE@=\count418
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box53
+\strutbox@=\box54
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen161
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count419
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count420
+\dotsspace@=\muskip22
+\c@parentequation=\count421
+\dspbrk@lvl=\count422
+\tag@help=\toks20
+\row@=\count423
+\column@=\count424
+\maxfields@=\count425
+\andhelp@=\toks21
+\eqnshift@=\dimen162
+\alignsep@=\dimen163
+\tagshift@=\dimen164
+\tagwidth@=\dimen165
+\totwidth@=\dimen166
+\lineht@=\dimen167
+\@envbody=\toks22
+\multlinegap=\skip74
+\multlinetaggap=\skip75
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2950.
+LaTeX Info: Redefining \] on input line 2951.
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+)
+\@quotelevel=\count426
+\@quotereset=\count427
+ (./V2.aux)
+\openout1 = `V2.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+
+(/usr/local/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count428
+\scratchdimen=\dimen168
+\scratchbox=\box55
+\nofMPsegments=\count429
+\nofMParguments=\count430
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count431
+\MPscratchDim=\dimen169
+\MPnumerator=\count432
+\makeMPintoPDFobject=\count433
+\everyMPtoPDFconversion=\toks25
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(89.62709pt, 418.25368pt, 89.6271pt)
+* v-part:(T,H,B)=(101.40665pt, 591.5302pt, 152.11pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=418.25368pt
+* \textheight=591.5302pt
+* \oddsidemargin=17.3571pt
+* \evensidemargin=17.3571pt
+* \topmargin=-7.86334pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=35.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout3 = `V2.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'V2.bbl' not found.
+
+No file V2.bbl.
+Package biblatex Info: Reference section=0 on input line 25.
+Package biblatex Info: Reference segment=0 on input line 25.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 27.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 27.
+
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
+LaTeX Warning: Citation 'Peterson2004' on page 1 undefined on input line 45.
+
+
+LaTeX Warning: Citation 'Netzer2013' on page 1 undefined on input line 45.
+
+
+LaTeX Warning: Citation 'Cackett2021' on page 1 undefined on input line 45.
+
+[1
+
+{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+
+LaTeX Warning: Citation 'Peterson2004' on page 2 undefined on input line 51.
+
+
+LaTeX Warning: Citation 'BentzKatz2015' on page 2 undefined on input line 51.
+
+
+LaTeX Warning: Citation 'Cackett2021' on page 2 undefined on input line 53.
+
+
+LaTeX Warning: Citation 'Fausnaugh2016' on page 2 undefined on input line 55.
+
+
+LaTeX Warning: Citation 'Fausnaugh2017' on page 2 undefined on input line 55.
+
+
+LaTeX Warning: Citation 'Edelson2019' on page 2 undefined on input line 55.
+
+
+LaTeX Warning: Citation 'Cackett2021' on page 2 undefined on input line 55.
+
+[2]
+
+LaTeX Warning: Citation 'Peterson2002' on page 3 undefined on input line 57.
+
+
+LaTeX Warning: Citation 'BentzKatz2015' on page 3 undefined on input line 57.
+
+
+LaTeX Warning: Citation 'Cackett2021' on page 3 undefined on input line 57.
+
+
+LaTeX Warning: Citation 'DeRosa2015' on page 3 undefined on input line 57.
+
+
+LaTeX Warning: Citation 'Pei2017' on page 3 undefined on input line 57.
+
+
+LaTeX Warning: Citation 'Horne2021' on page 3 undefined on input line 57.
+
+
+Overfull \hbox (31.81163pt too wide) in paragraph at lines 57--58
+\OT1/cmr/m/n/12 velocity-delay in-for-ma-tion for sev-eral broad lines [[], [],
+ []]. 
+ []
+
+
+LaTeX Warning: Citation 'Pei2017' on page 3 undefined on input line 59.
+
+
+LaTeX Warning: Citation 'Horne2021' on page 3 undefined on input line 59.
+
+
+LaTeX Warning: Citation 'Horne2021' on page 3 undefined on input line 59.
+
+
+LaTeX Warning: Citation 'LongDexter2025' on page 3 undefined on input line 59.
+
+
+Overfull \hbox (11.73962pt too wide) in paragraph at lines 59--60
+[]\OT1/cmr/m/n/12 ]. This im-me-di-ately mo-ti-vates a shift away from purely i
+ntegrated-
+ []
+
+
+LaTeX Warning: Citation 'Dehghanian2019' on page 3 undefined on input line 61.
+
+[3]
+
+LaTeX Warning: Citation 'Du2018' on page 4 undefined on input line 63.
+
+
+LaTeX Warning: Citation 'Wang2025' on page 4 undefined on input line 63.
+
+
+LaTeX Warning: Citation 'Feng2024' on page 4 undefined on input line 63.
+
+
+LaTeX Warning: Citation 'RicciTrakhtenbrot2023' on page 4 undefined on input li
+ne 63.
+
+
+LaTeX Warning: Citation 'Fausnaugh2017' on page 4 undefined on input line 67.
+
+
+LaTeX Warning: Citation 'Cackett2021' on page 4 undefined on input line 67.
+
+
+LaTeX Warning: Citation 'Peterson2004' on page 4 undefined on input line 69.
+
+
+LaTeX Warning: Citation 'WhitePeterson1994' on page 4 undefined on input line 6
+9.
+
+
+LaTeX Warning: Citation 'Zu2011' on page 4 undefined on input line 69.
+
+
+LaTeX Warning: Citation 'Zu2013' on page 4 undefined on input line 69.
+
+
+LaTeX Warning: Citation 'Pancoast2014' on page 4 undefined on input line 69.
+
+
+LaTeX Warning: Citation 'Horne2021' on page 4 undefined on input line 69.
+
+
+LaTeX Warning: Citation 'Fausnaugh2016' on page 4 undefined on input line 69.
+
+
+LaTeX Warning: Citation 'Fausnaugh2017' on page 4 undefined on input line 69.
+
+
+LaTeX Warning: Citation 'Edelson2019' on page 4 undefined on input line 69.
+
+[4] [5]
+Overfull \hbox (8.57207pt too wide) in paragraph at lines 82--82
+[]\OT1/cmr/bx/n/17.28 Synergistic--Unique--Redundant De-com-po-si-tion
+ []
+
+
+LaTeX Warning: Citation 'MartinezSanchez2024SURD' on page 6 undefined on input 
+line 95.
+
+[6]
+
+LaTeX Warning: Citation 'MartinezSanchez2024SURD' on page 7 undefined on input 
+line 103.
+
+
+LaTeX Warning: Citation 'Schreiber2000' on page 7 undefined on input line 103.
+
+
+LaTeX Warning: Citation 'WilliamsBeer2010' on page 7 undefined on input line 10
+3.
+
+
+LaTeX Warning: Citation 'Shannon1948' on page 7 undefined on input line 122.
+
+
+LaTeX Warning: Citation 'CoverThomas2006' on page 7 undefined on input line 122
+.
+
+
+Overfull \hbox (10.91046pt too wide) in paragraph at lines 121--123
+\OT1/cmr/m/n/12 that is avail-able in the ob-served present state [[], []]. 
+ []
+
+
+LaTeX Warning: Citation 'MartinezSanchez2024SURD' on page 7 undefined on input 
+line 135.
+
+
+Overfull \hbox (54.03346pt too wide) in paragraph at lines 135--136
+\OT1/cmr/m/n/12 served part, at-tributed to hid-den or un-mea-sured in-flu-ence
+s [[]]. 
+ []
+
+[7]
+
+LaTeX Warning: Citation 'MartinezSanchez2024SURD' on page 8 undefined on input 
+line 174.
+
+
+Overfull \hbox (56.64455pt too wide) in paragraph at lines 174--175
+[]\OT1/cmr/m/n/12 The three causal types have the fol-low-ing in-ter-pre-ta-tio
+n [[]]: 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 176--178
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 178--180
+
+ []
+
+
+LaTeX Warning: Citation 'DeWeeseMeister1999' on page 8 undefined on input line 
+186.
+
+
+LaTeX Warning: Citation 'Butts2003' on page 8 undefined on input line 186.
+
+
+LaTeX Warning: Citation 'MartinezSanchez2024SURD' on page 8 undefined on input 
+line 186.
+
+[8{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
+}]
+
+LaTeX Warning: Citation 'MartinezSanchez2024SURD' on page 9 undefined on input 
+line 208.
+
+LaTeX Font Info:    Trying to load font information for U+euf on input line 212
+.
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)
+
+LaTeX Warning: Citation 'MartinezSanchez2024SURD' on page 9 undefined on input 
+line 218.
+
+[9] [10]
+
+LaTeX Warning: Citation 'MartinezSanchez2024SURD' on page 11 undefined on input
+ line 306.
+
+
+Overfull \hbox (60.62645pt too wide) in paragraph at lines 305--307
+\OT1/cmr/m/n/12 same de-com-po-si-tion ma-chin-ery to the en-larged pre-dic-tor
+ set [[]].
+ []
+
+
+LaTeX Warning: Citation 'MartinezSanchez2024SURD' on page 11 undefined on input
+ line 314.
+
+
+LaTeX Warning: Citation 'MartinezSanchez2024SURD' on page 11 undefined on input
+ line 318.
+
+
+Overfull \hbox (52.2057pt too wide) in paragraph at lines 318--319
+\OT1/cmr/m/n/12 con-tem-po-ra-ne-ous or ef-fec-tively sub-resolution in-ter-ac-
+tions [[]].
+ []
+
+[11]
+
+LaTeX Warning: Citation 'MartinezSanchez2024SURD' on page 12 undefined on input
+ line 372.
+
+
+Overfull \hbox (98.03023pt too wide) in paragraph at lines 372--373
+\OT1/cmr/m/n/12 map-based es-ti-ma-tors de-pend-ing on di-men-sion-al-ity and s
+am-ple size [[]].
+ []
+
+[12]
+
+LaTeX Warning: Citation 'MartinezSanchez2024SURD' on page 13 undefined on input
+ line 391.
+
+
+Overfull \hbox (133.59663pt too wide) in paragraph at lines 391--392
+\OT1/cmr/m/n/12 SURD has sev-eral prop-er-ties that are im-por-tant in time-ser
+ies ap-pli-ca-tions [[]]: 
+ []
+
+
+Overfull \hbox (1.15169pt too wide) in paragraph at lines 400--401
+[]\OT1/cmr/m/n/12 The main as-sump-tions are those com-mon to ob-ser-va-tional 
+information-theoretic
+ []
+
+
+LaTeX Warning: Citation 'MartinezSanchez2024SURD' on page 13 undefined on input
+ line 410.
+
+
+LaTeX Warning: Citation 'WilliamsBeer2010' on page 13 undefined on input line 4
+10.
+
+[13]
+
+LaTeX Warning: Citation 'DeRosa2015' on page 14 undefined on input line 415.
+
+
+LaTeX Warning: Citation 'Pei2017' on page 14 undefined on input line 415.
+
+[14]
+Overfull \hbox (132.80423pt too wide) in paragraph at lines 437--448
+ [][] 
+ []
+
+
+Overfull \hbox (2.19579pt too wide) in paragraph at lines 452--452
+[]\OT1/cmr/bx/n/14.4 Strict Over-lap In-ter-po-la-tion and Ca-dence Ho-mog-e-ni
+za-
+ []
+
+<figure1_light_curves.png, id=65, 781.7205pt x 493.6041pt>
+File: figure1_light_curves.png Graphic file (type png)
+<use figure1_light_curves.png>
+Package pdftex.def Info: figure1_light_curves.png  used on input line 468.
+(pdftex.def)             Requested size: 418.25368pt x 264.10947pt.
+[15]
+Overfull \hbox (183.21164pt too wide) in paragraph at lines 485--494
+ [][] 
+ []
+
+<figure2_surd_lag_scans.png, id=70, 855.9177pt x 782.925pt>
+File: figure2_surd_lag_scans.png Graphic file (type png)
+<use figure2_surd_lag_scans.png>
+Package pdftex.def Info: figure2_surd_lag_scans.png  used on input line 502.
+(pdftex.def)             Requested size: 418.25368pt x 382.58533pt.
+[16 <./figure1_light_curves.png>]
+<figure3_robustness_and_nulls.png, id=75, 926.5014pt x 386.6445pt>
+File: figure3_robustness_and_nulls.png Graphic file (type png)
+<use figure3_robustness_and_nulls.png>
+Package pdftex.def Info: figure3_robustness_and_nulls.png  used on input line 5
+25.
+(pdftex.def)             Requested size: 418.25368pt x 174.54889pt.
+ [17]
+Overfull \hbox (229.3118pt too wide) in paragraph at lines 536--545
+ [][] 
+ []
+
+<figure4_iccf_vs_surd.png, id=79, 716.1957pt x 710.4141pt>
+File: figure4_iccf_vs_surd.png Graphic file (type png)
+<use figure4_iccf_vs_surd.png>
+Package pdftex.def Info: figure4_iccf_vs_surd.png  used on input line 553.
+(pdftex.def)             Requested size: 418.25368pt x 414.88055pt.
+
+Overfull \hbox (4.41591pt too wide) in paragraph at lines 558--558
+[]\OT1/cmr/bx/n/14.4 Discrete Cor-re-la-tion Func-tion and False Dis-cov-ery Ra
+te
+ []
+
+[18]
+Overfull \hbox (4.93776pt too wide) in paragraph at lines 577--578
+\OT1/cmr/m/n/12 The re-sults in Sec-tion 4[] re-veal a stark dis-crep-ancy be-t
+ween clas-si-cal cross-correlation
+ []
+
+
+LaTeX Warning: Citation 'Pei2017' on page 19 undefined on input line 581.
+
+[19] [20]
+
+LaTeX Warning: Empty bibliography on input line 616.
+
+[21] [22 <./figure2_surd_lag_scans.png>] [23 <./figure3_robustness_and_nulls.pn
+g>] [24 <./figure4_iccf_vs_surd.png>] (./V2.aux)
+ ***********
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+ ***********
+
+
+LaTeX Warning: There were undefined references.
+
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                V2
+(biblatex)                and rerun LaTeX afterwards.
+
+Package logreq Info: Writing requests to 'V2.run.xml'.
+\openout1 = `V2.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 11379 strings out of 467525
+ 208324 string characters out of 5418983
+ 1049636 words of memory out of 5000000
+ 40188 multiletter control sequences out of 15000+600000
+ 640522 words of font info for 89 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 63i,10n,66p,1662b,1164s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></
+usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
+sr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
+r/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr
+/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/l
+ocal/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loc
+al/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local
+/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/t
+exlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texl
+ive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
+ve/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive
+/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2
+026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/20
+26/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/202
+6/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2
+026/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on V2.pdf (24 pages, 3455622 bytes).
+PDF statistics:
+ 182 PDF objects out of 1000 (max. 8388607)
+ 110 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+
