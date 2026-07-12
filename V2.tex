@@ -5,6 +5,8 @@
 \usepackage{geometry}
 \usepackage[style=numeric, sorting=none]{biblatex}
 \usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
 
 \addbibresource{refs.bib}
 
@@ -414,7 +416,7 @@ To evaluate the capabilities of the SURD algorithm on real-world astrophysical d
 
 \subsection{Data Products and MJD Correction}
 
-The 5100~\AA\ continuum light curve is obtained from the AGN Watch databases (specifically, \texttt{c5100.dat}), spanning a long duration of several years. The integrated H\(\beta\) emission line light curve is similarly taken from clean AGN Watch compilations (\texttt{ngc5548_agnwatch_hb_clean.csv}).
+The 5100~\AA\ continuum light curve is obtained from the AGN Watch databases (specifically, \texttt{c5100.dat}), spanning a long duration of several years. The integrated H\(\beta\) emission line light curve is similarly taken from clean AGN Watch compilations (\texttt{ngc5548\_agnwatch\_hb\_clean.csv}).
 
 The velocity-resolved spectroscopy files, containing H\(\beta\) profiles, were processed from individual \texttt{.spc} files. The filenames (following the template \texttt{nXXXXXma.spc}) contain an embedded time indicator where the numerical part \texttt{XXXXX} represents the Julian Date (JD) offset. Specifically, we confirmed the filename-to-MJD conversion:
 \begin{equation}
@@ -544,7 +546,7 @@ Red Wing H\(\beta\) & 13.0 & 84.0 & 1.0 \\
 \label{tab:iccf_vs_surd}
 \end{table}
 
-The classical ICCF identifies peaks at **19.0 days** (Blue Wing), **20.0 days** (Core H\(\beta\)), and **13.0 days** (Red Wing). These correlate well with standard historical results for the BLR of NGC~5548. In contrast, the SURD maximum synergy peaks occur at much longer timescales (44--106 days), while the minimum information leak occurs at the shortest possible lag of 1.0 day.
+The classical ICCF identifies peaks at \textbf{19.0 days} (Blue Wing), \textbf{20.0 days} (Core H\(\beta\)), and \textbf{13.0 days} (Red Wing). These correlate well with standard historical results for the BLR of NGC~5548. In contrast, the SURD maximum synergy peaks occur at much longer timescales (44--106 days), while the minimum information leak occurs at the shortest possible lag of 1.0 day.
 
 \begin{figure}[ht]
 \centering
@@ -564,7 +566,7 @@ Additionally, we applied a False Discovery Rate (FDR) multiple-testing correctio
 \begin{equation}
 p(\tau) = 1 - \Phi\left(\frac{S_{12}(\tau) - \mu_{\mathrm{null}}}{\sigma_{\mathrm{null}}}\right),
 \end{equation}
-where $\Phi$ is the standard normal CDF, and $\mu_{\mathrm{null}}$ and $\sigma_{\mathrm{null}}$ are the median and standard deviation of the surrogate distribution. Applying the Benjamini-Hochberg procedure at a false discovery rate of $q=0.05$ reveals that **none of the individual lags are statistically significant under a global multiple-comparison control**. 
+where $\Phi$ is the standard normal CDF, and $\mu_{\mathrm{null}}$ and $\sigma_{\mathrm{null}}$ are the median and standard deviation of the surrogate distribution. Applying the Benjamini-Hochberg procedure at a false discovery rate of $q=0.05$ reveals that \textbf{none of the individual lags are statistically significant under a global multiple-comparison control}. 
 
 This is a major methodological contribution for the paper: while the synergy peaks at 44d, 84d, and 106d stand out as clear local features that are locally significant ($p < 0.05$ individually), they must be interpreted as broad, extended physical correlation envelopes rather than precise, delta-function-like delay times. Multiple-testing corrections are essential for information-theoretic scans of variable astronomical light curves to avoid over-interpreting isolated lag values.
 
