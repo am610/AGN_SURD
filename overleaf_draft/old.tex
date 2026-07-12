@@ -1,0 +1,781 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+
+\usepackage[style=numeric, sorting=none]{biblatex}
+
+\addbibresource{ref.bib}
+
+
+
+
+
+
+\title{AGNs and SURD algorithm}
+\author{ Ayan Mitra, Vasilios Zarikas}
+\date{May 2026}
+
+
+
+
+\begin{document}
+
+
+
+
+
+\maketitle
+
+
+\section{Inro}
+
+\section{Introduction: AGN Physics Relevant to a SURD-based Time-series Analysis}
+\label{sec:intro_agn_physics}
+
+Active galactic nuclei (AGN) are powered by accretion onto supermassive black holes with masses spanning roughly \(10^6\) to \(10^{10}\,M_\odot\). Gas losing angular momentum and falling inward releases gravitational binding energy, which is converted into radiation across the electromagnetic spectrum. The central engine is compact, but the observed AGN phenomenon is produced by several physically distinct and mutually coupled regions: an accretion disk, a hot X-ray-emitting corona, a broad-line region (BLR) of dense photoionized gas, and a dusty obscuring and reprocessing structure often referred to as the torus. This multi-component picture underlies modern studies of AGN variability and reverberation mapping \cite{Cackett2021,Peterson2006,Netzer2015}.
+
+The accretion disk is usually modeled, as a first approximation, as an optically thick, geometrically thin flow. In such a picture, different radii radiate at different characteristic temperatures, so the spectral energy distribution is radially stratified: hotter inner radii contribute more strongly in the far-UV, while cooler outer radii dominate more of the optical continuum. This radial temperature structure is the reason continuum variability across bands can encode information about thermal response, irradiation, and the propagation of accretion-rate fluctuations through the disk \cite{Cackett2021,Fausnaugh2017}. At the same time, real AGN disks are not expected to behave as perfectly steady thin disks under all conditions, and continuum reverberation studies have repeatedly found that measured interband lags often imply continuum-emitting regions larger than predicted by the most minimal thin-disk expectation \cite{Fausnaugh2017,Fian2023}.
+
+Above and around the inner disk sits the corona, commonly interpreted as a compact region of hot electrons that up-scatters lower-energy seed photons into X-rays through inverse Compton scattering. In the simplest disk--corona picture, the disk supplies seed photons, the corona produces variable high-energy radiation, and some fraction of that radiation illuminates the disk and produces delayed UV/optical responses through reprocessing. Comparison of X-ray, UV, and optical light curves is therefore a direct probe of disk--corona coupling. However, reverberation studies show that the observed variability cannot always be described by a pure one-way lamp-post reprocessing scenario, indicating that intrinsic disk variability, propagation effects, extended reprocessors, or variable geometry may also contribute \cite{Cackett2021,Fausnaugh2017}.
+
+The BLR is the region of dense photoionized gas moving at velocities of order thousands of kilometers per second around the black hole, producing broad permitted emission lines such as H$\beta$, H$\alpha$, Mg\,II, C\,IV, and He\,II. These lines are broad because of the large gas velocities, and they are variable because the ionizing continuum that drives their emissivity is variable. The BLR is not spatially resolved in most AGN, so its geometry, kinematics, and stratification must be inferred indirectly through spectroscopy, photoionization modeling, and time-domain methods such as reverberation mapping \cite{Peterson2006,Cackett2021}. The standard picture is not that of a single thin shell, but of a stratified and possibly multi-component region that may involve a disk-like component, inflow, outflow, or disk-wind contributions \cite{Peterson2006,Netzer2015}.
+
+Farther out lies the dusty torus, or more generally the dusty obscuring and reprocessing region. Dust cannot survive too close to the central ionizing source, so the dusty structure begins near the dust sublimation radius, where incident optical/UV radiation is absorbed and reradiated in the infrared. In the broader unification framework, this region also contributes orientation-dependent obscuration. Modern reviews emphasize that the torus is likely clumpy and dynamically connected to disk winds and the circumnuclear medium, rather than being a perfectly static and homogeneous doughnut. This is important for variability studies because obscuration changes, anisotropic illumination, and line-of-sight structure can alter observed time series without requiring intrinsic luminosity changes alone \cite{Netzer2015,Cackett2021}.
+
+The central physical idea behind reverberation mapping is that variability in the ionizing continuum propagates outward at the speed of light and induces delayed responses in remote emitting or reprocessing regions. If the driving continuum varies at time \(t\), gas at a characteristic distance \(R\) responds at approximately \(t+R/c\), with the response smeared by geometry, anisotropy, radiative transfer, and the radial distribution of gas. Reverberation mapping therefore replaces missing angular resolution with time resolution: instead of directly imaging the BLR, the accretion disk, or the torus, one infers their characteristic sizes and structures from delayed variability signatures \cite{Cackett2021,Peterson2006}.
+
+In the standard linearized formulation, the line light curve is often written as a convolution of the driving continuum with a transfer function,
+\begin{equation}
+L(t)=\int \Psi(\tau)\,C(t-\tau)\,d\tau,
+\label{eq:transfer}
+\end{equation}
+where \(C(t)\) is the driving continuum, \(L(t)\) is the observed line response, and \(\Psi(\tau)\) is the delay distribution or transfer function. In the simplest interpretation, \(\Psi(\tau)\) encodes the geometry and responsivity of the line-emitting region \cite{Peterson2006,Cackett2021}. However, this equation is already an approximation in realistic AGN: the true physically relevant continuum may not be directly observed, the transfer function may evolve with source state, the response may be nonlinear, and variable obscuration may modify the continuum seen by the BLR relative to that seen by the observer \cite{Cackett2021,Dehghanian2019}.
+
+A key practical and physical issue is therefore that the continuum observed by the astronomer is not necessarily the continuum seen by the BLR. The BLR is especially sensitive to the ionizing EUV and soft-X-ray continuum, yet those wavebands are often unavailable or only partially constrained observationally. In many campaigns the best available predictors are optical, near-UV, and perhaps hard X-ray light curves. Consequently, a measured lag between an observed continuum band and an emission line does not automatically identify the true causal driver; it may instead quantify the delay between a proxy and a response. This hidden-driver problem is central to any attempt to interpret AGN time series causally \cite{Cackett2021,Dehghanian2019}.
+
+This issue is closely related to the continuum-lag problem. In a basic reprocessing picture, variable X-ray illumination should drive UV/optical variations with lags set by light-travel time and disk size. Yet multiple continuum reverberation studies have found lags larger than expected from the simplest geometrically thin, optically thick disk models, often by factors of a few, even when the wavelength dependence is broadly consistent with \(\tau \propto \lambda^{4/3}\) \cite{Fausnaugh2017,Fian2023}. This does not invalidate the reprocessing paradigm, but it shows that the time-domain relation between X-rays, UV, and optical light curves is not always exhausted by the most minimal disk model. Additional ingredients such as diffuse continuum emission, intrinsic propagation of accretion fluctuations, color-temperature corrections, winds, or complex irradiation geometry may contribute \cite{Cackett2021,Fausnaugh2017,Fian2023}.
+
+One of the clearest demonstrations that AGN variability cannot always be captured by a simple one-driver, one-response picture is the NGC~5548 ``holiday'' discovered during the AGN STORM campaign. In that campaign, the UV/optical continuum and broad emission lines were well correlated for part of the monitoring period, then became decorrelated for roughly two months, and later resumed correlated behavior. Dehghanian et al.\ argued that an obscuring wind could alter the ionizing spectral energy distribution incident on the BLR even while the observed UV continuum remained comparatively normal. Physically, this means that the BLR can continue to respond to photoionization physics while the observer's continuum proxy ceases to represent the radiation field actually seen by the line-emitting gas \cite{Dehghanian2019}. This is exactly the kind of situation in which a hidden-driver or partial-observability framework becomes essential.
+
+Velocity-resolved reverberation mapping adds another layer of physical information. Broad emission lines are not single fluxes but profiles distributed across Doppler velocity. Different velocity bins correspond, statistically, to gas with different line-of-sight motions and often different characteristic locations and dynamical states. Symmetric wing responses can indicate roughly virialized motion, asymmetries can suggest inflow or outflow, and differences between red- and blue-wing lags can reveal kinematic structure. Recent velocity-resolved campaigns have expanded the sample and shown both radial ionization stratification and diverse, sometimes evolving, BLR kinematics across sources and epochs \cite{Wang2025,Feng2024}. This means that BLR variability is not only delayed in time, but structured across velocity, ionization, and source state.
+
+Changing-look AGN provide an even more dramatic example of state dependence. These objects undergo large changes in continuum brightness and in broad-line strength, sometimes changing optical spectral type on timescales of months to years. Current reviews emphasize that changing-look phenomena can arise from strong changes in accretion state, ionizing continuum production, or obscuration, depending on the source and event \cite{RicciTrakhtenbrot2023}. From a time-series point of view, changing-look AGN matter because they show that the coupling between continuum emission and line-emitting gas is not fixed. The mapping between predictors and responses can change substantially over observable time baselines.
+
+All of these considerations explain why pairwise lag methods, though extremely successful and indispensable, can still be insufficient for some AGN problems. A cross-correlation peak or a fitted lag can tell us that one signal tends to lead another, but it cannot tell us whether two predictor bands carry the same causal content, whether one band contains uniquely important information, or whether a target responds only to a combination of predictors. In AGN language, these correspond to physically different situations. Two bands may be redundant because both trace the same hidden EUV driver; one band may be uniquely informative because it lies closer to the true ionizing continuum; or two bands may act synergistically because the response depends on a state-dependent combination of disk and coronal properties that neither captures in isolation.
+
+This is precisely where an information-decomposition approach becomes attractive. In the proposed SURD framework, one writes a lagged predictive relation of the form
+\begin{equation}
+Y(t+\tau)\leftarrow \mathbf{X}(t),
+\label{eq:lagged_prediction}
+\end{equation}
+where \(Y\) is a target time series and \(\mathbf{X}=\{X_1,X_2,\dots,X_n\}\) is a set of predictors. One then decomposes the predictive information into conceptually distinct pieces: unique information from each predictor, redundant information shared across predictors, synergistic information available only from predictor combinations, and an information-leak term representing target variability not captured by the chosen observed predictors. Schematically, one may write
+\begin{equation}
+I\!\left(Y(t+\tau);\mathbf{X}(t)\right)
+= R + \sum_i U_i + S + L,
+\label{eq:surd_schematic}
+\end{equation}
+where \(R\) denotes redundancy, \(U_i\) unique information terms, \(S\) synergy, and \(L\) the information leak. The exact estimator and decomposition details depend on the chosen SURD implementation, but the physical interpretation is already clear.
+
+The hidden-driver toy model used in the AGN SURD notebook maps naturally onto real AGN physics. A latent UV or EUV driver can represent the physically relevant but unobserved ionizing continuum. Observed optical and X-ray light curves can act as partial and noisy proxies of that driver. A delayed H$\beta$ light curve can represent one BLR response channel. Within that mapping, unique information measures an irreducible predictor, redundancy measures shared tracing of a common source, synergy measures joint dependence on multiple observed channels, and information leak measures the degree to which the monitored variables fail to close the causal budget. In real AGN applications, such leak could correspond to an unobserved EUV component, variable shielding, changing transfer functions, or line-emitting gas responding to continuum structure not represented by the monitored bands \cite{AGN_SURD_notebook,Cackett2021,Dehghanian2019}.
+
+There is also a hierarchy of timescales behind AGN variability. The inner disk and corona can vary on relatively short timescales; the BLR usually responds on longer light-travel times of days to weeks or more, depending on luminosity and black-hole mass; and the dusty torus responds on still longer timescales. On top of those geometric delays lie intrinsic dynamical, thermal, and viscous timescales of the accretion flow and gas distribution. As a consequence, a measured lag is not always a pure geometric ruler: it can mix light-travel delay, thermal reprocessing, propagation of accretion fluctuations, and changes in gas responsivity \cite{Cackett2021,Peterson2006}. This layered timing structure is another reason that a multivariate, state-dependent, and velocity-aware framework is desirable.
+
+Finally, the observational data themselves add substantial complexity. AGN light curves are often irregularly sampled, contain seasonal gaps, have heterogeneous measurement uncertainties, and exhibit strong red-noise autocorrelation. Red-noise processes can broaden apparent lag signatures and complicate causal interpretation, especially in finite and unevenly sampled campaigns \cite{Cackett2021}. Any serious application of SURD to AGN data must therefore be accompanied by robust significance testing, cadence-aware surrogates, sensitivity tests for interpolation or resampling choices, and comparison to established reverberation tools. This is not a weakness of the scientific idea; it is a reflection of the fact that, in AGN studies, variability is both the signal and the challenge.
+
+In summary, the AGN physics relevant to the proposed SURD analysis can be stated compactly as follows: an AGN is a multicomponent, partially hidden, time-variable system in which the accretion disk, corona, BLR, and dusty obscuring structures exchange information through radiation, geometry, and changing source state. Reverberation mapping already exploits the timing structure of that system. A SURD-based program seeks to exploit its \emph{information structure} as well, by distinguishing what is uniquely predictive, what is redundant, what is only jointly informative, and what remains causally hidden from the monitored observables \cite{AGN_SURD_notebook,Cackett2021,Peterson2006,Netzer2015}.
+
+
+
+\section{Project Concept: State-dependent and Velocity-resolved SURD Analysis of AGN Time Series}
+\label{sec:project_concept_surd_agn}
+
+The AGN notebook provided in the GitHub repository explicitly frames SURD as a method that can go beyond pairwise cross-correlation in reverberation mapping. In its current proof-of-concept form, the notebook uses a synthetic system with a hidden UV driver, optical and X-ray continuum proxies, and a delayed H$\beta$ response. It scans lags, uses a custom \texttt{run\_collect()} helper to recover results for all targets, and notes practical issues such as uniform resampling of irregular light curves and lag broadening when the hidden driver is modeled as a random walk \cite{AGN_SURD_notebook}. The central conceptual step already present in the notebook is the attempt to distinguish whether observed bands carry overlapping, distinct, or jointly emergent predictive information about the delayed broad-line response. In this sense, the notebook already contains the seed of a more ambitious astrophysical research program.
+
+\subsection{Title}
+
+\textbf{State-dependent and velocity-resolved SURD analysis of AGN time series: identifying hidden ionizing drivers, reverberation holidays, and evolving BLR information flow}
+
+\subsection{Abstract}
+
+Reverberation mapping has become a central tool for probing the inner structure of active galactic nuclei (AGN), because variable ionizing emission drives delayed responses in the accretion disk, broad-line region (BLR), and dusty environment \cite{CackettHorneWinkler2021}. Yet most standard timing analyses remain fundamentally pairwise: they determine whether one band leads another, but not whether two predictors carry the same information, different information, or only become informative jointly. The SURD framework is promising precisely because it decomposes predictive information into unique, redundant, and synergistic components. The notebook examined in the GitHub repository already demonstrates this idea in a hidden-driver toy model with optical and X-ray proxies and a delayed H$\beta$ response \cite{AGN_SURD_notebook}.
+
+The proposed research program is to transform that proof of concept into a full astrophysical diagnostic. The main goal is to build a time-, lag-, and velocity-resolved map of information transfer in AGN campaigns, and to use it to determine whether broad-line variability is driven by a single hidden ionizing continuum, by multiple partially independent drivers, or by state-dependent joint control involving the disk, corona, and line-emitting gas. This framework is especially well matched to current AGN problems, including continuum-lag puzzles, reverberation holidays, and growing evidence that velocity-resolved BLR kinematics can evolve with time \cite{Korista2014,Dehghanian2019,LuEtAl2022,FengEtAl2024}.
+
+\subsection{Scientific Background}
+
+AGN variability studies are powerful because they replace spatial resolution with time resolution: changes in the central engine propagate outward and are recorded as delayed responses in other components. Modern reverberation mapping is used not only for black-hole mass estimation, but also to probe the X-ray corona, the UV/optical accretion disk, the broad-line region, and the dusty torus \cite{CackettHorneWinkler2021}.
+
+However, the current timing toolbox has a structural limitation. Cross-correlation and lag-fitting approaches can identify the dominant delay between two signals, but they do not reveal whether
+\begin{itemize}
+    \item one continuum band contains uniquely relevant physical information,
+    \item two bands are merely redundant proxies of the same hidden driver,
+    \item or the line response depends on the joint state of two or more bands.
+\end{itemize}
+
+That limitation matters because several important AGN results already indicate that the inner engine is not adequately described by a single simple linear driver-response chain. Continuum reverberation work has emphasized that UV/optical lag spectra can be difficult to reconcile with minimal thin-disk expectations \cite{Korista2014}. The AGN STORM campaign on NGC 5548 found a pronounced ``holiday,'' during which broad emission lines decoupled from the observed UV/optical continuum for an extended interval, suggesting that the observed continuum was not the whole causal story \cite{Dehghanian2019}. More recent velocity-resolved reverberation mapping shows that BLR kinematic signatures can differ across sources and even evolve in time, implying a dynamical and state-dependent information structure rather than a static one \cite{LuEtAl2022,FengEtAl2024,FengEtAl2021}.
+
+This is precisely the niche where SURD can add something new.
+
+\subsection{Motivation}
+
+The notebook's internal logic is already astrophysically pointed. It assumes a hidden UV driver, two observed continuum proxies, and a delayed H$\beta$ response, then asks how the decomposition changes with lag. In effect, it is already testing the hypothesis that observed bands can be partial, noisy, and possibly redundant tracers of the physically relevant ionizing continuum \cite{AGN_SURD_notebook}.
+
+The broader motivation is to turn that idea into a diagnostic for real AGN puzzles.
+
+\subsubsection{Hidden-driver problem}
+
+In many campaigns, the directly observed bands may not coincide with the truly relevant ionizing continuum. The line-emitting gas is often most sensitive to the unobserved EUV/soft-X-ray part of the spectrum, while observers usually have optical, UV, and X-ray proxies. If those proxies are incomplete, a standard lag method can still return a delay but may misidentify the physical driver. The information-leak term in the notebook is especially valuable here, because it can be reinterpreted as a measure of missing causal content \cite{AGN_SURD_notebook}.
+
+\subsubsection{Reverberation holidays and state changes}
+
+The NGC 5548 holiday showed that line response can temporarily decouple from the observed continuum. In a SURD framework, such intervals should appear not merely as a lag anomaly, but as a redistribution of information: rising leak, changing redundancy, or a collapse of unique predictive power in bands that usually track the line well \cite{Dehghanian2019}.
+
+\subsubsection{Velocity-dependent causal structure}
+
+Velocity-resolved reverberation mapping already shows that the blue wing, red wing, and line core can respond differently and may encode inflow, outflow, virial motion, or structural evolution. But conventional velocity-resolved lag analysis still remains mostly pairwise. SURD could reveal whether different velocity sectors are driven by distinct information channels, which would be a new kind of BLR diagnostic \cite{LuEtAl2022,FengEtAl2024,FengEtAl2021}.
+
+\subsubsection{Disk-corona coupling}
+
+There is continuing debate over whether observed UV/optical variability is mainly driven by X-ray reprocessing, by intrinsic disk fluctuations, or by more complex multi-component coupling. A unique/redundant/synergistic analysis is directly tailored to this question \cite{Korista2014,CackettHorneWinkler2021}.
+
+\subsection{Central Research Question}
+
+\subsubsection{Primary question}
+
+\textbf{Can SURD identify when AGN line variability is controlled by a hidden ionizing continuum rather than by the observed optical/UV/X-ray bands directly?}
+
+\subsubsection{Secondary questions}
+
+\begin{enumerate}
+    \item Does the information architecture of an AGN change with source state?
+    \item Do different velocity bins of a broad line receive unique, redundant, or synergistic driving information from different continuum bands?
+    \item Can information leak be used as an operational diagnostic of hidden drivers, variable obscuration, anisotropic illumination, or evolving transfer functions?
+    \item Do changing-look transitions or reverberation holidays show a characteristic SURD precursor signature?
+\end{enumerate}
+
+\subsection{Hypotheses}
+
+\subsubsection{H1. Hidden-driver redundancy hypothesis}
+
+If optical and X-ray are mainly noisy proxies of one hidden EUV driver, then the broad-line target should show
+\begin{itemize}
+    \item high redundancy between observed continuum bands,
+    \item limited unique information from either band alone,
+    \item non-negligible information leak if the true driver is unobserved.
+\end{itemize}
+
+This is the natural real-data extension of the notebook's synthetic setup \cite{AGN_SURD_notebook}.
+
+\subsubsection{H2. Joint-control hypothesis}
+
+If the line response depends on both disk state and coronal state, then
+\begin{itemize}
+    \item synergy should become significant,
+    \item the synergistic term should peak at physically meaningful lags or source states.
+\end{itemize}
+
+\subsubsection{H3. State-change hypothesis}
+
+During reverberation holidays, changing-look episodes, or major secular transitions,
+\begin{itemize}
+    \item the distribution among unique, redundant, and synergistic terms should change with time,
+    \item information leak should rise if the observed predictors cease to capture the dominant driver.
+\end{itemize}
+
+\subsubsection{H4. Velocity-channel hypothesis}
+
+If the BLR is stratified kinematically and physically, then different velocity bins of the same broad line should not share identical SURD signatures. For example, wings and core may show different balances of unique and redundant information, reflecting different radii, ionization conditions, or inflow/outflow geometry \cite{LuEtAl2022,FengEtAl2024,FengEtAl2021}.
+
+\subsection{Scope of the Analysis}
+
+\subsubsection{Phase I: Synthetic astrophysical benchmark suite}
+
+The first phase should build a controlled library of AGN-inspired synthetic systems, extending the notebook's hidden-driver example \cite{AGN_SURD_notebook}.
+
+Suggested benchmark families are the following.
+
+\paragraph{A. Single hidden EUV driver.}
+Observed optical and X-ray are noisy proxies; H$\beta$ is a delayed response. This should produce strong redundancy and measurable leak when the true driver is omitted.
+
+\paragraph{B. Two-driver disk-corona system.}
+A slow disk fluctuation and a faster coronal fluctuation both contribute to the line response. This should produce synergy if the line depends on both.
+
+\paragraph{C. Absorber-modulated response.}
+The same driver is present, but the transfer to the BLR is periodically suppressed or reweighted by a latent obscurer or wind state. This is a clean toy analog of a reverberation holiday.
+
+\paragraph{D. Breathing BLR.}
+The lag and responsivity vary with continuum level. This tests whether sliding-window SURD can detect state dependence.
+
+\paragraph{E. Velocity-resolved BLR response.}
+Different velocity bins respond to different mixtures of drivers and delays. This creates a calibration map for interpreting real velocity-resolved results.
+
+The point of this phase is not merely validation. It is to build a dictionary from physical scenario to SURD signature.
+
+\subsubsection{Phase II: Real AGN campaign analysis}
+
+The best starting point is a source with dense, multiwavelength monitoring and known anomalous behavior. AGN STORM-like data are ideal because they combine spectroscopic and continuum information at high cadence and have already demonstrated complex behavior, including line holidays and detailed velocity-delay structure \cite{CackettHorneWinkler2021,Dehghanian2019}.
+
+A strong initial target set would include
+\begin{itemize}
+    \item a classical reverberation source with good multiband coverage,
+    \item a source with a known holiday or hidden-driver signature,
+    \item a changing-look AGN with long-baseline monitoring,
+    \item a source with published velocity-resolved reverberation mapping and evidence for kinematic evolution.
+\end{itemize}
+
+\subsubsection{Phase III: Velocity-resolved and time-local SURD}
+
+This is the centerpiece of the project.
+
+For each campaign, each broad line can be divided into velocity bins, and SURD can be computed in overlapping windows and over a lag scan. This creates a four-dimensional structure
+\[
+\{v,\tau,w,\mathrm{component}\},
+\]
+where \(v\) is velocity bin, \(\tau\) is lag, \(w\) is time window, and \(\mathrm{component}\) denotes unique, redundant, synergistic, or leak information.
+
+This is the proposed ``information tomography'' of AGN reverberation.
+
+\subsection{Proposed Methodology}
+
+\subsubsection{Data representation}
+
+For predictors \(X_1(t), X_2(t), \dots, X_n(t)\) and target \(Y(t)\), define a lagged predictive problem of the form
+\[
+Y(t+\tau) \leftarrow \{X_1(t), X_2(t), \dots, X_n(t)\}.
+\]
+SURD decomposes the mutual information into
+\begin{itemize}
+    \item unique contributions \(U_i\),
+    \item redundant contribution \(R\),
+    \item synergistic contribution \(S\),
+    \item residual or information leak \(L\).
+\end{itemize}
+
+The notebook already implements this idea through histogram-based approximation of the joint distribution and a lag scan in sample units \cite{AGN_SURD_notebook}.
+
+\subsubsection{Sliding-window analysis}
+
+Instead of one decomposition over the full campaign, compute SURD in overlapping windows. This allows the information anatomy to evolve in time and is essential for detecting transient states, holidays, or changing-look behavior.
+
+\subsubsection{Velocity-resolved targets}
+
+Instead of only integrated H$\beta$ flux, define targets such as
+\[
+Y_v(t) = F_{\mathrm{H}\beta}(v,t),
+\]
+for line-core, blue-wing, red-wing, or narrow velocity bins. Then compute
+\[
+\mathrm{SURD}\big(Y_v(t+\tau);X_{\rm X}(t),X_{\rm UV}(t),X_{\rm opt}(t),\dots\big).
+\]
+
+\subsubsection{Multi-line hierarchy}
+
+Where data allow, extend the targets to multiple lines such as H$\beta$, He\,II, Fe\,II, or other line species. Different lines sample different ionization and radius regimes, so comparing their SURD signatures can reveal where hidden-driver effects are strongest \cite{CackettHorneWinkler2021,FengEtAl2024}.
+
+\subsubsection{Null tests and significance}
+
+Because AGN light curves are red-noise dominated and often irregularly sampled, significance testing is critical. The notebook already highlights the problem that random-walk-like drivers broaden lag localization \cite{AGN_SURD_notebook}.
+
+The analysis should therefore include
+\begin{itemize}
+    \item surrogate light curves preserving power spectrum and cadence,
+    \item bootstrap confidence intervals,
+    \item sensitivity to resampling method,
+    \item sensitivity to histogram binning,
+    \item comparison to simpler pairwise lag tools.
+\end{itemize}
+
+\subsection{Observables and Outputs}
+
+The main outputs should be the following.
+
+\subsubsection{Lag profiles}
+
+For each target and predictor set:
+\begin{itemize}
+    \item total mutual information versus lag,
+    \item unique, redundant, synergistic, and leak terms versus lag.
+\end{itemize}
+
+\subsubsection{Windowed state profiles}
+
+For each time window:
+\begin{itemize}
+    \item decomposition at the dominant lag,
+    \item change-point structure in the information anatomy.
+\end{itemize}
+
+\subsubsection{Velocity--lag maps}
+
+For each broad line:
+\[
+U(v,\tau), \qquad R(v,\tau), \qquad S(v,\tau), \qquad L(v,\tau).
+\]
+
+\subsubsection{Campaign-level summary statistics}
+
+For each AGN:
+\begin{itemize}
+    \item dominant source of unique predictive information,
+    \item average redundancy between continuum bands,
+    \item mean and maximum information leak,
+    \item state dependence of the above,
+    \item whether the source behaves more like a single hidden-driver system or a multi-driver synergistic system.
+\end{itemize}
+
+\subsection{Interpretation Framework}
+
+A central strength of the proposal is that each SURD component has a direct physical interpretation.
+
+\subsubsection{Unique information}
+
+A continuum band has irreducible predictive content for the line.
+
+\textit{Interpretation:} that band is closer to the physically relevant driver, or carries distinct state information.
+
+\subsubsection{Redundant information}
+
+Multiple bands carry overlapping predictive content.
+
+\textit{Interpretation:} they are tracing a common hidden process, such as the same ionizing continuum.
+
+\subsubsection{Synergistic information}
+
+Neither predictor is highly informative alone, but together they are.
+
+\textit{Interpretation:} nonlinear or state-dependent control, such as disk-corona coupling, geometry changes, or absorber-modulated response.
+
+\subsubsection{Information leak}
+
+Observed variables do not fully capture the target's dynamics.
+
+\textit{Interpretation:} hidden EUV driver, variable obscuration, evolving transfer function, anisotropic illumination, or unmodeled physics.
+
+\subsection{Most Promising First Science Cases}
+
+\subsubsection{Case 1: Hidden-driver diagnosis in a classical reverberation-mapping source}
+
+Start with a well-observed source and ask whether observed optical, UV, and X-ray bands behave redundantly, uniquely, or synergistically with respect to the broad-line target.
+
+\subsubsection{Case 2: Reverberation holiday source}
+
+Apply sliding-window SURD to a source like NGC 5548 and test whether the holiday corresponds to rising leak and a restructuring of information flow \cite{Dehghanian2019}.
+
+\subsubsection{Case 3: Velocity-resolved kinematic evolution}
+
+Apply the method to a source with velocity-resolved H$\beta$ reverberation and look for distinct information signatures in wings versus core, especially where evolving kinematics have already been reported \cite{LuEtAl2022,FengEtAl2024,FengEtAl2021}.
+
+\subsubsection{Case 4: Changing-look AGN}
+
+Apply windowed SURD before, during, and after major spectral changes to see whether the information architecture shifts in advance of the observed state transition. Changing-look AGN are now recognized as dramatic optical, UV, and X-ray variability events on months-to-years timescales, making them a natural stress test for this framework \cite{HutchinsonEtAl2023review}.
+
+\subsection{Novelty}
+
+The main novelty is not simply the use of information theory in astronomy. It is the combination of four elements:
+\begin{enumerate}
+    \item \textbf{hidden-driver diagnosis}, grounded directly in the notebook's design,
+    \item \textbf{sliding-window state dependence}, to capture holidays and secular transitions,
+    \item \textbf{velocity-resolved SURD tomography}, to map information flow across BLR kinematics,
+    \item \textbf{use of information leak as a scientific observable}, rather than as a residual nuisance term.
+\end{enumerate}
+
+That combination appears genuinely new relative to standard AGN timing practice \cite{AGN_SURD_notebook,CackettHorneWinkler2021,Dehghanian2019,LuEtAl2022,FengEtAl2024}.
+
+\subsection{Risks and Limitations}
+
+The main technical risks are
+\begin{itemize}
+    \item irregular sampling,
+    \item red-noise autocorrelation,
+    \item estimator bias from finite histograms,
+    \item limited signal-to-noise in velocity bins.
+\end{itemize}
+
+These are real but manageable. In fact, addressing them carefully will strengthen the paper, because the notebook already shows awareness of the red-noise lag-broadening issue \cite{AGN_SURD_notebook}.
+
+\subsection{Expected Impact}
+
+If successful, this project would provide a new way to interpret AGN time series. Instead of asking only ``what is the lag?'', it would ask
+\begin{itemize}
+    \item who carries the information,
+    \item who shares it,
+    \item who contributes only jointly,
+    \item and when the observed data fail to close the causal budget.
+\end{itemize}
+
+That would make SURD a complement to reverberation mapping, not a replacement for it. Standard reverberation mapping would still constrain geometry and delays; SURD would constrain the \emph{information architecture} of the variability.
+
+\subsection{Concise Project Statement}
+
+This project proposes to extend SURD from a hidden-driver AGN toy model into a state-dependent, velocity-resolved reverberation framework for real AGN light curves. The scientific aim is to determine whether broad-line variability is driven by a single hidden ionizing continuum, by multiple partially independent drivers, or by synergistic combinations of disk and coronal states. By tracking unique, redundant, synergistic, and leaked information across lag, time window, and line-of-sight velocity, the analysis would address hidden-driver problems, reverberation holidays, changing-look transitions, and evolving BLR kinematics within one unified timing framework. The notebook already contains the seed of this program; the proposal is to turn it into a full AGN information-tomography method \cite{AGN_SURD_notebook}.
+
+
+
+\section{Target Variables and Predictor Variables in the Proposed SURD Analysis of AGN Time Series}
+\label{sec:targets_predictors_surd_agn}
+
+The proposed research program should be formulated explicitly as a supervised time-series decomposition problem. This makes the astrophysical goals much clearer and prevents the discussion from remaining overly general. The central idea is that, for each AGN science case, one defines a \emph{target} time series \(Y\) and a set of \emph{predictor} time series
+\[
+\mathbf{X}=\{X_1,X_2,\dots\},
+\]
+and then computes SURD for a lagged relation of the form
+\[
+Y(t+\tau)\leftarrow \mathbf{X}(t),
+\]
+possibly in sliding windows and, for emission lines, in velocity bins. Reverberation mapping already treats broad-line fluxes as delayed responses to continuum variations, and AGN campaigns routinely compare UV/optical continua and broad lines such as H$\beta$. The advantage of the SURD formalism is that it goes beyond pairwise lag estimation and asks which predictors carry unique information, which are redundant, which act only jointly through synergy, and whether some information remains unaccounted for through leakage.
+
+Below, the proposed research program is reformulated in a more explicit way, with clearly defined targets, predictors, and associated physical questions for each science case.
+
+\subsection{Baseline Reverberation Case: Integrated Broad-line Response}
+
+This should be the first and simplest science case.
+
+\subsubsection{Target}
+
+The natural target is
+\[
+Y(t)=F_{\mathrm{H}\beta}(t),
+\]
+namely the \emph{integrated H$\beta$ broad-line flux} as a function of time.
+
+In practice, H$\beta$ can be replaced by another broad line if the dataset is better in another line, but H$\beta$ is the most natural starting point because it is a standard reverberation-mapping target.
+
+\subsubsection{Predictors}
+
+A minimal predictor set is
+\[
+X_1(t)=F_{\rm X}(t), \qquad
+X_2(t)=F_{\rm UV}(t), \qquad
+X_3(t)=F_{\rm opt}(t).
+\]
+
+In words, these correspond to
+\begin{itemize}
+    \item \(F_{\rm X}(t)\): X-ray continuum light curve,
+    \item \(F_{\rm UV}(t)\): UV continuum light curve,
+    \item \(F_{\rm opt}(t)\): optical continuum light curve.
+\end{itemize}
+
+\subsubsection{Physical Question}
+
+The main physical question is: \emph{which observed continuum band is most informative for the line response?}
+
+\subsubsection{Interpretation}
+
+This setup has a direct physical interpretation:
+\begin{itemize}
+    \item large \(U_{\rm UV}\): the UV carries uniquely relevant driver information,
+    \item large redundancy among UV, optical, and X-ray: these bands are mostly tracing the same hidden continuum,
+    \item large synergy: the line depends on a joint state of disk and corona,
+    \item large leakage: the true ionizing driver is not fully represented by the observed bands.
+\end{itemize}
+
+This setup directly matches the notebook's hidden-driver logic and the real AGN problem that the BLR may respond to an unobserved ionizing continuum rather than to the observed optical proxy alone.
+
+\subsection{Hidden-Ionizing-Driver Case}
+
+This is the most important proposal scientifically.
+
+\subsubsection{Target}
+
+Again, the target is
+\[
+Y(t)=F_{\mathrm{H}\beta}(t),
+\]
+or more generally the integrated flux of a broad emission line.
+
+\subsubsection{Predictors}
+
+Use only the \emph{observed continua}:
+\[
+\mathbf{X}(t)=\{F_{\rm X}(t),F_{\rm UV}(t),F_{\rm opt}(t)\}.
+\]
+
+Optionally, one can add continuum colors or hardness ratios as extra predictors:
+\[
+X_4(t)=\frac{F_{\rm UV}(t)}{F_{\rm opt}(t)}, \qquad
+X_5(t)=H_{\rm X}(t),
+\]
+where \(H_{\rm X}(t)\) is an X-ray hardness ratio.
+
+\subsubsection{Physical Question}
+
+The physical question is: \emph{do the observed continua contain enough information to explain the broad-line variability, or is there evidence for a hidden driver?}
+
+\subsubsection{Why This Target--Predictor Choice Is Good}
+
+This choice is physically well motivated because the emission line is the response variable, while the continua are candidate drivers. If SURD shows high information leakage even when multiple observed continuum bands are included, that strongly suggests missing causal information, such as an unobserved EUV driver or a changing obscurer. The NGC 5548 holiday is exactly the kind of phenomenon in which the observed continuum can fail to represent the ionizing continuum seen by the BLR.
+
+\subsection{Reverberation-Holiday Case}
+
+This should be framed as a \emph{windowed} version of the previous setup.
+
+\subsubsection{Target}
+
+The target remains
+\[
+Y(t)=F_{\mathrm{H}\beta}(t),
+\]
+or another broad-line flux.
+
+\subsubsection{Predictors}
+
+The predictors are the same continuum set:
+\[
+\mathbf{X}(t)=\{F_{\rm X}(t),F_{\rm UV}(t),F_{\rm opt}(t)\}.
+\]
+
+\subsubsection{Extra Analysis Dimension}
+
+The difference here is that SURD is computed in overlapping windows:
+\[
+Y_w(t+\tau)\leftarrow \mathbf{X}_w(t),
+\]
+where \(w\) labels the time window.
+
+\subsubsection{Physical Question}
+
+The physical question becomes: \emph{does the causal information structure change during the holiday interval?}
+
+\subsubsection{What to Look For}
+
+Before, during, and after the holiday, the following features should be examined:
+\begin{itemize}
+    \item whether redundancy collapses,
+    \item whether one predictor loses its unique information,
+    \item whether information leakage rises sharply.
+\end{itemize}
+
+This formulation is more specific than merely saying that one should ``use SURD on a holiday source.'' The exact task is to predict integrated broad-line flux from observed multiband continuum fluxes, but to do so window by window in order to determine whether the predictor--target relation breaks down during the anomalous interval. The holiday literature reports that broad lines decorrelated from the continuum during the anomalous phase.
+
+\subsection{Velocity-resolved BLR Case}
+
+This is the strongest extension beyond standard reverberation mapping.
+
+\subsubsection{Targets}
+
+Instead of one integrated line light curve, one defines a separate target for each velocity bin:
+\[
+Y_v(t)=F_{\mathrm{H}\beta}(v,t),
+\]
+where \(v\) labels a velocity slice across the line profile.
+
+Examples include:
+\begin{itemize}
+    \item a blue-wing target,
+    \item a line-core target,
+    \item a red-wing target,
+    \item or five to ten narrower velocity bins.
+\end{itemize}
+
+\subsubsection{Predictors}
+
+The predictor set remains
+\[
+\mathbf{X}(t)=\{F_{\rm X}(t),F_{\rm UV}(t),F_{\rm opt}(t)\}.
+\]
+
+Optional extra predictors may include
+\begin{itemize}
+    \item continuum color,
+    \item X-ray hardness,
+    \item another line-free optical band.
+\end{itemize}
+
+\subsubsection{Physical Question}
+
+The key physical question is: \emph{do different kinematic parts of the BLR respond to different driver information?}
+
+\subsubsection{Why This Setup Is Powerful}
+
+Velocity-resolved reverberation mapping already shows that different regions of the line profile can have different lags and different kinematic interpretations. The SURD extension asks a stronger question: not only whether they respond at different times, but whether they are driven by different \emph{information channels}. Recent velocity-resolved reverberation studies find evolving BLR kinematics and differing behavior across velocity bins, which is exactly the observational context for this proposal.
+
+\subsubsection{Interpretation}
+
+For example:
+\begin{itemize}
+    \item if the blue wing has larger \(U_{\rm X}\), then outflow-sensitive gas may be more tightly linked to the coronal or high-energy state,
+    \item if the line core has large redundancy, then the central low-velocity response may mainly trace the common continuum driver,
+    \item if the red wing has high synergy, then the response may depend jointly on disk and coronal state.
+\end{itemize}
+
+\subsection{Multi-line Ionization-Stratification Case}
+
+Here the proposal becomes especially clear if each emission line is treated as a separate target.
+
+\subsubsection{Targets}
+
+Run separate SURD analyses for
+\[
+Y_1(t)=F_{\mathrm{He\,II}}(t),\quad
+Y_2(t)=F_{\mathrm{H}\beta}(t),\quad
+Y_3(t)=F_{\mathrm{Fe\,II}}(t),
+\]
+or whatever lines are available in the relevant dataset.
+
+\subsubsection{Predictors}
+
+Again use
+\[
+\mathbf{X}(t)=\{F_{\rm X}(t),F_{\rm UV}(t),F_{\rm opt}(t)\}.
+\]
+
+\subsubsection{Physical Question}
+
+The physical question is: \emph{do different line species respond to different driver information?}
+
+\subsubsection{Why This Is Physically Meaningful}
+
+Different lines probe different ionization conditions and different radial zones. Therefore a higher-ionization line might show
+\begin{itemize}
+    \item more unique dependence on UV or X-ray,
+    \item less redundancy with optical,
+    \item less or more leakage depending on how close the observed bands are to the true ionizing continuum.
+\end{itemize}
+
+This is much more specific than simply suggesting that several lines should be used. It means that one keeps the same predictor set, but uses multiple target lines and compares the SURD signatures across targets.
+
+\subsection{Continuum-driving-Continuum Case}
+
+This is the best way to study disk--corona coupling directly.
+
+\subsubsection{Target}
+
+Now the target is not a line but a continuum band:
+\[
+Y(t)=F_{\rm UV}(t)
+\]
+or
+\[
+Y(t)=F_{\rm opt}(t).
+\]
+
+\subsubsection{Predictors}
+
+For a UV target, use
+\[
+\mathbf{X}(t)=\{F_{\rm X}(t),F_{\rm opt}(t)\}.
+\]
+
+For an optical target, use
+\[
+\mathbf{X}(t)=\{F_{\rm X}(t),F_{\rm UV}(t)\}.
+\]
+
+\subsubsection{Physical Question}
+
+The physical question becomes: \emph{is the UV/optical continuum primarily driven by X-ray reprocessing, by inward or outward disk propagation, or by joint control?}
+
+\subsubsection{Interpretation}
+
+The SURD outputs then have the following interpretation:
+\begin{itemize}
+    \item large \(U_{\rm X}\): supports a strong X-ray-driving role,
+    \item large \(U_{\rm UV}\) when predicting optical: supports radial disk propagation or UV-led disk variability,
+    \item large synergy: supports a mixed disk--corona state dependence.
+\end{itemize}
+
+This connects directly to the continuum-lag problem in AGN variability. Reverberation studies use continuum-to-continuum lags to probe disk structure, and the observed complexity motivates going beyond pairwise lag methods.
+
+\subsection{Changing-look AGN Case}
+
+Here the key is not to change the target itself, but to make the predictors and targets explicit across epochs.
+
+\subsubsection{Target}
+
+The best primary target remains
+\[
+Y(t)=F_{\mathrm{H}\beta}(t),
+\]
+or the integrated flux of the main broad line that appears or fades.
+
+A second target can be the broad-line equivalent width or the broad-line-to-continuum ratio, if available.
+
+\subsubsection{Predictors}
+
+Use
+\[
+\mathbf{X}(t)=\{F_{\rm X}(t),F_{\rm UV}(t),F_{\rm opt}(t)\}.
+\]
+
+\subsubsection{Windowing}
+
+Compute SURD before, during, and after the changing-look transition.
+
+\subsubsection{Physical Question}
+
+The physical question is: \emph{does the driver--response information structure change before the visible spectral transition?}
+
+\subsubsection{Why This Is Specific}
+
+The exact proposal is:
+\begin{itemize}
+    \item keep the broad-line flux as target,
+    \item keep multiband continuum fluxes as predictors,
+    \item compare SURD terms across state epochs.
+\end{itemize}
+
+Changing-look AGN are characterized by major continuum and broad-line state changes on observable timescales. This makes them natural candidates for a state-dependent decomposition.
+
+\subsection{Compact Summary Table of Targets and Predictors}
+
+Table~\ref{tab:surd_targets_predictors} summarizes the most explicit version of the proposal.
+
+\begin{table*}[htbp]
+\centering
+\caption{Explicit definition of target variables and predictor variables for the main proposed SURD science cases in AGN time-series analysis.}
+\label{tab:surd_targets_predictors}
+\begin{tabular}{|p{3.0cm}|p{4.0cm}|p{5.0cm}|p{3.8cm}|}
+\hline
+\textbf{Science case} & \textbf{Target variable(s)} & \textbf{Predictor variable(s)} & \textbf{Main question} \\
+\hline
+Standard reverberation mapping & \(F_{\mathrm{H}\beta}(t)\) & \(F_{\rm X}(t),\,F_{\rm UV}(t),\,F_{\rm opt}(t)\) & Which continuum best predicts the line? \\
+\hline
+Hidden driver & \(F_{\mathrm{H}\beta}(t)\) & \(F_{\rm X}(t),\,F_{\rm UV}(t),\,F_{\rm opt}(t)\), optional colors/hardness & Is there missing causal information? \\
+\hline
+Holiday analysis & \(F_{\mathrm{H}\beta}(t)\) in windows & Same continua, but windowed in time & Does the predictor--target relation break during the holiday? \\
+\hline
+Velocity-resolved BLR & \(F_{\mathrm{H}\beta}(v,t)\) for each velocity bin & \(F_{\rm X}(t),\,F_{\rm UV}(t),\,F_{\rm opt}(t)\) & Do different BLR kinematic zones have different drivers? \\
+\hline
+Multi-line reverberation mapping & \(F_{\mathrm{He\,II}}(t),\,F_{\mathrm{H}\beta}(t),\,F_{\mathrm{Fe\,II}}(t)\) & Same continua & Do different ionization zones see different driver information? \\
+\hline
+Disk--corona coupling & \(F_{\rm UV}(t)\) or \(F_{\rm opt}(t)\) & Other continuum bands & Is continuum variability driven by reprocessing, propagation, or both? \\
+\hline
+Changing-look AGN & Broad-line flux or line/continuum ratio & Multiband continuum, windowed by state & Does the information structure change before spectral transition? \\
+\hline
+\end{tabular}
+\end{table*}
+
+\subsection{Recommended First Concrete Project}
+
+The most robust first paper should still be based on the simplest and best-defined setup:
+\[
+Y(t)=F_{\mathrm{H}\beta}(t), \qquad
+\mathbf{X}(t)=\{F_{\rm X}(t),F_{\rm UV}(t),F_{\rm opt}(t)\},
+\]
+and then extended to
+\[
+Y_v(t)=F_{\mathrm{H}\beta}(v,t)
+\]
+for velocity bins, and finally to multiple lines.
+
+That sequence is well aligned with the way reverberation mapping is already used to connect continuum variability with broad-line responses.
+
+\subsection{Recommended First Concrete Proposal}
+
+The first proposal should be stated in an extremely explicit way:
+
+\begin{itemize}
+    \item \textbf{Target:} integrated H$\beta$ flux \(F_{\mathrm{H}\beta}(t)\).
+    \item \textbf{Predictors:} contemporaneous X-ray, UV, and optical continuum fluxes \(F_{\rm X}(t)\), \(F_{\rm UV}(t)\), and \(F_{\rm opt}(t)\).
+    \item \textbf{Task:} compute SURD as a function of lag and time window.
+    \item \textbf{Goal:} test whether the line is explained by redundant observed proxies of one hidden driver, by one uniquely informative band, or by a joint state of disk and corona.
+    \item \textbf{Extension:} repeat the same procedure with velocity-binned H$\beta$ targets.
+\end{itemize}
+
+This version is specific, physically interpretable, and directly connected to known AGN reverberation problems including hidden-driver behavior and broad-line anomalies.
+
+
+\printbibliography
+
+
+\end{document}

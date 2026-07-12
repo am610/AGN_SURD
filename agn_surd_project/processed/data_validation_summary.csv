@@ -1,0 +1,6 @@
+Light Curve,Number of Points,MJD Min,MJD Max,Median Cadence (days),Source File
+5100 Å Continuum,1548,47509.00,52264.62,1.00,c5100.dat
+Integrated Hβ,1248,47509.00,52174.23,1.05,ngc5548_agnwatch_hb_clean.csv
+Hβ Blue Wing,247,47512.00,49255.00,5.00,hb_profiles_extracted/*.spc
+Hβ Core,247,47512.00,49255.00,5.00,hb_profiles_extracted/*.spc
+Hβ Red Wing,247,47512.00,49255.00,5.00,hb_profiles_extracted/*.spc

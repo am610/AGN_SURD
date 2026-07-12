@@ -1,0 +1,21 @@
+# Git ignore patterns for AGN_SURD project
+
+# Datasets and large zip files
+agn_surd_project.zip
+agn_surd_project/agn_data/
+agn_surd_presentation_figures-20260528T215535Z-3-001.zip
+AGNs_and_SURD_algorithm.zip
+completed_overleaf_draft.zip
+
+# External repositories
+SURD/
+PyCCF/
+
+# OS / Python files
+.DS_Store
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.ipynb_checkpoints/
