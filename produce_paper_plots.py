@@ -1,0 +1,252 @@
+import sys
+import os
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from scipy.stats import zscore
+from scipy.signal import correlate
+
+# Configure path to SURD utilities
+sys.path.append('/Users/ayan/Programs/SURD/SURD')
+sys.path.append('/Users/ayan/Programs/SURD/SURD/utils')
+from utils import surd
+
+# ----------------- 1. LOAD AND PREPARE DATA -----------------
+print("Loading and aligning dataset...")
+cont_path = "/Users/ayan/Programs/SURD/agn_surd_project/agn_data/ngc5548_agnwatch/c5100.dat"
+hb_bins_path = "/Users/ayan/Programs/SURD/agn_surd_project/processed/ngc5548_hb_velocity_bins.csv"
+
+df_cont = pd.read_csv(cont_path, sep=r'\s+', header=None, names=['jd_2440000', 'flux', 'err'])
+df_cont['mjd'] = df_cont['jd_2440000']
+
+df_hb = pd.read_csv(hb_bins_path)
+
+tmin = max(df_cont['mjd'].min(), df_hb['mjd'].min())
+tmax = min(df_cont['mjd'].max(), df_hb['mjd'].max())
+
+dt_final = 1.0
+uniform_time_grid = np.arange(tmin, tmax + dt_final, dt_final)
+prepared_data = pd.DataFrame({'time': uniform_time_grid})
+
+# Interpolate continuum
+valid_cont = df_cont.dropna(subset=['flux']).sort_values('mjd')
+prepared_data['cont_flux_zscore'] = zscore(np.interp(uniform_time_grid, valid_cont['mjd'], valid_cont['flux']))
+
+# Interpolate spectroscopic bins
+for col, new_name in [('blue_wing_flux', 'blue_wing_flux_zscore'), 
+                      ('core_flux', 'core_flux_zscore'), 
+                      ('red_wing_flux', 'red_wing_flux_zscore')]:
+    valid_data = df_hb.dropna(subset=[col]).sort_values('mjd')
+    prepared_data[new_name] = zscore(np.interp(uniform_time_grid, valid_data['mjd'], valid_data[col]))
+
+prepared_data = prepared_data.dropna().reset_index(drop=True)
+
+# Extract z-scored flux arrays
+cont_zscore = prepared_data['cont_flux_zscore'].values
+blue_zscore = prepared_data['blue_wing_flux_zscore'].values
+core_zscore = prepared_data['core_flux_zscore'].values
+red_zscore = prepared_data['red_wing_flux_zscore'].values
+
+# Set custom plotting styles for premium publication quality
+plt.style.use('seaborn-v0_8-whitegrid' if 'seaborn-v0_8-whitegrid' in plt.style.available else 'default')
+plt.rcParams.update({
+    'font.size': 12,
+    'axes.labelsize': 14,
+    'axes.titlesize': 14,
+    'xtick.labelsize': 12,
+    'ytick.labelsize': 12,
+    'legend.fontsize': 11,
+    'figure.titlesize': 16,
+    'font.family': 'sans-serif'
+})
+
+# ----------------- FIGURE 1: PREPARED LIGHT CURVES -----------------
+print("Generating Figure 1: Aligned Light Curves...")
+fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(11, 7), sharex=True)
+
+ax1.plot(prepared_data['time'], cont_zscore, label='5100 Å Continuum', color='#1f77b4', linewidth=1.5)
+ax1.set_ylabel('Standardized Flux ($Z$)')
+ax1.legend(loc='upper right')
+ax1.set_title('NGC 5548 Continuum and Velocity-resolved $H\\beta$ Components (Strict Overlap Window)')
+
+ax2.plot(prepared_data['time'], blue_zscore, label='Blue Wing ($-3000$ to $-1000$ km/s)', color='#2ca02c', alpha=0.8)
+ax2.plot(prepared_data['time'], core_zscore, label='Core ($-1000$ to $+1000$ km/s)', color='#d62728', alpha=0.8)
+ax2.plot(prepared_data['time'], red_zscore, label='Red Wing ($+1000$ to $+3000$ km/s)', color='#ff7f0e', alpha=0.8)
+ax2.set_xlabel('Modified Julian Date (MJD)')
+ax2.set_ylabel('Standardized Flux ($Z$)')
+ax2.legend(loc='upper right')
+
+plt.tight_layout()
+fig.savefig('overleaf_draft/figure1_light_curves.png', dpi=300)
+plt.close(fig)
+
+# ----------------- SURD UTILS FOR PLOTTING -----------------
+def run_collect(X, nvars, nlag, nbins):
+    results = {}
+    for i in range(nvars):
+        Y = np.vstack([X[i, nlag:], X[:, :-nlag]])
+        hist, _ = np.histogramdd(Y.T, nbins)
+        I_R, I_S, MI, info_leak = surd.surd(hist)
+        results[i] = {"I_R": I_R, "I_S": I_S, "MI": MI, "info_leak": info_leak}
+    return results
+
+def lag_scan_target3(X, lags, nbins=8):
+    metrics = {"lag": [], "info_leak": [], "MI1": [], "MI2": [], "U1": [], "U2": [], "R12": [], "S12": []}
+    for lag in lags:
+        res = run_collect(X=X, nvars=3, nlag=lag, nbins=nbins)[2]
+        metrics["lag"].append(lag)
+        metrics["info_leak"].append(res["info_leak"])
+        metrics["MI1"].append(res["MI"].get((1,), np.nan))
+        metrics["MI2"].append(res["MI"].get((2,), np.nan))
+        metrics["U1"].append(res["I_R"].get((1,), np.nan))
+        metrics["U2"].append(res["I_R"].get((2,), np.nan))
+        metrics["R12"].append(res["I_R"].get((1, 2), np.nan))
+        metrics["S12"].append(res["I_S"].get((1, 2), np.nan))
+    return metrics
+
+# Run SURD scans up to 120 lags
+lags_120 = np.arange(1, 121)
+print("Running SURD lag scans up to 120 days for all targets...")
+# Core target: S1=cont, S2=blue -> T3=core
+X_core = np.vstack([cont_zscore, blue_zscore, core_zscore])
+metrics_core = lag_scan_target3(X_core, lags_120, nbins=8)
+
+# Red target: S1=cont, S2=blue -> T3=red
+X_red = np.vstack([cont_zscore, blue_zscore, red_zscore])
+metrics_red = lag_scan_target3(X_red, lags_120, nbins=8)
+
+# Blue target: S1=cont, S2=core -> T3=blue
+X_blue = np.vstack([cont_zscore, core_zscore, blue_zscore])
+metrics_blue = lag_scan_target3(X_blue, lags_120, nbins=8)
+
+# ----------------- FIGURE 2: SURD LAG SCANS -----------------
+print("Generating Figure 2: SURD Synergy and Leak Lag Scans...")
+fig, axs = plt.subplots(3, 2, figsize=(12, 11), sharex=True)
+
+targets = [('Core $H\\beta$', metrics_core), ('Red Wing $H\\beta$', metrics_red), ('Blue Wing $H\\beta$', metrics_blue)]
+
+for idx, (name, metrics) in enumerate(targets):
+    # Synergy column
+    ax_syn = axs[idx, 0]
+    ax_syn.plot(metrics['lag'], metrics['S12'], color='purple', label='Synergy', linewidth=2)
+    ax_syn.plot(metrics['lag'], metrics['R12'], color='gray', linestyle='--', label='Redundancy', alpha=0.7)
+    ax_syn.plot(metrics['lag'], metrics['U1'], color='blue', linestyle=':', label='Unique (Continuum)', alpha=0.7)
+    ax_syn.set_ylabel('Information (bits)')
+    ax_syn.set_title(f'Information Decomposition: {name}')
+    ax_syn.legend(loc='upper right')
+    
+    # Leak column
+    ax_leak = axs[idx, 1]
+    ax_leak.plot(metrics['lag'], metrics['info_leak'], color='darkorange', linewidth=2, label='Information Leak')
+    ax_leak.set_ylabel('Conditional Entropy (bits)')
+    ax_leak.set_title(f'Information Leak: {name}')
+    ax_leak.legend(loc='upper right')
+
+axs[2, 0].set_xlabel('Lag (days)')
+axs[2, 1].set_xlabel('Lag (days)')
+plt.tight_layout()
+fig.savefig('overleaf_draft/figure2_surd_lag_scans.png', dpi=300)
+plt.close(fig)
+
+# ----------------- FIGURE 3: ROBUSTNESS AND SHUFFLE ENVELOPES -----------------
+print("Generating Figure 3: Robustness and Null Tests...")
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(13, 5.5))
+
+# Panel A: nbins sensitivity (1 to 60 lags)
+lags_60 = np.arange(1, 61)
+nbins_vals = [4, 6, 8, 10, 12]
+colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd']
+for n_idx, n_val in enumerate(nbins_vals):
+    m_temp = lag_scan_target3(X_core, lags_60, nbins=n_val)
+    ax1.plot(lags_60, m_temp['S12'], label=f'nbins = {n_val}', color=colors[n_idx], linewidth=1.5)
+ax1.set_xlabel('Lag (days)')
+ax1.set_ylabel('Synergy $S_{12}$ (bits)')
+ax1.set_title('A: Histogram Bin Sensitivity (Core Target)')
+ax1.legend(loc='upper right')
+
+# Panel B: real vs. circular & block shuffle null envelopes
+df_combined = pd.read_csv('/Users/ayan/Programs/SURD/agn_surd_project/plots/test_c_shuffle_results/robustness_surrogate_core_combined.csv')
+
+ax2.plot(df_combined['lag'], df_combined['real_synergy'], color='black', linewidth=2, label='Real Synergy')
+# Circular shuffle
+ax2.plot(df_combined['lag'], df_combined['median_synergy_cont_circ_shuffle'], color='blue', label='Median (Circular)', alpha=0.8)
+ax2.fill_between(df_combined['lag'], df_combined['p2_5_synergy_cont_circ_shuffle'], df_combined['p97_5_synergy_cont_circ_shuffle'], 
+                 color='blue', alpha=0.15, label='95% envelope (Circular)')
+# Block shuffle
+ax2.plot(df_combined['lag'], df_combined['median_synergy_cont_block_shuffle'], color='red', label='Median (Block, 10d)', alpha=0.8)
+ax2.fill_between(df_combined['lag'], df_combined['p2_5_synergy_cont_block_shuffle'], df_combined['p97_5_synergy_cont_block_shuffle'], 
+                 color='red', alpha=0.15, label='95% envelope (Block, 10d)')
+
+ax2.set_xlabel('Lag (days)')
+ax2.set_ylabel('Synergy $S_{12}$ (bits)')
+ax2.set_title('B: Real vs. Surrogate Envelopes (Core Target)')
+ax2.legend(loc='upper right')
+
+plt.tight_layout()
+fig.savefig('overleaf_draft/figure3_robustness_and_nulls.png', dpi=300)
+plt.close(fig)
+
+# ----------------- FIGURE 4: ICCF VS SURD -----------------
+print("Generating Figure 4: ICCF vs. SURD Lags...")
+def compute_iccf(line, cont, lags, dt=1.0):
+    min_len = min(len(line), len(cont))
+    line_trimmed = line[:min_len]
+    cont_trimmed = cont[:min_len]
+    
+    correlation = correlate(line_trimmed, cont_trimmed, mode='full')
+    correlation = correlation / np.sqrt(np.sum(line_trimmed**2) * np.sum(cont_trimmed**2))
+    
+    correlation_lags_samples = np.arange(-min_len + 1, min_len)
+    correlation_lags_days = correlation_lags_samples * dt
+    
+    desired_lags_min = lags.min() * dt
+    desired_lags_max = lags.max() * dt
+    
+    mask_lags = (correlation_lags_days >= desired_lags_min) & (correlation_lags_days <= desired_lags_max)
+    iccf_lags_days = correlation_lags_days[mask_lags]
+    iccf_values = correlation[mask_lags]
+    return iccf_lags_days, iccf_values
+
+iccf_lags_b, iccf_vals_b = compute_iccf(blue_zscore, cont_zscore, lags_120)
+iccf_lags_c, iccf_vals_c = compute_iccf(core_zscore, cont_zscore, lags_120)
+iccf_lags_r, iccf_vals_r = compute_iccf(red_zscore, cont_zscore, lags_120)
+
+fig, axs = plt.subplots(3, 1, figsize=(10, 10), sharex=True)
+
+components = [
+    ('Blue Wing $H\\beta$', iccf_lags_b, iccf_vals_b, metrics_blue, 19.0, 44.0),
+    ('Core $H\\beta$', iccf_lags_c, iccf_vals_c, metrics_core, 20.0, 106.0),
+    ('Red Wing $H\\beta$', iccf_lags_r, iccf_vals_r, metrics_red, 13.0, 84.0)
+]
+
+for idx, (name, iccf_lags, iccf_vals, surd_metrics, iccf_peak, surd_peak) in enumerate(components):
+    ax = axs[idx]
+    
+    # Plot ICCF on left y-axis
+    color = '#1f77b4'
+    ax.plot(iccf_lags, iccf_vals, color=color, label='ICCF (Linear Correlation)', linewidth=2)
+    ax.tick_params(axis='y', labelcolor=color)
+    ax.set_ylabel('Correlation Coefficient', color=color)
+    ax.axvline(iccf_peak, color=color, linestyle='--', label=f'ICCF Peak Lag: {iccf_peak:.1f} d')
+    
+    # Plot SURD Synergy on right y-axis
+    ax2 = ax.twinx()
+    color2 = 'purple'
+    ax2.plot(surd_metrics['lag'], surd_metrics['S12'], color=color2, label='SURD Synergy', linewidth=2)
+    ax2.tick_params(axis='y', labelcolor=color2)
+    ax2.set_ylabel('Synergy $S_{12}$ (bits)', color=color2)
+    ax2.axvline(surd_peak, color=color2, linestyle='-.', label=f'SURD Synergy Peak: {surd_peak:.1f} d')
+    
+    ax.set_title(f'ICCF vs. SURD Synergy: {name}')
+    
+    # Combine legends
+    lines, labels = ax.get_legend_handles_labels()
+    lines2, labels2 = ax2.get_legend_handles_labels()
+    ax.legend(lines + lines2, labels + labels2, loc='upper right')
+
+axs[2].set_xlabel('Lag (days)')
+plt.tight_layout()
+fig.savefig('overleaf_draft/figure4_iccf_vs_surd.png', dpi=300)
+plt.close(fig)
+
+print("All 4 publication-quality figures successfully created and saved in overleaf_draft/!")
