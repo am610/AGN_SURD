@@ -119,16 +119,30 @@ metrics_red = lag_scan_target3(X_red, lags_120, nbins=8)
 X_blue = np.vstack([cont_zscore, core_zscore, blue_zscore])
 metrics_blue = lag_scan_target3(X_blue, lags_120, nbins=8)
 
-# ----------------- FIGURE 2: SURD LAG SCANS -----------------
-print("Generating Figure 2: SURD Synergy and Leak Lag Scans...")
+# ----------------- FIGURE 2: SURD LAG SCANS WITH MONTE CARLO UNCERTAINTY -----------------
+print("Generating Figure 2: SURD Synergy and Leak Lag Scans with MC Uncertainty...")
 fig, axs = plt.subplots(3, 2, figsize=(12, 11), sharex=True)
 
-targets = [('Core $H\\beta$', metrics_core), ('Red Wing $H\\beta$', metrics_red), ('Blue Wing $H\\beta$', metrics_blue)]
+# Load MC uncertainty results
+df_mc_core = pd.read_csv('/Users/ayan/Programs/SURD/agn_surd_project/processed/mc_uncertainty_core.csv')
+df_mc_red = pd.read_csv('/Users/ayan/Programs/SURD/agn_surd_project/processed/mc_uncertainty_red.csv')
+df_mc_blue = pd.read_csv('/Users/ayan/Programs/SURD/agn_surd_project/processed/mc_uncertainty_blue.csv')
 
-for idx, (name, metrics) in enumerate(targets):
+targets = [
+    ('Core $H\\beta$', metrics_core, df_mc_core),
+    ('Red Wing $H\\beta$', metrics_red, df_mc_red),
+    ('Blue Wing $H\\beta$', metrics_blue, df_mc_blue)
+]
+
+for idx, (name, metrics, df_mc) in enumerate(targets):
     # Synergy column
     ax_syn = axs[idx, 0]
-    ax_syn.plot(metrics['lag'], metrics['S12'], color='purple', label='Synergy', linewidth=2)
+    # Plot MC Median and Shaded Error Bands
+    ax_syn.plot(df_mc['lag'], df_mc['median_synergy'], color='purple', label='Synergy (MC Median)', linewidth=2)
+    ax_syn.fill_between(df_mc['lag'], df_mc['p16_synergy'], df_mc['p84_synergy'], color='purple', alpha=0.3, label='1$\sigma$ MC Error')
+    ax_syn.fill_between(df_mc['lag'], df_mc['p2_5_synergy'], df_mc['p97_5_synergy'], color='purple', alpha=0.1, label='2$\sigma$ MC Error')
+    
+    # Reference curves from real run
     ax_syn.plot(metrics['lag'], metrics['R12'], color='gray', linestyle='--', label='Redundancy', alpha=0.7)
     ax_syn.plot(metrics['lag'], metrics['U1'], color='blue', linestyle=':', label='Unique (Continuum)', alpha=0.7)
     ax_syn.set_ylabel('Information (bits)')
@@ -137,7 +151,11 @@ for idx, (name, metrics) in enumerate(targets):
     
     # Leak column
     ax_leak = axs[idx, 1]
-    ax_leak.plot(metrics['lag'], metrics['info_leak'], color='darkorange', linewidth=2, label='Information Leak')
+    # Plot MC Median and Shaded Error Bands for Leak
+    ax_leak.plot(df_mc['lag'], df_mc['median_leak'], color='darkorange', linewidth=2, label='Information Leak (MC Median)')
+    ax_leak.fill_between(df_mc['lag'], df_mc['p16_leak'], df_mc['p84_leak'], color='darkorange', alpha=0.3, label='1$\sigma$ MC Error')
+    ax_leak.fill_between(df_mc['lag'], df_mc['p2_5_leak'], df_mc['p97_5_leak'], color='darkorange', alpha=0.1, label='2$\sigma$ MC Error')
+    
     ax_leak.set_ylabel('Conditional Entropy (bits)')
     ax_leak.set_title(f'Information Leak: {name}')
     ax_leak.legend(loc='upper right')
