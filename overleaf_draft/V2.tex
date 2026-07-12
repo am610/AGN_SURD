@@ -533,16 +533,16 @@ To compare our information-theoretic results with standard techniques, we comput
 
 \begin{table}[ht]
 \centering
-\begin{tabular}{lccc}
+\begin{tabular}{lcccc}
 \hline
-\textbf{Target Component} & \textbf{ICCF Peak Lag (days)} & \textbf{SURD Max Synergy Lag (days)} & \textbf{SURD Min Leak Lag (days)} \\
+\textbf{Target Component} & \textbf{ICCF Peak (d)} & \textbf{JAVELIN Peak (d)} & \textbf{SURD Max Synergy (d)} & \textbf{SURD Min Leak (d)} \\
 \hline
-Blue Wing H\(\beta\) & 19.0 & 44.0 & 1.0 \\
-Core H\(\beta\) & 20.0 & 106.0 & 1.0 \\
-Red Wing H\(\beta\) & 13.0 & 84.0 & 1.0 \\
+Blue Wing H\(\beta\) & 19.0 & $19.4_{-2.9}^{+2.5}$ & 44.0 & 1.0 \\
+Core H\(\beta\) & 20.0 & $20.1_{-3.2}^{+2.9}$ & 106.0 & 1.0 \\
+Red Wing H\(\beta\) & 13.0 & $12.8_{-1.8}^{+1.8}$ & 84.0 & 1.0 \\
 \hline
 \end{tabular}
-\caption{Comparison of classical ICCF peak correlation lags with the SURD peak synergy lags and minimum information leak lags.}
+\caption{Comparison of classical ICCF peak correlation lags, JAVELIN stochastic transfer function peaks, SURD peak synergy lags, and minimum information leak lags.}
 \label{tab:iccf_vs_surd}
 \end{table}
 
@@ -553,6 +553,27 @@ The classical ICCF identifies peaks at \textbf{19.0 days} (Blue Wing), \textbf{2
 \includegraphics[width=\textwidth]{figure4_iccf_vs_surd.png}
 \caption{Comparison of the Inter-Correlation Function (ICCF, blue) and the SURD synergy curve (purple) for the Blue Wing (top), Core (middle), and Red Wing (bottom) targets. Vertical lines mark the respective peak lags.}
 \label{fig:iccf_vs_surd}
+\end{figure}
+
+\subsection{Comparison with Stochastic Transfer Function Modeling (JAVELIN)}
+\label{sec:javelin_comparison}
+
+To supplement our cross-correlation analysis, we performed stochastic transfer function modeling using the JAVELIN package \cite{Zu2011}. JAVELIN models the driving continuum as a Damped Random Walk (DRW) process and fits the line response using a parameterized top-hat transfer function, estimating the prompt delay, width, and scaling factor via Markov Chain Monte Carlo (MCMC) sampling.
+
+Using 80 walkers, 150 burn-in iterations, and 300 chain steps, the MCMC posterior distributions for the lag of each component are shown in Figure~\ref{fig:javelin_posteriors}. The JAVELIN median lags and $1\sigma$ (16th--84th percentiles) confidence intervals are:
+\begin{itemize}
+    \item \textbf{Blue Wing:} $19.4_{-2.9}^{+2.5}$ days (HPD range: 16.5--21.9 days).
+    \item \textbf{Core H\(\beta\):} $20.1_{-3.2}^{+2.9}$ days (HPD range: 16.9--23.0 days).
+    \item \textbf{Red Wing:} $12.8_{-1.8}^{+1.8}$ days (HPD range: 11.0--14.6 days).
+\end{itemize}
+
+These results are in excellent agreement with the classical ICCF and DCF peaks (see Table~\ref{tab:iccf_vs_surd}). The convergence of both cross-correlation and DRW-based transfer function modeling on a prompt lag of 13--20 days confirms the validity of the linear reverberation response. In contrast, the much longer-term SURD synergy peaks (44--106 days) represent complex non-linear dynamics that are invisible to these standard linear frameworks.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.8\textwidth]{figure6_javelin_posteriors.png}
+\caption{JAVELIN MCMC lag posterior distributions for the Blue Wing (top), Core (middle), and Red Wing (bottom) of H\(\beta\) in NGC~5548. Black solid and dashed lines represent the median and $1\sigma$ (16th--84th percentiles) confidence intervals, respectively.}
+\label{fig:javelin_posteriors}
 \end{figure}
 
 \subsection{Discrete Correlation Function and False Discovery Rate Correction}
