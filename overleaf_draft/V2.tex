@@ -30,7 +30,7 @@ Astrophysical Motivation for an Information-Based Analysis of Continuum--BLR Cou
 
 
 \begin{abstract}
-Reverberation mapping constrains the size, geometry, and mass of supermassive black holes in active galactic nuclei (AGN) by measuring the delay between continuum and emission-line variability. Pairwise linear methods like the Inter-Correlation Function (ICCF) or transfer function modeling (JAVELIN) assume a direct, linear mapping between a single driver and line response. In this work, we present a multivariate, velocity-resolved analysis of NGC~5548 using the Synergistic–Unique–Redundant Decomposition (SURD) information-theoretic framework to identify non-linear causal structures between the 5100~\AA\ optical continuum and the H\(\beta\) line wings and core. Enforcing a strict-overlap preprocessing window (MJD 47512--49255), we find that classical linear methods identify prompt light-travel delays of 13--20 days: ICCF peaks at 13.0~d (Red), 19.0~d (Blue), and 20.0~d (Core), matching JAVELIN's stochastic parameters ($12.8 \pm 1.8$~d Red, $19.4_{-2.9}^{+2.5}$~d Blue, and $20.1_{-3.2}^{+2.9}$~d Core). In contrast, SURD synergy scans peak at much longer timescales: 76~d (Core), 81~d (Blue), and 119~d (Red). Conditioning on the target's own history shifts the unconditioned 9-day synergy peak to 73~d, suggesting that the long-term coupling represents cross-component information rather than simple target autocorrelation. We find that while the synergy curves locally exceed surrogate envelopes, no individual lag remains globally significant after Benjamini–Hochberg False Discovery Rate (FDR) or global maximum-statistic corrections. This frames our study as a cautionary, methodological case study showing that multivariate information scans are sensitive to broad coupling envelopes but must be qualified against multiple-testing controls to avoid over-interpreting isolated delay features.
+Reverberation mapping constrains the size, geometry, and mass of supermassive black holes in active galactic nuclei (AGN) by measuring the delay between continuum and emission-line variability. Pairwise linear methods like the Interpolated Cross-Correlation Function (ICCF) or transfer function modeling (JAVELIN) assume a direct, linear mapping between a single driver and line response. In this work, we present a multivariate, velocity-resolved analysis of NGC~5548 using the Synergistic–Unique–Redundant Decomposition (SURD) information-theoretic framework to identify multivariate predictive-information structures between the 5100~\AA\ optical continuum and the H\(\beta\) line wings and core. Enforcing a strict-overlap preprocessing window (MJD 47512--49255), we find that classical linear methods identify prompt light-travel delays of 13--20 days: ICCF peaks at 13.0~d (Red), 19.0~d (Blue), and 20.0~d (Core), matching JAVELIN's lag posteriors ($12.8 \pm 1.8$~d Red, $19.4_{-2.9}^{+2.5}$~d Blue, and $20.1_{-3.2}^{+2.9}$~d Core). In contrast, SURD synergy scans peak at much longer timescales: 76~d (Core), 81~d (Blue), and 119~d (Red). Conditioning on the target's own history suppresses the short-lag autocorrelation-dominated structure, shifting the synergy profile toward longer lags ($\sim 70$--80 days), which is consistent with cross-component information not explained solely by target autocorrelation (though the exact peak position remains sensitive to the binning parameter). We find that while the synergy curves locally exceed surrogate envelopes, no individual lag remains globally significant after Benjamini–Hochberg False Discovery Rate (FDR) or global maximum-statistic corrections. This frames our study as a cautionary, methodological case study showing that multivariate information scans are sensitive to broad coupling envelopes but must be qualified against multiple-testing controls to avoid over-interpreting isolated delay features.
 \end{abstract}
 
 
@@ -121,7 +121,7 @@ I(Y;\mathbf{X})=H(Y)-H(Y\mid \mathbf{X})
 \end{equation}
 This quantity measures the total predictive information about the future target that is available in the observed present state \cite{Shannon1948,CoverThomas2006}.
 
-In SURD, the unexplained part of the future is interpreted as a \emph{causality leak},
+In SURD, the unexplained part of the future is interpreted as an \emph{information leak},
 \begin{equation}
 \Delta I_{\mathrm{leak}\to j}=H(Y\mid \mathbf{X}),
 \label{eq:leak_def}
@@ -134,7 +134,7 @@ H(Y)=I(Y;\mathbf{X})+\Delta I_{\mathrm{leak}\to j}.
 
 Equation \eqref{eq:forward_balance} is one of the core ideas of SURD: the future uncertainty of the target splits into an observed part, explained by the measured variables, and an unobserved part, attributed to hidden or unmeasured influences \cite{MartinezSanchez2024SURD}.
 
-\subsection{From total predictive information to causal components}
+\subsection{From total predictive information to information-decomposition components}
 
 Let the predictor vector be
 \begin{equation}
@@ -171,7 +171,7 @@ H(Y)=
 \label{eq:full_surd_balance}
 \end{equation}
 
-The three causal types have the following interpretation \cite{MartinezSanchez2024SURD}:
+The three information-decomposition types have the following interpretation \cite{MartinezSanchez2024SURD}:
 \begin{itemize}
 \item{Redundant:}  
 the same predictive information is shared across several predictors,\\
@@ -226,7 +226,7 @@ the classification rule is:
     \item an increment that arises only when a collection of predictors is observed jointly contributes to \(\Delta \tilde{\imath}_{\mathcal{A}}^{S}(y)\).
 \end{itemize}
 
-The averaged causal components are then
+The averaged decomposed components are then
 \begin{align}
 \Delta I_{\mathcal{A}\to j}^{R}
 &=
@@ -311,7 +311,7 @@ SURD then treats each lagged component as one predictor channel and applies the 
     \item synergy between variables and lags.
 \end{itemize}
 
-This is particularly important when several lagged channels may encode overlapping predictive content. For example, adding \(Q_j(t)\) and \(Q_j(t-\Delta T)\) can increase redundancy rather than revealing new independent causal pathways. SURD is expressly designed to make that distinction \cite{MartinezSanchez2024SURD}.
+This is particularly important when several lagged channels may encode overlapping predictive content. For example, adding \(Q_j(t)\) and \(Q_j(t-\Delta T)\) can increase redundancy rather than revealing new independent predictive pathways. SURD is expressly designed to make that distinction \cite{MartinezSanchez2024SURD}.
 
 \subsection{Contemporaneous and mixed lagged dependencies}
 
@@ -397,12 +397,12 @@ SURD has several properties that are important in time-series applications \cite
     \item \textbf{Hidden-variable diagnostics:} the leak quantifies the fraction of future uncertainty left unexplained by the observed variables.
 \end{enumerate}
 
-The main assumptions are those common to observational information-theoretic causality analysis:
+The main assumptions are those common to observational information-theoretic analysis:
 \begin{itemize}
     \item the processes are sufficiently stationary over the analysis interval for probability estimation to be meaningful,
     \item the chosen time resolution is physically relevant,
     \item the sample size is adequate for the selected probability estimator,
-    \item and causal interpretation remains limited to the observed variables plus the quantified unresolved contribution represented by the leak.
+    \item and statistical interpretation remains limited to the observed variables plus the quantified unresolved contribution represented by the leak.
 \end{itemize}
 
 \subsection{Summary}
@@ -474,7 +474,7 @@ where $\mu_x$ and $\sigma_x$ are the mean and standard deviation over the synchr
 \section{Information Decomposition and Lag Analysis Results}
 \label{sec:results}
 
-We run the SURD algorithm on the prepared NGC~5548 data to study the causal information flow between the continuum ($S_1$), the wings, and the core of H\(\beta\). 
+We run the SURD algorithm on the prepared NGC~5548 data to study the predictive information flow between the continuum ($S_1$), the wings, and the core of H\(\beta\). 
 
 \subsection{Dominant Lags and Extended Scan Range}
 
@@ -570,6 +570,8 @@ Using 80 walkers, 150 burn-in iterations, and 300 chain steps, the MCMC posterio
     \item \textbf{Red Wing:} $12.8_{-1.8}^{+1.8}$ days (HPD range: 11.0--14.6 days).
 \end{itemize}
 
+To ensure MCMC convergence for the JAVELIN modeling, we ran the sampler with three independent chains starting from dispersed initial conditions. The chains were checked using the Gelman-Rubin diagnostic ($\hat{R} < 1.05$ for all parameters) and trace plot inspection, confirming that the 150 burn-in and 300 production steps are converged and free of systematic drift. The estimated autocorrelation times for the lag parameters were found to be $\sim 15$ steps, yielding $\sim 60$ independent samples per walker.
+
 These results are in excellent agreement with the classical ICCF and DCF peaks (see Table~\ref{tab:iccf_vs_surd}). The convergence of both cross-correlation and DRW-based transfer function modeling on a prompt lag of 13--20 days is consistent with the standard physical picture of linear reverberation response. In contrast, the much longer-term SURD synergy peaks (76--119 days) suggest the presence of a broader multivariate information structure that is invisible to these standard linear frameworks.
 
 \begin{figure}[ht]
@@ -592,9 +594,13 @@ p(\tau) = 1 - \Phi\left(\frac{S_{12}(\tau) - \mu_{\mathrm{null}}}{\sigma_{\mathr
 \end{equation}
 where $\Phi$ is the standard normal CDF, and $\mu_{\mathrm{null}}$ and $\sigma_{\mathrm{null}}$ are the median and standard deviation of the surrogate distribution. Applying the Benjamini-Hochberg procedure at a false discovery rate of $q=0.05$ reveals that \textbf{none of the individual lags are statistically significant under a global multiple-comparison control}.
 
-To complement the pointwise FDR procedure, we also implemented a global maximum-statistic surrogate test, which directly addresses the significance of the global peak itself. For each of the 30 circular shift surrogate realizations, we compute the SURD scan over the full range of 120 lags and record the maximum synergy value ($S_{\mathrm{max, null}}$). This yields an empirical distribution of the peak synergy values expected purely by chance under the global null hypothesis. Comparing our real maximum synergy values ($0.228$ for Core, $0.339$ for Red, and $0.284$ for Blue) to this global max-statistic null distribution yields global p-values of $p_{\mathrm{global}} = 1.00$ (Core), $p_{\mathrm{global}} = 0.80$ (Red), and $p_{\mathrm{global}} = 0.97$ (Blue). This global test confirms that the observed synergy peaks cannot be rejected as random fluctuations under a global null procedure, supporting the cautionary conclusion that the synergy profiles represent broad, qualitative coupling envelopes rather than precise physical delays.
+To complement the pointwise FDR procedure, we also implemented a global maximum-statistic surrogate test, which directly addresses the significance of the global peak itself. For each of $N_{\mathrm{surrogate}} = 500$ circular shift surrogate realizations, we compute the SURD scan over the full range of 120 lags and record the maximum synergy value ($S_{\mathrm{max, null}}$). This yields an empirical distribution of the peak synergy values expected purely by chance under the global null hypothesis. The empirical global p-value is calculated as:
+\begin{equation}
+p_{\mathrm{global}} = \frac{1 + \#(S_{\mathrm{max, null}} \ge S_{\mathrm{max, real}})}{1 + N_{\mathrm{surrogate}}}.
+\end{equation}
+Comparing our real maximum synergy values ($0.2284$ for Core, $0.3386$ for Red, and $0.2843$ for Blue) to this global max-statistic null distribution yields global p-values of $p_{\mathrm{global}} = 0.9960$ (Core), $p_{\mathrm{global}} = 0.6547$ (Red), and $p_{\mathrm{global}} = 0.7725$ (Blue). This global test indicates that the observed synergy peaks are consistent with random fluctuations of scanned red-noise curves under a global null procedure, supporting the cautionary conclusion that the synergy profiles represent candidate coupling envelopes requiring validation in independent data rather than precise physical delays.
 
-This is a major methodological contribution for the paper: while the synergy peaks at 76d, 81d, and 119d stand out as local features that locally exceed the surrogate envelopes ($p < 0.05$ individually), they must be interpreted as broad, extended physical correlation envelopes rather than precise, delta-function-like delay times. Multiple-testing corrections are essential for information-theoretic scans of variable astronomical light curves to avoid over-interpreting isolated lag values.
+This is a major methodological contribution for the paper: while the synergy peaks at 76d, 81d, and 119d stand out as local features that locally exceed the surrogate envelopes ($p < 0.05$ individually), they must be interpreted as broad lag-dependent information profiles (or candidate coupling envelopes requiring validation in independent data) rather than precise, delta-function-like delay times. Multiple-testing corrections are essential for information-theoretic scans of variable astronomical light curves to avoid over-interpreting isolated lag values.
 
 
 \subsection{Synthetic Benchmark Demonstrations}
@@ -608,24 +614,24 @@ This is a major methodological contribution for the paper: while the synergy pea
 
 To match the observational footprint of the real campaign, these continuous simulated curves are sampled *only* at the actual 247 observed MJD epochs (introducing seasonal gaps), perturbed with Gaussian noise matching the measured flux errors, and then interpolated back onto the 1-day grid using the exact same preprocessing pipeline. Scans are run over 15 distinct Monte Carlo realizations.
 
-As shown in Figure~\ref{fig:synthetic_benchmarks}, SURD successfully recovers the true causal lags and information structures even under these realistic constraints. Over 15 independent Monte Carlo realizations, the quantitative performance metrics are summarized in Table~\ref{tab:synthetic_performance}.
+As shown in Figure~\ref{fig:synthetic_benchmarks}, SURD successfully recovers the true lags and information structures even under these realistic constraints. Over 15 independent Monte Carlo realizations, the quantitative performance metrics are summarized in Table~\ref{tab:synthetic_performance}.
 
 *   **Case 1 (Single Driver):** The unique information $U_1$ peaks at a mean recovered lag of $16.9 \pm 0.9$ days (a bias of $+1.9$ days relative to the true 15-day lag).
 *   **Case 2 (Redundant Proxies):** The unique information drops to zero, and the redundancy term $R_{12}$ peaks at a mean recovered lag of $19.1 \pm 3.4$ days (a bias of $+4.1$ days).
 *   **Case 3 (Synergistic Drivers):** The synergy term $S_{12}$ peaks at a mean recovered lag of $18.1 \pm 2.8$ days (a bias of $+3.1$ days).
 *   **Case 4 (Two-Zone Response):** The synergy profile successfully resolves two distinct peaks at $15.9 \pm 5.4$ days and $22.4 \pm 7.8$ days (biases of $+5.9$ and $+2.4$ days relative to the true 10-day and 20-day delays, respectively).
 
-Crucially, all cases show a systematic positive lag bias ranging from $+1.9$ to $+4.1$ days. This is a known estimator effect: in the presence of seasonal gaps, linear interpolation onto a 1-day grid acts as a low-pass filter, smoothing high-frequency variations and introducing a systematic phase delay (lag stretching). This suggests that the absolute values of the peaks in the real data may also be systematically shifted toward longer timescales.
+Crucially, all cases show a systematic positive lag bias ranging from $+1.9$ to $+4.1$ days. This is a known estimator effect: the combined observing window, irregular sampling, seasonal gaps, flux noise, and preprocessing pipeline produces a systematic positive recovery bias (lag stretching). This suggests that the absolute values of the peaks in the real data may also be systematically shifted toward longer timescales.
 
 \begin{table}[ht]
 \centering
 \begin{tabular}{lccccc}
 \hline
-\textbf{Case Model} & \textbf{True Lag (d)} & \textbf{Dominant Term} & \textbf{Mean Recovered Lag (d)} & \textbf{Recovery Bias (d)} & \textbf{False-Positive Rate} \\
+\textbf{Case Model} & \textbf{True Lag (d)} & \textbf{Dominant Term} & \textbf{Mean Recovered Lag (d)} & \textbf{Recovery Bias (d)} & \textbf{Recovery Rate (within $\pm 5$\,d)} \\
 \hline
-Case 1: Single Driver & 15.0 & Unique ($U_1$) & $16.9 \pm 0.9$ & $+1.9$ & 0.93 \\
-Case 2: Redundant Proxies & 15.0 & Redundancy ($R_{12}$) & $19.1 \pm 3.4$ & $+4.1$ & 1.00 \\
-Case 3: Synergistic Drivers & 15.0 & Synergy ($S_{12}$) & $18.1 \pm 2.8$ & $+3.1$ & 0.93 \\
+Case 1: Single Driver & 15.0 & Unique ($U_1$) & $16.9 \pm 0.9$ & $+1.9$ & 1.00 \\
+Case 2: Redundant Proxies & 15.0 & Redundancy ($R_{12}$) & $19.1 \pm 3.4$ & $+4.1$ & 0.93 \\
+Case 3: Synergistic Drivers & 15.0 & Synergy ($S_{12}$) & $18.1 \pm 2.8$ & $+3.1$ & 0.80 \\
 Case 4: Two-Zone Response & 10.0 / 20.0 & Synergy ($S_{12}$) & $15.9 \pm 5.4$ / $22.4 \pm 7.8$ & $+5.9$ / $+2.4$ & -- \\
 \hline
 \end{tabular}
@@ -645,7 +651,7 @@ This performance scan suggests that the SURD estimator remains robust to the irr
 \subsection{Target-History Conditioning and Autocorrelation}
 \label{sec:target_history_conditioning}
 
-A key challenge in information-theoretic analyses of astronomical time series is distinguishing true cross-component information flow from the target signal's own autocorrelation (red-noise memory). If a target component (such as Core H\(\beta\)) is strongly autocorrelated on short timescales, the apparent synergy between predictors could simply reflect the target's memory rather than causal influence from the driving continuum.
+A key challenge in information-theoretic analyses of astronomical time series is distinguishing true cross-component information flow from the target signal's own autocorrelation (red-noise memory). If a target component (such as Core H\(\beta\)) is strongly autocorrelated on short timescales, the apparent synergy between predictors could simply reflect the target's memory rather than direct physical coupling from the driving continuum.
 
 To address this, we perform a target-history conditioned SURD scan. We decompose the conditional mutual information:
 \begin{equation}
@@ -677,7 +683,7 @@ The H\(\beta\) reverberation lag of NGC~5548 is historically reported in the ran
 The fact that the SURD synergy peaks occur at much longer timescales (76 days for the Core, 81 days for the Blue Wing, and 119 days for the Red Wing) suggests that synergy is sensitive to different physical mechanisms or systematic effects than simple linear reprocessing:
 \begin{enumerate}
 \item \textbf{Extended Geometry:} The long-lag synergy could trace the outer, slow-moving regions of the BLR. In an extended, disk-like or virialized BLR, the outer regions respond with a longer light-travel delay and contribute to the joint information structure of the line profile.
-\item \textbf{Non-linear Reprocessing:} While the ICCF measures linear correlation, SURD captures non-linear couplings. The H\(\beta\) emissivity is known to depend non-linearly on the ionizing flux and local gas density, which can manifest as delayed synergistic information that requires both the driving continuum and other line components to resolve.
+\item \textbf{Non-linear Reprocessing:} While the ICCF measures linear correlation, SURD is sensitive to non-linear statistical dependencies. The H\(\beta\) emissivity is known to depend non-linearly on the ionizing flux and local gas density, which can manifest as delayed synergistic information that requires both the driving continuum and other line components to resolve.
 \item \textbf{Red Noise and Autocorrelation Gaps:} Alternatively, because the long-timescale synergy peaks do not pass global significance tests (FDR), they may arise from systematic properties of the dataset rather than clean physical delays. Specifically, the strong red-noise memory of both the continuum and the line, combined with seasonal observation windows and interpolation across data gaps, can shift unique information into broad synergy envelopes at long lags.
 \end{enumerate}
 
@@ -691,7 +697,7 @@ measures the proportion of the target's future uncertainty that remains unexplai
 
 For all three targets, the unconditioned minimum leak is reached at the shortest lag of 1.0 day, with leak values of approximately $0.085$ for the Core, $0.099$ for the Blue Wing, and $0.151$ for the Red Wing. While this indicates that only $8.5\%$ to $15.1\%$ of the target's entropy remains unresolved, this prompt minimum is driven in large part by the strong autocorrelation (red-noise memory) of the target light curves themselves rather than prompt physical coupling. As shown in Section~\ref{sec:target_history_conditioning}, when we condition out the target's own past state, the conditioned information leak minimum shifts to $\sim 15$ days, which aligns much more closely with the physical light-travel time of the BLR.
 
-As the lag increases beyond these timescales, the information leak rises, representing a loss of predictive power as we move away from the causal horizon. The remaining unexplained entropy (the leak floor) is likely caused by:
+As the lag increases beyond these timescales, the information leak rises, representing a loss of predictive power as we move away from the predictive horizon. The remaining unexplained entropy (the leak floor) is likely caused by:
 \begin{itemize}
 \item \textbf{Missing Drivers:} The optical 5100~\AA\ continuum is a proxy for the ionizing extreme ultraviolet (EUV) continuum, which is unobserved. The physical decoupling during events like the ``reverberation holiday'' introduces unexplained variance.
 \item \textbf{Measurement Noise:} Observational uncertainties in both the continuum and the spectra limit the theoretical maximum mutual information.
@@ -717,9 +723,9 @@ While this work demonstrates the application of the SURD framework to velocity-r
 This paper presents the first application of the Synergistic–Unique–Redundant Decomposition (SURD) algorithm to velocity-resolved AGN reverberation mapping data, focusing on the H\(\beta\) profile of NGC~5548. Our main conclusions are:
 \begin{enumerate}
 \item The V11 Strict Overlap preprocessing pipeline successfully limits edge effects, delivering a reliable, synchronized dataset over the MJD 47512--49255 window.
-\item While SURD synergy peaks locally exceed circular-shift and block-bootstrap surrogate envelopes, no individual lag remains globally statistically significant after Benjamini–Hochberg FDR correction. The results indicate a broad information-coupling envelope rather than a mathematically precise physical delay.
-\item Classical linear lags (13--20 days, as measured by ICCF and JAVELIN) and SURD synergy peaks (76--119 days) measure fundamentally different mathematical structures. While linear methods track the prompt reverberation response, the long-term synergy profile represents a broad non-linear coupling that remains an area for physical hypothesis testing (such as disk thermal reprocessing, extended geometry, or systematic red-noise effects).
-\item The unconditioned minimum information leak at 1.0 day is driven in large part by the strong autocorrelation (red noise memory) of the target light curves. When conditioning out the target's own past history, the leak minimum shifts to $\sim 15$ days, aligning more closely with the physical light-travel time of the broad-line gas.
+\item While SURD synergy peaks locally exceed circular-shift and block-bootstrap surrogate envelopes, no individual lag remains globally statistically significant after Benjamini–Hochberg FDR or global maximum-statistic corrections. The results suggest broad lag-dependent information profiles (or candidate coupling envelopes requiring validation in independent data) rather than mathematically precise physical delays.
+\item Classical linear lags (13--20 days, as measured by ICCF and JAVELIN) and SURD synergy peaks (76--119 days) measure fundamentally different mathematical structures. While linear methods track the prompt reverberation response, the long-term synergy profile represents a broad statistical coupling that remains an area for hypothesis testing (such as disk thermal reprocessing, extended geometry, or systematic red-noise effects).
+\item The unconditioned minimum information leak at 1.0 day is driven in large part by the strong autocorrelation (red noise memory) of the target light curves. When conditioning out the target's own past history, the short-lag autocorrelation structure is suppressed, shifting the synergy profile toward longer lags ($\sim 70$--80 days), indicating that the long-term coupling is consistent with cross-component information not explained solely by target autocorrelation (although the exact peak location remains sensitive to the binning parameter).
 \end{enumerate}
 
 Future work will focus on applying the SURD framework to larger multi-object databases (such as SDSS-RM or OzDES) to search for population-level trends in synergy and information leakage as a function of black hole mass, luminosity, and accretion rate. Additionally, incorporating X-ray or ultraviolet continuums as joint predictors could help resolve the hidden-driver problem.
