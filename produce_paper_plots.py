@@ -232,9 +232,9 @@ iccf_lags_r, iccf_vals_r = compute_iccf(red_zscore, cont_zscore, lags_120)
 fig, axs = plt.subplots(3, 1, figsize=(10, 10), sharex=True)
 
 components = [
-    ('Blue Wing $H\\beta$', iccf_lags_b, iccf_vals_b, metrics_blue, 19.0, 44.0),
-    ('Core $H\\beta$', iccf_lags_c, iccf_vals_c, metrics_core, 20.0, 106.0),
-    ('Red Wing $H\\beta$', iccf_lags_r, iccf_vals_r, metrics_red, 13.0, 84.0)
+    ('Blue Wing $H\\beta$', iccf_lags_b, iccf_vals_b, metrics_blue, 19.0, 81.0),
+    ('Core $H\\beta$', iccf_lags_c, iccf_vals_c, metrics_core, 20.0, 76.0),
+    ('Red Wing $H\\beta$', iccf_lags_r, iccf_vals_r, metrics_red, 13.0, 119.0)
 ]
 
 for idx, (name, iccf_lags, iccf_vals, surd_metrics, iccf_peak, surd_peak) in enumerate(components):
@@ -267,4 +267,94 @@ plt.tight_layout()
 fig.savefig('overleaf_draft/figure4_iccf_vs_surd.png', dpi=300)
 plt.close(fig)
 
-print("All 4 publication-quality figures successfully created and saved in overleaf_draft/!")
+# ----------------- FIGURE 5: REALISTIC SYNTHETIC BENCHMARKS -----------------
+print("Generating Figure 5: Realistic Synthetic Benchmarks...")
+# Import and run the realistic synthetic simulation directly
+try:
+    import scratch.run_synthetic_realistic as run_realistic
+    # Since run_realistic executes on load and writes figure5, this will trigger it!
+except Exception as e:
+    print(f"Warning: Could not run realistic synthetic benchmarks automatically: {e}")
+
+# ----------------- FIGURE 7: TARGET-HISTORY CONDITIONING -----------------
+print("Generating Figure 7: Target-History Conditioning (Core Target)...")
+def run_conditional_collect(X, target_idx, predictor_indices, history_idx, nlag, nbins=6):
+    future_target = X[target_idx, nlag:]
+    pred_1 = X[predictor_indices[0], :-nlag]
+    pred_2 = X[predictor_indices[1], :-nlag]
+    hist_var = X[history_idx, :-nlag]
+    
+    data = np.vstack([future_target, pred_1, pred_2, hist_var]).T
+    hist_4d, _ = np.histogramdd(data, bins=nbins)
+    hist_4d = hist_4d / np.sum(hist_4d)
+    
+    cond_synergy = 0.0
+    cond_leak = 0.0
+    
+    for k in range(nbins):
+        p_x3 = np.sum(hist_4d[:, :, :, k])
+        if p_x3 > 1e-6:
+            hist_3d = hist_4d[:, :, :, k] / p_x3
+            try:
+                I_R, I_S, MI, info_leak = surd.surd(hist_3d)
+                syn_val = I_S.get((1, 2), 0.0)
+                cond_synergy += p_x3 * syn_val
+                cond_leak += p_x3 * info_leak
+            except Exception:
+                pass
+                
+    return cond_synergy, cond_leak
+
+def run_unconditioned_collect(X, target_idx, predictor_indices, nlag, nbins=6):
+    future_target = X[target_idx, nlag:]
+    pred_1 = X[predictor_indices[0], :-nlag]
+    pred_2 = X[predictor_indices[1], :-nlag]
+    
+    data = np.vstack([future_target, pred_1, pred_2]).T
+    hist_3d, _ = np.histogramdd(data, bins=nbins)
+    hist_3d = hist_3d / np.sum(hist_3d)
+    
+    I_R, I_S, MI, info_leak = surd.surd(hist_3d)
+    return I_S.get((1, 2), 0.0), info_leak
+
+# We use the standardized continuum, blue wing, and core arrays
+X_cond = np.vstack([cont_zscore, blue_zscore, core_zscore])
+lags_scan = np.arange(1, 121)
+
+core_uncond_syn, core_uncond_leak = [], []
+core_cond_syn, core_cond_leak = [], []
+
+for lag in lags_scan:
+    us, ul = run_unconditioned_collect(X_cond, 2, [0, 1], lag, nbins=6)
+    cs, cl = run_conditional_collect(X_cond, 2, [0, 1], 2, lag, nbins=6)
+    core_uncond_syn.append(us)
+    core_uncond_leak.append(ul)
+    core_cond_syn.append(cs)
+    core_cond_leak.append(cl)
+
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(13, 5.5))
+
+# Synergy comparison
+ax1.plot(lags_scan, core_uncond_syn, label='Unconditioned Synergy', color='blue', linewidth=2)
+ax1.plot(lags_scan, core_cond_syn, label='History-Conditioned Synergy', color='red', linewidth=2)
+ax1.set_xlabel('Lag (days)')
+ax1.set_ylabel('Synergy $S_{12}$ (bits)')
+ax1.set_title('A: Synergy Comparison (Core Target)')
+ax1.legend(loc='upper right')
+ax1.grid(True, linestyle='--', alpha=0.5)
+
+# Leak comparison
+ax2.plot(lags_scan, core_uncond_leak, label='Unconditioned Leak', color='blue', linewidth=2)
+ax2.plot(lags_scan, core_cond_leak, label='History-Conditioned Leak', color='red', linewidth=2)
+ax2.set_xlabel('Lag (days)')
+ax2.set_ylabel('Information Leak (normalized entropy)')
+ax2.set_title('B: Information Leak Comparison (Core Target)')
+ax2.legend(loc='upper right')
+ax2.grid(True, linestyle='--', alpha=0.5)
+
+plt.tight_layout()
+fig.savefig('overleaf_draft/figure7_history_conditioning.png', dpi=300)
+plt.close(fig)
+print("Figure 7: figure7_history_conditioning.png successfully created and saved in overleaf_draft/!")
+
+print("All publication-quality figures successfully created and saved in overleaf_draft/!")
