@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  15 JUL 2026 22:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  15 JUL 2026 22:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**V2.tex
-(./V2.tex
+**V3.tex
+(./V3.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 (/usr/local/texlive/2026/texmf-dist/tex/latex/mnras/mnras.cls
@@ -515,8 +515,8 @@ File: t1ntxtlf.fd 2021/05/24 v1.1 font definition file for T1/ntx/tlf
 )
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 9.0pt on input line 23.
- (./V2.aux)
-\openout1 = `V2.aux'.
+ (./V3.aux)
+\openout1 = `V3.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 23.
 LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line
@@ -600,9 +600,9 @@ LaTeX Font Info:    ... okay on input line 23.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring ON on input line 23.
-(./V2.out) (./V2.out)
+(./V3.out) (./V3.out)
 \@outlinefile=\write3
-\openout3 = `V2.out'.
+\openout3 = `V3.out'.
 
 
 (/usr/local/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -1062,7 +1062,7 @@ Underfull \hbox (badness 4132) in paragraph at lines 750--752
 to
  []
 
-[10] (./V2.bbl [11])
+[10] (./V3.bbl [11])
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [12
@@ -1120,7 +1120,7 @@ s been already used, duplicate ignored
 l.800 \end{document}
                     
 
- <./figure7_history_conditioning.png>] (./V2.aux)
+ <./figure7_history_conditioning.png>] (./V3.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
@@ -1133,7 +1133,7 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package rerunfilecheck Info: File `V2.out' has not changed.
+Package rerunfilecheck Info: File `V3.out' has not changed.
 (rerunfilecheck)             Checksum: BFECB696BE5EF1ED2A3780C925880067;9112.
  ) 
 Here is how much of TeX's memory you used:
@@ -1160,7 +1160,7 @@ t/fonts/type1/public/newtx/txmiaX.pfb></usr/local/texlive/2026/texmf-dist/fonts
 ublic/newtx/ztmb.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/new
 tx/ztmr.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/newtx/ztmri.
 pfb>
-Output written on V2.pdf (15 pages, 4546023 bytes).
+Output written on V3.pdf (15 pages, 4546023 bytes).
 PDF statistics:
  657 PDF objects out of 1000 (max. 8388607)
  594 compressed objects within 6 object streams
