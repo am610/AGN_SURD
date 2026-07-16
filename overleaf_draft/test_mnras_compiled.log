@@ -2,8 +2,8 @@ This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded forma
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**V2.tex
-(./V2.tex
+**test_mnras_compiled.tex
+(./test_mnras_compiled.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 (/usr/local/texlive/2026/texmf-dist/tex/latex/mnras/mnras.cls
@@ -515,13 +515,13 @@ File: t1ntxtlf.fd 2021/05/24 v1.1 font definition file for T1/ntx/tlf
 )
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 9.0pt on input line 23.
- (./V2.aux)
-\openout1 = `V2.aux'.
+
+No file test_mnras_compiled.aux.
+\openout1 = `test_mnras_compiled.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 23.
 LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line
  23.
-
 (/usr/local/texlive/2026/texmf-dist/tex/latex/newtx/omlntxmi.fd
 File: omlntxmi.fd 2015/08/25 Fontinst v1.933 font definitions for OML/ntxmi.
 )
@@ -600,10 +600,8 @@ LaTeX Font Info:    ... okay on input line 23.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring ON on input line 23.
-(./V2.out) (./V2.out)
 \@outlinefile=\write3
-\openout3 = `V2.out'.
-
+\openout3 = `test_mnras_compiled.out'.
 
 (/usr/local/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -820,43 +818,251 @@ LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
 (Font)              scaled to size 9.0pt on input line 45.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
 (Font)              scaled to size 9.0pt on input line 45.
+
+Package natbib Warning: Citation `Peterson2004' on page 1 undefined on input li
+ne 45.
+
+
+Package natbib Warning: Citation `Netzer2013' on page 1 undefined on input line
+ 45.
+
+
+Package natbib Warning: Citation `Cackett2021' on page 1 undefined on input lin
+e 45.
+
+
+Underfull \vbox (badness 1389) has occurred while \output is active []
+
+
+
+Package natbib Warning: Citation `Peterson2004' on page 1 undefined on input li
+ne 51.
+
+
+Package natbib Warning: Citation `BentzKatz2015' on page 1 undefined on input l
+ine 51.
+
+
+Package natbib Warning: Citation `Cackett2021' on page 1 undefined on input lin
+e 53.
+
+
+Underfull \vbox (badness 1342) has occurred while \output is active []
+
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 8.0pt on input line 54.
+(Font)              scaled to size 8.0pt on input line 55.
+
+
+LaTeX Warning: Reference `firstpage' on page 1 undefined on input line 55.
+
+
+LaTeX Warning: Reference `lastpage' on page 1 undefined on input line 55.
+
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.0pt on input line 54.
+(Font)              scaled to size 6.0pt on input line 55.
 LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input lin
-e 54.
+e 55.
 (/usr/local/texlive/2026/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd
 File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
 )
 LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 54.
+(Font)              scaled to size 8.0pt on input line 55.
  [1{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/
 local/texlive/2026/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}{/usr/local/
 texlive/2026/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}
 
 
 {/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/tex-gyre/q-ts1.enc}]
+
+Package natbib Warning: Citation `Fausnaugh2016' on page 2 undefined on input l
+ine 55.
+
+
+Package natbib Warning: Citation `Fausnaugh2017' on page 2 undefined on input l
+ine 55.
+
+
+Package natbib Warning: Citation `Edelson2019' on page 2 undefined on input lin
+e 55.
+
+
+Package natbib Warning: Citation `Cackett2021' on page 2 undefined on input lin
+e 55.
+
+
+Package natbib Warning: Citation `Peterson2002' on page 2 undefined on input li
+ne 57.
+
+
+Package natbib Warning: Citation `BentzKatz2015' on page 2 undefined on input l
+ine 57.
+
+
+Package natbib Warning: Citation `Cackett2021' on page 2 undefined on input lin
+e 57.
+
+
+Package natbib Warning: Citation `DeRosa2015' on page 2 undefined on input line
+ 57.
+
+
+Package natbib Warning: Citation `Pei2017' on page 2 undefined on input line 57
+.
+
+
+Package natbib Warning: Citation `Horne2021' on page 2 undefined on input line 
+57.
+
+
+Package natbib Warning: Citation `Pei2017' on page 2 undefined on input line 59
+.
+
+
+Package natbib Warning: Citation `Horne2021' on page 2 undefined on input line 
+59.
+
+
+Package natbib Warning: Citation `Horne2021' on page 2 undefined on input line 
+59.
+
+
+Package natbib Warning: Citation `LongDexter2025' on page 2 undefined on input 
+line 59.
+
+
+Package natbib Warning: Citation `Dehghanian2019' on page 2 undefined on input 
+line 61.
+
+
+Package natbib Warning: Citation `Du2018' on page 2 undefined on input line 63.
+
+
+
+Package natbib Warning: Citation `Wang2025' on page 2 undefined on input line 6
+3.
+
+
+Package natbib Warning: Citation `Feng2024' on page 2 undefined on input line 6
+3.
+
+
+Package natbib Warning: Citation `RicciTrakhtenbrot2023' on page 2 undefined on
+ input line 63.
+
+
 Underfull \vbox (badness 6380) has occurred while \output is active []
+
+
+
+Package natbib Warning: Citation `Fausnaugh2017' on page 2 undefined on input l
+ine 67.
+
+
+Package natbib Warning: Citation `Cackett2021' on page 2 undefined on input lin
+e 67.
+
+
+Package natbib Warning: Citation `Peterson2004' on page 2 undefined on input li
+ne 69.
+
+
+Package natbib Warning: Citation `WhitePeterson1994' on page 2 undefined on inp
+ut line 69.
+
+
+Package natbib Warning: Citation `Zu2011' on page 2 undefined on input line 69.
+
+
+
+Package natbib Warning: Citation `Zu2013' on page 2 undefined on input line 69.
+
+
+
+Package natbib Warning: Citation `Pancoast2014' on page 2 undefined on input li
+ne 69.
+
+
+Package natbib Warning: Citation `Horne2021' on page 2 undefined on input line 
+69.
+
+
+Package natbib Warning: Citation `Fausnaugh2016' on page 2 undefined on input l
+ine 69.
+
+
+Package natbib Warning: Citation `Fausnaugh2017' on page 2 undefined on input l
+ine 69.
+
+
+Package natbib Warning: Citation `Edelson2019' on page 2 undefined on input lin
+e 69.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 12.0pt on input line 72.
- [2]
+(Font)              scaled to size 12.0pt on input line 74.
+
+
+LaTeX Warning: Reference `firstpage' on page 2 undefined on input line 74.
+
+
+LaTeX Warning: Reference `lastpage' on page 2 undefined on input line 74.
+
+[2]
 LaTeX Font Info:    Font shape `OT1/minntx/b/n' will be
 (Font)              scaled to size 9.0pt on input line 89.
 LaTeX Font Info:    Font shape `OT1/minntx/b/n' will be
 (Font)              scaled to size 6.6pt on input line 89.
 LaTeX Font Info:    Font shape `OT1/minntx/b/n' will be
 (Font)              scaled to size 5.5pt on input line 89.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
 (Font)              scaled to size 9.0pt on input line 95.
- [3]
+
+
+Package natbib Warning: Citation `MartinezSanchez2024SURD' on page 3 undefined 
+on input line 95.
+
+
+Package natbib Warning: Citation `MartinezSanchez2024SURD' on page 3 undefined 
+on input line 103.
+
+
+Package natbib Warning: Citation `Schreiber2000' on page 3 undefined on input l
+ine 103.
+
+
+Package natbib Warning: Citation `WilliamsBeer2010' on page 3 undefined on inpu
+t line 103.
+
+
+Package natbib Warning: Citation `Shannon1948' on page 3 undefined on input lin
+e 122.
+
+
+Package natbib Warning: Citation `CoverThomas2006' on page 3 undefined on input
+ line 122.
+
+
+LaTeX Warning: Reference `eq:forward_balance' on page 3 undefined on input line
+ 135.
+
+
+Package natbib Warning: Citation `MartinezSanchez2024SURD' on page 3 undefined 
+on input line 135.
+
+
+LaTeX Warning: Reference `firstpage' on page 3 undefined on input line 172.
+
+
+LaTeX Warning: Reference `lastpage' on page 3 undefined on input line 172.
+
+[3]
+
+Package natbib Warning: Citation `MartinezSanchez2024SURD' on page 4 undefined 
+on input line 174.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 176--178
 
  []
@@ -865,6 +1071,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 176--178
 Underfull \hbox (badness 10000) in paragraph at lines 178--180
 
  []
+
+
+Package natbib Warning: Citation `DeWeeseMeister1999' on page 4 undefined on in
+put line 186.
+
+
+Package natbib Warning: Citation `Butts2003' on page 4 undefined on input line 
+186.
+
+
+Package natbib Warning: Citation `MartinezSanchez2024SURD' on page 4 undefined 
+on input line 186.
+
+
+Package natbib Warning: Citation `MartinezSanchez2024SURD' on page 4 undefined 
+on input line 208.
+
+
+Package natbib Warning: Citation `MartinezSanchez2024SURD' on page 4 undefined 
+on input line 218.
 
 
 Overfull \hbox (57.40823pt too wide) detected at line 297
@@ -881,6 +1107,24 @@ S/ntxsy/m/n/9 ¹\OML/ntxmi/m/it/9 t \LMS/ntxsy/m/n/9 ^^@ \U/ntxmia/m/it/9 ^^A\OM
 L/ntxmi/m/it/9 T[]\LMS/ntxsy/m/n/9 º[]\OML/ntxmi/m/it/9 :$  
  []
 
+
+Package natbib Warning: Citation `MartinezSanchez2024SURD' on page 4 undefined 
+on input line 306.
+
+
+Package natbib Warning: Citation `MartinezSanchez2024SURD' on page 4 undefined 
+on input line 314.
+
+
+Package natbib Warning: Citation `MartinezSanchez2024SURD' on page 4 undefined 
+on input line 318.
+
+
+LaTeX Warning: Reference `firstpage' on page 4 undefined on input line 319.
+
+
+LaTeX Warning: Reference `lastpage' on page 4 undefined on input line 319.
+
 [4]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 6.6pt on input line 322.
@@ -893,17 +1137,61 @@ ntxmia/m/it/9 = [][]\OML/ntxmi/m/it/9 ; []; [][]:$
  []
 
 
+LaTeX Warning: Reference `eq:full_surd_balance' on page 5 undefined on input li
+ne 327.
+
+
 Overfull \hbox (3.34254pt too wide) detected at line 345
 $[][] \U/ntxmia/m/it/9 = []\OML/ntxmi/m/it/9 ;  [][] \U/ntxmia/m/it/9 = []\OML/
 ntxmi/m/it/9 ;  [][] \U/ntxmia/m/it/9 = []\OML/ntxmi/m/it/9 :$  
  []
 
-[5]
+
+LaTeX Warning: Reference `eq:mi_total' on page 5 undefined on input line 372.
+
+
+LaTeX Warning: Reference `eq:specific_mi' on page 5 undefined on input line 372
+.
+
+
+Package natbib Warning: Citation `MartinezSanchez2024SURD' on page 5 undefined 
+on input line 372.
+
+
+LaTeX Warning: Reference `eq:leak_def' on page 5 undefined on input line 385.
+
+
+Package natbib Warning: Citation `MartinezSanchez2024SURD' on page 5 undefined 
+on input line 391.
+
+
+Package natbib Warning: Citation `MartinezSanchez2024SURD' on page 5 undefined 
+on input line 410.
+
+
+Package natbib Warning: Citation `WilliamsBeer2010' on page 5 undefined on inpu
+t line 410.
+
+
+Package natbib Warning: Citation `DeRosa2015' on page 5 undefined on input line
+ 415.
+
+
+Package natbib Warning: Citation `Pei2017' on page 5 undefined on input line 41
+5.
+
 LaTeX Font Info:    Trying to load font information for T1+aett on input line 4
 19.
- (/usr/local/texlive/2026/texmf-dist/tex/latex/ae/t1aett.fd
+(/usr/local/texlive/2026/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
+
+LaTeX Warning: Reference `firstpage' on page 5 undefined on input line 420.
+
+
+LaTeX Warning: Reference `lastpage' on page 5 undefined on input line 420.
+
+[5]
 Underfull \hbox (badness 5578) in paragraph at lines 429--430
 []\T1/ntxtlf/b/n/9 Blue Wing: \T1/ntxtlf/m/n/9 in-te-grated flux in the ve-loc-
 ity range
@@ -921,6 +1209,10 @@ Underfull \hbox (badness 4660) in paragraph at lines 431--432
 ty range
  []
 
+
+LaTeX Warning: Reference `tab:data_properties' on page 6 undefined on input lin
+e 433.
+
 LaTeX Font Info:    Font shape `OT1/minntx/b/n' will be
 (Font)              scaled to size 8.0pt on input line 437.
 LaTeX Font Info:    Font shape `OT1/minntx/b/n' will be
@@ -930,7 +1222,11 @@ Overfull \hbox (126.0302pt too wide) in paragraph at lines 435--448
  [] 
  []
 
-<figure1_light_curves.png, id=388, 781.7205pt x 493.6041pt>
+
+LaTeX Warning: Reference `fig:light_curves' on page 6 undefined on input line 4
+64.
+
+<figure1_light_curves.png, id=99, 781.7205pt x 493.6041pt>
 File: figure1_light_curves.png Graphic file (type png)
 <use figure1_light_curves.png>
 Package pdftex.def Info: figure1_light_curves.png  used on input line 468.
@@ -940,24 +1236,39 @@ Overfull \hbox (264.0pt too wide) in paragraph at lines 466--469
  [] 
  []
 
+
+LaTeX Warning: Reference `tab:peak_synergy_comparison' on page 6 undefined on i
+nput line 481.
+
+
+LaTeX Warning: Reference `fig:surd_lag_scans' on page 6 undefined on input line
+ 481.
+
+
+Overfull \hbox (124.32pt too wide) in paragraph at lines 483--494
+ [] 
+ []
+
+
+LaTeX Warning: Reference `firstpage' on page 6 undefined on input line 499.
+
+
+LaTeX Warning: Reference `lastpage' on page 6 undefined on input line 499.
+
 [6
 pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.482 
+l.499 
       
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.482 
+l.499 
        <./figure1_light_curves.png>]
-Overfull \hbox (124.32pt too wide) in paragraph at lines 483--494
- [] 
- []
-
-<figure2_surd_lag_scans.png, id=410, 855.4359pt x 782.925pt>
+<figure2_surd_lag_scans.png, id=120, 855.4359pt x 782.925pt>
 File: figure2_surd_lag_scans.png Graphic file (type png)
 <use figure2_surd_lag_scans.png>
 Package pdftex.def Info: figure2_surd_lag_scans.png  used on input line 502.
@@ -967,7 +1278,11 @@ Overfull \hbox (264.0pt too wide) in paragraph at lines 500--503
  [] 
  []
 
-<figure3_robustness_and_nulls.png, id=412, 926.2605pt x 386.6445pt>
+
+LaTeX Warning: Reference `fig:robustness_and_nulls' on page 7 undefined on inpu
+t line 524.
+
+<figure3_robustness_and_nulls.png, id=121, 926.2605pt x 386.6445pt>
 File: figure3_robustness_and_nulls.png Graphic file (type png)
 <use figure3_robustness_and_nulls.png>
 Package pdftex.def Info: figure3_robustness_and_nulls.png  used on input line 5
@@ -979,11 +1294,19 @@ Overfull \hbox (264.0pt too wide) in paragraph at lines 526--529
  []
 
 
+LaTeX Warning: Reference `tab:iccf_vs_surd' on page 7 undefined on input line 5
+35.
+
+
+LaTeX Warning: Reference `fig:iccf_vs_surd' on page 7 undefined on input line 5
+35.
+
+
 Overfull \hbox (144.67204pt too wide) in paragraph at lines 537--548
  [] 
  []
 
-<figure4_iccf_vs_surd.png, id=415, 722.9409pt x 710.4141pt>
+<figure4_iccf_vs_surd.png, id=122, 722.9409pt x 710.4141pt>
 File: figure4_iccf_vs_surd.png Graphic file (type png)
 <use figure4_iccf_vs_surd.png>
 Package pdftex.def Info: figure4_iccf_vs_surd.png  used on input line 556.
@@ -993,7 +1316,19 @@ Overfull \hbox (264.0pt too wide) in paragraph at lines 554--557
  [] 
  []
 
-<figure6_javelin_posteriors.png, id=420, 703.9098pt x 709.4505pt>
+
+Package natbib Warning: Citation `Zu2011' on page 7 undefined on input line 564
+.
+
+
+LaTeX Warning: Reference `fig:javelin_posteriors' on page 7 undefined on input 
+line 566.
+
+
+LaTeX Warning: Reference `tab:iccf_vs_surd' on page 7 undefined on input line 5
+75.
+
+<figure6_javelin_posteriors.png, id=123, 703.9098pt x 709.4505pt>
 File: figure6_javelin_posteriors.png Graphic file (type png)
 <use figure6_javelin_posteriors.png>
 Package pdftex.def Info: figure6_javelin_posteriors.png  used on input line 579
@@ -1004,24 +1339,39 @@ Overfull \hbox (162.40155pt too wide) in paragraph at lines 577--580
  [] 
  []
 
+
+LaTeX Warning: Reference `firstpage' on page 7 undefined on input line 590.
+
+
+LaTeX Warning: Reference `lastpage' on page 7 undefined on input line 590.
+
 [7
 pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.588 
+l.590 
       
 pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.588 
+l.590 
       ]
+
+LaTeX Warning: Reference `fig:synthetic_benchmarks' on page 8 undefined on inpu
+t line 617.
+
+
+LaTeX Warning: Reference `tab:synthetic_performance' on page 8 undefined on inp
+ut line 617.
+
+
 Overfull \hbox (260.54572pt too wide) in paragraph at lines 626--638
  [] 
  []
 
-<figure5_synthetic_benchmarks.png, id=438, 854.9541pt x 709.6914pt>
+<figure5_synthetic_benchmarks.png, id=138, 854.9541pt x 709.6914pt>
 File: figure5_synthetic_benchmarks.png Graphic file (type png)
 <use figure5_synthetic_benchmarks.png>
 Package pdftex.def Info: figure5_synthetic_benchmarks.png  used on input line 6
@@ -1032,8 +1382,24 @@ Overfull \hbox (264.0pt too wide) in paragraph at lines 644--647
  [] 
  []
 
-[8]
-<figure7_history_conditioning.png, id=454, 925.5378pt x 384.4764pt>
+
+LaTeX Warning: Reference `firstpage' on page 8 undefined on input line 655.
+
+
+LaTeX Warning: Reference `lastpage' on page 8 undefined on input line 655.
+
+[8
+pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has
+ been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.655 
+      ]
+
+LaTeX Warning: Reference `fig:history_conditioning' on page 9 undefined on inpu
+t line 662.
+
+<figure7_history_conditioning.png, id=152, 925.5378pt x 384.4764pt>
 File: figure7_history_conditioning.png Graphic file (type png)
 <use figure7_history_conditioning.png>
 Package pdftex.def Info: figure7_history_conditioning.png  used on input line 6
@@ -1044,13 +1410,59 @@ Overfull \hbox (264.0pt too wide) in paragraph at lines 666--669
  [] 
  []
 
-[9
-pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has
- been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.702 
-      ]
+
+LaTeX Warning: Reference `sec:results' on page 9 undefined on input line 677.
+
+
+Package natbib Warning: Citation `Pei2017' on page 9 undefined on input line 68
+1.
+
+! Undefined control sequence.
+l.693 ...mpaign of NGC~5548 presented by \textcite
+                                                  {LongDexter2025} (specific...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.695 However, \textcite
+                        {LongDexter2025} show that the velocity-resolved H\(...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `sec:limitations' on page 9 undefined on input line 70
+1.
+
+
+LaTeX Warning: Reference `firstpage' on page 9 undefined on input line 707.
+
+
+LaTeX Warning: Reference `lastpage' on page 9 undefined on input line 707.
+
+[9]
+
+LaTeX Warning: Reference `fig:surd_lag_scans' on page 10 undefined on input lin
+e 711.
+
+
+LaTeX Warning: Reference `sec:target_history_conditioning' on page 10 undefined
+ on input line 725.
+
+
+LaTeX Warning: Reference `sec:synthetic_benchmarks' on page 10 undefined on inp
+ut line 741.
+
+
+LaTeX Warning: Reference `sec:target_history_conditioning' on page 10 undefined
+ on input line 743.
+
+
 Underfull \hbox (badness 2617) in paragraph at lines 750--752
 \T1/ntxtlf/m/n/9 This pa-per presents the first ap-pli-ca-tion of the Syn-er-gi
 s-
@@ -1062,65 +1474,106 @@ Underfull \hbox (badness 4132) in paragraph at lines 750--752
 to
  []
 
-[10] (./V2.bbl [11])
+
+LaTeX Warning: Reference `firstpage' on page 10 undefined on input line 754.
+
+
+LaTeX Warning: Reference `lastpage' on page 10 undefined on input line 754.
+
+[10]
+
+Package natbib Warning: Citation `Dehghanian2019' on page 11 undefined on input
+ line 765.
+
+No file test_mnras_compiled.bbl.
+
+Package natbib Warning: There were undefined citations.
+
+
+LaTeX Warning: Reference `firstpage' on page 11 undefined on input line 800.
+
+
+LaTeX Warning: Reference `lastpage' on page 11 undefined on input line 800.
+
+[11]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [12
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+LaTeX Warning: Reference `firstpage' on page 12 undefined on input line 800.
+
+
+LaTeX Warning: Reference `lastpage' on page 12 undefined on input line 800.
+
+[12
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.800 \end{document}
-                     <./figure2_surd_lag_scans.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [13
+                    
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.800 \end{document}
-                    
+                     <./figure2_surd_lag_scans.png> <./figure3_robustness_and_n
+ulls.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+LaTeX Warning: Reference `firstpage' on page 13 undefined on input line 800.
+
+
+LaTeX Warning: Reference `lastpage' on page 13 undefined on input line 800.
+
+[13
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.800 \end{document}
-                     <./figure3_robustness_and_nulls.png> <./figure4_iccf_vs_su
-rd.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [14
+                    
 pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.800 \end{document}
-                    
+                     <./figure4_iccf_vs_surd.png> <./figure6_javelin_posteriors
+.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+LaTeX Warning: Reference `firstpage' on page 14 undefined on input line 800.
+
+
+LaTeX Warning: Reference `lastpage' on page 14 undefined on input line 800.
+
+[14
 pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.800 \end{document}
-                     <./figure6_javelin_posteriors.png> <./figure5_synthetic_be
-nchmarks.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [15
+                    
 pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.800 \end{document}
-                    
-
- <./figure7_history_conditioning.png>] (./V2.aux)
+                     <./figure5_synthetic_benchmarks.png> <./figure7_history_co
+nditioning.png>] (./test_mnras_compiled.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
@@ -1131,19 +1584,28 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
 
 
+LaTeX Warning: There were undefined references.
+
+
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package rerunfilecheck Info: File `V2.out' has not changed.
-(rerunfilecheck)             Checksum: BFECB696BE5EF1ED2A3780C925880067;9112.
+
+Package rerunfilecheck Warning: File `test_mnras_compiled.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `test_mnras_compiled.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  BFECB696BE5EF1ED2A3780C925880067;9112.
  ) 
 Here is how much of TeX's memory you used:
- 15309 strings out of 467525
- 224267 string characters out of 5418983
- 658475 words of memory out of 5000000
- 43779 multiletter control sequences out of 15000+600000
+ 15141 strings out of 467525
+ 221546 string characters out of 5418983
+ 650005 words of memory out of 5000000
+ 43649 multiletter control sequences out of 15000+600000
  736501 words of font info for 200 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 90i,15n,93p,2031b,533s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,15n,93p,2048b,445s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 , replaced by a fixed one
@@ -1160,10 +1622,10 @@ t/fonts/type1/public/newtx/txmiaX.pfb></usr/local/texlive/2026/texmf-dist/fonts
 ublic/newtx/ztmb.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/new
 tx/ztmr.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/newtx/ztmri.
 pfb>
-Output written on V2.pdf (15 pages, 4546023 bytes).
+Output written on test_mnras_compiled.pdf (14 pages, 4530776 bytes).
 PDF statistics:
- 657 PDF objects out of 1000 (max. 8388607)
- 594 compressed objects within 6 object streams
- 160 named destinations out of 1000 (max. 500000)
- 300 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 300 PDF objects out of 1000 (max. 8388607)
+ 241 compressed objects within 3 object streams
+ 131 named destinations out of 1000 (max. 500000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
