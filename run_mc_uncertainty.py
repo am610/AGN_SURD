@@ -65,7 +65,7 @@ def lag_scan_target3(target_arr, pred1_arr, pred2_arr, lags, nbins=8):
 
 # ----------------- 2. MONTE CARLO LOOP -----------------
 num_iterations = 100
-lags = np.arange(1, 121)
+lags = np.arange(1, 201)
 nbins = 8
 
 mc_results = {

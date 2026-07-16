@@ -118,17 +118,17 @@ def lag_scan_target3(target_arr, pred1_arr, pred2_arr, lags, nbins=8):
     print(f"  All {len(lags)} lags successfully verified: U1 + U2 + R12 + S12 = 1.0 (identity holds).")
     return metrics
 
-# Run SURD scans up to 120 lags
-lags_120 = np.arange(1, 121)
-print("Running SURD lag scans up to 120 days for all targets...")
+# Run SURD scans up to 200 lags
+lags_200 = np.arange(1, 201)
+print("Running SURD lag scans up to 200 days for all targets...")
 # Core target: S1=cont, S2=blue -> T3=core
-metrics_core = lag_scan_target3(core_zscore, cont_zscore, blue_zscore, lags_120, nbins=8)
+metrics_core = lag_scan_target3(core_zscore, cont_zscore, blue_zscore, lags_200, nbins=8)
 
 # Red target: S1=cont, S2=blue -> T3=red
-metrics_red = lag_scan_target3(red_zscore, cont_zscore, blue_zscore, lags_120, nbins=8)
+metrics_red = lag_scan_target3(red_zscore, cont_zscore, blue_zscore, lags_200, nbins=8)
 
 # Blue target: S1=cont, S2=core -> T3=blue
-metrics_blue = lag_scan_target3(blue_zscore, cont_zscore, core_zscore, lags_120, nbins=8)
+metrics_blue = lag_scan_target3(blue_zscore, cont_zscore, core_zscore, lags_200, nbins=8)
 
 # ----------------- FIGURE 2: SURD LAG SCANS WITH MONTE CARLO UNCERTAINTY -----------------
 print("Generating Figure 2: SURD Synergy and Leak Lag Scans with MC Uncertainty...")
@@ -237,16 +237,16 @@ def compute_iccf(line, cont, lags, dt=1.0):
     iccf_values = correlation[mask_lags]
     return iccf_lags_days, iccf_values
 
-iccf_lags_b, iccf_vals_b = compute_iccf(blue_zscore, cont_zscore, lags_120)
-iccf_lags_c, iccf_vals_c = compute_iccf(core_zscore, cont_zscore, lags_120)
-iccf_lags_r, iccf_vals_r = compute_iccf(red_zscore, cont_zscore, lags_120)
+iccf_lags_b, iccf_vals_b = compute_iccf(blue_zscore, cont_zscore, lags_200)
+iccf_lags_c, iccf_vals_c = compute_iccf(core_zscore, cont_zscore, lags_200)
+iccf_lags_r, iccf_vals_r = compute_iccf(red_zscore, cont_zscore, lags_200)
 
 fig, axs = plt.subplots(3, 1, figsize=(10, 10), sharex=True)
 
 components = [
-    ('Blue Wing $H\\beta$', iccf_lags_b, iccf_vals_b, metrics_blue, 19.0, 81.0),
-    ('Core $H\\beta$', iccf_lags_c, iccf_vals_c, metrics_core, 20.0, 76.0),
-    ('Red Wing $H\\beta$', iccf_lags_r, iccf_vals_r, metrics_red, 13.0, 119.0)
+    ('Blue Wing $H\\beta$', iccf_lags_b, iccf_vals_b, metrics_blue, 19.0, 109.0),
+    ('Core $H\\beta$', iccf_lags_c, iccf_vals_c, metrics_core, 20.0, 159.0),
+    ('Red Wing $H\\beta$', iccf_lags_r, iccf_vals_r, metrics_red, 13.0, 56.0)
 ]
 
 for idx, (name, iccf_lags, iccf_vals, surd_metrics, iccf_peak, surd_peak) in enumerate(components):
@@ -331,7 +331,7 @@ def run_unconditioned_collect(X, target_idx, predictor_indices, nlag, nbins=6):
 
 # We use the standardized continuum, blue wing, and core arrays
 X_cond = np.vstack([cont_zscore, blue_zscore, core_zscore])
-lags_scan = np.arange(1, 121)
+lags_scan = np.arange(1, 201)
 
 core_uncond_syn, core_uncond_leak = [], []
 core_cond_syn, core_cond_leak = [], []
@@ -344,11 +344,19 @@ for lag in lags_scan:
     core_cond_syn.append(cs)
     core_cond_leak.append(cl)
 
+# Load conditional surrogates (runs up to 120 days, so we slice or pad accordingly)
+df_cond_null = pd.read_csv('/Users/ayan/Programs/SURD/agn_surd_project/processed/conditional_surrogate_results.csv')
+
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(13, 5.5))
 
-# Synergy comparison
+# Synergy comparison with conditional surrogate envelope
 ax1.plot(lags_scan, core_uncond_syn, label='Unconditioned Synergy', color='blue', linewidth=2)
 ax1.plot(lags_scan, core_cond_syn, label='History-Conditioned Synergy', color='red', linewidth=2)
+# Overlay surrogate envelope (up to 120 days)
+ax1.plot(df_cond_null['lag'], df_cond_null['median_null_cond'], color='orange', label='Median (Shift null)', linestyle='--', alpha=0.8)
+ax1.fill_between(df_cond_null['lag'], df_cond_null['p2_5_null_cond'], df_cond_null['p97_5_null_cond'], 
+                 color='orange', alpha=0.15, label='95% cond envelope')
+
 ax1.set_xlabel('Lag (days)')
 ax1.set_ylabel('Synergy $S_{12}$ (bits)')
 ax1.set_title('A: Synergy Comparison (Core Target)')
@@ -368,5 +376,32 @@ plt.tight_layout()
 fig.savefig('overleaf_draft/figure7_history_conditioning.png', dpi=300)
 plt.close(fig)
 print("Figure 7: figure7_history_conditioning.png successfully created and saved in overleaf_draft/!")
+
+# ----------------- FIGURE 8: SEASONAL ALIASING NEGATIVE CONTROL -----------------
+print("Generating Figure 8: Seasonal Aliasing Negative Control...")
+df_alias = pd.read_csv('/Users/ayan/Programs/SURD/agn_surd_project/processed/seasonal_aliasing_null_test.csv')
+
+fig, ax = plt.subplots(figsize=(8, 5.5))
+ax.plot(df_alias['lag'], df_alias['median_syn'], color='purple', label='Median False Synergy (Zero long-lag coupling)', linewidth=2.5)
+ax.fill_between(df_alias['lag'], df_alias['p16_syn'], df_alias['p84_syn'], color='purple', alpha=0.25, label='1$\sigma$ Null Spread')
+ax.fill_between(df_alias['lag'], df_alias['p2_5_syn'], df_alias['p97_5_syn'], color='purple', alpha=0.1, label='2$\sigma$ Null Spread')
+
+# Highlight true 15-day lag
+ax.axvline(15, color='darkgreen', linestyle=':', label='True Coupling Lag (15d)', linewidth=2)
+# Highlight observed core/red peaks in real data
+ax.axvline(56, color='red', linestyle='--', alpha=0.6, label='Real Red Wing Peak (56d)')
+ax.axvline(109, color='blue', linestyle='-.', alpha=0.6, label='Real Blue Wing Peak (109d)')
+ax.axvline(159, color='magenta', linestyle='--', alpha=0.6, label='Real Core Peak (159d)')
+
+ax.set_xlabel('Lag (days)')
+ax.set_ylabel('Normalized Synergy $\\widehat{S}_{12}$')
+ax.set_title('Figure 8: Spurious Synergy Peaks from Seasonal Windowing (Negative Control)')
+ax.legend(loc='lower right')
+ax.grid(True, linestyle='--', alpha=0.5)
+
+plt.tight_layout()
+fig.savefig('overleaf_draft/figure8_seasonal_aliasing.png', dpi=300)
+plt.close(fig)
+print("Figure 8: figure8_seasonal_aliasing.png successfully created and saved in overleaf_draft/!")
 
 print("All publication-quality figures successfully created and saved in overleaf_draft/!")
