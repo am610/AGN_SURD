@@ -288,11 +288,10 @@ This form makes the interpretation transparent: the synergy is the part of the j
 
 For time-series applications, the predictor vector is typically augmented with lagged copies of the observed variables. If one includes \(p\) past lags per variable, the predictor vector becomes
 \begin{equation}
-\mathbf{X}(t)=
-\Bigl[
-Q_1(t),Q_1(t-\Delta T_1),\ldots,Q_1(t-\Delta T_p),\;
-Q_2(t),Q_2(t-\Delta T_1),\ldots,Q_N(t-\Delta T_p)
-\Bigr].
+\begin{split}
+\mathbf{X}(t) = \Bigl[ & Q_1(t), Q_1(t-\Delta T_1), \ldots, Q_1(t-\Delta T_p), \\
+                       & Q_2(t), Q_2(t-\Delta T_1), \ldots, Q_N(t-\Delta T_p) \Bigr].
+\end{split}
 \label{eq:lagged_vector_general}
 \end{equation}
 For example, with \(N=2\) variables and one additional lag,
@@ -317,12 +316,10 @@ This is particularly important when several lagged channels may encode overlappi
 
 A further advantage of the formalism is that the predictor vector can include variables at time \(t+\Delta T\) other than the target itself, thereby allowing the analysis of contemporaneous or effectively sub-resolution interactions \cite{MartinezSanchez2024SURD}. In practice, one excludes the target variable from the contemporaneous predictor set to avoid trivial self-determination, but permits other variables measured on the same time slice. Thus, a generic predictor vector may mix present, lagged, and contemporaneous channels:
 \begin{equation}
-\mathbf{X}(t)=
-\bigl[
-\text{past lags},
-\text{present variables},
-\text{contemporaneous non-target variables}
-\bigr].
+\begin{split}
+\mathbf{X}(t) = \bigl[ & \text{past lags}, \text{ present variables}, \\
+                       & \text{contemporaneous non-target variables} \bigr].
+\end{split}
 \end{equation}
 The same decomposition \eqref{eq:full_surd_balance} then applies.
 
@@ -432,7 +429,7 @@ We extract three kinematic components from the H\(\beta\) profile:
 \end{enumerate}
 A summary of the raw data products is presented in Table~\ref{tab:data_properties}.
 
-\begin{table}[ht]
+\begin{table*}
 \centering
 \begin{tabular}{lccccc}
 \hline
@@ -447,7 +444,7 @@ H\(\beta\) Red Wing & 247 & 47512.00 & 49255.00 & 5.00 days & \texttt{hb\_profil
 \end{tabular}
 \caption{Properties of the optical continuum and velocity-resolved H\(\beta\) light curves for NGC~5548 before strict overlap alignment.}
 \label{tab:data_properties}
-\end{table}
+\end{table*}
 
 \subsection{Strict Overlap Interpolation and Cadence Homogenization}
 
@@ -463,7 +460,7 @@ Z(t) = \frac{x(t) - \mu_x}{\sigma_x},
 \end{equation}
 where $\mu_x$ and $\sigma_x$ are the mean and standard deviation over the synchronized overlap window. The resulting aligned and standardized light curves are visualized in Figure~\ref{fig:light_curves}.
 
-\begin{figure*}[t]
+\begin{figure*}
 \centering
 \includegraphics[width=\textwidth]{figure1_light_curves.png}
 \caption{Top panel: Standardized 5100~\AA\ continuum light curve for NGC~5548 over the strictly aligned overlap window (MJD 47512--49255). Bottom panel: Standardized velocity-resolved H\(\beta\) components (Blue Wing, Line Core, and Red Wing) resampled onto the shared 1.0-day grid.}
@@ -480,7 +477,7 @@ We run the SURD algorithm on the prepared NGC~5548 data to study the predictive 
 
 To test the physical stability of the synergy and leak profiles, we extended the lag search range from the initial limit of 60 days to 120 days. The comparison of peak lags and synergy values between the standard and extended scans is summarized in Table~\ref{tab:peak_synergy_comparison}, and the complete information decomposition profiles with Monte Carlo uncertainty bands are displayed in Figure~\ref{fig:surd_lag_scans}.
 
-\begin{table}[ht]
+\begin{table*}
 \centering
 \begin{tabular}{lcccc}
 \hline
@@ -493,11 +490,11 @@ Blue Wing H\(\beta\) & 53 & 81 & 0.2277 & 0.2831 \\
 \end{tabular}
 \caption{Comparison of peak synergy lags and values between the standard (1--60 days) and extended (1--120 days) SURD scans.}
 \label{tab:peak_synergy_comparison}
-\end{table}
+\end{table*}
 
 For all three velocity components, the peak synergy lag shifts when the scan range is extended from 60 days to 120 days. Specifically, the Core peak shifts from 45 days to 76 days, the Red Wing peak shifts from 39 days to 119 days, and the Blue Wing peak shifts from 53 days to 81 days. This indicates that all three components exhibit broad, long-timescale synergy profiles that cannot be adequately captured within a narrow 60-day window, suggesting sensitivity to extended physical reprocessing envelopes.
 
-\begin{figure*}[t]
+\begin{figure*}
 \centering
 \includegraphics[width=0.95\textwidth]{figure2_surd_lag_scans.png}
 \caption{Decomposition of normalized predictive information (left column, where components represent the fraction of the joint mutual information $I(Y; X_1, X_2)$ and sum to $1.0$ at every lag: Synergy $\widehat{S}_{12}$ in solid purple, Redundancy $\widehat{R}_{12}$ in dashed gray, Unique Continuum $\widehat{U}_1$ in dotted blue, and Unique Wing/Core $\widehat{U}_2$ in dash-dotted red) and normalized information leak $\mathcal{L} = H(Y \mid X_1, X_2) / H(Y)$ (right column) as a function of lag up to 120 days for the three H\(\beta\) target components: Core (top row), Red Wing (middle row), and Blue Wing (bottom row). Solid curves represent the Monte Carlo median, and the dark and light shaded envelopes denote the $1\sigma$ (16th--84th percentiles) and $2\sigma$ (2.5th--97.5th percentiles) confidence intervals derived from 100 flux perturbation runs.}
@@ -523,7 +520,7 @@ While these real synergy values locally exceed the 95th percentile null envelope
 
 This negative FDR result has an important methodological consequence: the observed synergy peaks should not be interpreted as mathematically precise delta-function physical delays (like a simple light-travel time). Instead, they represent broad, lag-dependent coupling zones where information flow locally exceeds noise, but scanning over a large number of parameters limits our ability to identify a single globally significant delay. We therefore frame this work as a methodological case study presenting a broad lag-dependent information profile rather than a definitive physical measurement of a precise delay. The sensitivity to discretization parameters (histogram bins) and the comparison to shuffled envelopes are shown in Figure~\ref{fig:robustness_and_nulls}.
 
-\begin{figure*}[t]
+\begin{figure*}
 \centering
 \includegraphics[width=0.95\textwidth]{figure3_robustness_and_nulls.png}
 \caption{Panel A: Sensitivity of Core H\(\beta\) synergy to the number of histogram bins ($n_{\mathrm{bins}} = 4, 6, 8, 10, 12$) over lags 1--60 days, showing strong qualitative stability. Panel B: Real synergy curve for Core H\(\beta\) compared with the median and 95\% percentile envelopes for circular-shift (blue) and block-bootstrap (red) surrogate runs, indicating local significance relative to standard nulls.}
@@ -534,7 +531,7 @@ This negative FDR result has an important methodological consequence: the observ
 
 To compare our information-theoretic results with standard techniques, we computed the Inter-Correlation Function (ICCF) between the optical continuum and the three velocity-resolved H\(\beta\) components. The comparison is presented in Table~\ref{tab:iccf_vs_surd}, and the curves are shown side-by-side in Figure~\ref{fig:iccf_vs_surd}.
 
-\begin{table}[ht]
+\begin{table*}
 \centering
 \begin{tabular}{lcccc}
 \hline
@@ -547,11 +544,11 @@ Red Wing H\(\beta\) & 13.0 & $12.8_{-1.8}^{+1.8}$ & 119.0 & 1.0 \\
 \end{tabular}
 \caption{Comparison of classical ICCF peak correlation lags, JAVELIN stochastic transfer function peaks, SURD peak synergy lags, and minimum information leak lags.}
 \label{tab:iccf_vs_surd}
-\end{table}
+\end{table*}
 
 The classical ICCF identifies peaks at \textbf{19.0 days} (Blue Wing), \textbf{20.0 days} (Core H\(\beta\)), and \textbf{13.0 days} (Red Wing). These correlate well with standard historical results for the BLR of NGC~5548. In contrast, the SURD maximum synergy peaks occur at much longer timescales (76--119 days), while the minimum information leak occurs at the shortest possible lag of 1.0 day.
 
-\begin{figure*}[t]
+\begin{figure*}
 \centering
 \includegraphics[width=0.95\textwidth]{figure4_iccf_vs_surd.png}
 \caption{Comparison of the Inter-Correlation Function (ICCF, blue) and the SURD synergy curve (purple) for the Blue Wing (top), Core (middle), and Red Wing (bottom) targets. Vertical lines mark the respective peak lags.}
@@ -574,7 +571,7 @@ To ensure MCMC convergence for the JAVELIN modeling, we ran the sampler with thr
 
 These results are in excellent agreement with the classical ICCF and DCF peaks (see Table~\ref{tab:iccf_vs_surd}). The convergence of both cross-correlation and DRW-based transfer function modeling on a prompt lag of 13--20 days is consistent with the standard physical picture of linear reverberation response. In contrast, the much longer-term SURD synergy peaks (76--119 days) suggest the presence of a broader multivariate information structure that is invisible to these standard linear frameworks.
 
-\begin{figure*}[t]
+\begin{figure*}
 \centering
 \includegraphics[width=0.8\textwidth]{figure6_javelin_posteriors.png}
 \caption{JAVELIN MCMC lag posterior distributions for the Blue Wing (top), Core (middle), and Red Wing (bottom) of H\(\beta\) in NGC~5548. Black solid and dashed lines represent the median and $1\sigma$ (16th--84th percentiles) confidence intervals, respectively.}
@@ -623,7 +620,7 @@ As shown in Figure~\ref{fig:synthetic_benchmarks}, SURD successfully recovers th
 
 Crucially, all cases show a systematic positive lag bias ranging from $+1.9$ to $+4.1$ days. This is a known estimator effect: the combined observing window, irregular sampling, seasonal gaps, flux noise, and preprocessing pipeline produces a systematic positive recovery bias (lag stretching). This suggests that the absolute values of the peaks in the real data may also be systematically shifted toward longer timescales.
 
-\begin{table}[ht]
+\begin{table*}
 \centering
 \begin{tabular}{lccccc}
 \hline
@@ -637,11 +634,11 @@ Case 4: Two-Zone Response & 10.0 / 20.0 & Synergy ($S_{12}$) & $15.9 \pm 5.4$ / 
 \end{tabular}
 \caption{Quantitative performance of the SURD estimator across 15 Monte Carlo realizations run under realistic NGC~5548 observational conditions (irregular sampling, seasonal gaps, and flux uncertainties).}
 \label{tab:synthetic_performance}
-\end{table}
+\end{table*}
 
 This performance scan suggests that the SURD estimator remains robust to the irregular sampling, gaps, and interpolation of the NGC~5548 dataset, although a systematic positive lag offset must be taken into account when interpreting the results.
 
-\begin{figure*}[t]
+\begin{figure*}
 \centering
 \includegraphics[width=0.95\textwidth]{figure5_synthetic_benchmarks.png}
 \caption{SURD information decomposition scans for the four synthetic benchmark cases run under realistic NGC~5548 observational conditions (real sampling, seasonal gaps, and flux errors). Curves represent the Monte Carlo median Synergy (purple, with $1\sigma$ shaded envelope), Redundancy (gray dashed), and Unique information for drivers S1 (blue dotted) and S2 (red dash-dot).}
@@ -663,7 +660,7 @@ The results of this comparison are shown in Figure~\ref{fig:history_conditioning
 
 However, this high-dimensional conditional decomposition is sensitive to binning selections due to the finite-sample constraints of our $N = 1744$ epochs. When varying the bin size, we find that the conditioned Core peak is stable at 75 days and 73 days for $n_{\mathrm{bins}} = 5$ and $6$, respectively. For $n_{\mathrm{bins}} = 4$, the peak shifts to 37 days due to low resolution, whereas for $n_{\mathrm{bins}} = 7$, the peak shifts to 60 days. This shift at higher bins highlights the influence of high-dimensional sample sparsity (where empty cells bias the probability estimates). This sensitivity underscores that while conditioning out the past suppresses short-term autocorrelation, the resulting conditional curves should be interpreted as qualitative indicators of broad coupling rather than precise delay measurements.
 
-\begin{figure*}[t]
+\begin{figure*}
 \centering
 \includegraphics[width=0.95\textwidth]{figure7_history_conditioning.png}
 \caption{Comparison of the unconditioned (blue) and target-history conditioned (red) SURD synergy (left) and information leak (right) curves for the Core H\(\beta\) target. Conditioning on the target's own past shifts the synergy peak from a short autocorrelation-dominated delay of 9 days to a robust, long-term cross-component delay of 73 days.}

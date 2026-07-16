@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  15 JUL 2026 22:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  15 JUL 2026 22:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -866,135 +866,93 @@ Underfull \hbox (badness 10000) in paragraph at lines 178--180
 
  []
 
-
-Overfull \hbox (57.40823pt too wide) detected at line 297
-$\OT1/minntx/b/n/9 X\LMS/ntxsy/m/n/9 ¹\OML/ntxmi/m/it/9 t\LMS/ntxsy/m/n/9 º \U/
-ntxmia/m/it/9 = []\OML/ntxmi/m/it/9 Q[]\LMS/ntxsy/m/n/9 ¹\OML/ntxmi/m/it/9 t\LM
-S/ntxsy/m/n/9 º\OML/ntxmi/m/it/9 ; Q[]\LMS/ntxsy/m/n/9 ¹\OML/ntxmi/m/it/9 t \LM
-S/ntxsy/m/n/9 ^^@ \U/ntxmia/m/it/9 ^^A\OML/ntxmi/m/it/9 T[]\LMS/ntxsy/m/n/9 º\O
-ML/ntxmi/m/it/9 ; [] ; Q[]\LMS/ntxsy/m/n/9 ¹\OML/ntxmi/m/it/9 t \LMS/ntxsy/m/n/
-9 ^^@ \U/ntxmia/m/it/9 ^^A\OML/ntxmi/m/it/9 T[]\LMS/ntxsy/m/n/9 º\OML/ntxmi/m/i
-t/9 ;  Q[]\LMS/ntxsy/m/n/9 ¹\OML/ntxmi/m/it/9 t\LMS/ntxsy/m/n/9 º\OML/ntxmi/m/i
-t/9 ; Q[]\LMS/ntxsy/m/n/9 ¹\OML/ntxmi/m/it/9 t \LMS/ntxsy/m/n/9 ^^@ \U/ntxmia/m
-/it/9 ^^A\OML/ntxmi/m/it/9 T[]\LMS/ntxsy/m/n/9 º\OML/ntxmi/m/it/9 ; [] ; Q[]\LM
-S/ntxsy/m/n/9 ¹\OML/ntxmi/m/it/9 t \LMS/ntxsy/m/n/9 ^^@ \U/ntxmia/m/it/9 ^^A\OM
-L/ntxmi/m/it/9 T[]\LMS/ntxsy/m/n/9 º[]\OML/ntxmi/m/it/9 :$  
- []
-
 [4]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 6.6pt on input line 322.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 5.5pt on input line 322.
 
-Overfull \hbox (30.54375pt too wide) detected at line 326
-$\OT1/minntx/b/n/9 X\LMS/ntxsy/m/n/9 ¹\OML/ntxmi/m/it/9 t\LMS/ntxsy/m/n/9 º \U/
-ntxmia/m/it/9 = [][]\OML/ntxmi/m/it/9 ; []; [][]:$  
- []
-
-
-Overfull \hbox (3.34254pt too wide) detected at line 345
+Overfull \hbox (3.34254pt too wide) detected at line 342
 $[][] \U/ntxmia/m/it/9 = []\OML/ntxmi/m/it/9 ;  [][] \U/ntxmia/m/it/9 = []\OML/
 ntxmi/m/it/9 ;  [][] \U/ntxmia/m/it/9 = []\OML/ntxmi/m/it/9 :$  
  []
 
 [5]
 LaTeX Font Info:    Trying to load font information for T1+aett on input line 4
-19.
+16.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
-Underfull \hbox (badness 5578) in paragraph at lines 429--430
+Underfull \hbox (badness 5578) in paragraph at lines 426--427
 []\T1/ntxtlf/b/n/9 Blue Wing: \T1/ntxtlf/m/n/9 in-te-grated flux in the ve-loc-
 ity range
  []
 
 
-Underfull \hbox (badness 5417) in paragraph at lines 430--431
+Underfull \hbox (badness 5417) in paragraph at lines 427--428
 []\T1/ntxtlf/b/n/9 Line Core: \T1/ntxtlf/m/n/9 in-te-grated flux in the ve-loc-
 ity range
  []
 
 
-Underfull \hbox (badness 4660) in paragraph at lines 431--432
+Underfull \hbox (badness 4660) in paragraph at lines 428--429
 []\T1/ntxtlf/b/n/9 Red Wing: \T1/ntxtlf/m/n/9 in-te-grated flux in the ve-loc-i
 ty range
  []
 
 LaTeX Font Info:    Font shape `OT1/minntx/b/n' will be
-(Font)              scaled to size 8.0pt on input line 437.
+(Font)              scaled to size 8.0pt on input line 434.
 LaTeX Font Info:    Font shape `OT1/minntx/b/n' will be
-(Font)              scaled to size 6.0pt on input line 437.
-
-Overfull \hbox (126.0302pt too wide) in paragraph at lines 435--448
- [] 
- []
-
+(Font)              scaled to size 6.0pt on input line 434.
 <figure1_light_curves.png, id=388, 781.7205pt x 493.6041pt>
 File: figure1_light_curves.png Graphic file (type png)
 <use figure1_light_curves.png>
-Package pdftex.def Info: figure1_light_curves.png  used on input line 468.
+Package pdftex.def Info: figure1_light_curves.png  used on input line 465.
 (pdftex.def)             Requested size: 508.0pt x 320.7786pt.
-
-Overfull \hbox (124.32pt too wide) in paragraph at lines 483--494
- [] 
- []
-
 <figure2_surd_lag_scans.png, id=392, 855.4359pt x 782.925pt>
 File: figure2_surd_lag_scans.png Graphic file (type png)
 <use figure2_surd_lag_scans.png>
-Package pdftex.def Info: figure2_surd_lag_scans.png  used on input line 502.
+Package pdftex.def Info: figure2_surd_lag_scans.png  used on input line 499.
 (pdftex.def)             Requested size: 482.59845pt x 441.6964pt.
-[6
-pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has
- been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.518 \item \textbf
-                   {Red Wing H\(\beta\) (at 119 days):} Real synergy is $0.3...
-
-pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has
- been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.518 \item \textbf
-                   {Red Wing H\(\beta\) (at 119 days):} Real synergy is $0.3...
-]
-<figure3_robustness_and_nulls.png, id=415, 926.2605pt x 386.6445pt>
+<figure3_robustness_and_nulls.png, id=394, 926.2605pt x 386.6445pt>
 File: figure3_robustness_and_nulls.png Graphic file (type png)
 <use figure3_robustness_and_nulls.png>
 Package pdftex.def Info: figure3_robustness_and_nulls.png  used on input line 5
-28.
+25.
 (pdftex.def)             Requested size: 482.59845pt x 201.44568pt.
-
+[6]
 Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Overfull \hbox (144.67204pt too wide) in paragraph at lines 537--548
- [] 
- []
 
 <figure4_iccf_vs_surd.png, id=418, 722.9409pt x 710.4141pt>
 File: figure4_iccf_vs_surd.png Graphic file (type png)
 <use figure4_iccf_vs_surd.png>
-Package pdftex.def Info: figure4_iccf_vs_surd.png  used on input line 556.
+Package pdftex.def Info: figure4_iccf_vs_surd.png  used on input line 553.
 (pdftex.def)             Requested size: 482.59845pt x 474.22972pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [7
+pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has
+ been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.562 
+      
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.565 
+l.562 
       
-pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has
+pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.565 
+l.562 
        <./figure1_light_curves.png>]
+Underfull \vbox (badness 8000) has occurred while \output is active []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [8
@@ -1002,12 +960,18 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.576 
-       <./figure2_surd_lag_scans.png>]
-<figure6_javelin_posteriors.png, id=442, 703.9098pt x 709.4505pt>
+l.564 \begin{itemize}
+                     
+pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has
+ been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.564 \begin{itemize}
+                      <./figure2_surd_lag_scans.png>]
+<figure6_javelin_posteriors.png, id=441, 703.9098pt x 709.4505pt>
 File: figure6_javelin_posteriors.png Graphic file (type png)
 <use figure6_javelin_posteriors.png>
-Package pdftex.def Info: figure6_javelin_posteriors.png  used on input line 579
+Package pdftex.def Info: figure6_javelin_posteriors.png  used on input line 576
 .
 (pdftex.def)             Requested size: 406.40155pt x 409.59796pt.
  [9
@@ -1015,9 +979,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.609 \item
-            \textbf{Case 1: Single Driver.} The target responds to only one ...
+l.600 T
+       his is a major methodological contribution for the paper: while the s...
  <./figure3_robustness_and_nulls.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [10
@@ -1025,73 +992,70 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.623 
-       <./figure4_iccf_vs_surd.png>]
-Overfull \hbox (260.54572pt too wide) in paragraph at lines 626--638
- [] 
- []
-
-<figure5_synthetic_benchmarks.png, id=467, 854.9541pt x 709.6914pt>
+l.609 \item \textbf
+                   {Case 4: Two-Zone Response.} S1 is the prompt continuum, ...
+ <./figure4_iccf_vs_surd.png>]
+<figure5_synthetic_benchmarks.png, id=463, 854.9541pt x 709.6914pt>
 File: figure5_synthetic_benchmarks.png Graphic file (type png)
 <use figure5_synthetic_benchmarks.png>
 Package pdftex.def Info: figure5_synthetic_benchmarks.png  used on input line 6
-46.
+43.
 (pdftex.def)             Requested size: 482.59845pt x 400.6082pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 1762) has occurred while \output is active []
 
  [11
 pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.656 T
-       o address this, we perform a target-history conditioned SURD scan. We...
+l.652 
+       <./figure6_javelin_posteriors.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [12
 pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.656 T
-       o address this, we perform a target-history conditioned SURD scan. We...
- <./figure6_javelin_posteriors.png>]
-<figure7_history_conditioning.png, id=476, 925.5378pt x 384.4764pt>
-File: figure7_history_conditioning.png Graphic file (type png)
-<use figure7_history_conditioning.png>
-Package pdftex.def Info: figure7_history_conditioning.png  used on input line 6
-68.
-(pdftex.def)             Requested size: 482.59845pt x 200.47447pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [12
+l.660 
+      
 pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.678 
-       <./figure5_synthetic_benchmarks.png>] [13
+l.660 
+       <./figure5_synthetic_benchmarks.png>]
+<figure7_history_conditioning.png, id=484, 925.5378pt x 384.4764pt>
+File: figure7_history_conditioning.png Graphic file (type png)
+<use figure7_history_conditioning.png>
+Package pdftex.def Info: figure7_history_conditioning.png  used on input line 6
+65.
+(pdftex.def)             Requested size: 482.59845pt x 200.47447pt.
+ [13] [14
 pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.707 
-       <./figure7_history_conditioning.png>]
-Underfull \hbox (badness 2617) in paragraph at lines 750--752
+l.739 \item \textbf
+                   {Finite-Sample Histogram Bias:} Mutual information estima...
+ <./figure7_history_conditioning.png>]
+Underfull \hbox (badness 2617) in paragraph at lines 747--749
 \T1/ntxtlf/m/n/9 This pa-per presents the first ap-pli-ca-tion of the Syn-er-gi
 s-
  []
 
 
-Underfull \hbox (badness 4132) in paragraph at lines 750--752
+Underfull \hbox (badness 4132) in paragraph at lines 747--749
 \T1/ntxtlf/m/n/9 tic^^UUnique^^URedundant De-com-po-si-tion (SURD) al-go-rithm 
 to
  []
 
-[14] (./V3.bbl [15]) [16
+
+Underfull \vbox (badness 3271) has occurred while \output is active []
+
+ (./V3.bbl
+[15]) [16
 
 ] (./V3.aux)
  ***********
@@ -1107,13 +1071,13 @@ Package rerunfilecheck Info: File `V3.out' has not changed.
 (rerunfilecheck)             Checksum: BFECB696BE5EF1ED2A3780C925880067;9112.
  ) 
 Here is how much of TeX's memory you used:
- 15310 strings out of 467525
- 224276 string characters out of 5418983
- 652191 words of memory out of 5000000
- 43779 multiletter control sequences out of 15000+600000
+ 15312 strings out of 467525
+ 224336 string characters out of 5418983
+ 655697 words of memory out of 5000000
+ 43781 multiletter control sequences out of 15000+600000
  736501 words of font info for 200 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 90i,15n,93p,2031b,539s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,15n,93p,2031b,505s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 , replaced by a fixed one
@@ -1130,7 +1094,7 @@ t/fonts/type1/public/newtx/txmiaX.pfb></usr/local/texlive/2026/texmf-dist/fonts
 ublic/newtx/ztmb.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/new
 tx/ztmr.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/newtx/ztmri.
 pfb>
-Output written on V3.pdf (16 pages, 4547055 bytes).
+Output written on V3.pdf (16 pages, 4546428 bytes).
 PDF statistics:
  663 PDF objects out of 1000 (max. 8388607)
  599 compressed objects within 6 object streams
