@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  15 JUL 2026 23:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  15 JUL 2026 23:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1092,7 +1092,7 @@ Package rerunfilecheck Info: File `V3.out' has not changed.
 Here is how much of TeX's memory you used:
  15330 strings out of 467525
  224722 string characters out of 5418983
- 656508 words of memory out of 5000000
+ 656760 words of memory out of 5000000
  43791 multiletter control sequences out of 15000+600000
  736501 words of font info for 200 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1113,7 +1113,7 @@ t/fonts/type1/public/newtx/txmiaX.pfb></usr/local/texlive/2026/texmf-dist/fonts
 ublic/newtx/ztmb.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/new
 tx/ztmr.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/newtx/ztmri.
 pfb>
-Output written on V3.pdf (17 pages, 5195680 bytes).
+Output written on V3.pdf (17 pages, 5195897 bytes).
 PDF statistics:
  685 PDF objects out of 1000 (max. 8388607)
  617 compressed objects within 7 object streams
