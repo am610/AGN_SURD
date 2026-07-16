@@ -1,0 +1,153 @@
+\begin{thebibliography}{}
+\makeatletter
+\relax
+\def\mn@urlcharsother{\let\do\@makeother \do\$\do\&\do\#\do\^\do\_\do\%\do\~}
+\def\mn@doi{\begingroup\mn@urlcharsother \@ifnextchar [ {\mn@doi@}
+  {\mn@doi@[]}}
+\def\mn@doi@[#1]#2{\def\@tempa{#1}\ifx\@tempa\@empty \href
+  {http://dx.doi.org/#2} {doi:#2}\else \href {http://dx.doi.org/#2} {#1}\fi
+  \endgroup}
+\def\mn@eprint#1#2{\mn@eprint@#1:#2::\@nil}
+\def\mn@eprint@arXiv#1{\href {http://arxiv.org/abs/#1} {{\tt arXiv:#1}}}
+\def\mn@eprint@dblp#1{\href {http://dblp.uni-trier.de/rec/bibtex/#1.xml}
+  {dblp:#1}}
+\def\mn@eprint@#1:#2:#3:#4\@nil{\def\@tempa {#1}\def\@tempb {#2}\def\@tempc
+  {#3}\ifx \@tempc \@empty \let \@tempc \@tempb \let \@tempb \@tempa \fi \ifx
+  \@tempb \@empty \def\@tempb {arXiv}\fi \@ifundefined
+  {mn@eprint@\@tempb}{\@tempb:\@tempc}{\expandafter \expandafter \csname
+  mn@eprint@\@tempb\endcsname \expandafter{\@tempc}}}
+
+\bibitem[\protect\citeauthoryear{Bentz \& Katz}{Bentz \&
+  Katz}{2015}]{BentzKatz2015}
+Bentz M.~C.,  Katz S.,  2015, \mn@doi [Publications of the Astronomical Society
+  of the Pacific] {10.1086/679601}, 127, 67
+
+\bibitem[\protect\citeauthoryear{Butts}{Butts}{2003}]{Butts2003}
+Butts D.~A.,  2003, \mn@doi [Network: Computation in Neural Systems]
+  {10.1088/0954-898X_14_2_304}, 14, 177
+
+\bibitem[\protect\citeauthoryear{Cackett, Horne  \& Winkler}{Cackett
+  et~al.}{2021}]{Cackett2021}
+Cackett E.~M.,  Horne K.,   Winkler H.,  2021, \mn@doi [iScience]
+  {10.1016/j.isci.2021.102557}, 24, 102557
+
+\bibitem[\protect\citeauthoryear{Cover \& Thomas}{Cover \&
+  Thomas}{2006}]{CoverThomas2006}
+Cover T.~M.,  Thomas J.~A.,  2006, Elements of Information Theory, 2 edn.
+Wiley
+
+\bibitem[\protect\citeauthoryear{De~Rosa, Peterson, Ely  et~al.}{De~Rosa
+  et~al.}{2015}]{DeRosa2015}
+De~Rosa G.,  Peterson B.~M.,  Ely J.,   et~al., 2015, \mn@doi [The
+  Astrophysical Journal] {10.1088/0004-637X/806/1/128}, 806, 128
+
+\bibitem[\protect\citeauthoryear{DeWeese \& Meister}{DeWeese \&
+  Meister}{1999}]{DeWeeseMeister1999}
+DeWeese M.~R.,  Meister M.,  1999, \mn@doi [Network: Computation in Neural
+  Systems] {10.1088/0954-898X_10_4_302}, 10, 325
+
+\bibitem[\protect\citeauthoryear{Dehghanian, Ferland, Peterson
+  et~al.}{Dehghanian et~al.}{2019}]{Dehghanian2019}
+Dehghanian M.,  Ferland G.~J.,  Peterson B.~M.,   et~al., 2019, \mn@doi
+  [Monthly Notices of the Royal Astronomical Society] {10.1093/mnras/stz2910},
+  490, 5614
+
+\bibitem[\protect\citeauthoryear{Du, Wang, Zhang  et~al.}{Du
+  et~al.}{2018}]{Du2018}
+Du P.,  Wang J.-M.,  Zhang Z.-X.,   et~al., 2018, \mn@doi [The Astrophysical
+  Journal] {10.3847/1538-4357/aaaec4}, 856, 6
+
+\bibitem[\protect\citeauthoryear{Edelson, Gelbord, Horne  et~al.}{Edelson
+  et~al.}{2019}]{Edelson2019}
+Edelson R.,  Gelbord J.,  Horne K.,   et~al., 2019, \mn@doi [The Astrophysical
+  Journal] {10.3847/1538-4357/aafc11}, 870, 123
+
+\bibitem[\protect\citeauthoryear{Fausnaugh}{Fausnaugh}{2017}]{Fausnaugh2017}
+Fausnaugh M.~M.,  2017, \mn@doi [Frontiers in Astronomy and Space Sciences]
+  {10.3389/fspas.2017.00055}, 4, 55
+
+\bibitem[\protect\citeauthoryear{Fausnaugh, Denney, Barth  et~al.}{Fausnaugh
+  et~al.}{2016}]{Fausnaugh2016}
+Fausnaugh M.~M.,  Denney K.~D.,  Barth A.~J.,   et~al., 2016, \mn@doi [The
+  Astrophysical Journal] {10.3847/0004-637X/821/1/56}, 821, 56
+
+\bibitem[\protect\citeauthoryear{Feng, Li, Bai  et~al.}{Feng
+  et~al.}{2024}]{Feng2024}
+Feng H.-C.,  Li S.-S.,  Bai J.-M.,   et~al., 2024, arXiv e-prints
+
+\bibitem[\protect\citeauthoryear{Horne, De~Rosa, Peterson  et~al.}{Horne
+  et~al.}{2021}]{Horne2021}
+Horne K.,  De~Rosa G.,  Peterson B.~M.,   et~al., 2021, \mn@doi [The
+  Astrophysical Journal] {10.3847/1538-4357/abce60}, 907, 76
+
+\bibitem[\protect\citeauthoryear{Long \& Dexter}{Long \&
+  Dexter}{2025}]{LongDexter2025}
+Long K.,  Dexter J.,  2025, arXiv e-prints
+
+\bibitem[\protect\citeauthoryear{Mart{\'\i}nez-S{\'a}nchez, Arranz  \&
+  Lozano-Dur{\'a}n}{Mart{\'\i}nez-S{\'a}nchez
+  et~al.}{2024}]{MartinezSanchez2024SURD}
+Mart{\'\i}nez-S{\'a}nchez {\'A}.,  Arranz G.,   Lozano-Dur{\'a}n A.,  2024,
+  \mn@doi [Nature Communications] {10.1038/s41467-024-53373-4}, 15, 9296
+
+\bibitem[\protect\citeauthoryear{Netzer}{Netzer}{2013}]{Netzer2013}
+Netzer H.,  2013, The Physics and Evolution of Active Galactic Nuclei.
+Cambridge University Press, Cambridge
+
+\bibitem[\protect\citeauthoryear{Pancoast, Brewer  \& Treu}{Pancoast
+  et~al.}{2014}]{Pancoast2014}
+Pancoast A.,  Brewer B.~J.,   Treu T.,  2014, \mn@doi [Monthly Notices of the
+  Royal Astronomical Society] {10.1093/mnras/stu1419}, 445, 3055
+
+\bibitem[\protect\citeauthoryear{Pei, Barth, Bennert  et~al.}{Pei
+  et~al.}{2017}]{Pei2017}
+Pei L.,  Barth A.~J.,  Bennert V.~N.,   et~al., 2017, \mn@doi [The
+  Astrophysical Journal] {10.3847/1538-4357/aa5a87}, 837, 131
+
+\bibitem[\protect\citeauthoryear{Peterson}{Peterson}{2004}]{Peterson2004}
+Peterson B.~M.,  2004, \mn@doi [Publications of the Astronomical Society of the
+  Pacific] {10.1086/383281}, 116, 313
+
+\bibitem[\protect\citeauthoryear{Peterson, Berlind, Bertram  et~al.}{Peterson
+  et~al.}{2002}]{Peterson2002}
+Peterson B.~M.,  Berlind P.,  Bertram R.,   et~al., 2002, \mn@doi [The
+  Astrophysical Journal] {10.1086/344197}, 581, 197
+
+\bibitem[\protect\citeauthoryear{Ricci \& Trakhtenbrot}{Ricci \&
+  Trakhtenbrot}{2023}]{RicciTrakhtenbrot2023}
+Ricci C.,  Trakhtenbrot B.,  2023, \mn@doi [Nature Astronomy]
+  {10.1038/s41550-023-02108-4}, 7, 1282
+
+\bibitem[\protect\citeauthoryear{Schreiber}{Schreiber}{2000}]{Schreiber2000}
+Schreiber T.,  2000, \mn@doi [Physical Review Letters]
+  {10.1103/PhysRevLett.85.461}, 85, 461
+
+\bibitem[\protect\citeauthoryear{Shannon}{Shannon}{1948}]{Shannon1948}
+Shannon C.~E.,  1948, \mn@doi [Bell System Technical Journal]
+  {10.1002/j.1538-7305.1948.tb01338.x}, 27, 379
+
+\bibitem[\protect\citeauthoryear{Wang, Woo  et~al.}{Wang
+  et~al.}{2025}]{Wang2025}
+Wang S.,  Woo J.-H.,   et~al., 2025, arXiv e-prints
+
+\bibitem[\protect\citeauthoryear{White \& Peterson}{White \&
+  Peterson}{1994}]{WhitePeterson1994}
+White R.~J.,  Peterson B.~M.,  1994, \mn@doi [Publications of the Astronomical
+  Society of the Pacific] {10.1086/133456}, 106, 879
+
+\bibitem[\protect\citeauthoryear{Williams \& Beer}{Williams \&
+  Beer}{2010}]{WilliamsBeer2010}
+Williams P.~L.,  Beer R.~D.,  2010, arXiv preprint arXiv:1004.2515
+
+\bibitem[\protect\citeauthoryear{Zu, Kochanek  \& Peterson}{Zu
+  et~al.}{2011}]{Zu2011}
+Zu Y.,  Kochanek C.~S.,   Peterson B.~M.,  2011, \mn@doi [The Astrophysical
+  Journal] {10.1088/0004-637X/735/2/80}, 735, 80
+
+\bibitem[\protect\citeauthoryear{Zu, Kochanek, Kozlowski  \& Udalski}{Zu
+  et~al.}{2013}]{Zu2013}
+Zu Y.,  Kochanek C.~S.,  Kozlowski S.,   Udalski A.,  2013, \mn@doi [The
+  Astrophysical Journal] {10.1088/0004-637X/765/2/106}, 765, 106
+
+\makeatother
+\end{thebibliography}
