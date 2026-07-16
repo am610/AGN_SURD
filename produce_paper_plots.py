@@ -81,43 +81,54 @@ fig.savefig('overleaf_draft/figure1_light_curves.png', dpi=300)
 plt.close(fig)
 
 # ----------------- SURD UTILS FOR PLOTTING -----------------
-def run_collect(X, nvars, nlag, nbins):
-    results = {}
-    for i in range(nvars):
-        Y = np.vstack([X[i, nlag:], X[:, :-nlag]])
-        hist, _ = np.histogramdd(Y.T, nbins)
-        I_R, I_S, MI, info_leak = surd.surd(hist)
-        results[i] = {"I_R": I_R, "I_S": I_S, "MI": MI, "info_leak": info_leak}
-    return results
+def run_collect_2pred(target_arr, pred1_arr, pred2_arr, nlag, nbins):
+    future_target = target_arr[nlag:]
+    pred_1 = pred1_arr[:-nlag]
+    pred_2 = pred2_arr[:-nlag]
+    
+    Y = np.vstack([future_target, pred_1, pred_2])
+    hist, _ = np.histogramdd(Y.T, nbins)
+    hist = hist / np.sum(hist)
+    I_R, I_S, MI, info_leak = surd.surd(hist)
+    
+    joint_mi = MI.get((1, 2), 1e-14)
+    if joint_mi < 1e-14:
+        joint_mi = 1e-14
+    
+    return {
+        "U1": I_R.get((1,), 0.0) / joint_mi,
+        "U2": I_R.get((2,), 0.0) / joint_mi,
+        "R12": I_R.get((1, 2), 0.0) / joint_mi,
+        "S12": I_S.get((1, 2), 0.0) / joint_mi,
+        "info_leak": info_leak
+    }
 
-def lag_scan_target3(X, lags, nbins=8):
-    metrics = {"lag": [], "info_leak": [], "MI1": [], "MI2": [], "U1": [], "U2": [], "R12": [], "S12": []}
+def lag_scan_target3(target_arr, pred1_arr, pred2_arr, lags, nbins=8):
+    metrics = {"lag": [], "info_leak": [], "U1": [], "U2": [], "R12": [], "S12": []}
     for lag in lags:
-        res = run_collect(X=X, nvars=3, nlag=lag, nbins=nbins)[2]
+        res = run_collect_2pred(target_arr, pred1_arr, pred2_arr, lag, nbins)
+        sum_norm = res["U1"] + res["U2"] + res["R12"] + res["S12"]
+        assert np.abs(sum_norm - 1.0) < 1e-6, f"SURD Normalization failed at lag {lag}: sum is {sum_norm}"
         metrics["lag"].append(lag)
         metrics["info_leak"].append(res["info_leak"])
-        metrics["MI1"].append(res["MI"].get((1,), np.nan))
-        metrics["MI2"].append(res["MI"].get((2,), np.nan))
-        metrics["U1"].append(res["I_R"].get((1,), np.nan))
-        metrics["U2"].append(res["I_R"].get((2,), np.nan))
-        metrics["R12"].append(res["I_R"].get((1, 2), np.nan))
-        metrics["S12"].append(res["I_S"].get((1, 2), np.nan))
+        metrics["U1"].append(res["U1"])
+        metrics["U2"].append(res["U2"])
+        metrics["R12"].append(res["R12"])
+        metrics["S12"].append(res["S12"])
+    print(f"  All {len(lags)} lags successfully verified: U1 + U2 + R12 + S12 = 1.0 (identity holds).")
     return metrics
 
 # Run SURD scans up to 120 lags
 lags_120 = np.arange(1, 121)
 print("Running SURD lag scans up to 120 days for all targets...")
 # Core target: S1=cont, S2=blue -> T3=core
-X_core = np.vstack([cont_zscore, blue_zscore, core_zscore])
-metrics_core = lag_scan_target3(X_core, lags_120, nbins=8)
+metrics_core = lag_scan_target3(core_zscore, cont_zscore, blue_zscore, lags_120, nbins=8)
 
 # Red target: S1=cont, S2=blue -> T3=red
-X_red = np.vstack([cont_zscore, blue_zscore, red_zscore])
-metrics_red = lag_scan_target3(X_red, lags_120, nbins=8)
+metrics_red = lag_scan_target3(red_zscore, cont_zscore, blue_zscore, lags_120, nbins=8)
 
 # Blue target: S1=cont, S2=core -> T3=blue
-X_blue = np.vstack([cont_zscore, core_zscore, blue_zscore])
-metrics_blue = lag_scan_target3(X_blue, lags_120, nbins=8)
+metrics_blue = lag_scan_target3(blue_zscore, cont_zscore, core_zscore, lags_120, nbins=8)
 
 # ----------------- FIGURE 2: SURD LAG SCANS WITH MONTE CARLO UNCERTAINTY -----------------
 print("Generating Figure 2: SURD Synergy and Leak Lag Scans with MC Uncertainty...")
@@ -138,14 +149,15 @@ for idx, (name, metrics, df_mc) in enumerate(targets):
     # Synergy column
     ax_syn = axs[idx, 0]
     # Plot MC Median and Shaded Error Bands
-    ax_syn.plot(df_mc['lag'], df_mc['median_synergy'], color='purple', label='Synergy (MC Median)', linewidth=2)
-    ax_syn.fill_between(df_mc['lag'], df_mc['p16_synergy'], df_mc['p84_synergy'], color='purple', alpha=0.3, label='1$\sigma$ MC Error')
-    ax_syn.fill_between(df_mc['lag'], df_mc['p2_5_synergy'], df_mc['p97_5_synergy'], color='purple', alpha=0.1, label='2$\sigma$ MC Error')
+    ax_syn.plot(df_mc['lag'], df_mc['median_S12'], color='purple', label='Synergy (MC Median)', linewidth=2)
+    ax_syn.fill_between(df_mc['lag'], df_mc['p16_S12'], df_mc['p84_S12'], color='purple', alpha=0.3, label='1$\sigma$ MC Error')
+    ax_syn.fill_between(df_mc['lag'], df_mc['p2_5_S12'], df_mc['p97_5_S12'], color='purple', alpha=0.1, label='2$\sigma$ MC Error')
     
     # Reference curves from real run
     ax_syn.plot(metrics['lag'], metrics['R12'], color='gray', linestyle='--', label='Redundancy', alpha=0.7)
     ax_syn.plot(metrics['lag'], metrics['U1'], color='blue', linestyle=':', label='Unique (Continuum)', alpha=0.7)
-    ax_syn.set_ylabel('Information (bits)')
+    ax_syn.plot(metrics['lag'], metrics['U2'], color='red', linestyle='-.', label='Unique (Wing/Core)', alpha=0.7)
+    ax_syn.set_ylabel('Information Fraction')
     ax_syn.set_title(f'Information Decomposition: {name}')
     ax_syn.legend(loc='upper right')
     
@@ -156,7 +168,7 @@ for idx, (name, metrics, df_mc) in enumerate(targets):
     ax_leak.fill_between(df_mc['lag'], df_mc['p16_leak'], df_mc['p84_leak'], color='darkorange', alpha=0.3, label='1$\sigma$ MC Error')
     ax_leak.fill_between(df_mc['lag'], df_mc['p2_5_leak'], df_mc['p97_5_leak'], color='darkorange', alpha=0.1, label='2$\sigma$ MC Error')
     
-    ax_leak.set_ylabel('Conditional Entropy (bits)')
+    ax_leak.set_ylabel('Normalized Leak $\\mathcal{L}$')
     ax_leak.set_title(f'Information Leak: {name}')
     ax_leak.legend(loc='upper right')
 
@@ -175,10 +187,10 @@ lags_60 = np.arange(1, 61)
 nbins_vals = [4, 6, 8, 10, 12]
 colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd']
 for n_idx, n_val in enumerate(nbins_vals):
-    m_temp = lag_scan_target3(X_core, lags_60, nbins=n_val)
+    m_temp = lag_scan_target3(core_zscore, cont_zscore, blue_zscore, lags_60, nbins=n_val)
     ax1.plot(lags_60, m_temp['S12'], label=f'nbins = {n_val}', color=colors[n_idx], linewidth=1.5)
 ax1.set_xlabel('Lag (days)')
-ax1.set_ylabel('Synergy $S_{12}$ (bits)')
+ax1.set_ylabel('Normalized Synergy $\\widehat{S}_{12}$')
 ax1.set_title('A: Histogram Bin Sensitivity (Core Target)')
 ax1.legend(loc='upper right')
 
@@ -252,7 +264,7 @@ for idx, (name, iccf_lags, iccf_vals, surd_metrics, iccf_peak, surd_peak) in enu
     color2 = 'purple'
     ax2.plot(surd_metrics['lag'], surd_metrics['S12'], color=color2, label='SURD Synergy', linewidth=2)
     ax2.tick_params(axis='y', labelcolor=color2)
-    ax2.set_ylabel('Synergy $S_{12}$ (bits)', color=color2)
+    ax2.set_ylabel('Normalized Synergy $\\widehat{S}_{12}$', color=color2)
     ax2.axvline(surd_peak, color=color2, linestyle='-.', label=f'SURD Synergy Peak: {surd_peak:.1f} d')
     
     ax.set_title(f'ICCF vs. SURD Synergy: {name}')

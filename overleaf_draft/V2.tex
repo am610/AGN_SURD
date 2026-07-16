@@ -500,7 +500,7 @@ For all three velocity components, the peak synergy lag shifts when the scan ran
 \begin{figure}[ht]
 \centering
 \includegraphics[width=\textwidth]{figure2_surd_lag_scans.png}
-\caption{Decomposition of predictive information (left column) and information leak (right column) as a function of lag up to 120 days for the three H\(\beta\) target components: Core (top row), Red Wing (middle row), and Blue Wing (bottom row). Solid curves represent the Monte Carlo median, and the dark and light shaded envelopes denote the $1\sigma$ (16th--84th percentiles) and $2\sigma$ (2.5th--97.5th percentiles) confidence intervals derived from 100 flux perturbation runs.}
+\caption{Decomposition of normalized predictive information (left column, where components represent the fraction of the joint mutual information $I(Y; X_1, X_2)$ and sum to $1.0$ at every lag: Synergy $\widehat{S}_{12}$ in solid purple, Redundancy $\widehat{R}_{12}$ in dashed gray, Unique Continuum $\widehat{U}_1$ in dotted blue, and Unique Wing/Core $\widehat{U}_2$ in dash-dotted red) and normalized information leak $\mathcal{L} = H(Y \mid X_1, X_2) / H(Y)$ (right column) as a function of lag up to 120 days for the three H\(\beta\) target components: Core (top row), Red Wing (middle row), and Blue Wing (bottom row). Solid curves represent the Monte Carlo median, and the dark and light shaded envelopes denote the $1\sigma$ (16th--84th percentiles) and $2\sigma$ (2.5th--97.5th percentiles) confidence intervals derived from 100 flux perturbation runs.}
 \label{fig:surd_lag_scans}
 \end{figure}
 
@@ -687,6 +687,33 @@ The fact that the SURD synergy peaks occur at much longer timescales (76 days fo
 \item \textbf{Red Noise and Autocorrelation Gaps:} Alternatively, because the long-timescale synergy peaks do not pass global significance tests (FDR), they may arise from systematic properties of the dataset rather than clean physical delays. Specifically, the strong red-noise memory of both the continuum and the line, combined with seasonal observation windows and interpolation across data gaps, can shift unique information into broad synergy envelopes at long lags.
 \end{enumerate}
 
+\subsection{Comparison with 2023 Reverberation Mapping and Kinematic Evolution}
+\label{sec:comparison_xi}
+
+A key context for our results is the recent spectroscopic reverberation campaign of NGC~5548 presented by \textcite{LongDexter2025} (specifically, the 2023 campaign and its combination with historical data from 2015--2021). They measure an integrated H\(\beta\) rest-frame delay of \(15.6_{-2.9}^{+2.6}\)~days, which is in close quantitative agreement with our velocity-resolved ICCF (13--20~days) and JAVELIN (\(12.8_{-1.8}^{+1.8}\) to \(20.1_{-3.2}^{+2.9}\)~days) prompt responses. 
+
+However, \textcite{LongDexter2025} show that the velocity-resolved H\(\beta\) lag profile of NGC~5548 is highly non-stationary and changes substantially from season to season:
+\begin{itemize}
+    \item \textbf{Virialized/Keplerian (e.g., 2015):} A symmetric, M-shaped lag profile where the high-velocity wings respond faster than the low-velocity core ($|v| \uparrow \implies \tau \downarrow$), consistent with virial motion.
+    \item \textbf{Inflow-like (e.g., 2019, 2021):} A red-leading-blue asymmetry where the redshifted wing responds earlier ($\tau_{\mathrm{red}} < \tau_{\mathrm{blue}}$), indicating radial inflow.
+    \item \textbf{Outflow-like (e.g., 2020, 2023):} A blue-leading-red asymmetry ($\tau_{\mathrm{blue}} < \tau_{\mathrm{red}}$), indicating radial outflow or wind-driven gas.
+\end{itemize}
+Our analysis of the historical NGC~5548 dataset yields a red-leading-blue lag ordering (\(\tau_{\mathrm{red}} \approx 13\)~d, \(\tau_{\mathrm{blue}} \approx 19\)~d, \(\tau_{\mathrm{core}} \approx 20\)~d), which matches the inflow-like state of the BLR. Crucially, the long-term non-stationarity of the velocity profile means that our long-baseline SURD analysis (conducted over a 1744-day joint campaign) averages over these distinct kinematic states. As discussed in Section~\ref{sec:limitations}, this mixing of physical regimes can produce artificial state-identification synergy and explains why the broad 76--119 day synergy envelopes do not survive global multiple-testing controls.
+
+\subsection{Novelty of the Information-Decomposition Framework}
+\label{sec:novelty_framework}
+
+Our study introduces a fundamental novelty compared to classical reverberation mapping and recent velocity-resolved studies. While methods like ICCF, DCF, and JAVELIN are designed to identify one characteristic lag timescale $\tau$ corresponding to linear response or top-hat transfer function width, SURD decomposes the total joint information between the continuum and different line velocity components into distinct unique, redundant, synergistic, and leak components.
+
+Specifically, SURD provides the following physical insights that cannot be captured by pairwise linear methods:
+\begin{itemize}
+    \item \textbf{Unique Information ($\widehat{U}_1$, $\widehat{U}_2$):} It isolates whether a specific velocity component (e.g., Blue Wing) contains predictive information about the future target (e.g., Core) that is not already duplicated by the continuum. For NGC~5548, we find that the Continuum unique information is generally small, indicating that most of its predictive content is redundant with the line profile itself (which serves as a physical integrator).
+    \item \textbf{Redundancy ($\widehat{R}_{12}$):} It quantifies the shared information between the continuum and the opposite line component. A high redundancy (such as the $\sim 48\%$ redundancy observed at short lags in Figure~\ref{fig:surd_lag_scans}) suggests that both predictors are responding to the same underlying physical driver.
+    \item \textbf{Synergy ($\widehat{S}_{12}$):} It tracks information that is only accessible when observing the continuum and another line component jointly. This joint dependence is a key signature of multivariate physical coupling, such as when the line core response depends on both the continuum flux (local photoionization) and the wing state (reverberating gas density and velocity distribution).
+    \item \textbf{Predictive Leak ($\mathcal{L}$):} It provides a direct diagnostic of unobserved or missing drivers. A high leak floor ($\approx 50\%$) implies that the optical continuum near 5100~\AA\ is an imperfect proxy for the true ionizing extreme ultraviolet (EUV) continuum, or that structural non-stationarity violates the assumption of a simple driver--response chain.
+\end{itemize}
+This framework changes the scientific question from "what is the delay?" to "how is the predictive information distributed across the monitored components, and what fraction remains unexplained?"
+
 \subsection{Interpretation of the Information Leak}
 
 The normalized information leak, defined as the ratio of conditional entropy to total target entropy:
@@ -695,7 +722,7 @@ The normalized information leak, defined as the ratio of conditional entropy to 
 \end{equation}
 measures the proportion of the target's future uncertainty that remains unexplained by the observed predictors. It is an information-theoretic entropy fraction, not a linear explained-variance statistic (like $R^2$), and it naturally incorporates finite-sample bias, discretization effects, observational noise, missing predictors, and stochasticity.
 
-For all three targets, the unconditioned minimum leak is reached at the shortest lag of 1.0 day, with leak values of approximately $0.085$ for the Core, $0.099$ for the Blue Wing, and $0.151$ for the Red Wing. While this indicates that only $8.5\%$ to $15.1\%$ of the target's entropy remains unresolved, this prompt minimum is driven in large part by the strong autocorrelation (red-noise memory) of the target light curves themselves rather than prompt physical coupling. As shown in Section~\ref{sec:target_history_conditioning}, when we condition out the target's own past state, the conditioned information leak minimum shifts to $\sim 15$ days, which aligns much more closely with the physical light-travel time of the BLR.
+For all three targets, the unconditioned minimum leak is reached at short lags corresponding to the physical light-travel time: lag 11.0 days for the Core (leak value $\approx 0.491$), lag 10.0 days for the Red Wing (leak value $\approx 0.682$), and lag 8.0 days for the Blue Wing (leak value $\approx 0.560$). These values indicate that approximately $49\%$ to $68\%$ of the target's future entropy remains unexplained by the continuum and opposite wing/core. This is physically consistent with prompt line response. In contrast to the unconditioned 2-predictor scan, when we introduce the target's own history as a predictor (as in Section~\ref{sec:target_history_conditioning}), the target's strong self-correlation on 1-day timescales dominates, which would artificially pull the leak to near-zero at 1.0 day if not properly conditioned.
 
 As the lag increases beyond these timescales, the information leak rises, representing a loss of predictive power as we move away from the predictive horizon. The remaining unexplained entropy (the leak floor) is likely caused by:
 \begin{itemize}
@@ -725,10 +752,40 @@ This paper presents the first application of the Synergistic–Unique–Redundan
 \item The V11 Strict Overlap preprocessing pipeline successfully limits edge effects, delivering a reliable, synchronized dataset over the MJD 47512--49255 window.
 \item While SURD synergy peaks locally exceed circular-shift and block-bootstrap surrogate envelopes, no individual lag remains globally statistically significant after Benjamini–Hochberg FDR or global maximum-statistic corrections. The results suggest broad lag-dependent information profiles (or candidate coupling envelopes requiring validation in independent data) rather than mathematically precise physical delays.
 \item Classical linear lags (13--20 days, as measured by ICCF and JAVELIN) and SURD synergy peaks (76--119 days) measure fundamentally different mathematical structures. While linear methods track the prompt reverberation response, the long-term synergy profile represents a broad statistical coupling that remains an area for hypothesis testing (such as disk thermal reprocessing, extended geometry, or systematic red-noise effects).
-\item The unconditioned minimum information leak at 1.0 day is driven in large part by the strong autocorrelation (red noise memory) of the target light curves. When conditioning out the target's own past history, the short-lag autocorrelation structure is suppressed, shifting the synergy profile toward longer lags ($\sim 70$--80 days), indicating that the long-term coupling is consistent with cross-component information not explained solely by target autocorrelation (although the exact peak location remains sensitive to the binning parameter).
+\item The unconditioned minimum information leak occurs at lags of 8--11 days, matching the physical light-travel time of the BLR. When conditioning out the target's own past history, the short-lag autocorrelation structure is suppressed, shifting the synergy profile toward longer lags ($\sim 70$--80 days), indicating that the long-term coupling is consistent with cross-component information not explained solely by target autocorrelation (although the exact peak location remains sensitive to the binning parameter).
 \end{enumerate}
 
-Future work will focus on applying the SURD framework to larger multi-object databases (such as SDSS-RM or OzDES) to search for population-level trends in synergy and information leakage as a function of black hole mass, luminosity, and accretion rate. Additionally, incorporating X-ray or ultraviolet continuums as joint predictors could help resolve the hidden-driver problem.
+Future work will focus on applying the SURD framework to larger multi-object databases (such as SDSS-RM or OzDES) to search for population-level trends in synergy and information leakage as a function of black hole mass, luminosity, and accretion rate.
+
+\subsection{Future Work: Multiband Continuum Drivers and the Reverberation Holiday}
+\label{sec:future_multiband}
+
+A physically compelling extension of this work is to transition from single-continuum proxies to a joint multiband predictor set. In active galactic nuclei, the BLR responds directly to the extreme ultraviolet (EUV) ionizing continuum, which is generally unobservable due to interstellar extinction (the "EUV Lyman limit" gap). Observers must rely on proxies such as the optical continuum near 5100~\AA\ ($F_{\mathrm{opt}}$), the ultraviolet continuum near 1158~\AA\ ($F_{\mathrm{UV}}$), or the X-ray continuum ($F_{\mathrm{X}}$).
+
+During anomalous states, such as the "reverberation holiday" observed in NGC~5548 \cite{Dehghanian2019}, the emission lines decorrelate from the UV and optical continua. This suggests that the ionizing spectral energy distribution (SED) incident on the BLR has decoupled from the observed continuum bands, possibly due to a shielding wind or gas screen.
+
+To resolve this hidden-driver problem, we propose a multiband SURD analysis of the future broad-line response $Y = F_{\mathrm{H}\beta}(t+\tau)$ using a joint predictor vector:
+\begin{equation}
+\mathbf{X}(t) = \left[ F_{\mathrm{X}}(t), F_{\mathrm{UV}}(t), F_{\mathrm{opt}}(t) \right].
+\label{eq:multiband_predictors}
+\end{equation}
+Decomposing the joint mutual information $I(Y; \mathbf{X})$ yields:
+\begin{equation}
+I(Y; F_{\mathrm{X}}, F_{\mathrm{UV}}, F_{\mathrm{opt}}) = U_{\mathrm{X}} + U_{\mathrm{UV}} + U_{\mathrm{opt}} + \sum_{\mathcal{A}} R_{\mathcal{A}} + \sum_{\mathcal{A}} S_{\mathcal{A}}
+\label{eq:multiband_surd}
+\end{equation}
+where the unique, redundant, and synergistic terms provide direct, testable physical signatures:
+\begin{itemize}
+    \item \textbf{Unique UV ($U_{\mathrm{UV}}$):} Measures the extent to which the UV continuum carries uniquely relevant photoionization information that cannot be reconstructed from the optical or X-rays. If $U_{\mathrm{UV}} \gg U_{\mathrm{opt}}$, it confirms that the UV is a vastly superior physical proxy for the ionizing flux.
+    \item \textbf{Redundancy ($R_{\mathrm{UV,opt}}$):} Measures the shared information between the UV and optical continua. Since both bands originate from the accretion disk, a large redundancy confirms disk thermal reprocessing and allows us to test whether the optical contains any independent predictive information.
+    \item \textbf{Synergy ($S_{\mathrm{X,UV}}$):} Tracks whether the line response depends on the joint coronal (X-ray) and disk (UV) state, representing sensitivity to SED shape or hardness ratio variations.
+    \item \textbf{Predictive Leak ($\mathcal{L}$):} Measures the fraction of line variability that cannot be explained by any combination of the observed continua. During a normal reverberating state, the leak $\mathcal{L}(\tau_{\mathrm{BLR}})$ should be relatively small. During a reverberation holiday, the leak is expected to increase dramatically:
+    \begin{equation}
+    \mathcal{L}_{\mathrm{holiday}} > \mathcal{L}_{\mathrm{normal}}.
+    \label{eq:leak_holiday}
+    \end{equation}
+\end{itemize}
+This information-theoretic signature would provide a direct, model-independent proof of ionizing-continuum shielding and hidden-driver dynamics in active galactic nuclei.
 
 \section*{Data and Code Availability}
 The velocity-resolved spectroscopic light curves and optical continuum data used in this work are available in the public repositories of the AGN Watch compilation (specifically, \url{http://www.astronomy.ohio-state.edu/~agnwatch/}). The Python code and pipeline implementing the preprocessing, SURD algorithm, surrogate null tests, and JAVELIN modeling runs are open-source and hosted on GitHub at \url{https://github.com/am610/AGN_SURD}.
