@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  15 JUL 2026 22:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  15 JUL 2026 23:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -981,15 +981,18 @@ l.594
        <./figure3_robustness_and_nulls.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+
+Underfull \vbox (badness 1472) has occurred while \output is active []
+
  [10
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.604 \item \textbf
-                   {Case 4: Two-Zone Response.} S1 is the prompt continuum, ...
+l.602 \item \textbf
+                   {Case 2: Redundant Proxies.} The second driver is a noisy...
  <./figure4_iccf_vs_surd.png>]
-<figure5_synthetic_benchmarks.png, id=467, 854.9541pt x 709.6914pt>
+<figure5_synthetic_benchmarks.png, id=465, 854.9541pt x 709.6914pt>
 File: figure5_synthetic_benchmarks.png Graphic file (type png)
 <use figure5_synthetic_benchmarks.png>
 Package pdftex.def Info: figure5_synthetic_benchmarks.png  used on input line 6
@@ -1003,8 +1006,29 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.647 
-       <./figure6_javelin_posteriors.png>]
+l.641 \end{figure*}
+                    <./figure6_javelin_posteriors.png>]
+Underfull \hbox (badness 1184) in paragraph at lines 658--659
+\T1/ntxtlf/m/n/9 Lin-ear in-ter-po-la-tion across sea-sonal gaps smooths out hi
+gh-
+ []
+
+<figure7_seasonal_aliasing.png, id=480, 564.4287pt x 384.4764pt>
+File: figure7_seasonal_aliasing.png Graphic file (type png)
+<use figure7_seasonal_aliasing.png>
+Package pdftex.def Info: figure7_seasonal_aliasing.png  used on input line 665.
+
+(pdftex.def)             Requested size: 482.59845pt x 328.74246pt.
+
+Underfull \vbox (badness 1308) has occurred while \output is active []
+
+<figure8_history_conditioning.png, id=482, 925.5378pt x 384.4764pt>
+File: figure8_history_conditioning.png Graphic file (type png)
+<use figure8_history_conditioning.png>
+Package pdftex.def Info: figure8_history_conditioning.png  used on input line 6
+92.
+(pdftex.def)             Requested size: 482.59845pt x 200.47447pt.
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [12
@@ -1012,32 +1036,17 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.655 
-      
+l.701 
+      ]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [13
 pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.655 
-       <./figure5_synthetic_benchmarks.png>]
-Underfull \hbox (badness 1184) in paragraph at lines 658--659
-\T1/ntxtlf/m/n/9 Lin-ear in-ter-po-la-tion across sea-sonal gaps smooths out hi
-gh-
- []
-
-<figure7_seasonal_aliasing.png, id=488, 564.4287pt x 384.4764pt>
-File: figure7_seasonal_aliasing.png Graphic file (type png)
-<use figure7_seasonal_aliasing.png>
-Package pdftex.def Info: figure7_seasonal_aliasing.png  used on input line 665.
-
-(pdftex.def)             Requested size: 482.59845pt x 328.74246pt.
-<figure8_history_conditioning.png, id=490, 925.5378pt x 384.4764pt>
-File: figure8_history_conditioning.png Graphic file (type png)
-<use figure8_history_conditioning.png>
-Package pdftex.def Info: figure8_history_conditioning.png  used on input line 6
-92.
-(pdftex.def)             Requested size: 482.59845pt x 200.47447pt.
-[13]
+l.711 \end{enumerate}
+                      <./figure5_synthetic_benchmarks.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [14
@@ -1045,15 +1054,15 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.717 
-      
+l.711 \end{enumerate}
+                     
 pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.717 
-       <./figure7_seasonal_aliasing.png> <./figure8_history_conditioning.png>]
-[15]
+l.711 \end{enumerate}
+                      <./figure7_seasonal_aliasing.png> <./figure8_history_cond
+itioning.png>] [15]
 Underfull \hbox (badness 2617) in paragraph at lines 773--775
 \T1/ntxtlf/m/n/9 This pa-per presents the first ap-pli-ca-tion of the Syn-er-gi
 s-
@@ -1065,11 +1074,7 @@ Underfull \hbox (badness 4132) in paragraph at lines 773--775
 to
  []
 
-
-Underfull \vbox (badness 6078) has occurred while \output is active []
-
- (./V3.bbl
-[16]) [17
+[16] (./V3.bbl) [17
 
 ] (./V3.aux)
  ***********
@@ -1091,7 +1096,7 @@ Here is how much of TeX's memory you used:
  43791 multiletter control sequences out of 15000+600000
  736501 words of font info for 200 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 90i,15n,93p,2195b,505s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,15n,93p,2195b,459s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 , replaced by a fixed one
@@ -1108,7 +1113,7 @@ t/fonts/type1/public/newtx/txmiaX.pfb></usr/local/texlive/2026/texmf-dist/fonts
 ublic/newtx/ztmb.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/new
 tx/ztmr.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/newtx/ztmri.
 pfb>
-Output written on V3.pdf (17 pages, 5195840 bytes).
+Output written on V3.pdf (17 pages, 5195680 bytes).
 PDF statistics:
  685 PDF objects out of 1000 (max. 8388607)
  617 compressed objects within 7 object streams

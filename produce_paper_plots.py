@@ -395,7 +395,7 @@ ax.axvline(159, color='magenta', linestyle='--', alpha=0.6, label='Real Core Pea
 
 ax.set_xlabel('Lag (days)')
 ax.set_ylabel('Normalized Synergy $\\widehat{S}_{12}$')
-ax.set_title('Figure 8: Spurious Synergy Peaks from Seasonal Windowing (Negative Control)')
+ax.set_title('Figure 7: Spurious Synergy Peaks from Seasonal Windowing (Negative Control)')
 ax.legend(loc='lower right')
 ax.grid(True, linestyle='--', alpha=0.5)
 
