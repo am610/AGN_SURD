@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  15 JUL 2026 22:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.1)  15 JUL 2026 22:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -904,17 +904,17 @@ LaTeX Font Info:    Font shape `OT1/minntx/b/n' will be
 (Font)              scaled to size 8.0pt on input line 434.
 LaTeX Font Info:    Font shape `OT1/minntx/b/n' will be
 (Font)              scaled to size 6.0pt on input line 434.
-<figure1_light_curves.png, id=388, 781.7205pt x 493.6041pt>
+<figure1_light_curves.png, id=392, 781.7205pt x 493.6041pt>
 File: figure1_light_curves.png Graphic file (type png)
 <use figure1_light_curves.png>
 Package pdftex.def Info: figure1_light_curves.png  used on input line 465.
 (pdftex.def)             Requested size: 508.0pt x 320.7786pt.
-<figure2_surd_lag_scans.png, id=392, 855.4359pt x 782.925pt>
+<figure2_surd_lag_scans.png, id=396, 855.4359pt x 782.925pt>
 File: figure2_surd_lag_scans.png Graphic file (type png)
 <use figure2_surd_lag_scans.png>
 Package pdftex.def Info: figure2_surd_lag_scans.png  used on input line 499.
 (pdftex.def)             Requested size: 482.59845pt x 441.6964pt.
-<figure3_robustness_and_nulls.png, id=394, 926.2605pt x 386.6445pt>
+<figure3_robustness_and_nulls.png, id=398, 926.2605pt x 386.6445pt>
 File: figure3_robustness_and_nulls.png Graphic file (type png)
 <use figure3_robustness_and_nulls.png>
 Package pdftex.def Info: figure3_robustness_and_nulls.png  used on input line 5
@@ -923,11 +923,11 @@ Package pdftex.def Info: figure3_robustness_and_nulls.png  used on input line 5
 [6]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<figure4_iccf_vs_surd.png, id=418, 722.9409pt x 710.4141pt>
+<figure4_iccf_vs_surd.png, id=422, 716.1957pt x 710.4141pt>
 File: figure4_iccf_vs_surd.png Graphic file (type png)
 <use figure4_iccf_vs_surd.png>
 Package pdftex.def Info: figure4_iccf_vs_surd.png  used on input line 553.
-(pdftex.def)             Requested size: 482.59845pt x 474.22972pt.
+(pdftex.def)             Requested size: 482.59845pt x 478.70665pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -968,7 +968,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has
                                                   \__shipout_drop_firstpage_...
 l.564 \begin{itemize}
                       <./figure2_surd_lag_scans.png>]
-<figure6_javelin_posteriors.png, id=441, 703.9098pt x 709.4505pt>
+<figure6_javelin_posteriors.png, id=445, 703.9098pt x 709.4505pt>
 File: figure6_javelin_posteriors.png Graphic file (type png)
 <use figure6_javelin_posteriors.png>
 Package pdftex.def Info: figure6_javelin_posteriors.png  used on input line 576
@@ -984,9 +984,6 @@ l.600 T
  <./figure3_robustness_and_nulls.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [10
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) ha
 s been already used, duplicate ignored
@@ -995,7 +992,7 @@ s been already used, duplicate ignored
 l.609 \item \textbf
                    {Case 4: Two-Zone Response.} S1 is the prompt continuum, ...
  <./figure4_iccf_vs_surd.png>]
-<figure5_synthetic_benchmarks.png, id=463, 854.9541pt x 709.6914pt>
+<figure5_synthetic_benchmarks.png, id=467, 854.9541pt x 709.6914pt>
 File: figure5_synthetic_benchmarks.png Graphic file (type png)
 <use figure5_synthetic_benchmarks.png>
 Package pdftex.def Info: figure5_synthetic_benchmarks.png  used on input line 6
@@ -1026,36 +1023,52 @@ s been already used, duplicate ignored
                                                   \__shipout_drop_firstpage_...
 l.660 
        <./figure5_synthetic_benchmarks.png>]
-<figure7_history_conditioning.png, id=484, 925.5378pt x 384.4764pt>
+Underfull \hbox (badness 1184) in paragraph at lines 663--664
+\T1/ntxtlf/m/n/9 Lin-ear in-ter-po-la-tion across sea-sonal gaps smooths out hi
+gh-
+ []
+
+<figure8_seasonal_aliasing.png, id=488, 564.4287pt x 384.4764pt>
+File: figure8_seasonal_aliasing.png Graphic file (type png)
+<use figure8_seasonal_aliasing.png>
+Package pdftex.def Info: figure8_seasonal_aliasing.png  used on input line 670.
+
+(pdftex.def)             Requested size: 482.59845pt x 328.74246pt.
+<figure7_history_conditioning.png, id=490, 925.5378pt x 384.4764pt>
 File: figure7_history_conditioning.png Graphic file (type png)
 <use figure7_history_conditioning.png>
 Package pdftex.def Info: figure7_history_conditioning.png  used on input line 6
-65.
+97.
 (pdftex.def)             Requested size: 482.59845pt x 200.47447pt.
- [13] [14
+[13]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14
 pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.739 \item \textbf
-                   {Finite-Sample Histogram Bias:} Mutual information estima...
- <./figure7_history_conditioning.png>]
-Underfull \hbox (badness 2617) in paragraph at lines 747--749
+l.722 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.722 
+       <./figure8_seasonal_aliasing.png> <./figure7_history_conditioning.png>]
+[15]
+Underfull \hbox (badness 2617) in paragraph at lines 778--780
 \T1/ntxtlf/m/n/9 This pa-per presents the first ap-pli-ca-tion of the Syn-er-gi
 s-
  []
 
 
-Underfull \hbox (badness 4132) in paragraph at lines 747--749
+Underfull \hbox (badness 4132) in paragraph at lines 778--780
 \T1/ntxtlf/m/n/9 tic^^UUnique^^URedundant De-com-po-si-tion (SURD) al-go-rithm 
 to
  []
 
-
-Underfull \vbox (badness 3271) has occurred while \output is active []
-
- (./V3.bbl
-[15]) [16
+(./V3.bbl [16]) [17
 
 ] (./V3.aux)
  ***********
@@ -1068,16 +1081,16 @@ LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
 
 Package rerunfilecheck Info: File `V3.out' has not changed.
-(rerunfilecheck)             Checksum: BFECB696BE5EF1ED2A3780C925880067;9112.
+(rerunfilecheck)             Checksum: B474F5BB306C92DD6A9067BC887C7CC3;9522.
  ) 
 Here is how much of TeX's memory you used:
- 15312 strings out of 467525
- 224336 string characters out of 5418983
- 655697 words of memory out of 5000000
- 43781 multiletter control sequences out of 15000+600000
+ 15330 strings out of 467525
+ 224722 string characters out of 5418983
+ 657072 words of memory out of 5000000
+ 43791 multiletter control sequences out of 15000+600000
  736501 words of font info for 200 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 90i,15n,93p,2031b,505s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,15n,93p,2195b,505s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 , replaced by a fixed one
@@ -1094,10 +1107,10 @@ t/fonts/type1/public/newtx/txmiaX.pfb></usr/local/texlive/2026/texmf-dist/fonts
 ublic/newtx/ztmb.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/new
 tx/ztmr.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/newtx/ztmri.
 pfb>
-Output written on V3.pdf (16 pages, 4546428 bytes).
+Output written on V3.pdf (17 pages, 5195501 bytes).
 PDF statistics:
- 663 PDF objects out of 1000 (max. 8388607)
- 599 compressed objects within 6 object streams
- 161 named destinations out of 1000 (max. 500000)
- 300 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 685 PDF objects out of 1000 (max. 8388607)
+ 617 compressed objects within 7 object streams
+ 169 named destinations out of 1000 (max. 500000)
+ 313 words of extra memory for PDF output out of 10000 (max. 10000000)
 
