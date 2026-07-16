@@ -289,7 +289,7 @@ except Exception as e:
     print(f"Warning: Could not run realistic synthetic benchmarks automatically: {e}")
 
 # ----------------- FIGURE 7: TARGET-HISTORY CONDITIONING -----------------
-print("Generating Figure 7: Target-History Conditioning (Core Target)...")
+print("Generating Figure 8: Target-History Conditioning (Core Target)...")
 def run_conditional_collect(X, target_idx, predictor_indices, history_idx, nlag, nbins=6):
     future_target = X[target_idx, nlag:]
     pred_1 = X[predictor_indices[0], :-nlag]
@@ -373,12 +373,12 @@ ax2.legend(loc='upper right')
 ax2.grid(True, linestyle='--', alpha=0.5)
 
 plt.tight_layout()
-fig.savefig('overleaf_draft/figure7_history_conditioning.png', dpi=300)
+fig.savefig('overleaf_draft/figure8_history_conditioning.png', dpi=300)
 plt.close(fig)
-print("Figure 7: figure7_history_conditioning.png successfully created and saved in overleaf_draft/!")
+print("Figure 7: figure8_history_conditioning.png successfully created and saved in overleaf_draft/!")
 
 # ----------------- FIGURE 8: SEASONAL ALIASING NEGATIVE CONTROL -----------------
-print("Generating Figure 8: Seasonal Aliasing Negative Control...")
+print("Generating Figure 7: Seasonal Aliasing Negative Control...")
 df_alias = pd.read_csv('/Users/ayan/Programs/SURD/agn_surd_project/processed/seasonal_aliasing_null_test.csv')
 
 fig, ax = plt.subplots(figsize=(8, 5.5))
@@ -400,8 +400,8 @@ ax.legend(loc='lower right')
 ax.grid(True, linestyle='--', alpha=0.5)
 
 plt.tight_layout()
-fig.savefig('overleaf_draft/figure8_seasonal_aliasing.png', dpi=300)
+fig.savefig('overleaf_draft/figure7_seasonal_aliasing.png', dpi=300)
 plt.close(fig)
-print("Figure 8: figure8_seasonal_aliasing.png successfully created and saved in overleaf_draft/!")
+print("Figure 8: figure7_seasonal_aliasing.png successfully created and saved in overleaf_draft/!")
 
 print("All publication-quality figures successfully created and saved in overleaf_draft/!")
