@@ -24,6 +24,8 @@ tmp/
 *.fdb_latexmk
 *.fls
 *.out
+*.log
+~$*
 
 # Downloaded source documents
 audit/wanders_peterson_1996.pdf

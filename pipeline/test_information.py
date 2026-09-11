@@ -61,6 +61,21 @@ class InformationTests(unittest.TestCase):
                 if name.endswith('_error'):
                     np.testing.assert_array_equal(source[name], first[name])
 
+    def test_continuum_baseline_decomposition(self):
+        from pipeline.continuum_baseline import decompose_1d
+        # Perfect correlation
+        hist = np.diag([10, 10])
+        mi, leak, entropy = decompose_1d(hist)
+        self.assertAlmostEqual(mi, 1.0, places=8)
+        self.assertAlmostEqual(leak, 0.0, places=8)
+        self.assertAlmostEqual(entropy, 1.0, places=8)
+        # Complete independence
+        hist = np.ones((2, 2)) * 10
+        mi, leak, entropy = decompose_1d(hist)
+        self.assertAlmostEqual(mi, 0.0, places=8)
+        self.assertAlmostEqual(leak, 1.0, places=8)
+
 
 if __name__ == '__main__':
     unittest.main()
+
