@@ -1,0 +1,3 @@
+series,native_dates,source_observations,first_jd_offset,last_jd_offset,largest_gap_days
+continuum,557,557,47512.0,49243.66,89.0
+line,226,247,47512.0,49255.0,105.0

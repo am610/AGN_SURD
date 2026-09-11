@@ -2,6 +2,12 @@
   "status": "Task 3 Detection Power and False Positive Calibration Grid Completed",
   "detection_threshold_bits": 0.19020175597418215,
   "false_positive_rate": 0.06,
+  "false_positive_rate_ci": [
+    0.02061497034897397,
+    0.16217091688838173
+  ],
+  "threshold_calibration_realizations": 50,
+  "false_positive_evaluation_realizations": 50,
   "tolerance_days": 3,
   "grid_amplitudes": [
     0.0,
@@ -16,5 +22,9 @@
     20,
     30
   ],
-  "realizations_per_cell": 50
+  "realizations_per_cell": 50,
+  "response_width_days": 5.0,
+  "process_timescale_days": 50.0,
+  "noise_scale": 1.0,
+  "amplitude_definition": "linear mixing coefficient, not fraction of response variance"
 }

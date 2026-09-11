@@ -613,20 +613,20 @@ Under within-season sampling, the peak lags and mutual information values are id
 \hline
 \textbf{Target Component} & \textbf{Method} & \textbf{Peak Lag (d)} & \textbf{Peak MI (bits)} & \textbf{Null 95\% (bits)} & $\boldsymbol{p}_{\mathbf{global}}$ & \textbf{Leak Minimum (d)} \\
 \hline
-Blue Wing H\(\beta\) & Gap-limited & 16 & 0.473 & 0.413 & 0.0099 & 16 (0.762) \\
-Core H\(\beta\)      & Gap-limited & 15 & 0.719 & 0.489 & 0.0099 & 15 (0.637) \\
-Red Wing H\(\beta\)  & Gap-limited & 23 & 0.326 & 0.433 & 0.2178 & 23 (0.834) \\
+Blue Wing H\(\beta\) & Gap-limited & 16 & 0.473 & 0.425 & 0.009 & 16 (0.762) \\
+Core H\(\beta\)      & Gap-limited & 15 & 0.719 & 0.494 & 0.001 & 15 (0.637) \\
+Red Wing H\(\beta\)  & Gap-limited & 23 & 0.326 & 0.436 & 0.228 & 23 (0.834) \\
 \hline
 Blue Wing H\(\beta\) & Daily       & 20 & 0.446 & --    & --     & 20 (0.776) \\
 Core H\(\beta\)      & Daily       & 16 & 0.660 & --    & --     & 16 (0.660) \\
 Red Wing H\(\beta\)  & Daily       & 13 & 0.265 & --    & --     & 13 (0.867) \\
 \hline
 \end{tabular}
-\caption{One-predictor continuum baseline lag recovery and significance calibration across 201 lags ($0$--$200$~d). Statistical significance is evaluated against $N=100$ circular-shift surrogates of the 5100~\AA\ continuum. Prompt peaks for the Blue Wing (16~d) and Line Core (15~d) are globally significant ($p_{\mathrm{global}} < 0.01$), while the Red Wing peak (23~d) lies within the 95th percentile null envelope.}
+\caption{One-predictor continuum baseline lag recovery and significance calibration across 201 lags ($0$--$200$~d). Statistical significance is evaluated against $N=999$ circular-shift surrogates. Each global value controls the lag scan for one target. Benjamini--Hochberg adjustment across the three target-level tests gives $q=0.0135$, $0.003$, and $0.228$ for Blue, Core, and Red.}
 \label{tab:continuum_baseline}
 \end{table*}
 
-We calibrate statistical significance using $N=100$ circular-shift null realizations of the continuum light curve, evaluating the scan-wide maximum-statistic distribution. Crucially, the prompt peaks for the Blue Wing ($16$~d) and Line Core ($15$~d) are \textbf{globally statistically significant} ($p_{\mathrm{global}} = 0.0099$, $p < 0.01$). In contrast, the Red Wing peak ($23$~d) falls within the 95th percentile null maximum ($0.433$~bits, $p_{\mathrm{global}} = 0.218$), consistent with its broader cross-correlation profile.
+We calibrate significance using $N=999$ circular-shift null realizations and the scan-wide maximum statistic. Blue has $p_{\mathrm{global}}=0.009$ and $q=0.0135$, while Core has $p_{\mathrm{global}}=0.001$ and $q=0.003$. Red lies within the null distribution ($p_{\mathrm{global}}=q=0.228$). These statements apply to the selected gap-limited estimator and null; they do not correct across every exploratory sampling and estimator choice in the repository.
 
 In synthetic simulations with an injected 20-day delay, the one-predictor continuum baseline cleanly recovers the true delay ($17$--$22$~d) across all four random seeds and all sampling methods. This establishes a key methodological insight: mutual information is fully capable of resolving prompt reverberation delays, but the unconditioned three-predictor SURD setup suffers from inter-line cross-correlations that create spurious long-lag maxima when line components are used as predictors of one another.
 
@@ -639,7 +639,7 @@ We simulate synthetic Damped Random Walk (DRW) continuum drivers ($\tau_{\mathrm
 \begin{equation}
 y(t) = A \cdot \bar{x}_{\mathrm{delayed}}(t) + (1 - A) \cdot \eta_{\mathrm{indep}}(t),
 \end{equation}
-where $A \in [0.0, 1.0]$ is the coherent response amplitude, $\bar{x}_{\mathrm{delayed}}(t)$ is the continuum driver convolved with a top-hat transfer function of width 5~d centered at delay $\tau_{\mathrm{true}}$, and $\eta_{\mathrm{indep}}(t)$ is an independent red-noise process representing autonomous line variability. The simulated signals are sampled at the exact 224 spectroscopic dates and 557 continuum dates of the adopted NGC~5548 dataset, with Gaussian noise added according to observed photometric uncertainties. We evaluate a parameter grid spanning response amplitudes $A \in \{0.0, 0.2, 0.4, 0.6, 0.8, 1.0\}$ and true delays $\tau_{\mathrm{true}} \in \{10, 20, 30\}$~d, executing $N=50$ independent Monte Carlo realizations per cell (800 total realizations).
+where $A \in [0.0, 1.0]$ is a linear mixing coefficient rather than a fraction of response variance, $\bar{x}_{\mathrm{delayed}}(t)$ is the continuum driver convolved with a top-hat transfer function of width 5~d centered at delay $\tau_{\mathrm{true}}$, and $\eta_{\mathrm{indep}}(t)$ is an independent red-noise process. The simulations use the exact adopted observation dates and reported uncertainties. We evaluate $A \in \{0.0, 0.2, 0.4, 0.6, 0.8, 1.0\}$ and $\tau_{\mathrm{true}} \in \{10, 20, 30\}$~d with 50 realizations per injected cell. Fifty null realizations calibrate the threshold and a separate fifty evaluate its false positive rate, giving 850 central-grid realizations.
 
 \begin{table*}
 \centering
@@ -647,50 +647,50 @@ where $A \in [0.0, 1.0]$ is the coherent response amplitude, $\bar{x}_{\mathrm{d
 \hline
 \textbf{Amplitude} $A$ & \textbf{True Lag $\tau$ (d)} & \textbf{Detection Power} & \textbf{Recovery $\le 3$~d} & \textbf{Lag Bias (d)} & \textbf{Lag RMSE (d)} & \textbf{Mean Peak MI (bits)} \\
 \hline
-0.0 (Null) & -- & 0.06 & -- & -- & -- & 0.111 \\
+0.0 (Null) & -- & 0.06 & -- & -- & -- & 0.115 \\
 \hline
-0.2 & 10 & 0.02 & 0.08 & $+24.46$ & 31.11 & 0.127 \\
-0.2 & 20 & 0.02 & 0.18 & $+10.46$ & 23.67 & 0.123 \\
-0.2 & 30 & 0.08 & 0.16 & $+4.78$  & 19.31 & 0.149 \\
+0.2 & 10 & 0.04 & 0.14 & $+17.78$ & 27.54 & 0.124 \\
+0.2 & 20 & 0.12 & 0.28 & $+11.94$ & 22.03 & 0.151 \\
+0.2 & 30 & 0.04 & 0.20 & $+7.06$  & 18.37 & 0.127 \\
 \hline
-0.4 & 10 & 0.44 & 0.68 & $+5.86$  & 16.27 & 0.223 \\
-0.4 & 20 & 0.36 & 0.54 & $+1.74$  & 10.61 & 0.234 \\
-0.4 & 30 & 0.38 & 0.58 & $+2.46$  & 10.81 & 0.264 \\
+0.4 & 10 & 0.40 & 0.56 & $+4.28$  & 12.98 & 0.238 \\
+0.4 & 20 & 0.40 & 0.60 & $+3.00$  & 12.41 & 0.259 \\
+0.4 & 30 & 0.40 & 0.60 & $+1.16$  & 12.22 & 0.235 \\
 \hline
-0.6 & 10 & 0.96 & 0.96 & $+0.00$  & 1.40  & 0.502 \\
-0.6 & 20 & 0.96 & 0.96 & $+0.38$  & 1.75  & 0.527 \\
-0.6 & 30 & 0.96 & 0.96 & $-0.04$  & 1.54  & 0.513 \\
+0.6 & 10 & 0.92 & 0.92 & $-0.26$  & 1.84  & 0.520 \\
+0.6 & 20 & 0.98 & 0.98 & $+0.24$  & 1.47  & 0.502 \\
+0.6 & 30 & 1.00 & 1.00 & $-0.40$  & 1.39  & 0.557 \\
 \hline
-0.8 & 10 & 1.00 & 1.00 & $+0.12$  & 0.92  & 0.873 \\
-0.8 & 20 & 1.00 & 1.00 & $+0.00$  & 1.10  & 0.904 \\
-0.8 & 30 & 1.00 & 1.00 & $-0.02$  & 0.97  & 0.884 \\
+0.8 & 10 & 1.00 & 1.00 & $+0.08$  & 0.80  & 0.899 \\
+0.8 & 20 & 1.00 & 1.00 & $-0.26$  & 1.05  & 0.885 \\
+0.8 & 30 & 1.00 & 1.00 & $-0.02$  & 0.71  & 0.879 \\
 \hline
-1.0 & 10 & 1.00 & 1.00 & $+0.06$  & 0.71  & 1.027 \\
-1.0 & 20 & 1.00 & 1.00 & $-0.08$  & 0.87  & 1.024 \\
-1.0 & 30 & 1.00 & 1.00 & $-0.26$  & 0.84  & 1.025 \\
+1.0 & 10 & 1.00 & 1.00 & $+0.14$  & 0.68  & 1.020 \\
+1.0 & 20 & 1.00 & 1.00 & $+0.04$  & 0.72  & 1.019 \\
+1.0 & 30 & 1.00 & 1.00 & $-0.02$  & 0.76  & 1.021 \\
 \hline
 \end{tabular}
-\caption{Detection power, false positive calibration, and lag recovery error across an amplitude-delay grid ($N=50$ realizations per cell). Detection is defined as recovery within $\pm 3$~d of the true delay with peak MI exceeding the empirical 95\% null threshold ($0.1902$~bits). The empirical false positive rate under the null ($A=0.0$) is $0.06$.}
+\caption{Detection power and lag recovery across the central grid. Independent null samples calibrate and evaluate the threshold. The false positive estimate is $0.06$, with a 95\% Wilson interval from $0.021$ to $0.162$.}
 \label{tab:detection_power}
 \end{table*}
 
 \begin{figure*}
 \centering
 \includegraphics[width=0.95\textwidth]{figure12_detection_power.png}
-\caption{Detection power (left) and lag recovery root-mean-square error (right) as a function of response amplitude $A$ across delays $\tau_{\mathrm{true}} \in \{10, 20, 30\}$~d. Dotted horizontal line marks the nominal 5\% false positive rate under the null ($A=0.0$). A coherent response amplitude $A \ge 0.5$--$0.6$ is required to achieve $\ge 90\%$ detection power and lag RMSE $< 2.0$~d under the NGC~5548 observing cadence.}
+\caption{Detection power and lag RMSE as a function of the linear mixing coefficient $A$. At $A=0.6$, power ranges from $0.92$ to $1.00$, while its 95\% Wilson lower bounds range from $0.812$ to $0.929$.}
 \label{fig:detection_power}
 \end{figure*}
 
-Under the pure null hypothesis ($A = 0.0$, where line variability is completely independent of the continuum), the empirical 95th percentile of the scan-wide maximum MI is $0.1902$~bits. The empirical false positive rate at this decision threshold is $\mathrm{FPR} = 0.06$ (3 of 50 realizations exceed the threshold), in excellent agreement with the nominal 5\% design level.
+Under the pure null hypothesis, the empirical 95th percentile of the calibration maximum MI is $0.1902$~bits. Three of fifty independent evaluation realizations exceed it, giving $\mathrm{FPR}=0.06$ with a wide 95\% Wilson interval of $0.021$--$0.162$. The point estimate is compatible with the nominal level but is not a precise calibration result.
 
 Table~\ref{tab:detection_power} and Figure~\ref{fig:detection_power} reveal a sharp detection boundary:
 \begin{enumerate}
     \item \textbf{Sub-threshold Regime ($A \le 0.2$):} Detection power is negligible ($2\%$--$8\%$), and lag RMSE is large ($19$--$31$~d). The recovered peaks are scattered uniformly across the scan window by sample noise and interpolation trends.
     \item \textbf{Intermediate Transition ($A = 0.4$):} Detection power rises to $36\%$--$44\%$, with $54\%$--$68\%$ of realizations locating the lag within $\pm 3$~d. Lag RMSE drops to $10$--$16$~d.
-    \item \textbf{High-Confidence Recovery ($A \ge 0.6$):} Detection power reaches $96\%$ across all tested delays. The true delay is recovered within $\pm 3$~d in $96\%$ of realizations, lag bias is negligible ($-0.04$ to $+0.38$~d), and lag RMSE is only $1.4$--$1.7$~d.
+    \item \textbf{High-response regime ($A \ge 0.6$):} At $A=0.6$, power is $0.92$--$1.00$ and lag RMSE is $1.39$--$1.84$~d. At $A\ge0.8$, every central-grid realization is detected, although finite-simulation intervals remain necessary.
     \item \textbf{Asymptotic Precision ($A \ge 0.8$):} Detection power reaches $100\%$, with lag RMSE $< 1.1$~d and mean peak mutual information exceeding $0.87$~bits.
 \end{enumerate}
-This benchmark defines the observational sensitivity envelope for NGC~5548: a physical reverberation response must contribute at least $50\%$--$60\%$ of the total line variance ($A \gtrsim 0.5$--$0.6$) to be reliably detected ($> 90\%$ power) and positioned within $\pm 2$~d.
+This benchmark provides an exploratory sensitivity envelope for the stipulated simulator. One-factor runs over response widths of 2 and 10~d, process timescales of 30 and 100~d, and noise scales of 0.5 and 2 show material model dependence. The 100~d process gives only $0.84$ power at $A=0.6$ for all three delays. Larger evaluation samples are needed before fixing a universal detection boundary.
 
 \subsection{Testing Incremental Velocity Information and Kinematic Coupling}
 \label{sec:incremental_information}
@@ -707,24 +707,24 @@ If $H_0$ holds, the observed correlations between velocity components are fully 
 \hline
 \textbf{Target} $Y$ & \textbf{Candidate Wing} $X_{\mathrm{wing}}$ & \textbf{Peak Lag (d)} & \textbf{Peak CMI (bits)} & \textbf{Null 95\% (bits)} & $\boldsymbol{p}_{\mathbf{global}}$ & $\boldsymbol{\Delta R^2_{\mathrm{held\text{-}out}}}$ \\
 \hline
-Core H\(\beta\)     & Blue Wing (discrete)   & 96 & 0.218 & 0.419 & 0.903 & $+0.017$ \\
-Core H\(\beta\)     & Blue Wing (KNN $k=5$)   & 58 & 0.164 & 0.500 & 1.000 & -- \\
-Core H\(\beta\)     & Red Wing (discrete)    & 100 & 0.192 & 0.360 & 1.000 & $-0.213$ \\
-Core H\(\beta\)     & Red Wing (KNN $k=5$)    & 91 & 0.213 & 0.384 & 0.968 & -- \\
-Red Wing H\(\beta\)  & Blue Wing (Outflow, discrete) & 39 & 0.211 & 0.345 & 0.903 & -- \\
-Red Wing H\(\beta\)  & Blue Wing (Outflow, KNN)      & 30 & 0.271 & 0.351 & 0.677 & -- \\
-Blue Wing H\(\beta\) & Red Wing (Inflow, discrete)  & 34 & 0.253 & 0.409 & 0.968 & $-0.053$ \\
-Blue Wing H\(\beta\) & Red Wing (Inflow, KNN)       & 97 & 0.349 & 0.453 & 0.613 & -- \\
+Core H\(\beta\)     & Blue Wing (discrete)   & 96 & 0.218 & 0.438 & 0.911 & $-0.031$ \\
+Core H\(\beta\)     & Blue Wing (KNN $k=5$)   & 43 & 0.156 & 0.322 & 1.000 & -- \\
+Core H\(\beta\)     & Red Wing (discrete)    & 100 & 0.192 & 0.378 & 1.000 & $-0.058$ \\
+Core H\(\beta\)     & Red Wing (KNN $k=5$)    & 52 & 0.233 & 0.306 & 0.644 & -- \\
+Red Wing H\(\beta\)  & Blue Wing (Outflow, discrete) & 39 & 0.211 & 0.334 & 0.832 & $-0.187$ \\
+Red Wing H\(\beta\)  & Blue Wing (Outflow, KNN)      & 30 & 0.128 & 0.214 & 0.782 & -- \\
+Blue Wing H\(\beta\) & Red Wing (Inflow, discrete)  & 34 & 0.253 & 0.419 & 0.941 & $-0.102$ \\
+Blue Wing H\(\beta\) & Red Wing (Inflow, KNN)       & 97 & 0.281 & 0.338 & 0.525 & -- \\
 \hline
 \end{tabular}
-\caption{Tests of incremental predictive information conditioned on the continuum driver $F_{5100}(t)$ and target history $Y(t)$. Global empirical $p$-values are evaluated against 30 circular-shift surrogates that strictly preserve the $(Y(t+\tau), F_{5100}(t), Y(t))$ distribution while randomizing $X_{\mathrm{wing}}$. Out-of-sample $\Delta R^2_{\mathrm{held\text{-}out}}$ represents the change in predictive variance on held-out observing seasons. None of the directional kinematic hypotheses survives conditioning.}
+\caption{Tests of incremental predictive information conditioned on the continuum driver and target history. Global values use 100 circular-shift surrogates. Continuous variables are standardized before KSG neighbour searches. The final column is the sample-count-weighted change in predictive $R^2$ at the pre-specified 15~d lag across the two native-gap-defined segments. It is a limited diagnostic rather than independent confirmation.}
 \label{tab:incremental_information}
 \end{table*}
 
 \begin{figure*}
 \centering
 \includegraphics[width=0.98\textwidth]{figure13_incremental_information.png}
-\caption{Conditional mutual information scans testing incremental velocity-component coupling. Solid curves show observed conditional mutual information $I(Y(t+\tau); X_{\mathrm{wing}}(t) \mid F_{5100}(t), Y(t))$ for discrete quantile histograms (blue) and continuous Kraskov KNN ($k=5$, green). Shaded bands and dashed lines represent the pointwise 95\% surrogate envelope and median from circular-shift realizations preserving the continuum and target history. In all four directional configurations, the observed curves lie well within their null envelopes ($p_{\mathrm{global}} \ge 0.61$--$1.00$).}
+\caption{Observed conditional mutual information scans for discrete quantile histograms (blue) and standardized continuous KSG estimation (red). The plotted curves are descriptive; scan-wide significance is obtained from surrogate maxima and reported in Table~\ref{tab:incremental_information}. Every tested directional configuration is non-significant under both estimators.}
 \label{fig:incremental_information}
 \end{figure*}
 
@@ -735,16 +735,30 @@ We test four directional configurations:
     \item \textbf{Blue $\to$ Red (Outflow):} Testing whether the blueshifted wing leads and predicts the redshifted wing.
     \item \textbf{Red $\to$ Blue (Inflow):} Testing whether the redshifted wing leads and predicts the blueshifted wing.
 \end{enumerate}
-We evaluate conditional mutual information using both a discrete 3-bin quantile histogram estimator and a continuous Kraskov--St{\"o}gbauer--Grassberger (KSG, $k=5$) nearest-neighbor estimator. Statistical significance is determined using $N=30$ circular-shift surrogates in which $X_{\mathrm{wing}}$ is rolled while keeping the joint target-continuum pair $(Y(t+\tau), F_{5100}(t), Y(t))$ intact. Furthermore, we perform a leave-one-season-out predictive cross-validation, training a linear autoregressive predictor on four observing seasons and testing on the held-out season to record the change in out-of-sample explained variance $\Delta R^2$ when $X_{\mathrm{wing}}$ is added to the baseline.
+We use a discrete 3-bin quantile estimator and a KSG estimator with $k=5$. Every KSG marginal is standardized before the scale-sensitive Chebyshev neighbour search. Significance uses $N=100$ circular-shift surrogates in which the candidate component is rolled while the target, continuum, and target history remain fixed. Native gaps longer than 60~d define two predictive validation segments, tuples cannot cross their boundary, and the candidate is evaluated at a pre-specified lag of 15~d. With only two segments, this check has low inferential resolution.
 
-Table~\ref{tab:incremental_information} and Figure~\ref{fig:incremental_information} demonstrate an unambiguous result: \textbf{once conditioned on the continuum driver and target autocorrelation, no velocity wing provides statistically significant incremental information about any other component}. Every directional scan yields a global $p$-value $p_{\mathrm{global}} \ge 0.61$--$1.00$ under both discrete and continuous estimators:
+Table~\ref{tab:incremental_information} and Figure~\ref{fig:incremental_information} show that no tested velocity wing has significant incremental information under the declared circular-shift null. This is evidence of nondetection, not proof that physical transport is absent:
 \begin{itemize}
-    \item Blue $\to$ Core: discrete $p_{\mathrm{global}} = 0.903$, KNN $p_{\mathrm{global}} = 1.000$, $\Delta R^2 = +0.017$.
-    \item Red $\to$ Core: discrete $p_{\mathrm{global}} = 1.000$, KNN $p_{\mathrm{global}} = 0.968$, $\Delta R^2 = -0.213$ (adding the Red wing degrades predictive accuracy).
-    \item Outflow (Blue $\to$ Red): discrete $p_{\mathrm{global}} = 0.903$, KNN $p_{\mathrm{global}} = 0.677$.
-    \item Inflow (Red $\to$ Blue): discrete $p_{\mathrm{global}} = 0.968$, KNN $p_{\mathrm{global}} = 0.613$, $\Delta R^2 = -0.053$.
+    \item Blue $\to$ Core: discrete $p_{\mathrm{global}} = 0.911$, KNN $p_{\mathrm{global}} = 1.000$.
+    \item Red $\to$ Core: discrete $p_{\mathrm{global}} = 1.000$, KNN $p_{\mathrm{global}} = 0.644$.
+    \item Outflow (Blue $\to$ Red): discrete $p_{\mathrm{global}} = 0.832$, KNN $p_{\mathrm{global}} = 0.782$.
+    \item Inflow (Red $\to$ Blue): discrete $p_{\mathrm{global}} = 0.941$, KNN $p_{\mathrm{global}} = 0.525$.
 \end{itemize}
-Held-out out-of-sample predictive performance confirms this finding: adding a second velocity wing fails to improve predictive generalization, producing zero or negative $\Delta R^2$ across observing seasons. We conclude that the 1988--1993 NGC~5548 campaign data provide no evidence for direct kinematic coupling or directional gas transfer between velocity components; the observed multi-component variability is fully consistent with independent responses to a single ionizing continuum driver.
+The two-segment predictive diagnostic gives weighted $\Delta R^2$ values from $-0.187$ to $-0.031$. The interval for Red predicting Blue crosses zero, and two segments are insufficient for a strong generalization claim. We conclude only that this aggregate campaign yields no significant directional CMI under the tested null. It neither detects nor refutes physical gas transport.
+
+\subsection{Unequal Predictor Lag Configurations}
+\label{sec:unequal_lags}
+
+Equation~3.18 of the SURD formulation permits a distinct delay for every predictor. We evaluate common-lag, symmetric virial, blue-leading, and red-leading response-phase configurations for every target in two four-variable sets: continuum plus the three line components, and integrated H\(\beta\) plus the three line components. Predictor lags are defined relative to the response phase assigned to the selected target, so signed offsets are retained rather than silently clipping physically reversed orderings.
+
+\begin{figure*}
+\centering
+\includegraphics[width=0.95\textwidth]{figure15_asymmetric_lags.png}
+\caption{Core-target normalized synergy and information leakage for four unequal-lag configurations. The complete saved table includes every target in both four-variable sets. These curves are descriptive because an unequal-lag maximum-statistic null has not yet been calibrated.}
+\label{fig:unequal_lags}
+\end{figure*}
+
+The corrected configurations are not equivalent to the common-lag control. Nevertheless, their synergy maxima remain broad and occur mainly near the upper portion of the 60~d base-lag scan, while leak minima are generally prompt. Without a pre-specified configuration family and matched null distribution, these differences cannot identify virial, inflow, or outflow geometry.
 
 \subsection{Synthetic Benchmark Demonstrations}
 \label{sec:synthetic_benchmarks}
@@ -981,12 +995,12 @@ The results in Section~\ref{sec:results} reveal a discrepancy between native-cad
 
 The H\(\beta\) reverberation lag of NGC~5548 is historically reported near tens of days (e.g., $15.6 \pm 0.5$ days during the high-cadence AGN STORM campaign \cite{Pei2017}). Our blue and core ICCF centroid distributions are prompt, while the red-wing function has a 15-d peak but a broad shoulder that moves its centroid to approximately 30~d. These summaries support a prompt reverberating response but do not by themselves determine BLR geometry or a velocity ordering. More detailed line-shape and delay-profile modelling motivates multicomponent descriptions \citep{LongDexter2025}.
 
-Crucially, our one-predictor continuum baseline analysis (Section~\ref{sec:continuum_baseline}) demonstrates that information theory is fully capable of identifying this physical prompt reverberation scale: the mutual information $I(Y(t); F_{5100}(t-\tau))$ identifies peaks at 16~d for the Blue Wing and 15~d for the Line Core that are globally statistically significant ($p_{\mathrm{global}} = 0.0099$). In contrast, the unconditioned three-predictor SURD maxima occur at much longer timescales (128 days for the Core, 93 days for the Blue Wing, and 198 days for the Red Wing). The matched nulls and negative controls require these long-lag maxima to be interpreted against estimator and sampling effects rather than as direct physical delays:
+Our one-predictor continuum baseline identifies prompt peaks at 16~d for the Blue Wing and 15~d for the Line Core. With 999 surrogates, their lag-scan global values are $0.009$ and $0.001$, and their three-target adjusted values are $0.0135$ and $0.003$. The long three-predictor maxima require interpretation against estimator and sampling effects rather than as physical delays:
 \begin{enumerate}
 \item \textbf{Extended Geometry:} Extended geometry or non-linear photoionization reprocessing could in principle contribute to long-timescale dependence. However, the matched independent-red-noise control reproduces comparable maxima under the same dimensionality and estimator. The observed maxima therefore do not require a physical long-lag component.
 \item \textbf{Non-linear Reprocessing:} Non-linear reprocessing cannot be inferred from peak amplitude alone because the matched fully independent controls have median normalized total synergy near 0.8, matching or exceeding the real-data amplitudes.
 \item \textbf{Estimator and Sampling Effects:} Four-dimensional histogram sparsity, red-noise structure, the observing window, interpolation, and normalization are jointly sufficient to reproduce unstable maxima. The migration of the three-predictor maxima to long lags is an artifact of cross-line predictor collinearity and seasonal red-noise aliasing.
-\item \textbf{Observational Sensitivity Boundaries:} Our detection power calibration (Section~\ref{sec:detection_power}) establishes that responses with coherent amplitude $A \ge 0.5$--$0.6$ are recovered with $>90\%$ power and lag RMSE $< 1.7$~d under the NGC~5548 sampling cadence. Weaker responses ($A \le 0.4$) fall into the noise floor and produce unconstrained lag estimates.
+\item \textbf{Observational Sensitivity Boundaries:} In the central simulator, $A=0.6$ gives power from $0.92$ to $1.00$. One-factor sensitivity runs show weaker performance for a 100~d process timescale, so $A$ is not a universal threshold and is not a variance fraction.
 \end{enumerate}
 
 \subsection{Comparison with 2023 Reverberation Mapping and Kinematic Evolution}
@@ -1000,7 +1014,7 @@ However, \citet{Xi2025} show that the velocity-resolved H\(\beta\) lag profile o
     \item \textbf{Inflow-like (e.g., 2019, 2021):} A red-leading-blue asymmetry where the redshifted wing responds earlier ($\tau_{\mathrm{red}} < \tau_{\mathrm{blue}}$), indicating radial inflow.
     \item \textbf{Outflow-like (e.g., 2020, 2023):} A blue-leading-red asymmetry ($\tau_{\mathrm{blue}} < \tau_{\mathrm{red}}$), indicating radial outflow or wind-driven gas.
 \end{itemize}
-Our incremental predictive information tests (Section~\ref{sec:incremental_information}) directly evaluate whether these kinematic coupling mechanisms operate as persistent directional information channels over the 5-year campaign. When conditioned on the continuum driver and the target component's own red-noise history, neither wing provides statistically significant predictive information about any other component ($p_{\mathrm{global}} \ge 0.61$--$1.00$). Held-out season predictions yield non-positive $\Delta R^2$, confirming that adding inter-line predictors provides no out-of-sample predictive gain. Thus, while individual observing seasons may exhibit transient velocity-resolved asymmetries, the multi-year aggregate data are fully consistent with autonomous BLR sub-regions responding independently to the central ionizing source without detectable mass or information transfer between velocity components.
+Our incremental tests ask whether these kinematic patterns appear as persistent directional information over the historical aggregate campaign. No tested direction is significant under either estimator, with global values from $0.525$ to $1.000$. The native gap rule yields only two predictive validation segments, so their negative weighted changes in $R^2$ are diagnostics rather than decisive confirmation. These results do not test the later Xi et al. seasons and do not refute transient or season-specific transport.
 
 \subsection{Scope of the Information-Decomposition Framework}
 \label{sec:novelty_framework}
@@ -1055,9 +1069,9 @@ This paper presents an application of the Synergistic--Unique--Redundant Decompo
 \begin{enumerate}
 \item The strict-overlap preprocessing pipeline limits edge effects and delivers a synchronized dataset over the JD offset 47512--49255 window.
 \item In the exactly matched 999-realization circular-shift analysis, no lag survives empirical Benjamini--Hochberg correction and the four global maximum-statistic p-values are 0.873--1.000. The range-dependent SURD maxima therefore provide no significant evidence for physical long-lag delays.
-\item In contrast to the three-predictor SURD scans, a one-predictor continuum baseline $I(Y(t); F_{5100}(t-\tau))$ cleanly recovers prompt reverberation peaks at 16~d for the Blue Wing and 15~d for the Line Core that are globally statistically significant ($p_{\mathrm{global}} = 0.0099$). This confirms that information theory reliably identifies prompt reverberation, while isolating the 93--198~d SURD peaks as artifacts of inter-line cross-correlations.
-\item Detection power calibration across an amplitude-delay grid ($N=800$ realizations) with realistic NGC~5548 observational noise and dates establishes that a coherent response amplitude $A \ge 0.5$--$0.6$ is required to achieve $\ge 90\%$ detection power and lag recovery RMSE $< 1.7$~d. Signals below $A \approx 0.4$ fall into the observational noise floor, while the false positive rate under the null ($A=0.0$) matches nominal expectation at 6\%.
-\item Tests of incremental predictive information $I(Y(t+\tau); X_{\mathrm{wing}}(t) \mid F_{5100}(t), Y(t))$ directly refute persistent directional kinematic transport (inflow or outflow) between velocity components in this campaign: every directional scan yields a global $p$-value $p_{\mathrm{global}} \ge 0.61$--$1.00$ under both discrete and continuous KSG estimators, and out-of-sample held-out season predictions yield non-positive $\Delta R^2$.
+\item The one-predictor continuum baseline recovers prompt peaks at 16~d for Blue and 15~d for Core. With 999 surrogates, their lag-scan global values are $0.009$ and $0.001$, and their three-target adjusted values are $0.0135$ and $0.003$. Red is not significant at $0.228$.
+\item The central detection grid uses 850 realizations with separate null calibration and evaluation samples. At $A=0.6$, power is $0.92$--$1.00$ and lag RMSE is $1.39$--$1.84$~d, but confidence intervals and process-timescale sensitivities preclude a universal threshold claim. The parameter $A$ is a mixing coefficient, not a variance percentage.
+\item Every tested incremental directional scan is non-significant under both discrete and standardized KSG estimators. The two-segment prediction diagnostic is too limited to refute physical transport, so the supported conclusion is nondetection under the declared aggregate null.
 \item Native-cadence bidirectional ICCF gives FR/RSS centroid lags of approximately 19, 23, and 30~d for the blue, core, and red components, whereas the non-significant SURD maxima occur at 93--198~d. These statistics have different estimands and must not be interpreted as competing lag measurements.
 \item Matched independent-red-noise ablations reproduce unstable normalized maxima with complete data and after applying the observing mask and interpolation. Histogram dimensionality, red-noise structure, sampling, interpolation, and normalization are jointly sufficient; the experiment does not identify one ingredient as the unique cause.
 \item The minimum information leak for the line targets occurs at 1--9 days, much shorter than the SURD synergy maxima, but the leak minimum is not stable enough to treat as a precise lag measurement on its own. In the separate 1--120~d core-target conditioning test, the default conditioned maximum occurs at 73~d and is globally insignificant ($p_{\mathrm{global}} = 0.9802$). Across 3--8 equal-width and quantile bins, the maximum moves from 37 to 102~d, cell occupancy deteriorates, and every auxiliary global test remains non-significant ($p_{\mathrm{global}}=0.64$--1.00).

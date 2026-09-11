@@ -119,6 +119,19 @@ def cmi_ksg(y, x, z, k=5):
     x = np.asarray(x, dtype=float)[:, None] if x.ndim == 1 else x
     z = np.asarray(z, dtype=float)[:, None] if z.ndim == 1 else z
 
+    # The Chebyshev metric is scale sensitive at finite sample size.  Standardize
+    # every marginal before the neighbour search so flux units do not determine
+    # which dimension sets the joint radius.
+    def standardize(values):
+        center = np.mean(values, axis=0)
+        spread = np.std(values, axis=0, ddof=1)
+        spread = np.where(np.isfinite(spread) & (spread > 0), spread, 1.0)
+        return (values - center) / spread
+
+    y = standardize(y)
+    x = standardize(x)
+    z = standardize(z)
+
     # Slight deterministic jitter to break exact interpolation ties
     n_samples = len(y)
     scale = np.maximum(np.std(x, axis=0), 1.0)
@@ -262,39 +275,42 @@ def calibrate_incremental_null(grid, target='core', candidate='blue', conditions
 # 5. Out-of-Sample Held-Out Season Prediction Test
 # -----------------------------------------------------------------------------
 
-def evaluate_heldout_seasons(grid, target='core', candidate='blue', conditions=['continuum', 'core'], lag=15):
-    """Test out-of-sample predictive improvement by holding out each observing season."""
-    # Label seasons based on gaps > 60 days
-    t_vals = grid['time'].to_numpy()
-    diffs = np.diff(t_vals)
-    # Find season break indices where gap > 60 days in observations
-    season_breaks = [0] + list(np.where(diffs > 1.5)[0] + 1) + [len(grid)]
-    # In uniform grid, gaps appear as NaNs in data
-    valid_any = np.isfinite(grid[target])
-    # Identify contiguous blocks of non-NaNs
-    changes = np.diff(np.r_[0, valid_any.astype(int), 0])
-    starts = np.where(changes == 1)[0]
-    ends = np.where(changes == -1)[0]
+def observing_season_labels(times, observed_times, boundary_gap_days=60):
+    """Assign times to seasons defined only by gaps in native observations."""
+    times = np.asarray(times, dtype=float)
+    observed_times = np.asarray(observed_times, dtype=float)
+    breaks = np.where(np.diff(observed_times) > boundary_gap_days)[0]
+    edges = (observed_times[breaks] + observed_times[breaks + 1]) / 2.0
+    labels = np.searchsorted(edges, times).astype(int)
+    labels[(times < observed_times[0]) | (times > observed_times[-1])] = -1
+    return labels
 
-    # Map each time point to a season index
-    season_labels = np.zeros(len(grid), dtype=int)
-    for s_id, (st, en) in enumerate(zip(starts, ends)):
-        season_labels[st:en] = s_id
+
+def evaluate_heldout_seasons(grid, observed_times, boundary_gap_days=60,
+                             target='core', candidate='blue',
+                             conditions=['continuum', 'core'], lag=15):
+    """Test out-of-sample predictive improvement by holding out each observing season."""
+    t_vals = grid['time'].to_numpy()
+    season_labels = observing_season_labels(
+        t_vals, observed_times, boundary_gap_days=boundary_gap_days
+    )
 
     # Align data at lag
     y_fut = grid[target].iloc[lag:].to_numpy()
     x_cand = grid[candidate].iloc[:-lag].to_numpy()
     z_base = np.column_stack([grid[c].iloc[:-lag].to_numpy() for c in conditions])
-    seasons = season_labels[lag:]
+    target_seasons = season_labels[lag:]
+    predictor_seasons = season_labels[:-lag]
 
     valid = np.isfinite(y_fut) & np.isfinite(x_cand)
     for j in range(z_base.shape[1]):
         valid &= np.isfinite(z_base[:, j])
+    valid &= (target_seasons >= 0) & (target_seasons == predictor_seasons)
 
     y_fut = y_fut[valid]
     x_cand = x_cand[valid]
     z_base = z_base[valid]
-    seasons = seasons[valid]
+    seasons = target_seasons[valid]
 
     unique_seasons = np.unique(seasons)
     results = []
@@ -338,6 +354,35 @@ def evaluate_heldout_seasons(grid, target='core', candidate='blue', conditions=[
         })
 
     return pd.DataFrame(results)
+
+
+def summarize_prediction_folds(pred_df, rng_seed=24017, n_bootstrap=5000):
+    """Summarize season results without treating interpolated days as peers."""
+    if pred_df.empty:
+        return {
+            'n_heldout_seasons': 0,
+            'mean_delta_r2': np.nan,
+            'weighted_delta_r2': np.nan,
+            'weighted_delta_r2_ci_low': np.nan,
+            'weighted_delta_r2_ci_high': np.nan,
+            'improved_season_fraction': np.nan,
+        }
+    values = pred_df['delta_r2'].to_numpy(dtype=float)
+    weights = pred_df['test_samples'].to_numpy(dtype=float)
+    weighted = float(np.average(values, weights=weights))
+    rng = np.random.default_rng(rng_seed)
+    draws = np.empty(n_bootstrap, dtype=float)
+    for i in range(n_bootstrap):
+        idx = rng.integers(0, len(values), len(values))
+        draws[i] = np.average(values[idx], weights=weights[idx])
+    return {
+        'n_heldout_seasons': int(len(values)),
+        'mean_delta_r2': float(np.mean(values)),
+        'weighted_delta_r2': weighted,
+        'weighted_delta_r2_ci_low': float(np.percentile(draws, 2.5)),
+        'weighted_delta_r2_ci_high': float(np.percentile(draws, 97.5)),
+        'improved_season_fraction': float(np.mean(values > 0)),
+    }
 
 
 # -----------------------------------------------------------------------------
@@ -401,9 +446,18 @@ def run_all_incremental_tests(out_dir=None, n_surrogates=50, workers=2):
         p_k5 = float((1 + np.sum(null_k5 >= obs_max_k5)) / (len(null_k5) + 1))
 
         # 3. Held-out Season Prediction
-        pred_df = evaluate_heldout_seasons(grid, target=target, candidate=cand, conditions=conds, lag=15)
+        prediction_lag = 15
+        pred_df = evaluate_heldout_seasons(
+            grid,
+            lines.jd_offset.to_numpy(),
+            boundary_gap_days=sampling['season_boundary_gap_days'],
+            target=target,
+            candidate=cand,
+            conditions=conds,
+            lag=prediction_lag,
+        )
         pred_df.to_csv(out / f'{case_name}_heldout_prediction.csv', index=False)
-        mean_delta_r2 = float(pred_df['delta_r2'].mean()) if not pred_df.empty else np.nan
+        pred_summary = summarize_prediction_folds(pred_df)
 
         summary_records.append({
             'target': target,
@@ -417,7 +471,13 @@ def run_all_incremental_tests(out_dir=None, n_surrogates=50, workers=2):
             'obs_max_cmi_ksg_k5_bits': obs_max_k5,
             'null_ksg_k5_95pct': float(np.percentile(null_k5, 95)),
             'global_p_val_ksg_k5': p_k5,
-            'mean_out_of_sample_delta_r2': mean_delta_r2
+            'prediction_lag_days': prediction_lag,
+            'n_heldout_seasons': pred_summary['n_heldout_seasons'],
+            'mean_out_of_sample_delta_r2': pred_summary['mean_delta_r2'],
+            'weighted_out_of_sample_delta_r2': pred_summary['weighted_delta_r2'],
+            'weighted_delta_r2_ci_low': pred_summary['weighted_delta_r2_ci_low'],
+            'weighted_delta_r2_ci_high': pred_summary['weighted_delta_r2_ci_high'],
+            'improved_season_fraction': pred_summary['improved_season_fraction'],
         })
 
     summary_table = pd.DataFrame(summary_records)
@@ -456,7 +516,7 @@ def run_all_incremental_tests(out_dir=None, n_surrogates=50, workers=2):
         'status': 'Task 4 Incremental Predictive Information Test Completed',
         'n_surrogates': n_surrogates,
         'estimator_comparison': ['3-bin quantile histogram', 'continuous KSG (k=5)'],
-        'heldout_prediction': 'Season-by-season cross-validation',
+        'heldout_prediction': 'Native-gap-defined observing-season cross-validation with no cross-season tuples',
         'results': summary_records
     }
     (out / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')

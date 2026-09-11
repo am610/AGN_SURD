@@ -40,3 +40,17 @@ __pycache__/
 *.pyo
 *.pyd
 .ipynb_checkpoints/
+
+# Historical local review exports and scratch analyses
+Hbeta_components_prediction_analysis.pdf
+V5.pdf
+overleaf_draft/V4.*
+scratch/
+
+# Large legacy validation arrays retained locally but not required by the
+# adopted release pipeline.  Compact summaries and reconciled release outputs
+# remain version controlled.
+agn_surd_project/processed/knn_mi_surrogate_curves.csv
+agn_surd_project/processed/knn_cmi_surrogate_curves.csv
+agn_surd_project/processed/mrk817_knn_surrogate_curves.csv
+agn_surd_project/processed/round_robin_surrogate_scans.npz

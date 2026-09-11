@@ -6,7 +6,7 @@ This repository investigates the behavior of Synergistic Unique Redundant Decomp
 
 The adopted pipeline uses 242 Hβ spectra on 224 dates and 557 original continuum observations. Five profiles without exact date and instrument matches in the corrected observation table are excluded from the adopted sample and preserved in the archive comparison. The revised continuum is available as a sensitivity input.
 
-Four sampling methods have been implemented across 201 lags. Observed information scans and a small simulation pilot have run successfully. Significance calibration, false positive rates, detection power and incremental prediction tests remain open. Historical scripts, notebooks and manuscript versions elsewhere in the repository use earlier selections and settings; their results must not be attributed to the adopted pipeline.
+Four sampling methods have been implemented across 201 lags. Common-lag and unequal-lag decomposition now cover every target in both requested four-variable sets. The continuum baseline uses 999 scan-wide null surrogates and controls the three-target family. The power grid uses separate null calibration and evaluation samples, reports uncertainty intervals, and includes one-factor width, timescale, and noise sensitivities. Incremental scans use standardized KSG inputs and 100 surrogates. Their two-segment prediction check is diagnostic only.
 
 ## Reproduce the current pipeline
 
@@ -22,6 +22,12 @@ python pipeline/adopted_data.py
 python -m unittest pipeline.test_sampling pipeline.test_information
 python pipeline/sampling.py
 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python -m pipeline.benchmark_information --workers 2
+python -m pipeline.continuum_baseline
+python -m pipeline.calibrate_significance --surrogates 999 --workers 4
+python -m pipeline.decompose_all_atoms
+python -m pipeline.asymmetric_lags
+python -m pipeline.detection_power_grid --reps 50 --workers 4
+python -m pipeline.incremental_information --surrogates 100 --workers 4
 ```
 
 Input retrieval downloads public archive data and the upstream SURD implementation at commit `79dbdea85e6754ec2b5457b3e37204c5d53d1815`. It verifies file hashes, refuses to overwrite differing local files, and extracts only the expected spectra. Raw archive inputs and the source paper are retrieved from their providers rather than distributed here. The corrected table text required by the loader is included under `audit` with its provenance documented.
@@ -36,15 +42,28 @@ Input retrieval downloads public archive data and the upstream SURD implementati
 6. [Sampling support audit](agn_surd_project/processed/reconciled/sampling)
 7. [Executed information pilot](agn_surd_project/processed/reconciled/information_pilot/04dde4b289c6ac42)
 
+## Authoritative release files
+
+`main.tex` is the authoritative manuscript source and `main.pdf` is its compiled
+release artifact.  The matching files under `overleaf_draft` are synchronized
+copies for Overleaf packaging, not independent manuscript versions.  Historical
+notebooks and versioned PDFs are exploratory records and are not inputs to the
+adopted pipeline.
+
+The release is considered reproducible only after the commands above have run
+from a clean checkout, the unit tests pass, regenerated numerical outputs have
+been compared with the committed evidence, and the compiled PDF has received a
+complete visual review.
+
 The information pilot includes curves and peak summaries for all eight simulated datasets, observed curves and peaks, timings, settings and source hashes. Its peaks are descriptive; no calibrated significance is claimed. The benchmark estimates about 18 minutes for 1000 repetitions of that exact scan on the tested laptop with two workers. Expanded parameter grids and nested calibration can require much more computation.
 
 ## Remaining research
 
-1. Complete the sampling comparison with a declared null, statistic family and significance calibration.
-2. Measure false positive rates, detection power, lag recovery and atom identification with uncertainty intervals.
-3. Test whether another velocity component adds information beyond continuum and target history, using controls that preserve the dependencies allowed by that null.
-4. Check estimator settings and temporal neighbour exclusion. Support any predictive claim with evaluation on observing seasons held out from fitting.
-5. Align manuscript text, tables and figures with the final validated pipeline and verify the complete release.
+1. Increase the independent null evaluation size for the power sensitivities.
+2. Add intended atom identification to the expanded power grid.
+3. Test temporal neighbour exclusion for continuous estimators.
+4. Replace the two-segment prediction diagnostic with a pre-specified blocked validation design if a predictive headline is retained.
+5. Run the complete documented workflow from a clean checkout and archive superseded manuscript versions.
 
 ## Sources
 

@@ -1,11 +1,11 @@
 {
   "status": "Task 4 Incremental Predictive Information Test Completed",
-  "n_surrogates": 30,
+  "n_surrogates": 100,
   "estimator_comparison": [
     "3-bin quantile histogram",
     "continuous KSG (k=5)"
   ],
-  "heldout_prediction": "Season-by-season cross-validation",
+  "heldout_prediction": "Native-gap-defined observing-season cross-validation with no cross-season tuples",
   "results": [
     {
       "target": "core",
@@ -13,13 +13,19 @@
       "conditioning_vars": "continuum;core",
       "obs_peak_hist_lag": 96,
       "obs_max_cmi_hist_bits": 0.21759991552127098,
-      "null_hist_95pct": 0.41934770310031516,
-      "global_p_val_hist": 0.9032258064516129,
-      "obs_peak_ksg_k5_lag": 58,
-      "obs_max_cmi_ksg_k5_bits": 0.1643210332047234,
-      "null_ksg_k5_95pct": 0.49985395820631073,
+      "null_hist_95pct": 0.43797090011033984,
+      "global_p_val_hist": 0.9108910891089109,
+      "obs_peak_ksg_k5_lag": 43,
+      "obs_max_cmi_ksg_k5_bits": 0.15614503433370702,
+      "null_ksg_k5_95pct": 0.32239493536346336,
       "global_p_val_ksg_k5": 1.0,
-      "mean_out_of_sample_delta_r2": 0.016523633949658056
+      "prediction_lag_days": 15,
+      "n_heldout_seasons": 2,
+      "mean_out_of_sample_delta_r2": -0.03147972860409881,
+      "weighted_out_of_sample_delta_r2": -0.030908629428005013,
+      "weighted_delta_r2_ci_low": -0.035085324894959635,
+      "weighted_delta_r2_ci_high": -0.02787413231323799,
+      "improved_season_fraction": 0.0
     },
     {
       "target": "core",
@@ -27,13 +33,19 @@
       "conditioning_vars": "continuum;core",
       "obs_peak_hist_lag": 100,
       "obs_max_cmi_hist_bits": 0.19174498326958384,
-      "null_hist_95pct": 0.35953666653069355,
+      "null_hist_95pct": 0.3779321319290478,
       "global_p_val_hist": 1.0,
-      "obs_peak_ksg_k5_lag": 91,
-      "obs_max_cmi_ksg_k5_bits": 0.21278203598504816,
-      "null_ksg_k5_95pct": 0.3844456285921781,
-      "global_p_val_ksg_k5": 0.967741935483871,
-      "mean_out_of_sample_delta_r2": -0.21290333756429025
+      "obs_peak_ksg_k5_lag": 52,
+      "obs_max_cmi_ksg_k5_bits": 0.2330954718318193,
+      "null_ksg_k5_95pct": 0.3058165229489001,
+      "global_p_val_ksg_k5": 0.6435643564356436,
+      "prediction_lag_days": 15,
+      "n_heldout_seasons": 2,
+      "mean_out_of_sample_delta_r2": -0.06768121777756936,
+      "weighted_out_of_sample_delta_r2": -0.057819378679547555,
+      "weighted_delta_r2_ci_low": -0.12994327656060256,
+      "weighted_delta_r2_ci_high": -0.005419158994536155,
+      "improved_season_fraction": 0.0
     },
     {
       "target": "red",
@@ -41,13 +53,19 @@
       "conditioning_vars": "continuum;red",
       "obs_peak_hist_lag": 39,
       "obs_max_cmi_hist_bits": 0.21116758942299022,
-      "null_hist_95pct": 0.3448425361005543,
-      "global_p_val_hist": 0.9032258064516129,
+      "null_hist_95pct": 0.3344084360460345,
+      "global_p_val_hist": 0.8316831683168316,
       "obs_peak_ksg_k5_lag": 30,
-      "obs_max_cmi_ksg_k5_bits": 0.2709909298440122,
-      "null_ksg_k5_95pct": 0.35058325232753124,
-      "global_p_val_ksg_k5": 0.6774193548387096,
-      "mean_out_of_sample_delta_r2": 0.5592901200858288
+      "obs_max_cmi_ksg_k5_bits": 0.1284904447353488,
+      "null_ksg_k5_95pct": 0.2136792374396801,
+      "global_p_val_ksg_k5": 0.7821782178217822,
+      "prediction_lag_days": 15,
+      "n_heldout_seasons": 2,
+      "mean_out_of_sample_delta_r2": -0.1628921698895519,
+      "weighted_out_of_sample_delta_r2": -0.18691324522741154,
+      "weighted_delta_r2_ci_low": -0.31454761567932255,
+      "weighted_delta_r2_ci_high": -0.01123672409978127,
+      "improved_season_fraction": 0.0
     },
     {
       "target": "blue",
@@ -55,13 +73,19 @@
       "conditioning_vars": "continuum;blue",
       "obs_peak_hist_lag": 34,
       "obs_max_cmi_hist_bits": 0.25292320302357024,
-      "null_hist_95pct": 0.40891327562294455,
-      "global_p_val_hist": 0.967741935483871,
+      "null_hist_95pct": 0.41872590808970894,
+      "global_p_val_hist": 0.9405940594059405,
       "obs_peak_ksg_k5_lag": 97,
-      "obs_max_cmi_ksg_k5_bits": 0.34873852766884156,
-      "null_ksg_k5_95pct": 0.4534065674529086,
-      "global_p_val_ksg_k5": 0.6129032258064516,
-      "mean_out_of_sample_delta_r2": -0.05278868632471521
+      "obs_max_cmi_ksg_k5_bits": 0.2805575232019702,
+      "null_ksg_k5_95pct": 0.33831252900975706,
+      "global_p_val_ksg_k5": 0.5247524752475248,
+      "prediction_lag_days": 15,
+      "n_heldout_seasons": 2,
+      "mean_out_of_sample_delta_r2": -0.08654205864089781,
+      "weighted_out_of_sample_delta_r2": -0.10161586332262199,
+      "weighted_delta_r2_ci_low": -0.1817095120792459,
+      "weighted_delta_r2_ci_high": 0.008625394797450281,
+      "improved_season_fraction": 0.5
     }
   ]
 }

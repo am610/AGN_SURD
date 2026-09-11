@@ -63,6 +63,18 @@ def run_worker_continuum(job):
     return run_null_realization_continuum(lines, cont, sampling, config, method, shift, seed)
 
 
+def benjamini_hochberg(values):
+    """Return Benjamini Hochberg adjusted values in original order."""
+    values = np.asarray(values, dtype=float)
+    order = np.argsort(values)
+    ranked = values[order]
+    adjusted = ranked * len(values) / np.arange(1, len(values) + 1)
+    adjusted = np.minimum.accumulate(adjusted[::-1])[::-1]
+    result = np.empty_like(adjusted)
+    result[order] = np.minimum(adjusted, 1.0)
+    return result
+
+
 def calibrate_continuum_baseline(method='gap_limited', n_surrogates=100, workers=2, out_dir=None):
     sampling = json.loads((HERE / 'sampling_config.json').read_text())
     config = json.loads((HERE / 'information_config.json').read_text())
@@ -134,6 +146,12 @@ def calibrate_continuum_baseline(method='gap_limited', n_surrogates=100, workers
         })
 
     summary_df = pd.DataFrame(summary)
+    summary_df['target_family_bh_q_value_mi'] = benjamini_hochberg(
+        summary_df['global_p_value_mi'].to_numpy()
+    )
+    summary_df['target_family_bh_q_value_leak'] = benjamini_hochberg(
+        summary_df['global_p_value_leak'].to_numpy()
+    )
     print("\nCalibration Summary:")
     print(summary_df[['target', 'observed_peak_lag', 'observed_max_mi_bits', 'null_max_mi_95pct', 'global_p_value_mi', 'global_p_value_leak']].to_string(index=False))
 
@@ -143,7 +161,8 @@ def calibrate_continuum_baseline(method='gap_limited', n_surrogates=100, workers
         'sampling_method': method,
         'n_surrogates': n_surrogates,
         'null_type': 'circular_shift_continuum',
-        'results': summary
+        'scan_family': 'Each p value controls all scanned lags for one target; BH q values control the three target family for the selected sampling method',
+        'results': summary_df.to_dict(orient='records')
     }
     (out / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
     print(f"Outputs saved to {out}")

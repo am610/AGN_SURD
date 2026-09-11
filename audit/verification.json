@@ -1,0 +1,129 @@
+{
+  "data": {
+    "window": [
+      47512.0,
+      49255.0
+    ],
+    "grid_count": 1744,
+    "continuum_rows": 557,
+    "line_rows": 247,
+    "distinct_line_dates": 226,
+    "duplicate_line_rows": 21,
+    "fractional_continuum_dates": 187,
+    "continuum": {
+      "max_gap": 89.0,
+      "median_gap": 1.0,
+      "grid_points_bridging_gap_over_30d": 240,
+      "grid_points_bridging_gap_over_60d": 88
+    },
+    "line": {
+      "max_gap": 105.0,
+      "median_gap": 6.0,
+      "grid_points_bridging_gap_over_30d": 334,
+      "grid_points_bridging_gap_over_60d": 104
+    }
+  },
+  "null_recalculation": [
+    {
+      "target": "continuum",
+      "peak_lag": 115,
+      "maximum": 0.7137860313719139,
+      "p_global": 1.0
+    },
+    {
+      "target": "red_wing",
+      "peak_lag": 198,
+      "maximum": 0.7358291610825668,
+      "p_global": 0.873
+    },
+    {
+      "target": "core",
+      "peak_lag": 128,
+      "maximum": 0.7044712676248095,
+      "p_global": 0.947
+    },
+    {
+      "target": "blue_wing",
+      "peak_lag": 93,
+      "maximum": 0.7132750634647523,
+      "p_global": 0.936
+    }
+  ],
+  "fresh_scan_max_difference": {
+    "continuum": 3.1112035170366426e-10,
+    "red_wing": 2.7210034225788604e-10,
+    "core": 3.270870796434622e-10,
+    "blue_wing": 3.767977596602634e-10
+  },
+  "max_atom_additivity_error": 4.440892098500626e-16,
+  "iccf_fresh": [
+    {
+      "target": "blue_wing",
+      "peak": 19.0,
+      "centroid": 19.48977841731325,
+      "rmax": 0.8147916466907101,
+      "stored_curve_max_difference": 2.220446049250313e-16,
+      "duplicate_dates_mean_centroid": 19.480178821266538
+    },
+    {
+      "target": "core",
+      "peak": 22.0,
+      "centroid": 22.313572196948552,
+      "rmax": 0.8797309228038499,
+      "stored_curve_max_difference": 2.220446049250313e-16,
+      "duplicate_dates_mean_centroid": 22.78952226627628
+    },
+    {
+      "target": "red_wing",
+      "peak": 15.0,
+      "centroid": 30.86391058172842,
+      "rmax": 0.6002142760095943,
+      "stored_curve_max_difference": 1.6653345369377348e-16,
+      "duplicate_dates_mean_centroid": 31.859041942863232
+    }
+  ],
+  "analytic_atoms": {
+    "unique": {
+      "U1": 0.9999999999981621,
+      "U2": 0,
+      "R12": 0.0,
+      "S12": 0.0,
+      "leak": 1.838085239569409e-12
+    },
+    "redundancy": {
+      "U1": 0,
+      "U2": 0.0,
+      "R12": 0.9999999999981621,
+      "S12": 8.588685318500211e-13,
+      "leak": 9.78994663114463e-13
+    },
+    "xor": {
+      "U1": 0,
+      "U2": 0.0,
+      "R12": 0.0,
+      "S12": 0.9999999999981621,
+      "leak": 1.838085239569409e-12
+    },
+    "independent": {
+      "U1": 0,
+      "U2": 0.0,
+      "R12": 0.0,
+      "S12": 0.0,
+      "leak": 1.0
+    }
+  },
+  "spectra": {
+    "count": 247,
+    "pixel_width_min": 2.0,
+    "pixel_width_max": 2.0,
+    "saved_flux_error_max_difference": 3.552713678800501e-15
+  },
+  "source_hashes": {
+    "SURD/utils/surd.py": "c843b337d6e1fc4437d26ee1551980c21da973cf0fb1f3f5f1f82455773bd2bf",
+    "run_standard_iccf.py": "81dc190eaa6f9b4fd154fbbf32877483e40879fffd944536a789a430eb48c459",
+    "run_knn_estimator_crosscheck.py": "f63947ee22a2b5315c790a33be5dd71417433be96a3676983b4dbbc49528cdc2",
+    "agn_surd_project/processed/ngc5548_hb_velocity_bins.csv": "e092d46ad67c2c59bc67312706a8e58eaeffb06257829562cf611e677c417a41",
+    "agn_surd_project/processed/round_robin_surrogate_scans.npz": "6cc0532def579e90fe0f40d98f9f8d9490eaa3be4b0bbcf7782f5ad09e96f407",
+    "overleaf_draft/final_draft.tex": "480c3458b5c8064cd2d60d4a2096b44b6968fde0ebb19a1e190cc6447b2b4d52"
+  }
+}

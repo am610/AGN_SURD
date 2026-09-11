@@ -15,22 +15,28 @@ HERE = Path(__file__).resolve().parent
 
 KINEMATIC_CONFIGS = {
     'symmetric_virial': {
-        'description': 'Wings lead core by 5 days (tau_blue = tau_red = tau_0, tau_core = tau_0 + 5d)',
-        'offsets': {'blue': 0, 'red': 0, 'core': 5, 'continuum': 0}
+        'description': 'Wings respond 5 days before core',
+        'response_delays': {'continuum': 0, 'blue': 5, 'red': 5, 'core': 10, 'profile_total': 10}
     },
     'blue_leading_outflow': {
-        'description': 'Blue wing leads red wing by 5 days (tau_blue = tau_0, tau_red = tau_0 + 5d)',
-        'offsets': {'blue': 0, 'core': 2, 'red': 5, 'continuum': 0}
+        'description': 'Blue responds 5 days before red',
+        'response_delays': {'continuum': 0, 'blue': 5, 'core': 8, 'red': 10, 'profile_total': 8}
     },
     'red_leading_inflow': {
-        'description': 'Red wing leads blue wing by 5 days (tau_red = tau_0, tau_blue = tau_0 + 5d)',
-        'offsets': {'red': 0, 'core': 2, 'blue': 5, 'continuum': 0}
+        'description': 'Red responds 5 days before blue',
+        'response_delays': {'continuum': 0, 'red': 5, 'core': 8, 'blue': 10, 'profile_total': 8}
     },
     'common_lag_control': {
         'description': 'All predictors at the identical lag tau_0',
-        'offsets': {'blue': 0, 'core': 0, 'red': 0, 'continuum': 0}
+        'response_delays': {'continuum': 0, 'blue': 0, 'core': 0, 'red': 0, 'profile_total': 0}
     }
 }
+
+
+def relative_offsets(target, predictors, response_delays):
+    """Return predictor lags relative to the response phase of the target."""
+    target_delay = response_delays[target]
+    return {name: target_delay - response_delays[name] for name in predictors}
 
 
 def scan_asymmetric_lags(lines, cont, sampling_config, info_config, target='core',
@@ -122,30 +128,43 @@ def run_kinematic_comparison(out_dir=None):
     print("=== Scanning Asymmetric / Multi-Lag Configurations ===")
 
     all_frames = []
-    # Test on Core target with predictors [continuum, blue, red]
-    target = 'core'
-    preds = ['continuum', 'blue', 'red']
+    variable_sets = {
+        'continuum_wings': ['continuum', 'blue', 'core', 'red'],
+        'total_wings': ['profile_total', 'blue', 'core', 'red'],
+    }
 
-    for name, cfg in KINEMATIC_CONFIGS.items():
-        print(f"Running kinematic model: {name} ({cfg['description']})...")
-        offsets = {p: cfg['offsets'][p] for p in preds}
-        df = scan_asymmetric_lags(lines, cont, sampling, config, target=target,
-                                  predictors=preds, offsets=offsets,
-                                  method='gap_limited', max_base_lag=60)
-        df['kinematic_model'] = name
-        all_frames.append(df)
+    for mode, variables in variable_sets.items():
+        for target in variables:
+            preds = [name for name in variables if name != target]
+            for name, cfg in KINEMATIC_CONFIGS.items():
+                print(f"Running {mode}, target {target}, model {name}...")
+                offsets = relative_offsets(target, preds, cfg['response_delays'])
+                df = scan_asymmetric_lags(
+                    lines, cont, sampling, config, target=target,
+                    predictors=preds, offsets=offsets,
+                    method='gap_limited', max_base_lag=60,
+                )
+                df['mode'] = mode
+                df['kinematic_model'] = name
+                df['configuration_description'] = cfg['description']
+                all_frames.append(df)
 
     res_df = pd.concat(all_frames, ignore_index=True)
-    csv_path = out / 'core_target_kinematic_asymmetric_scans.csv'
+    csv_path = out / 'all_targets_kinematic_asymmetric_scans.csv'
     res_df.to_csv(csv_path, index=False)
     print(f"Saved results to {csv_path}")
 
-    # Plot comparison of synergy and leakage across kinematic models
+    # The compact paper figure retains the core target comparison.  The CSV
+    # contains every target and both requested four-variable sets.
+    plot_df = res_df[(res_df['mode'] == 'continuum_wings') & (res_df['target'] == 'core')]
+    legacy_csv_path = out / 'core_target_kinematic_asymmetric_scans.csv'
+    plot_df.to_csv(legacy_csv_path, index=False)
+    print(f"Saved corrected core comparison to {legacy_csv_path}")
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 5))
     colors = {'common_lag_control': 'black', 'symmetric_virial': 'tab:blue',
               'blue_leading_outflow': 'tab:cyan', 'red_leading_inflow': 'tab:red'}
 
-    for name, group in res_df.groupby('kinematic_model'):
+    for name, group in plot_df.groupby('kinematic_model'):
         sub = group[group.status == 'ok']
         lbl = name.replace('_', ' ').title()
         ax1.plot(sub.base_lag_days, sub.norm_synergy, label=lbl, color=colors.get(name, 'gray'), lw=1.8)

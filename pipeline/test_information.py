@@ -91,8 +91,42 @@ class InformationTests(unittest.TestCase):
         self.assertGreaterEqual(val_ksg, 0.0)
         self.assertLess(val_ksg, 0.15)
 
+    def test_ksg_is_invariant_to_flux_units(self):
+        from pipeline.incremental_information import cmi_ksg
+        rng = np.random.default_rng(818)
+        z = rng.normal(size=(300, 2))
+        x = z[:, 0] + rng.normal(scale=0.5, size=300)
+        y = x + z[:, 1] + rng.normal(scale=0.5, size=300)
+        reference = cmi_ksg(y, x, z, k=5)
+        rescaled = cmi_ksg(1000 * y, 0.001 * x, z * np.array([20, 0.05]), k=5)
+        self.assertAlmostEqual(reference, rescaled, places=8)
+
+    def test_observing_seasons_follow_native_gaps(self):
+        from pipeline.incremental_information import observing_season_labels
+        labels = observing_season_labels(
+            np.array([0, 10, 50, 100, 120]),
+            np.array([0, 10, 100, 120]),
+            boundary_gap_days=60,
+        )
+        np.testing.assert_array_equal(labels, np.array([0, 0, 0, 1, 1]))
+
+    def test_asymmetric_offsets_change_core_predictors(self):
+        from pipeline.asymmetric_lags import KINEMATIC_CONFIGS, relative_offsets
+        predictors = ['continuum', 'blue', 'red']
+        symmetric = relative_offsets(
+            'core', predictors, KINEMATIC_CONFIGS['symmetric_virial']['response_delays']
+        )
+        common = relative_offsets(
+            'core', predictors, KINEMATIC_CONFIGS['common_lag_control']['response_delays']
+        )
+        self.assertNotEqual(symmetric, common)
+        self.assertEqual(symmetric, {'continuum': 10, 'blue': 5, 'red': 5})
+
+    def test_benjamini_hochberg_adjustment(self):
+        from pipeline.calibrate_significance import benjamini_hochberg
+        adjusted = benjamini_hochberg([0.01, 0.04, 0.03])
+        np.testing.assert_allclose(adjusted, [0.03, 0.04, 0.04])
+
 
 if __name__ == '__main__':
     unittest.main()
-
-

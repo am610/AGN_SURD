@@ -1,0 +1,13 @@
+{
+  "status": "One factor sensitivity grid completed",
+  "cases": [
+    "noise_0_5",
+    "noise_2",
+    "timescale_100",
+    "timescale_30",
+    "width_10",
+    "width_2"
+  ],
+  "interpretation": "Each case changes one factor from the central width 5, timescale 50, noise scale 1 configuration",
+  "realizations_per_cell": 25
+}

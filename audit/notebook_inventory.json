@@ -1,0 +1,280 @@
+[
+  {
+    "file": "2_SURDS_AGN.ipynb",
+    "cells": 112,
+    "executed_cells": 40,
+    "stored_errors": [
+      {
+        "cell": 0,
+        "name": "ModuleNotFoundError",
+        "value": "No module named 'surd'"
+      },
+      {
+        "cell": 22,
+        "name": "ModuleNotFoundError",
+        "value": "No module named 'surd'"
+      },
+      {
+        "cell": 24,
+        "name": "ModuleNotFoundError",
+        "value": "No module named 'surd'"
+      },
+      {
+        "cell": 26,
+        "name": "ModuleNotFoundError",
+        "value": "No module named 'surd'"
+      },
+      {
+        "cell": 28,
+        "name": "ModuleNotFoundError",
+        "value": "No module named 'it_tools'"
+      },
+      {
+        "cell": 30,
+        "name": "AttributeError",
+        "value": "module 'surd' has no attribute 'surd'"
+      },
+      {
+        "cell": 32,
+        "name": "ModuleNotFoundError",
+        "value": "No module named 'it_tools'"
+      },
+      {
+        "cell": 34,
+        "name": "ModuleNotFoundError",
+        "value": "No module named 'it_tools'"
+      },
+      {
+        "cell": 36,
+        "name": "ModuleNotFoundError",
+        "value": "No module named 'it_tools'"
+      },
+      {
+        "cell": 38,
+        "name": "ModuleNotFoundError",
+        "value": "No module named 'it_tools'"
+      },
+      {
+        "cell": 40,
+        "name": "ModuleNotFoundError",
+        "value": "No module named 'it_tools'"
+      }
+    ]
+  },
+  {
+    "file": "3_SURDS_AGN.ipynb",
+    "cells": 9,
+    "executed_cells": 8,
+    "stored_errors": []
+  },
+  {
+    "file": "3_SURDS_AGN_V10_Full_Range.ipynb",
+    "cells": 173,
+    "executed_cells": 48,
+    "stored_errors": []
+  },
+  {
+    "file": "3_SURDS_AGN_V10_Restricted_MJD.ipynb",
+    "cells": 172,
+    "executed_cells": 76,
+    "stored_errors": []
+  },
+  {
+    "file": "3_SURDS_AGN_V11_Strict_Overlap.ipynb",
+    "cells": 172,
+    "executed_cells": 76,
+    "stored_errors": []
+  },
+  {
+    "file": "3_SURDS_AGN_V2.ipynb",
+    "cells": 23,
+    "executed_cells": 15,
+    "stored_errors": []
+  },
+  {
+    "file": "3_SURDS_AGN_V3.ipynb",
+    "cells": 31,
+    "executed_cells": 19,
+    "stored_errors": []
+  },
+  {
+    "file": "3_SURDS_AGN_V4.ipynb",
+    "cells": 37,
+    "executed_cells": 22,
+    "stored_errors": []
+  },
+  {
+    "file": "3_SURDS_AGN_V5.ipynb",
+    "cells": 49,
+    "executed_cells": 28,
+    "stored_errors": []
+  },
+  {
+    "file": "3_SURDS_AGN_V6.ipynb",
+    "cells": 59,
+    "executed_cells": 33,
+    "stored_errors": []
+  },
+  {
+    "file": "3_SURDS_AGN_V7.ipynb",
+    "cells": 151,
+    "executed_cells": 11,
+    "stored_errors": []
+  },
+  {
+    "file": "3_SURDS_AGN_V8.ipynb",
+    "cells": 173,
+    "executed_cells": 78,
+    "stored_errors": []
+  },
+  {
+    "file": "3_SURDS_AGN_V9.ipynb",
+    "cells": 223,
+    "executed_cells": 89,
+    "stored_errors": [
+      {
+        "cell": 147,
+        "name": "Exception",
+        "value": "File `'e4abc4e1.py'` not found."
+      },
+      {
+        "cell": 148,
+        "name": "Exception",
+        "value": "File `'c50685dc.py'` not found."
+      },
+      {
+        "cell": 150,
+        "name": "Exception",
+        "value": "File `'5c6b10b3.py'` not found."
+      },
+      {
+        "cell": 151,
+        "name": "Exception",
+        "value": "File `'b0ecd459.py'` not found."
+      },
+      {
+        "cell": 152,
+        "name": "Exception",
+        "value": "File `'28b4ef17.py'` not found."
+      },
+      {
+        "cell": 153,
+        "name": "Exception",
+        "value": "File `'0083a84d.py'` not found."
+      },
+      {
+        "cell": 154,
+        "name": "Exception",
+        "value": "File `'fbd1ac55.py'` not found."
+      },
+      {
+        "cell": 156,
+        "name": "Exception",
+        "value": "File `'dbc05bab.py'` not found."
+      },
+      {
+        "cell": 157,
+        "name": "Exception",
+        "value": "File `'3a1ee1bb.py'` not found."
+      },
+      {
+        "cell": 158,
+        "name": "Exception",
+        "value": "File `'d46b38fa.py'` not found."
+      },
+      {
+        "cell": 159,
+        "name": "Exception",
+        "value": "File `'9786d6d1.py'` not found."
+      },
+      {
+        "cell": 160,
+        "name": "Exception",
+        "value": "File `'c40dec7d.py'` not found."
+      },
+      {
+        "cell": 188,
+        "name": "KeyError",
+        "value": "'p2_5_synergy'"
+      }
+    ]
+  },
+  {
+    "file": "3_SURDS_AGN_colab.ipynb",
+    "cells": 223,
+    "executed_cells": 0,
+    "stored_errors": [
+      {
+        "cell": 147,
+        "name": "Exception",
+        "value": "File `'e4abc4e1.py'` not found."
+      },
+      {
+        "cell": 148,
+        "name": "Exception",
+        "value": "File `'c50685dc.py'` not found."
+      },
+      {
+        "cell": 150,
+        "name": "Exception",
+        "value": "File `'5c6b10b3.py'` not found."
+      },
+      {
+        "cell": 151,
+        "name": "Exception",
+        "value": "File `'b0ecd459.py'` not found."
+      },
+      {
+        "cell": 152,
+        "name": "Exception",
+        "value": "File `'28b4ef17.py'` not found."
+      },
+      {
+        "cell": 153,
+        "name": "Exception",
+        "value": "File `'0083a84d.py'` not found."
+      },
+      {
+        "cell": 154,
+        "name": "Exception",
+        "value": "File `'fbd1ac55.py'` not found."
+      },
+      {
+        "cell": 156,
+        "name": "Exception",
+        "value": "File `'dbc05bab.py'` not found."
+      },
+      {
+        "cell": 157,
+        "name": "Exception",
+        "value": "File `'3a1ee1bb.py'` not found."
+      },
+      {
+        "cell": 158,
+        "name": "Exception",
+        "value": "File `'d46b38fa.py'` not found."
+      },
+      {
+        "cell": 159,
+        "name": "Exception",
+        "value": "File `'9786d6d1.py'` not found."
+      },
+      {
+        "cell": 160,
+        "name": "Exception",
+        "value": "File `'c40dec7d.py'` not found."
+      },
+      {
+        "cell": 188,
+        "name": "KeyError",
+        "value": "'p2_5_synergy'"
+      }
+    ]
+  },
+  {
+    "file": "surd_agn_starter.ipynb",
+    "cells": 17,
+    "executed_cells": 0,
+    "stored_errors": []
+  }
+]

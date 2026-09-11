@@ -1,8 +1,10 @@
 # Changes warranted by the adopted pipeline
 
-The local working draft `final_draft.tex` still describes earlier calculations and contains definitions that disagree with the verified loader. The historical manuscript sources already in this repository are not a submission release. The new pilot does not provide calibrated significance for the adopted sample.
+This file records the reconciliation history.  The authoritative manuscript is
+the repository root `main.tex`; `final_draft.tex` is its synchronized Overleaf
+copy.  Historical manuscript sources are not submission releases.
 
-## Update now
+## Reconciliation items completed in the current manuscript
 
 1. Replace MJD labels with JD less 2400000 where the plotted coordinates are 47512 to 49255. The filename rule produces that JD offset, not MJD. The revised continuum file instead needs 40000 added to its dates, as checked against corrected Table 1.
 2. Correct the adopted velocity boundaries to minus 6000, minus 2000, plus 2000 and plus 6000 km/s. Document observed wavelengths, the project reference redshift 0.017175 and reference wavelength 4861.33 Å. These are explicit project choices and do not reproduce the exact bins or redshift used by Wanders and Peterson.
@@ -14,7 +16,7 @@ The local working draft `final_draft.tex` still describes earlier calculations a
 
 The accompanying `reconciliation_update.tex` is an insertable methods and status section with tables generated from the adopted output files. It is a review fragment, not a rewritten complete manuscript. Integrate it while replacing the conflicting legacy methods text. Merely appending it would leave contradictions elsewhere. The local draft and live Overleaf project have not been replaced by this fragment.
 
-## Wait for calibration before updating numerical conclusions
+## Interpretation limits retained after calibration
 
 Do not transfer historical p values, ICCF delays, conditional results or estimator comparisons to the new 242 spectrum selection. Recompute the analyses that remain in the paper using the adopted inputs, or explicitly identify them as historical diagnostic calculations.
 
@@ -30,6 +32,18 @@ Do not describe the pilot peaks as detected lags. The independent simulations al
 6. Update the abstract, conclusions, figures and captions only after the relevant results are validated. Choose one authoritative manuscript, map every displayed number to a saved output, compile and visually review the final paper, and verify the reproduction instructions from a clean checkout.
 
 The immediate computational step is the null specification and continuum baseline, followed by a modest calibration batch on the laptop. The benchmark supports local execution for that scale. A larger simulation grid or nested calibration can then move to institutional computing resources.
+
+## Corrected execution update on 11 September 2026
+
+The continuum baseline now uses 999 surrogates and reports target-family adjusted values. Blue and Core remain significant under the selected gap-limited null, while Red does not.
+
+The unequal-lag implementation now evaluates every target in both requested four-variable sets. The previous symmetric configuration was invalid because its only changed offset belonged to the target, which was excluded from the predictors. The corrected target-relative configurations remain descriptive until their configuration family receives matched null calibration.
+
+The central power grid now separates threshold calibration from false positive evaluation and reports uncertainty intervals. One-factor sensitivity runs vary response width, process timescale, and measurement noise. The amplitude parameter is a linear mixing coefficient and must not be described as a variance percentage.
+
+The incremental analysis now standardizes KSG marginals and uses 100 surrogates. The native 60 day gap rule produces only two predictive validation segments. The supported conclusion is therefore nondetection of directional conditional information under the tested aggregate null, not refutation of physical transport.
+
+The current paper text incorporates these corrections. Release status remains provisional until the revised working tree is committed and reproduced from a clean checkout.
 
 ## Evidence
 
