@@ -1,0 +1,67 @@
+{
+  "status": "Task 4 Incremental Predictive Information Test Completed",
+  "n_surrogates": 30,
+  "estimator_comparison": [
+    "3-bin quantile histogram",
+    "continuous KSG (k=5)"
+  ],
+  "heldout_prediction": "Season-by-season cross-validation",
+  "results": [
+    {
+      "target": "core",
+      "candidate_wing": "blue",
+      "conditioning_vars": "continuum;core",
+      "obs_peak_hist_lag": 96,
+      "obs_max_cmi_hist_bits": 0.21759991552127098,
+      "null_hist_95pct": 0.41934770310031516,
+      "global_p_val_hist": 0.9032258064516129,
+      "obs_peak_ksg_k5_lag": 58,
+      "obs_max_cmi_ksg_k5_bits": 0.1643210332047234,
+      "null_ksg_k5_95pct": 0.49985395820631073,
+      "global_p_val_ksg_k5": 1.0,
+      "mean_out_of_sample_delta_r2": 0.016523633949658056
+    },
+    {
+      "target": "core",
+      "candidate_wing": "red",
+      "conditioning_vars": "continuum;core",
+      "obs_peak_hist_lag": 100,
+      "obs_max_cmi_hist_bits": 0.19174498326958384,
+      "null_hist_95pct": 0.35953666653069355,
+      "global_p_val_hist": 1.0,
+      "obs_peak_ksg_k5_lag": 91,
+      "obs_max_cmi_ksg_k5_bits": 0.21278203598504816,
+      "null_ksg_k5_95pct": 0.3844456285921781,
+      "global_p_val_ksg_k5": 0.967741935483871,
+      "mean_out_of_sample_delta_r2": -0.21290333756429025
+    },
+    {
+      "target": "red",
+      "candidate_wing": "blue",
+      "conditioning_vars": "continuum;red",
+      "obs_peak_hist_lag": 39,
+      "obs_max_cmi_hist_bits": 0.21116758942299022,
+      "null_hist_95pct": 0.3448425361005543,
+      "global_p_val_hist": 0.9032258064516129,
+      "obs_peak_ksg_k5_lag": 30,
+      "obs_max_cmi_ksg_k5_bits": 0.2709909298440122,
+      "null_ksg_k5_95pct": 0.35058325232753124,
+      "global_p_val_ksg_k5": 0.6774193548387096,
+      "mean_out_of_sample_delta_r2": 0.5592901200858288
+    },
+    {
+      "target": "blue",
+      "candidate_wing": "red",
+      "conditioning_vars": "continuum;blue",
+      "obs_peak_hist_lag": 34,
+      "obs_max_cmi_hist_bits": 0.25292320302357024,
+      "null_hist_95pct": 0.40891327562294455,
+      "global_p_val_hist": 0.967741935483871,
+      "obs_peak_ksg_k5_lag": 97,
+      "obs_max_cmi_ksg_k5_bits": 0.34873852766884156,
+      "null_ksg_k5_95pct": 0.4534065674529086,
+      "global_p_val_ksg_k5": 0.6129032258064516,
+      "mean_out_of_sample_delta_r2": -0.05278868632471521
+    }
+  ]
+}

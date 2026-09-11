@@ -75,7 +75,24 @@ class InformationTests(unittest.TestCase):
         self.assertAlmostEqual(mi, 0.0, places=8)
         self.assertAlmostEqual(leak, 1.0, places=8)
 
+    def test_incremental_cmi_estimators(self):
+        from pipeline.incremental_information import cmi_histogram, cmi_ksg
+        rng = np.random.default_rng(123)
+        n = 200
+        z = rng.normal(size=n)
+        # Y and X conditionally independent given Z
+        x = z + 0.1 * rng.normal(size=n)
+        y = z + 0.1 * rng.normal(size=n)
+        res_hist = cmi_histogram(y, x, z, n_bins=3)
+        self.assertIsNotNone(res_hist)
+        self.assertLess(res_hist['cmi_bits'], 0.15)
+
+        val_ksg = cmi_ksg(y, x, z, k=5)
+        self.assertGreaterEqual(val_ksg, 0.0)
+        self.assertLess(val_ksg, 0.15)
+
 
 if __name__ == '__main__':
     unittest.main()
+
 

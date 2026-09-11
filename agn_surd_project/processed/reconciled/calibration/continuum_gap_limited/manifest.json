@@ -1,7 +1,7 @@
 {
   "status": "Continuum baseline significance calibration",
   "sampling_method": "gap_limited",
-  "n_surrogates": 50,
+  "n_surrogates": 100,
   "null_type": "circular_shift_continuum",
   "results": [
     {
@@ -9,45 +9,45 @@
       "target": "blue",
       "observed_peak_lag": 16,
       "observed_max_mi_bits": 0.47318181666815756,
-      "null_max_mi_median": 0.2627480252334774,
-      "null_max_mi_95pct": 0.4329566384132715,
-      "global_p_value_mi": 0.0196078431372549,
+      "null_max_mi_median": 0.27444679142472583,
+      "null_max_mi_95pct": 0.41340860355152237,
+      "global_p_value_mi": 0.009900990099009901,
       "observed_min_leak_lag": 16,
       "observed_min_leak": 0.7622051776718068,
-      "null_min_leak_median": 0.8680300434091976,
-      "null_min_leak_5pct": 0.7815996181540094,
-      "global_p_value_leak": 0.0196078431372549,
-      "n_surrogates": 50
+      "null_min_leak_median": 0.8619046591026477,
+      "null_min_leak_5pct": 0.7921868386079742,
+      "global_p_value_leak": 0.009900990099009901,
+      "n_surrogates": 100
     },
     {
       "method": "gap_limited",
       "target": "core",
       "observed_peak_lag": 15,
       "observed_max_mi_bits": 0.7186419777390128,
-      "null_max_mi_median": 0.26950999576882895,
-      "null_max_mi_95pct": 0.47435090887557113,
-      "global_p_value_mi": 0.0196078431372549,
+      "null_max_mi_median": 0.27668680468814033,
+      "null_max_mi_95pct": 0.48889878336729065,
+      "global_p_value_mi": 0.009900990099009901,
       "observed_min_leak_lag": 15,
       "observed_min_leak": 0.637476842640738,
-      "null_min_leak_median": 0.8565708181255012,
-      "null_min_leak_5pct": 0.746930441813763,
-      "global_p_value_leak": 0.0196078431372549,
-      "n_surrogates": 50
+      "null_min_leak_median": 0.8538771081020458,
+      "null_min_leak_5pct": 0.7424056908506171,
+      "global_p_value_leak": 0.009900990099009901,
+      "n_surrogates": 100
     },
     {
       "method": "gap_limited",
       "target": "red",
       "observed_peak_lag": 23,
       "observed_max_mi_bits": 0.3255443768721302,
-      "null_max_mi_median": 0.27123366952676664,
-      "null_max_mi_95pct": 0.4406839270651949,
-      "global_p_value_mi": 0.23529411764705882,
+      "null_max_mi_median": 0.262160548455483,
+      "null_max_mi_95pct": 0.43317679469201964,
+      "global_p_value_mi": 0.21782178217821782,
       "observed_min_leak_lag": 23,
       "observed_min_leak": 0.8342058007978153,
-      "null_min_leak_median": 0.8618305250103384,
-      "null_min_leak_5pct": 0.7760438454787907,
-      "global_p_value_leak": 0.23529411764705882,
-      "n_surrogates": 50
+      "null_min_leak_median": 0.8665256729808517,
+      "null_min_leak_5pct": 0.7799298976649123,
+      "global_p_value_leak": 0.21782178217821782,
+      "n_surrogates": 100
     }
   ]
 }
