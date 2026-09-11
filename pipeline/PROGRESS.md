@@ -32,3 +32,7 @@ Publication preparation: added public input retrieval with pinned hashes and a p
 4. The central power grid now uses 850 realizations, including independent null calibration and evaluation samples. Power has Wilson intervals and lag bias and RMSE have bootstrap intervals. The false positive estimate is 0.06 with a 95% interval from 0.021 to 0.162. Six one-factor sensitivity grids vary response width, process timescale, and noise. The mixing coefficient is not interpreted as a variance fraction.
 5. Incremental information was rerun after standardizing KSG marginals, increasing calibration to 100 surrogates, and defining validation segments from native gaps without boundary crossing. All directional scans remain non-significant, with global values from 0.525 to 1.000. The declared 60 day rule produces only two validation segments, so prediction is a limited diagnostic and does not refute physical transport.
 6. The manuscript text and tables were revised to match these corrected outputs and bounded interpretations. Sixteen unit tests pass. Final release verification remains open until clean checkout reproduction and visual review are complete.
+
+Release verification identified and corrected a missing explicit SciPy runtime
+dependency used by the KSG and interval calculations.  The final clean checkout
+run must use the updated pinned requirements file.

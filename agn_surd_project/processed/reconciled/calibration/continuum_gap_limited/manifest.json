@@ -3,14 +3,15 @@
   "sampling_method": "gap_limited",
   "n_surrogates": 999,
   "null_type": "circular_shift_continuum",
+  "scan_family": "Each p value controls all scanned lags for one target; BH q values control the three target family for the selected sampling method",
   "results": [
     {
       "method": "gap_limited",
       "target": "blue",
       "observed_peak_lag": 16,
-      "observed_max_mi_bits": 0.4731818166681575,
-      "null_max_mi_median": 0.2752427044986564,
-      "null_max_mi_95pct": 0.4250513007887074,
+      "observed_max_mi_bits": 0.47318181666815756,
+      "null_max_mi_median": 0.27524270449865645,
+      "null_max_mi_95pct": 0.42505130078870745,
       "global_p_value_mi": 0.009,
       "observed_min_leak_lag": 16,
       "observed_min_leak": 0.7622051776718068,
@@ -55,6 +56,5 @@
       "target_family_bh_q_value_mi": 0.228,
       "target_family_bh_q_value_leak": 0.224
     }
-  ],
-  "scan_family": "Each p value controls all scanned lags for one target; BH q values control the three target family for the selected sampling method"
+  ]
 }

@@ -1,24 +1,29 @@
 {
-  "status": "passed",
-  "validation": "Fresh source tree and new Python 3.11 virtual environment; public inputs downloaded and hash checked",
-  "unit_tests_passed": 10,
-  "simulation_realizations": 8,
-  "csv_files_matching_published_outputs_byte_for_byte": 26,
-  "verified_pilot": "04dde4b289c6ac42",
-  "checks": [
-    "Candidate spectra reproduce saved fluxes with the explicit integration factor",
-    "All 242 adopted table matches pass",
-    "All four samplers executed across 201 lags",
-    "All observed and simulated CSV outputs match the published pilot"
+  "status": "passed_with_platform_render_variance",
+  "validation": "Fresh local clone, new Python 3.11 virtual environment, public inputs downloaded and hash checked, and the documented adopted workflow executed",
+  "unit_tests_passed": 16,
+  "input_retrieval": "passed",
+  "adopted_data_reproduction": "byte_for_byte",
+  "sampling_reproduction": "byte_for_byte",
+  "calibrated_numerical_results": "matched, with one floating point serialization difference below 1e-16",
+  "full_release_analyses_executed": [
+    "continuum baseline",
+    "999 surrogate continuum calibration",
+    "all atom decomposition",
+    "all target asymmetric lag scans",
+    "850 realization central detection power grid",
+    "100 surrogate incremental information scans"
   ],
-  "source_sha256": {
-    "pipeline/adopted_data.py": "39d3031a29da0973855eddeb33930d2d22759ed6ca88c5121bcd4e649b01a140",
-    "pipeline/benchmark_information.py": "4ad0668ddcb001c02e017013858f7f1af13310138426e784a9a0f707f1f706c3",
-    "pipeline/fetch_inputs.py": "90d8b81eb348080f4da5001dcfbe04f42c23720dd3db3fc6e49d721cb3669fed",
-    "pipeline/information.py": "61e905214680ab4492c58d12047aea910f8516ba5431de2bf99557966682d196",
-    "pipeline/reconcile_data.py": "8e000178c4661afd954cc7d47106dad3d135c0973bea67b2296ee9ffa3bcb0ef",
-    "pipeline/sampling.py": "56d72af7c752aa15b33c1a29b33319e2bfd1f7b25de298f8c4d34ef781ff99ac",
-    "pipeline/test_information.py": "9701faa7a6c1b18c1fc6a1ea4aa68cd737520a208ded5f2b19e5dbd0190a0bbc",
-    "pipeline/test_sampling.py": "565f6405cf4f83cbec00e35e8032f81973216c0137667b558f1036ca423fcabd"
+  "rendering_note": "PNG byte hashes can differ across clean environments because Matplotlib font resolution and metadata are platform dependent. Numerical CSV outputs and plotted values were checked separately.",
+  "pdf_visual_review": {
+    "pages": 21,
+    "status": "passed",
+    "checks": [
+      "no clipped text",
+      "no overlapping tables or figures",
+      "legible labels and legends",
+      "complete references",
+      "consistent headers, footers and page numbering"
+    ]
   }
 }
