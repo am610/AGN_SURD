@@ -18,6 +18,7 @@
   "pdf_visual_review": {
     "pages": 21,
     "status": "passed",
+    "compiler": "Tectonic 0.17.0",
     "checks": [
       "no clipped text",
       "no overlapping tables or figures",
