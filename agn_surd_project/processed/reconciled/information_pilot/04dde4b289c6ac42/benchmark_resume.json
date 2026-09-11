@@ -1,0 +1,162 @@
+{
+  "status": "Runtime and correctness pilot only; not calibrated significance or power",
+  "sampling": {
+    "status": "Settings fixed before new significance calculations",
+    "continuum": "original",
+    "lag_min_days": 0,
+    "lag_max_days": 200,
+    "lag_step_days": 1,
+    "grid_step_days": 1,
+    "maximum_interpolation_gap_days": 30,
+    "season_boundary_gap_days": 60,
+    "native_pair_tolerance_days": 1,
+    "methods": [
+      "daily",
+      "gap_limited",
+      "within_season",
+      "native"
+    ],
+    "interpretation": "Exploratory sampling comparison; choices informed by known cadence, not new significance"
+  },
+  "information": {
+    "status": "Exploratory local benchmark, not significance calibration",
+    "targets": [
+      "blue",
+      "core",
+      "red"
+    ],
+    "bins": 4,
+    "binning": "Native marginal quantiles fixed across methods and lags within each realization",
+    "minimum_tuples": 32,
+    "minimum_joint_mi_bits_for_ratio": 1e-10,
+    "pilot_seeds": [
+      91001,
+      91002,
+      91003,
+      91004
+    ],
+    "simulation_cases": [
+      "independent",
+      "delayed_shared_driver"
+    ],
+    "driver_timescale_days": 50,
+    "response_delay_days": 20,
+    "response_width_days": 10,
+    "simulation_grid_days": 0.5,
+    "simulation_burn_days": 500,
+    "response_amplitude": 0.8,
+    "independent_line_amplitude": 0.6,
+    "interpretation": "Synthetic timing and runtime pilot only. Process parameters are stipulated, not fitted to the AGN. No empirical significance claim."
+  },
+  "sha256": {
+    "pipeline/sampling_config.json": "40c7fea243b66e02572cc37dc784d6c414928ea05cc291166afaef0375b4751a",
+    "pipeline/information_config.json": "04eeb1ce7ac22b4be31ec2ddc2d41668808fecf138f23f32332b35373e5de9c2",
+    "pipeline/sampling.py": "56d72af7c752aa15b33c1a29b33319e2bfd1f7b25de298f8c4d34ef781ff99ac",
+    "pipeline/information.py": "61e905214680ab4492c58d12047aea910f8516ba5431de2bf99557966682d196",
+    "pipeline/benchmark_information.py": "4ad0668ddcb001c02e017013858f7f1af13310138426e784a9a0f707f1f706c3",
+    "pipeline/adopted_data.py": "39d3031a29da0973855eddeb33930d2d22759ed6ca88c5121bcd4e649b01a140",
+    "pipeline/reconcile_data.py": "8e000178c4661afd954cc7d47106dad3d135c0973bea67b2296ee9ffa3bcb0ef",
+    "SURD/utils/surd.py": "c843b337d6e1fc4437d26ee1551980c21da973cf0fb1f3f5f1f82455773bd2bf",
+    "SURD/utils/it_tools.py": "3a6c752e37961774cc951dbaf85d15e2fc39486c3d42efa8e07d0ede90554e18",
+    "agn_surd_project/processed/reconciled/adopted/manifest.json": "be0917baa2e4f6b5fcd54ed2005e6cb97dd23869602f977b1d52320e0b38a7fd"
+  },
+  "platform": "macOS-26.5-arm64-arm-64bit",
+  "python": "3.11.5",
+  "numpy": "1.26.4",
+  "pandas": "2.2.2",
+  "logical_cpus": 12,
+  "workers": 2,
+  "observed_seconds": 2.012528249999832,
+  "simulation_wall_seconds": 0.5456979999999021,
+  "parent_peak_memory_mib": 146.046875,
+  "maximum_worker_peak_memory_mib": 159.96875,
+  "simulations": 8,
+  "cached_simulations": 8,
+  "median_simulation_seconds": 2.0657234165000773,
+  "throughput_seconds_per_simulation": null,
+  "projected_1000_simulations_hours": null,
+  "projection_limit": "Same cases, estimator, scan extent and worker count only; excludes nested calibration and expanded parameter grids",
+  "simulation_limit": "Noise added at aggregated native dates using propagated errors; shared calibration covariance omitted; process parameters not fitted",
+  "results": [
+    {
+      "case": "independent",
+      "seed": 91001,
+      "elapsed_seconds": 2.0643573330003164,
+      "process_peak_memory_mib": 151.015625,
+      "output_sha256": {
+        "_curves.csv": "b7eb8200acb9fcd08b4c25562c7ebb17ccd6795bbdcb31aec293c8ea683b675d",
+        "_peaks.csv": "f31ed24e8614707ac13c5dd46391ffa7c65d3536dde614f99d758f7b69fe2d71"
+      }
+    },
+    {
+      "case": "independent",
+      "seed": 91002,
+      "elapsed_seconds": 2.067089499999838,
+      "process_peak_memory_mib": 149.203125,
+      "output_sha256": {
+        "_curves.csv": "882db7f4f83697cd76689ea2483eb748600bde5082fcbe229243d8957a802a77",
+        "_peaks.csv": "406d8585814b1336d37e2072479d999ac65b0a1b2d84034447a7604db6f63833"
+      }
+    },
+    {
+      "case": "independent",
+      "seed": 91003,
+      "elapsed_seconds": 2.0430545409999468,
+      "process_peak_memory_mib": 152.984375,
+      "output_sha256": {
+        "_curves.csv": "c7ff34d2c6c392b41fb208162e1bb6868fd39a69af12b8314e5d57e0f280d9d5",
+        "_peaks.csv": "8097dded1227e51c0d27e70e017e192e0769fb2fe85773caede2533ef25e9258"
+      }
+    },
+    {
+      "case": "independent",
+      "seed": 91004,
+      "elapsed_seconds": 2.0438598749997254,
+      "process_peak_memory_mib": 152.84375,
+      "output_sha256": {
+        "_curves.csv": "5797eabd72166721038d9aa9738892aed66196168ad958d6fd1043863d5fb274",
+        "_peaks.csv": "694f7c12653fa84bdeef10669aa1412ce467c616b0db28d5e8ced8f924737251"
+      }
+    },
+    {
+      "case": "delayed_shared_driver",
+      "seed": 91001,
+      "elapsed_seconds": 2.0861170829998628,
+      "process_peak_memory_mib": 158.796875,
+      "output_sha256": {
+        "_curves.csv": "1dc69dcd72f567b747521d0b00cdaa2decbf2df7b1eca3636102db85d0588ecd",
+        "_peaks.csv": "e4ed110fa4c828a68901f48a5d06bebff0a1b093aa2e6f5d0b74edd5c2dcfe96"
+      }
+    },
+    {
+      "case": "delayed_shared_driver",
+      "seed": 91002,
+      "elapsed_seconds": 2.085657582999829,
+      "process_peak_memory_mib": 157.03125,
+      "output_sha256": {
+        "_curves.csv": "af6b2e4efb790d4a8ad8000f3e176593fa60f3ec35b402c7be387fb283f1e518",
+        "_peaks.csv": "7963283516bf98a705cba5859053f5dd597a4e247a55a86f847a224b94f88859"
+      }
+    },
+    {
+      "case": "delayed_shared_driver",
+      "seed": 91003,
+      "elapsed_seconds": 2.059594291999929,
+      "process_peak_memory_mib": 159.96875,
+      "output_sha256": {
+        "_curves.csv": "00fc6a89a4f86023a6615ab8f229adfb4450324a420f95205c9497886092efb3",
+        "_peaks.csv": "e52f82aedac1ae5c3705f5f8bca580166e26aa8799f5a10817a13b43747d7223"
+      }
+    },
+    {
+      "case": "delayed_shared_driver",
+      "seed": 91004,
+      "elapsed_seconds": 2.0675173750000795,
+      "process_peak_memory_mib": 159.921875,
+      "output_sha256": {
+        "_curves.csv": "1479d5569c9c50176ab0100564b71282459bf69546f007fad034cb9c4bc01b78",
+        "_peaks.csv": "c5b7647d48ff9a09198532c480247fc1ffc48f0213b3ec980ff1cfe703868269"
+      }
+    }
+  ]
+}

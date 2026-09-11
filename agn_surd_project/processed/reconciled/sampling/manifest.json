@@ -1,0 +1,27 @@
+{
+  "status": "Support audit only; no information statistic or significance calculated",
+  "configuration": {
+    "status": "Settings fixed before new significance calculations",
+    "continuum": "original",
+    "lag_min_days": 0,
+    "lag_max_days": 200,
+    "lag_step_days": 1,
+    "grid_step_days": 1,
+    "maximum_interpolation_gap_days": 30,
+    "season_boundary_gap_days": 60,
+    "native_pair_tolerance_days": 1,
+    "methods": [
+      "daily",
+      "gap_limited",
+      "within_season",
+      "native"
+    ],
+    "interpretation": "Exploratory sampling comparison; choices informed by known cadence, not new significance"
+  },
+  "configuration_sha256": "40c7fea243b66e02572cc37dc784d6c414928ea05cc291166afaef0375b4751a",
+  "script_sha256": "56d72af7c752aa15b33c1a29b33319e2bfd1f7b25de298f8c4d34ef781ff99ac",
+  "adopted_manifest_sha256": "be0917baa2e4f6b5fcd54ed2005e6cb97dd23869602f977b1d52320e0b38a7fd",
+  "native_reuse_policy": "One tuple per target observation; predictor observations may be reused and are not independent samples",
+  "lag_convention": "Positive lag means target follows predictors",
+  "error_policy": "Flux errors stay in native input tables; sampling does not treat interpolated values as independent measurements"
+}

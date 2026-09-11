@@ -1,0 +1,18 @@
+{
+  "status": "Exploratory local benchmark, not significance calibration",
+  "targets": ["blue", "core", "red"],
+  "bins": 4,
+  "binning": "Native marginal quantiles fixed across methods and lags within each realization",
+  "minimum_tuples": 32,
+  "minimum_joint_mi_bits_for_ratio": 1e-10,
+  "pilot_seeds": [91001, 91002, 91003, 91004],
+  "simulation_cases": ["independent", "delayed_shared_driver"],
+  "driver_timescale_days": 50,
+  "response_delay_days": 20,
+  "response_width_days": 10,
+  "simulation_grid_days": 0.5,
+  "simulation_burn_days": 500,
+  "response_amplitude": 0.8,
+  "independent_line_amplitude": 0.6,
+  "interpretation": "Synthetic timing and runtime pilot only. Process parameters are stipulated, not fitted to the AGN. No empirical significance claim."
+}

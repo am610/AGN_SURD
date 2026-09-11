@@ -1,0 +1,10 @@
+{
+  "case": "independent",
+  "seed": 91003,
+  "elapsed_seconds": 2.0430545409999468,
+  "process_peak_memory_mib": 152.984375,
+  "output_sha256": {
+    "_curves.csv": "c7ff34d2c6c392b41fb208162e1bb6868fd39a69af12b8314e5d57e0f280d9d5",
+    "_peaks.csv": "8097dded1227e51c0d27e70e017e192e0769fb2fe85773caede2533ef25e9258"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "status": "Settings fixed before new significance calculations",
+  "continuum": "original",
+  "lag_min_days": 0,
+  "lag_max_days": 200,
+  "lag_step_days": 1,
+  "grid_step_days": 1,
+  "maximum_interpolation_gap_days": 30,
+  "season_boundary_gap_days": 60,
+  "native_pair_tolerance_days": 1,
+  "methods": ["daily", "gap_limited", "within_season", "native"],
+  "interpretation": "Exploratory sampling comparison; choices informed by known cadence, not new significance"
+}

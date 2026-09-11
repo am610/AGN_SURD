@@ -1,0 +1,10 @@
+{
+  "case": "delayed_shared_driver",
+  "seed": 91001,
+  "elapsed_seconds": 2.0861170829998628,
+  "process_peak_memory_mib": 158.796875,
+  "output_sha256": {
+    "_curves.csv": "1dc69dcd72f567b747521d0b00cdaa2decbf2df7b1eca3636102db85d0588ecd",
+    "_peaks.csv": "e4ed110fa4c828a68901f48a5d06bebff0a1b093aa2e6f5d0b74edd5c2dcfe96"
+  }
+}

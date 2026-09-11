@@ -15,6 +15,24 @@ javelin/
 # OS / Python files
 .DS_Store
 .ipynb_checkpoints/
+
+# Local environments and build products
+.venv/
+tmp/
+*.aux
+*.blg
+*.fdb_latexmk
+*.fls
+*.out
+
+# Downloaded source documents
+audit/wanders_peterson_1996.pdf
+audit/wanders_peterson_1996.txt
+audit/iw_bp_96_tab.ps
+
+# Keep only the published benchmark run under version control
+agn_surd_project/processed/reconciled/information_pilot/*
+!agn_surd_project/processed/reconciled/information_pilot/04dde4b289c6ac42/
 __pycache__/
 *.pyc
 *.pyo
