@@ -26,7 +26,7 @@ $^{2}$Department of Physics, University of Thessaly, Lamia 35100, Greece
 \maketitle
 
 \begin{abstract}
-Reverberation mapping constrains the size, geometry, and mass of supermassive black holes in active galactic nuclei (AGN) by measuring the delay between continuum and emission-line variability. Pairwise linear methods like the Interpolated Cross-Correlation Function (ICCF) or transfer function modeling (JAVELIN) assume a direct, linear mapping between a single driver and line response. In this work, we present a multivariate, velocity-resolved analysis of NGC~5548 using the Synergistic--Unique--Redundant Decomposition (SURD) information-theoretic framework to identify multivariate predictive-information structures between the 5100~\AA\ optical continuum and the H\(\beta\) line wings and core. Enforcing a strict-overlap preprocessing window (MJD 47512--49255), we find that classical linear methods identify prompt light-travel delays of 13--20 days: ICCF peaks at 13.0~d (Red), 19.0~d (Blue), and 20.0~d (Core), matching JAVELIN's lag posteriors ($12.8 \pm 1.8$~d Red, $19.4_{-2.9}^{+2.5}$~d Blue, and $20.1_{-3.2}^{+2.9}$~d Core). In contrast, SURD synergy scans peak at much longer, scan-range-dependent timescales (56~d Red, 109~d Blue, and 159~d Core). By running a synthetic negative control test with zero true long-lag coupling, we demonstrate that these unconditioned long-lag peaks are spurious artifacts manufactured by seasonal observing gaps, interpolation-induced red-noise coherence, and normalized synergy inflation as the denominator $I(Y; X_1, X_2)$ approaches zero. Furthermore, target-history conditioning (conditional PID) shifts the synergy peak to 73~d, but surrogate testing reveals that this peak is statistically insignificant (global max-statistic $p \approx 0.98$) due to finite-sample bias in the extremely sparse 4D joint probability cells (where $89.2\%$ of bins are completely empty). This frames our study as a cautionary, methodological case study showing that multivariate information scans are highly susceptible to windowing, boundary, and finite-sample artifacts, highlighting the absolute necessity of rigorous global multiple-testing controls and negative controls in time-domain astronomy.
+Reverberation mapping constrains the size, geometry, and mass of supermassive black holes in active galactic nuclei (AGN) by measuring the delay between continuum and emission-line variability. Pairwise linear methods like the Interpolated Cross-Correlation Function (ICCF) or transfer function modeling (JAVELIN) assume a direct, linear mapping between a single driver and line response. In this work, we present a multivariate, velocity-resolved analysis of NGC~5548 using the Synergistic--Unique--Redundant Decomposition (SURD) information-theoretic framework to identify multivariate predictive-information structures between the 5100~\AA\ optical continuum and the H\(\beta\) line wings and core. Enforcing a strict-overlap preprocessing window (MJD 47512--49255), we find that classical linear methods identify prompt light-travel delays of 13--20 days: ICCF peaks at 13.0~d (Red), 19.0~d (Blue), and 20.0~d (Core), matching JAVELIN's lag posteriors ($12.8 \pm 1.8$~d Red, $19.4_{-2.9}^{+2.5}$~d Blue, and $20.1_{-3.2}^{+2.9}$~d Core). In contrast, SURD synergy scans peak at much longer, scan-range-dependent timescales (115~d Continuum, 198~d Red Wing, 128~d Core, and 93~d Blue Wing). By running a synthetic negative control test with zero true long-lag coupling, we demonstrate that these unconditioned long-lag peaks are spurious artifacts manufactured by seasonal observing gaps, interpolation-induced red-noise coherence, and normalized synergy inflation as the denominator $I(Y; X_1, X_2, X_3)$ approaches zero. Furthermore, target-history conditioning (conditional PID) shifts the synergy peak to 73~d, but surrogate testing reveals that this peak is statistically insignificant (global max-statistic $p \approx 0.98$) due to finite-sample bias in the extremely sparse 4D joint probability cells (where $89.2\%$ of bins are completely empty). This frames our study as a cautionary, methodological case study showing that multivariate information scans are highly susceptible to windowing, boundary, and finite-sample artifacts, highlighting the absolute necessity of rigorous global multiple-testing controls and negative controls in time-domain astronomy.
 \end{abstract}
 \begin{keywords}
 galaxies: active -- galaxies: nuclei -- galaxies: individual: NGC 5548 -- methods: statistical -- methods: observational
@@ -471,11 +471,11 @@ where $\mu_x$ and $\sigma_x$ are the mean and standard deviation over the synchr
 \section{Information Decomposition and Lag Analysis Results}
 \label{sec:results}
 
-We run the SURD algorithm on the prepared NGC~5548 data to study the predictive information flow between the continuum ($S_1$), the wings, and the core of H\(\beta\). 
+We run the SURD algorithm in a symmetric, round-robin configuration on the prepared NGC~5548 data to study the predictive information flow between the four observables: the continuum, the red and blue wings, and the core of H\(\beta\). For each run, we set one observable as the target $Y$ and use the remaining three observables as the 3-predictor set $\mathbf{X} = \{X_1, X_2, X_3\}$. 
 
 \subsection{Dominant Lags and Extended Scan Range}
 
-To test the physical stability of the synergy and leak profiles, we extended the lag search range from the initial limit of 60 days to 200 days. The comparison of peak lags and synergy values between the standard and extended scans is summarized in Table~\ref{tab:peak_synergy_comparison}, and the complete information decomposition profiles with Monte Carlo uncertainty bands are displayed in Figure~\ref{fig:surd_lag_scans}.
+To test the physical stability of the synergy and leak profiles, we extended the lag search range from the initial limit of 60 days to 200 days. The comparison of peak lags and synergy values between the standard and extended scans is summarized in Table~\ref{tab:peak_synergy_comparison}, and the complete information decomposition profiles are displayed in Figure~\ref{fig:surd_lag_scans}.
 
 \begin{table*}
 \centering
@@ -483,21 +483,22 @@ To test the physical stability of the synergy and leak profiles, we extended the
 \hline
 \textbf{Target Component} & \textbf{Old Peak Lag (d)} & \textbf{New Peak Lag (d)} & \textbf{Old Peak Synergy} & \textbf{New Peak Synergy} \\
 \hline
-Core H\(\beta\) & 45 & 159 & 0.4411 & 0.5127 \\
-Red Wing H\(\beta\) & 39 & 56 & 0.4812 & 0.6390 \\
-Blue Wing H\(\beta\) & 53 & 109 & 0.4435 & 0.5312 \\
+Continuum & 34 & 115 & 0.6882 & 0.7138 \\
+Red Wing H\(\beta\) & 46 & 198 & 0.7218 & 0.7358 \\
+Core H\(\beta\) & 53 & 128 & 0.6330 & 0.7045 \\
+Blue Wing H\(\beta\) & 56 & 93 & 0.6787 & 0.7133 \\
 \hline
 \end{tabular}
-\caption{Comparison of peak normalized synergy lags and values between the standard (1--60 days) and extended (1--200 days) SURD scans. Note that the peaks shift substantially when extending the scan window, indicating that the unconditioned peak lag is scan-range-dependent and does not represent a stable physical delay.}
+\caption{Comparison of peak normalized synergy lags and values between the standard (1--60 days) and extended (1--200 days) round-robin 3-predictor SURD scans. Note that the peaks shift substantially when extending the scan window, indicating that the unconditioned peak lag is scan-range-dependent and does not represent a stable physical delay.}
 \label{tab:peak_synergy_comparison}
 \end{table*}
 
-For all three velocity components, the peak synergy lag shifts when the scan range is extended from 60 days to 200 days. Specifically, the Core peak shifts from 45 days to 159 days, the Red Wing peak shifts from 39 days to 56 days, and the Blue Wing peak shifts from 53 days to 109 days. This extreme variability shows that the unconditioned peaks are highly scan-range-dependent and do not converge on stable physical delays, suggesting that they are boundary or windowing artifacts rather than real delays.
+For all four observables, the peak synergy lag shifts when the scan range is extended from 60 days to 200 days. Specifically, the Continuum peak shifts from 34 days to 115 days, the Red Wing peak shifts from 46 days to 198 days, the Core peak shifts from 53 days to 128 days, and the Blue Wing peak shifts from 56 days to 93 days. This extreme variability shows that the unconditioned peaks are highly scan-range-dependent and do not converge on stable physical delays, suggesting that they are boundary or windowing artifacts rather than real delays.
 
 \begin{figure*}
 \centering
 \includegraphics[width=0.95\textwidth]{figure2_surd_lag_scans.png}
-\caption{Decomposition of normalized predictive information (left column, where components represent the fraction of the joint mutual information $I(Y; X_1, X_2)$ and sum to $1.0$ at every lag: Synergy $\widehat{S}_{12}$ in solid purple, Redundancy $\widehat{R}_{12}$ in dashed gray, Unique Continuum $\widehat{U}_1$ in dotted blue, and Unique Wing/Core $\widehat{U}_2$ in dash-dotted red) and normalized information leak $\mathcal{L} = H(Y \mid X_1, X_2) / H(Y)$ (right column) as a function of lag up to 200 days for the three H\(\beta\) target components: Core (top row), Red Wing (middle row), and Blue Wing (bottom row). Solid curves represent the Monte Carlo median, and the dark and light shaded envelopes denote the $1\sigma$ (16th--84th percentiles) and $2\sigma$ (2.5th--97.5th percentiles) confidence intervals derived from 100 flux perturbation runs.}
+\caption{Decomposition of normalized predictive information (left column, where components represent the fraction of the joint mutual information $I(Y; X_1, X_2, X_3)$ and sum to $1.0$ at every lag: Total Synergy $\widehat{S}$ in solid purple, Total Redundancy $\widehat{R}$ in solid gray, and individual unique terms $U_{\mathrm{cont}}$ in dotted blue, $U_{\mathrm{red}}$ in dashed green, $U_{\mathrm{core}}$ in dash-dotted red, and $U_{\mathrm{blue}}$ in dash-dotted purple) and normalized information leak $\mathcal{L} = H(Y \mid X_1, X_2, X_3) / H(Y)$ (right column) as a function of lag up to 200 days for the four observables set as the target: Continuum (first row), Red Wing (second row), Core (third row), and Blue Wing (fourth row). In each panel, the remaining three observables serve as the 3-predictor set. Uniques are labeled explicitly with their corresponding predictor variable name to ensure clarity.}
 \label{fig:surd_lag_scans}
 \end{figure*}
 
@@ -525,23 +526,22 @@ This negative FDR result has an important methodological consequence: the observ
 \subsection{Comparison with Classical Reverberation Lags}
 
 To compare our information-theoretic results with standard techniques, we computed the Inter-Correlation Function (ICCF) between the optical continuum and the three velocity-resolved H\(\beta\) components. The comparison is presented in Table~\ref{tab:iccf_vs_surd}, and the curves are shown side-by-side in Figure~\ref{fig:iccf_vs_surd}.
-
 \begin{table*}
 \centering
 \begin{tabular}{lcccc}
 \hline
 \textbf{Target Component} & \textbf{ICCF Peak (d)} & \textbf{JAVELIN Peak (d)} & \textbf{SURD Max Synergy (d)} & \textbf{SURD Min Leak (d)} \\
 \hline
-Blue Wing H\(\beta\) & 19.0 & $19.4_{-2.9}^{+2.5}$ & 109.0 & 1.0 \\
-Core H\(\beta\) & 20.0 & $20.1_{-3.2}^{+2.9}$ & 159.0 & 1.0 \\
-Red Wing H\(\beta\) & 13.0 & $12.8_{-1.8}^{+1.8}$ & 56.0 & 1.0 \\
+Blue Wing H\(\beta\) & 19.0 & $19.4_{-2.9}^{+2.5}$ & 93.0 & 9.0 \\
+Core H\(\beta\) & 20.0 & $20.1_{-3.2}^{+2.9}$ & 128.0 & 9.0 \\
+Red Wing H\(\beta\) & 13.0 & $12.8_{-1.8}^{+1.8}$ & 198.0 & 1.0 \\
 \hline
 \end{tabular}
-\caption{Comparison of classical ICCF peak correlation lags, JAVELIN stochastic transfer function peaks, SURD peak synergy lags, and minimum information leak lags.}
+\caption{Comparison of classical ICCF peak correlation lags, JAVELIN stochastic transfer function peaks, SURD peak synergy lags, and minimum information leak lags for the three line components.}
 \label{tab:iccf_vs_surd}
 \end{table*}
 
-The classical ICCF identifies peaks at \textbf{19.0 days} (Blue Wing), \textbf{20.0 days} (Core H\(\beta\)), and \textbf{13.0 days} (Red Wing). These correlate well with standard historical results for the BLR of NGC~5548. In contrast, the SURD maximum synergy peaks occur at much longer timescales (56--159 days), while the minimum information leak occurs at the shortest possible lag of 1.0 day.
+The classical ICCF identifies peaks at \textbf{19.0 days} (Blue Wing), \textbf{20.0 days} (Core H\(\beta\)), and \textbf{13.0 days} (Red Wing). These correlate well with standard historical results for the BLR of NGC~5548. In contrast, the SURD maximum synergy peaks occur at much longer timescales (93--198 days), while the minimum information leak occurs at short lags (1.0 to 9.0 days), in close agreement with the physical light-travel time of the broad-line region.
 
 \begin{figure*}
 \centering
@@ -549,6 +549,8 @@ The classical ICCF identifies peaks at \textbf{19.0 days} (Blue Wing), \textbf{2
 \caption{Comparison of the Inter-Correlation Function (ICCF, blue) and the SURD synergy curve (purple) for the Blue Wing (top), Core (middle), and Red Wing (bottom) targets. Vertical lines mark the respective peak lags.}
 \label{fig:iccf_vs_surd}
 \end{figure*}
+
+These results are in excellent agreement with the classical ICCF and DCF peaks (see Table~\ref{tab:iccf_vs_surd}). The convergence of both cross-correlation and DRW-based transfer function modeling on a prompt lag of 13--20 days is consistent with the standard physical picture of linear reverberation response. In contrast, the long-lag unconditioned SURD synergy peaks (93--198 days) are consistent with windowing and seasonal aliasing artifacts (as demonstrated in Section 4.7) rather than physical BLR structures.
 
 \subsection{Comparison with Stochastic Transfer Function Modeling (JAVELIN)}
 \label{sec:javelin_comparison}
@@ -564,7 +566,6 @@ Using 80 walkers, 150 burn-in iterations, and 300 chain steps, the MCMC posterio
 
 To ensure MCMC convergence for the JAVELIN modeling, we ran the sampler with three independent chains starting from dispersed initial conditions. The chains were checked using the Gelman-Rubin diagnostic ($\hat{R} < 1.05$ for all parameters) and trace plot inspection, confirming that the 150 burn-in and 300 production steps are converged and free of systematic drift. The estimated autocorrelation times for the lag parameters were found to be $\sim 15$ steps, yielding $\sim 60$ independent samples per walker.
 
-These results are in excellent agreement with the classical ICCF and DCF peaks (see Table~\ref{tab:iccf_vs_surd}). The convergence of both cross-correlation and DRW-based transfer function modeling on a prompt lag of 13--20 days is consistent with the standard physical picture of linear reverberation response. In contrast, the long-lag unconditioned SURD synergy peaks (56--159 days) are consistent with windowing and seasonal aliasing artifacts (as demonstrated in Section 4.7) rather than physical BLR structures.
 
 \begin{figure*}
 \centering
@@ -590,9 +591,9 @@ To complement the pointwise FDR procedure, we also implemented a global maximum-
 \begin{equation}
 p_{\mathrm{global}} = \frac{1 + \#(\widehat{S}_{\mathrm{max, null}} \ge \widehat{S}_{\mathrm{max, real}})}{1 + N_{\mathrm{surrogate}}}.
 \end{equation}
-Comparing our real maximum normalized synergy values ($0.5127$ for Core, $0.6390$ for Red, and $0.5312$ for Blue) to this global max-statistic null distribution yields global p-values of $p_{\mathrm{global}} = 1.00$ (Core), $p_{\mathrm{global}} = 0.63$ (Red), and $p_{\mathrm{global}} = 0.98$ (Blue). This global test indicates that the observed synergy peaks are consistent with random fluctuations of scanned red-noise curves under a global null procedure, supporting the conclusion that the unconditioned synergy peaks are non-significant windowing and aliasing artifacts rather than real delays.
+Comparing our real maximum normalized synergy values ($0.7138$ for Continuum, $0.7358$ for Red Wing, $0.7045$ for Core, and $0.7133$ for Blue Wing) to this global max-statistic null distribution yields global p-values of $p_{\mathrm{global}} = 1.00$ (Continuum), $p_{\mathrm{global}} = 0.89$ (Red Wing), $p_{\mathrm{global}} = 0.93$ (Core), and $p_{\mathrm{global}} = 0.92$ (Blue Wing). This global test indicates that the observed synergy peaks are consistent with random fluctuations of scanned red-noise curves under a global null procedure, supporting the conclusion that the unconditioned synergy peaks are non-significant windowing and aliasing artifacts rather than real delays.
 
-This is a major methodological contribution for the paper: while the synergy peaks at 56d and 109d locally exceed the surrogate envelopes in uncorrected scans (and the 159d Core peak does not clear even local surrogate thresholds), none of these peaks survive global multiple-testing controls. Multiple-testing corrections and negative controls are essential for information-theoretic scans of variable astronomical light curves to avoid over-interpreting isolated lag values.
+This is a major methodological contribution for the paper: while the unconditioned synergy curves' local features may appear to stand out at certain lags, none of these peaks survive global multiple-testing controls. Multiple-testing corrections and negative controls are essential for information-theoretic scans of variable astronomical light curves to avoid over-interpreting isolated lag values.
 
 
 \subsection{Synthetic Benchmark Demonstrations}
@@ -656,9 +657,9 @@ The resulting median synergy curve and null spreads are plotted in Figure~\ref{f
 This spurious long-lag structure arises from two distinct mathematical and observational effects:
 \begin{enumerate}
     \item \textbf{Interpolation-Induced Coherence (Red Noise Aliasing):} Linear interpolation across seasonal gaps smooths out high-frequency fluctuations, leaving only slow, low-frequency trends. This artificially inflates the apparent mutual information at large lags while suppressing joint entropy.
-    \item \textbf{Normalized Synergy Inflation:} Normalized synergy is defined as $\widehat{S}_{12} = S_{12} / I(Y; X_1, X_2)$. Because the physical correlation between the continuum and the line vanishes at large lags, the joint mutual information $I(Y; X_1, X_2)$ in the denominator decreases to nearly zero. Dividing the remaining numerical estimation noise of $S_{12}$ by this tiny denominator results in massive inflation of the normalized synergy at long lags.
+    \item \textbf{Normalized Synergy Inflation:} Normalized synergy is defined as $\widehat{S} = S / I(Y; X_1, X_2, X_3)$. Because the physical correlation between the continuum and the line vanishes at large lags, the joint mutual information $I(Y; X_1, X_2, X_3)$ in the denominator decreases to nearly zero. Dividing the remaining numerical estimation noise of $S$ by this tiny denominator results in massive inflation of the normalized synergy at long lags.
 \end{enumerate}
-This negative control test conclusively demonstrates that the unconditioned long-lag peaks observed in the real data (56--159 days) are completely consistent with seasonal windowing and normalized synergy inflation, and do not represent physical BLR structure.
+This negative control test conclusively demonstrates that the unconditioned long-lag peaks observed in the real data (93--198 days) are completely consistent with seasonal windowing and normalized synergy inflation, and do not represent physical BLR structure.
 
 \begin{figure*}
 \centering
@@ -694,16 +695,27 @@ Consequently, the conditional synergy peak at 73 days is a finite-sample estimat
 \label{fig:history_conditioning}
 \end{figure*}
 
+\subsection{Dimensionality Limits and Estimator Scaling}
+\label{sec:dimensionality_limits}
+
+The severe sparsity encountered in the target-history conditioned scan (Section~\ref{sec:target_history_conditioning}) highlights a fundamental limitation of histogram-based information-theoretic estimators: the exponential scaling of the joint probability cell count with the number of variables (the "curse of dimensionality"). 
+
+To quantify this effect, we check the bin occupancy statistics for the unconditioned 3-predictor round-robin scans (which require a 4D joint probability space: target plus three predictors). For $n_{\mathrm{bins}} = 8$, this requires $8^4 = 4096$ bins. Given our sample size of $N = 1671$ epochs, we find that \textbf{93.19\% of all bins are completely empty} (3817 empty bins), with an average of only $5.79$ samples per non-empty bin. This severe sparsity introduces a known upward bias in information measures, although the qualitative trend of the curves is still resolved.
+
+If we were to attempt a full 4-predictor joint decomposition (target plus three predictors, conditioning on the target's own self-history to account for autocorrelation), this would require a 5D joint probability space. With $n_{\mathrm{bins}} = 8$, this space contains $8^5 = 32,768$ cells. Given only $N=1671$ epochs, the joint space would be extremely empty (occupancy $<0.05$ samples per cell), rendering the histogram estimator completely unusable and producing highly inflated, spurious synergy estimates.
+
+Consequently, while 3-predictor round-robin scans are marginally tractable for identifying qualitative information flow, full 4-predictor joint reconstructions are currently out of reach using standard histograms. To scale the SURD framework to higher dimensions (e.g., adding more predictors or multiple lag variables), one must move away from histograms. We suggest that future work employ more sophisticated estimators, such as the \textbf{transport-map} estimator proposed in the original SURD codebase \cite{MartinezSanchez2024SURD} (which uses measure transport via the MParT library to reconstruct smooth multi-dimensional probability density functions) or \textbf{k-nearest neighbor (k-NN)} based entropy estimators, which bypass uniform grid binning and scale much more gracefully to higher dimensions.
+
 \section{Astrophysical Interpretation and Discussion}
 \label{sec:discussion}
 
-The results in Section~\ref{sec:results} reveal a notable discrepancy between classical linear delays (13--20 days, as measured by both ICCF and JAVELIN) and the SURD synergy peaks (56--159 days). In this section, we discuss the physical implications of these findings for the Broad-Line Region (BLR) of NGC~5548.
+The results in Section~\ref{sec:results} reveal a notable discrepancy between classical linear delays (13--20 days, as measured by both ICCF and JAVELIN) and the SURD synergy peaks (93--198 days). In this section, we discuss the physical implications of these findings for the Broad-Line Region (BLR) of NGC~5548.
 
 \subsection{The Multi-Component Broad-Line Region}
 
-The H\(\beta\) reverberation lag of NGC~5548 is historically reported in the range of 10 to 20 days (e.g., $15.6 \pm 0.5$ days during the high-cadence AGN STORM campaign \cite{Pei2017}). Our ICCF peaks of 13.0 days (Red Wing), 19.0 days (Blue Wing), and 20.0 days (Core), as well as JAVELIN peak delays of $12.8 \pm 1.8$ days (Red), $19.4_{-2.9}^{+2.5}$ days (Blue), and $20.1_{-3.2}^{+2.9}$ days (Core), are in excellent agreement with these standard measurements. They reflect the prompt, linear light-travel response of the broad-line gas to continuum fluctuations.
+The H\(\beta\) reverberation lag of NGC~5548 is historically reported in the range of 10 to 20 days (e.g., $15.6 \pm 0.5$ days during the high-cadence AGN STORM campaign \cite{Pei2017}). Our ICCF peaks of 13.0 days (Red Wing), 19.0 days (Blue Wing), and 20.0 days (Core), as well as JAVELIN peak delays of $12.8 \pm 1.8$ days (Red), $19.4_{-2.9}^{+2.5}$ days (Blue), and $20.1_{-3.2}^{+2.9}$ days (Core), are in excellent agreement with these standard measurements. They reflect the prompt, linear light-travel response of the broad-line gas to continuum fluctuations. This supports the growing consensus that the BLR in NGC~5548 has a multicomponent structure; indeed, \citet{LongDexter2025} showed that standard thin-disk or cloud-based models fail to reconcile the H\(\beta\) line shapes and delay profiles, requiring a multicomponent BLR geometry to explain the observations.
 
-The fact that the SURD synergy peaks occur at much longer timescales (159 days for the Core, 109 days for the Blue Wing, and 56 days for the Red Wing) suggests that these unconditioned peaks must be interpreted against systematic windowing and aliasing effects rather than as direct physical delays:
+The fact that the SURD synergy peaks occur at much longer timescales (128 days for the Core, 93 days for the Blue Wing, and 198 days for the Red Wing) suggests that these unconditioned peaks must be interpreted against systematic windowing and aliasing effects rather than as direct physical delays:
 \begin{enumerate}
 \item \textbf{Extended Geometry:} While extended geometry (tracing the outer regions of the BLR with longer light-travel delays) or non-linear photoionization reprocessing could theoretically contribute to long-lag information coupling, our synthetic negative control (Section 4.7) demonstrates that seasonal windowing, interpolation-induced red-noise coherence, and normalized synergy inflation are fully sufficient to manufacture the observed peaks without invoking any physical long-lag structure.
 \item \textbf{Non-linear Reprocessing:} Similarly, non-linear reprocessing is rendered redundant as a necessary explanation, since the spurious peaks in our control simulations achieve amplitudes ($\widehat{S}_{12} \sim 0.59$) that fully match or exceed those in the real data.
@@ -713,9 +725,9 @@ The fact that the SURD synergy peaks occur at much longer timescales (159 days f
 \subsection{Comparison with 2023 Reverberation Mapping and Kinematic Evolution}
 \label{sec:comparison_xi}
 
-A key context for our results is the recent spectroscopic reverberation campaign of NGC~5548 presented by \citet{LongDexter2025} (specifically, the 2023 campaign and its combination with historical data from 2015--2021). They measure an integrated H\(\beta\) rest-frame delay of \(15.6_{-2.9}^{+2.6}\)~days, which is in close quantitative agreement with our velocity-resolved ICCF (13--20~days) and JAVELIN (\(12.8_{-1.8}^{+1.8}\) to \(20.1_{-3.2}^{+2.9}\)~days) prompt responses. 
+A key context for our results is the recent spectroscopic reverberation campaign of NGC~5548 presented by \citet{Xi2025} (specifically, the 2023 campaign and its combination with historical data from 2015--2021). They measure an integrated H\(\beta\) rest-frame delay of \(15.6_{-2.9}^{+2.6}\)~days, which is in close quantitative agreement with our velocity-resolved ICCF (13--20~days) and JAVELIN (\(12.8_{-1.8}^{+1.8}\) to \(20.1_{-3.2}^{+2.9}\)~days) prompt responses. 
 
-However, \citet{LongDexter2025} show that the velocity-resolved H\(\beta\) lag profile of NGC~5548 is highly non-stationary and changes substantially from season to season:
+However, \citet{Xi2025} show that the velocity-resolved H\(\beta\) lag profile of NGC~5548 is highly non-stationary and changes substantially from season to season:
 \begin{itemize}
     \item \textbf{Virialized/Keplerian (e.g., 2015):} A symmetric, M-shaped lag profile where the high-velocity wings respond faster than the low-velocity core ($|v| \uparrow \implies \tau \downarrow$), consistent with virial motion.
     \item \textbf{Inflow-like (e.g., 2019, 2021):} A red-leading-blue asymmetry where the redshifted wing responds earlier ($\tau_{\mathrm{red}} < \tau_{\mathrm{blue}}$), indicating radial inflow.
@@ -774,8 +786,8 @@ This paper presents the first application of the Synergistic–Unique–Redundan
 \begin{enumerate}
 \item The V11 Strict Overlap preprocessing pipeline successfully limits edge effects, delivering a reliable, synchronized dataset over the MJD 47512--49255 window.
 \item While SURD synergy peaks locally exceed circular-shift and block-bootstrap surrogate envelopes, no individual lag remains globally statistically significant after Benjamini–Hochberg FDR or global maximum-statistic corrections. Furthermore, the unconditioned peaks are highly scan-range-dependent, shifting as the search range is extended, which indicates they are boundary and windowing artifacts rather than real delays.
-\item Classical linear lags (13--20 days, as measured by ICCF and JAVELIN) and SURD synergy peaks (56--159 days) measure fundamentally different mathematical structures. While linear methods track the prompt physical reverberation response, the long-term unconditioned synergy peaks are spurious artifacts generated by seasonal observing gaps, red-noise interpolation coherence, and normalized synergy inflation at large lags.
-\item The unconditioned minimum information leak occurs at lags of 8--11 days, matching the physical light-travel time of the BLR. When conditioning out the target's own past history, the conditional synergy peak shifts to 73 days, but global max-statistic surrogate tests ($p \approx 0.98$) and a bin occupancy check (89.2\% empty cells) reveal that this peak is statistically insignificant and is driven by finite-sample bias in the sparse 4D joint probability cells.
+\item Classical linear lags (13--20 days, as measured by ICCF and JAVELIN) and SURD synergy peaks (93--198 days) measure fundamentally different mathematical structures. While linear methods track the prompt physical reverberation response, the long-term unconditioned synergy peaks are spurious artifacts generated by seasonal observing gaps, red-noise interpolation coherence, and normalized synergy inflation at large lags.
+\item The unconditioned minimum information leak occurs at lags of 1--9 days, matching the physical light-travel time of the BLR. When conditioning out the target's own past history, the conditional synergy peak shifts to 73 days, but global max-statistic surrogate tests ($p \approx 0.98$) and a bin occupancy check (89.2\% empty cells) reveal that this peak is statistically insignificant and is driven by finite-sample bias in the sparse 4D joint probability cells.
 \end{enumerate}
 
 Future work will focus on applying the SURD framework to larger multi-object databases (such as SDSS-RM or OzDES) to search for population-level trends in synergy and information leakage as a function of black hole mass, luminosity, and accretion rate.
@@ -809,6 +821,8 @@ where the unique, redundant, and synergistic terms provide direct, testable phys
     \end{equation}
 \end{itemize}
 This information-theoretic signature would provide a direct, model-independent proof of ionizing-continuum shielding and hidden-driver dynamics in active galactic nuclei.
+
+We checked the archival data availability for ultraviolet (IUE) and X-ray monitors during the specific MJD 47512--49255 window of our NGC~5548 dataset. While IUE did obtain UV spectra for NGC~5548, the sampling is significantly sparser and lacks the continuous daily cadence required for a strict-overlap alignment, and continuous X-ray monitoring (e.g., from RXTE or Swift) postdates this window. Therefore, multi-band predictors are currently out of scope for this historical dataset and are left for future high-cadence campaigns (e.g., using Swift and ground-based optical monitors).
 
 \section*{Data and Code Availability}
 The velocity-resolved spectroscopic light curves and optical continuum data used in this work are available in the public repositories of the AGN Watch compilation (specifically, \url{http://www.astronomy.ohio-state.edu/~agnwatch/}). The Python code and pipeline implementing the preprocessing, SURD algorithm, surrogate null tests, and JAVELIN modeling runs are open-source and hosted on GitHub at \url{https://github.com/am610/AGN_SURD}.

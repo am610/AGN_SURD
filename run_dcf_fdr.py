@@ -1,3 +1,14 @@
+"""Deprecated exploratory script; retained only for provenance.
+
+The published analysis uses empirical lagwise and maximum-statistic p-values
+from ``scratch/run_max_statistic_round_robin.py``.  The Gaussian approximation
+formerly implemented here is intentionally not executable.
+"""
+
+raise SystemExit(
+    "Deprecated: use scratch/run_max_statistic_round_robin.py for empirical FDR."
+)
+
 import os
 import numpy as np
 import pandas as pd
