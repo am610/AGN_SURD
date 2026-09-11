@@ -22,13 +22,9 @@
 Bentz M.~C.,  Katz S.,  2015, \mn@doi [Publications of the Astronomical Society
   of the Pacific] {10.1086/679601}, 127, 67
 
-\bibitem[\protect\citeauthoryear{Butts}{Butts}{2003}]{Butts2003}
-Butts D.~A.,  2003, \mn@doi [Network: Computation in Neural Systems]
-  {10.1088/0954-898X_14_2_304}, 14, 177
-
-\bibitem[\protect\citeauthoryear{Cackett, Horne  \& Winkler}{Cackett
+\bibitem[\protect\citeauthoryear{Cackett, Bentz  \& Kara}{Cackett
   et~al.}{2021}]{Cackett2021}
-Cackett E.~M.,  Horne K.,   Winkler H.,  2021, \mn@doi [iScience]
+Cackett E.~M.,  Bentz M.~C.,   Kara E.,  2021, \mn@doi [iScience]
   {10.1016/j.isci.2021.102557}, 24, 102557
 
 \bibitem[\protect\citeauthoryear{Cover \& Thomas}{Cover \&
@@ -40,11 +36,6 @@ Wiley
   et~al.}{2015}]{DeRosa2015}
 De~Rosa G.,  Peterson B.~M.,  Ely J.,   et~al., 2015, \mn@doi [The
   Astrophysical Journal] {10.1088/0004-637X/806/1/128}, 806, 128
-
-\bibitem[\protect\citeauthoryear{DeWeese \& Meister}{DeWeese \&
-  Meister}{1999}]{DeWeeseMeister1999}
-DeWeese M.~R.,  Meister M.,  1999, \mn@doi [Network: Computation in Neural
-  Systems] {10.1088/0954-898X_10_4_302}, 10, 325
 
 \bibitem[\protect\citeauthoryear{Dehghanian, Ferland, Peterson
   et~al.}{Dehghanian et~al.}{2019}]{Dehghanian2019}
@@ -73,16 +64,34 @@ Fausnaugh M.~M.,  Denney K.~D.,  Barth A.~J.,   et~al., 2016, \mn@doi [The
 
 \bibitem[\protect\citeauthoryear{Feng, Li, Bai  et~al.}{Feng
   et~al.}{2024}]{Feng2024}
-Feng H.-C.,  Li S.-S.,  Bai J.-M.,   et~al., 2024, arXiv e-prints
+Feng H.-C.,  Li S.-S.,  Bai J.-M.,   et~al., 2024, \mn@doi [The Astrophysical
+  Journal] {10.3847/1538-4357/ad8568}, 976, 176
+
+\bibitem[\protect\citeauthoryear{Frenzel \& Pompe}{Frenzel \&
+  Pompe}{2007}]{FrenzelPompe2007}
+Frenzel S.,  Pompe B.,  2007, \mn@doi [Physical Review Letters]
+  {10.1103/PhysRevLett.99.204101}, 99, 204101
+
+\bibitem[\protect\citeauthoryear{Homayouni, De~Rosa, Plesha, Kriss, Barth,
+  Cackett  et~al.}{Homayouni et~al.}{2023}]{Homayouni2023}
+Homayouni Y.,  De~Rosa G.,  Plesha R.,  Kriss G.~A.,  Barth A.~J.,  Cackett
+  E.~M.,   et~al., 2023, \mn@doi [The Astrophysical Journal]
+  {10.3847/1538-4357/acc45a}, 948, 85
 
 \bibitem[\protect\citeauthoryear{Horne, De~Rosa, Peterson  et~al.}{Horne
   et~al.}{2021}]{Horne2021}
 Horne K.,  De~Rosa G.,  Peterson B.~M.,   et~al., 2021, \mn@doi [The
   Astrophysical Journal] {10.3847/1538-4357/abce60}, 907, 76
 
+\bibitem[\protect\citeauthoryear{Kraskov, St{\"o}gbauer  \&
+  Grassberger}{Kraskov et~al.}{2004}]{Kraskov2004}
+Kraskov A.,  St{\"o}gbauer H.,   Grassberger P.,  2004, \mn@doi [Physical
+  Review E] {10.1103/PhysRevE.69.066138}, 69, 066138
+
 \bibitem[\protect\citeauthoryear{Long \& Dexter}{Long \&
   Dexter}{2025}]{LongDexter2025}
-Long K.,  Dexter J.,  2025, arXiv e-prints
+Long K.,  Dexter J.,  2025, \mn@doi [The Astrophysical Journal]
+  {10.3847/1538-4357/adda38}, 987, 196
 
 \bibitem[\protect\citeauthoryear{Mart{\'\i}nez-S{\'a}nchez, Arranz  \&
   Lozano-Dur{\'a}n}{Mart{\'\i}nez-S{\'a}nchez
@@ -113,6 +122,12 @@ Peterson B.~M.,  2004, \mn@doi [Publications of the Astronomical Society of the
 Peterson B.~M.,  Berlind P.,  Bertram R.,   et~al., 2002, \mn@doi [The
   Astrophysical Journal] {10.1086/344197}, 581, 197
 
+\bibitem[\protect\citeauthoryear{Plesha, Kriss, De~Rosa  \& Homayouni}{Plesha
+  et~al.}{2023}]{STORM2HLSP2023}
+Plesha R.,  Kriss G.,  De~Rosa G.,   Homayouni Y.,  2023, {Space Telescope and
+  Optical Reverberation Mapping of Mrk 817 (STORM 2)}, High-Level Science
+  Product, \mn@doi{10.17909/n734-k698}
+
 \bibitem[\protect\citeauthoryear{Ricci \& Trakhtenbrot}{Ricci \&
   Trakhtenbrot}{2023}]{RicciTrakhtenbrot2023}
 Ricci C.,  Trakhtenbrot B.,  2023, \mn@doi [Nature Astronomy]
@@ -126,9 +141,15 @@ Schreiber T.,  2000, \mn@doi [Physical Review Letters]
 Shannon C.~E.,  1948, \mn@doi [Bell System Technical Journal]
   {10.1002/j.1538-7305.1948.tb01338.x}, 27, 379
 
+\bibitem[\protect\citeauthoryear{Wanders \& Peterson}{Wanders \&
+  Peterson}{1996}]{WandersPeterson1996}
+Wanders I.,  Peterson B.~M.,  1996, \mn@doi [The Astrophysical Journal]
+  {10.1086/177502}, 466, 174
+
 \bibitem[\protect\citeauthoryear{Wang, Woo  et~al.}{Wang
   et~al.}{2025}]{Wang2025}
-Wang S.,  Woo J.-H.,   et~al., 2025, arXiv e-prints
+Wang S.,  Woo J.-H.,   et~al., 2025, \mn@doi [The Astrophysical Journal]
+  {10.3847/1538-4357/adbca5}, 983, 45
 
 \bibitem[\protect\citeauthoryear{White \& Peterson}{White \&
   Peterson}{1994}]{WhitePeterson1994}
@@ -138,6 +159,10 @@ White R.~J.,  Peterson B.~M.,  1994, \mn@doi [Publications of the Astronomical
 \bibitem[\protect\citeauthoryear{Williams \& Beer}{Williams \&
   Beer}{2010}]{WilliamsBeer2010}
 Williams P.~L.,  Beer R.~D.,  2010, arXiv preprint arXiv:1004.2515
+
+\bibitem[\protect\citeauthoryear{Xi et~al.}{Xi et~al.}{2025}]{Xi2025}
+Xi W.-Z.,  et~al., 2025, \mn@doi [The Astrophysical Journal]
+  {10.3847/1538-4357/ae1ccb}, 995, 157
 
 \bibitem[\protect\citeauthoryear{Zu, Kochanek  \& Peterson}{Zu
   et~al.}{2011}]{Zu2011}
