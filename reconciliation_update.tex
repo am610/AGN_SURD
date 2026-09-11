@@ -1,0 +1,52 @@
+% Review fragment generated from saved adopted data and sampling tables.
+% Replace conflicting legacy methods text when integrating this fragment.
+% Requires standard LaTeX; no external figure or bibliography dependency.
+\section{Adopted data and sampling validation}
+\label{sec:adopted_sampling_update}
+
+The adopted reduction uses 242 H$\beta$ spectra on 224 distinct dates. Of the 247 archived profiles, five lack an exact date and instrument match in corrected Table 1 of Wanders and Peterson (1996) and are excluded under a documented provenance policy. These are \texttt{n57653ab.spc}, \texttt{n57654ab.spc}, \texttt{n57657ab.spc}, \texttt{n57711ab.spc}, and \texttt{n57725ab.spc}. Their original files are preserved; the exclusion does not establish that their measurements are invalid.
+
+We express dates as JD less 2400000, rather than MJD. The revised continuum file requires 40000 to be added to its tabulated dates, despite the archive landing page stating the other convention. All 242 selected dates and revised continuum fluxes have unique matches in the corrected table within the documented flux tolerance of 0.00051 in the revised archive units. Spectral dates have integer day precision; the precise time scale and correction to the heliocentre remain unspecified.
+
+The adopted velocity intervals are $[-6000,-2000)$, $[-2000,2000)$ and $[2000,6000)$ km/s for the blue wing, core and red wing respectively. We use observed wavelengths with reference wavelength 4861.33~\AA\ and numerical reference redshift 0.017175. These conventions retain the existing project reduction; they are not the exact intervals or redshift used in the source paper. Each selected pixel contributes its flux density multiplied by its 2~\AA\ width. Profiles are in arbitrary flux density units, so the resulting components are in arbitrary integrated units.
+
+Measurements sharing a date are averaged with equal weights for all components, preserving the identity between their sum and the integrated selected profile. Errors propagate in quadrature under independence assumptions. Pixel covariance and shared calibration covariance are unavailable. The selected profile sum differs from the archive total H$\beta$ light curve, whose subtraction conventions differ.
+
+The original continuum remains primary for continuity and denser observed sampling. The revised continuum is retained as a sensitivity input. Its flux units and galaxy subtraction differ from the original continuum. Table~\ref{tab:adopted_inputs} separates measurement counts from distinct dates. Each series retains its observed endpoints; lagged pairing enforces the support of each required series.
+
+\begin{table*}
+\centering
+\begin{tabular}{lrrrr}
+\hline
+Series & Measurements & Dates & First JD offset & Last JD offset \\
+\hline
+H$\beta$ components & 242 & 224 & 47512.00 & 49255.00 \\
+Original continuum & 557 & 557 & 47512.00 & 49243.66 \\
+Revised continuum & 242 & 224 & 47512.00 & 49255.00 \\
+\hline
+\end{tabular}
+\caption{Adopted input counts and actual support endpoints. JD offsets are relative to 2400000. The revised continuum is a sensitivity input.}
+\label{tab:adopted_inputs}
+\end{table*}
+
+We compare a daily linear interpolation grid, interpolation restricted to gaps of at most 30 days, analysis within seasons divided at gaps exceeding 60 days in either input and also restricted to 30 day interpolation gaps, and native observation pairing with a one day tolerance. Native ties select the earlier observation. No method extrapolates. A positive lag places the line target after its predictors. A native target contributes at most one tuple at each lag, although predictor observations may be reused. Counts therefore do not represent independent sample sizes.
+
+\begin{table*}
+\centering
+\begin{tabular}{rrrrr}
+\hline
+Lag (days) & Daily & Limited gaps & Within seasons & Native \\
+\hline
+0 & 1732 & 1363 & 1363 & 223 \\
+30 & 1714 & 1174 & 1174 & 74 \\
+100 & 1644 & 980 & 980 & 60 \\
+200 & 1544 & 840 & 778 & 51 \\
+\hline
+\end{tabular}
+\caption{Lagged tuple counts under the adopted sampling rules. There are 224 native line dates and 557 original continuum dates.}
+\label{tab:adopted_sampling_counts}
+\end{table*}
+
+The exploratory information pilot scans 201 lags from zero through 200 days for three line targets. Each target uses continuum and the other two line components at a common lag as predictors; the target component is excluded at every lag. Four marginal quantile bins are defined from native observations and held fixed across methods and lags within each dataset. The identical rule defines bins for each simulated dataset. A minimum of 32 tuples is a numerical guard, not evidence of adequate statistical support. Joint mutual information, individual SURD atoms, total synergy in bits, synergy divided by joint information, and histogram occupancy are saved separately.
+
+Eight simulated datasets have exercised this complete execution path, using independent signals and a delayed shared continuum driver. The process parameters are stipulated and have not been fitted to the observed campaign. This is a runtime and correctness pilot, not significance calibration or a detection power measurement. The present scans do not replace the historical numerical results elsewhere in the draft. Those results must be recomputed on the adopted sample or explicitly identified as historical diagnostics before submission.
