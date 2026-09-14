@@ -2,6 +2,8 @@
 
 This repository investigates the behavior of Synergistic Unique Redundant Decomposition in irregular observations of NGC 5548. The current work validates data provenance and quantifies how sampling and information estimation affect the results. It does not establish a new astrophysical lag or causal relationship.
 
+The main result is deliberately narrow. SURD provides a richer partition of predictive information than conventional lag estimators, but no information atom in these observations is both globally significant and robust enough to establish additional astrophysical knowledge. The prompt relationships are recovered more directly by ICCF and simpler information measures. The demonstrated contribution is therefore a validation framework and a warning against interpreting uncalibrated multivariate information structure as AGN physics.
+
 ## Current analysis
 
 The adopted pipeline uses 242 Hβ spectra on 224 dates and 557 original continuum observations. Five profiles without exact date and instrument matches in the corrected observation table are excluded from the adopted sample and preserved in the archive comparison. The revised continuum is available as a sensitivity input.
@@ -26,8 +28,9 @@ python -m pipeline.continuum_baseline
 python -m pipeline.calibrate_significance --surrogates 999 --workers 4
 python -m pipeline.decompose_all_atoms
 python -m pipeline.asymmetric_lags
-python -m pipeline.detection_power_grid --reps 50 --workers 4
+python -m pipeline.detection_power_grid --reps 200 --workers 4
 python -m pipeline.incremental_information --surrogates 100 --workers 4
+python -m pipeline.final_closure_checks
 ```
 
 Input retrieval downloads public archive data and the upstream SURD implementation at commit `79dbdea85e6754ec2b5457b3e37204c5d53d1815`. It verifies file hashes, refuses to overwrite differing local files, and extracts only the expected spectra. Raw archive inputs and the source paper are retrieved from their providers rather than distributed here. The corrected table text required by the loader is included under `audit` with its provenance documented.
@@ -57,13 +60,11 @@ complete visual review.
 
 The information pilot includes curves and peak summaries for all eight simulated datasets, observed curves and peaks, timings, settings and source hashes. Its peaks are descriptive; no calibrated significance is claimed. The benchmark estimates about 18 minutes for 1000 repetitions of that exact scan on the tested laptop with two workers. Expanded parameter grids and nested calibration can require much more computation.
 
-## Remaining research
+## Final closure status
 
-1. Increase the independent null evaluation size for the power sensitivities.
-2. Add intended atom identification to the expanded power grid.
-3. Test temporal neighbour exclusion for continuous estimators.
-4. Replace the two-segment prediction diagnostic with a pre-specified blocked validation design if a predictive headline is retained.
-5. Run the complete documented workflow from a clean checkout and archive superseded manuscript versions.
+The five release tasks are now addressed. The central power grid was rerun with 200 calibration and 200 evaluation null realizations per run, for 3400 central realizations. Intended atom identification is recorded in the 100 realization synthetic validation. Temporal neighbour exclusion was tested at 1, 3, and 5 days. A four block contiguous date validation was added, with two blocks meeting the strict overlap requirement at the 15 day evaluation lag. The clean checkout workflow and 22 page PDF review have passed.
+
+No further exploratory search for a positive SURD result is recommended with this dataset. A credible test of added astrophysical value requires a predefined analysis using denser simultaneous optical, ultraviolet, X ray, and velocity resolved observations, ideally with an estimator independent decomposition. This is future work rather than a release blocker.
 
 ## Sources
 

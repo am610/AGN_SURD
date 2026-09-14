@@ -6,7 +6,7 @@ Read the project research summary, the July task document, the September prepara
 
 Task 1 is complete under the explicit selection and convention policies described below. Implemented and executed `pipeline/reconcile_data.py` and `pipeline/adopted_data.py`. The candidate output remains in `agn_surd_project/processed/reconciled`; adopted inputs are in its `adopted` directory. Every original spectrum reproduces the saved component fluxes after the explicit 2 Å integration factor. The candidate has 247 spectra on 226 dates. The adopted sample has 242 spectra on 224 dates, with 557 original continuum observations. Component sums remain exact after combining repeated dates. Input hashes and dependency versions are recorded.
 
-Velocity decision: retain the intervals that generated the existing outputs, with boundaries at ±2000 and ±6000 km/s. Treat narrower intervals as a future sensitivity configuration. The manuscript still needs to be aligned with the adopted pipeline after remaining reconciliation checks.
+Velocity decision: retain the intervals that generated the existing outputs, with boundaries at ±2000 and ±6000 km/s. Treat narrower intervals as a future sensitivity configuration. The manuscript is aligned with this adopted pipeline.
 
 Archive evidence confirms arbitrary profile flux units. Matching the corrected Wanders and Peterson Table 1 date and instrument identifiers validates the filename interpretation for 242 of 247 spectra. The adopted policy excludes the other five profiles: n57653ab.spc, n57654ab.spc, n57657ab.spc, n57711ab.spc, n57725ab.spc. Their provenance remains unresolved and the original files are preserved. A saved exclusion table makes the selection reproducible.
 
@@ -29,10 +29,16 @@ Publication preparation: added public input retrieval with pinned hashes and a p
 1. The continuum baseline was recalibrated with 999 surrogates. Blue has a lag-scan global value of 0.009 and a three-target adjusted value of 0.0135. Core has corresponding values of 0.001 and 0.003. Red remains non-significant at 0.228.
 2. The common-lag decomposition exports all eleven atoms and normalized leakage for every target in both requested four-variable sets.
 3. The unequal-lag runner was corrected. Its original symmetric configuration offset the target, which was not among the predictors, and therefore duplicated the common-lag control. The corrected runner uses target-relative response phases, permits signed offsets, and evaluates every target in both variable sets. These scans remain descriptive because no unequal-lag null calibration has been run.
-4. The central power grid now uses 850 realizations, including independent null calibration and evaluation samples. Power has Wilson intervals and lag bias and RMSE have bootstrap intervals. The false positive estimate is 0.06 with a 95% interval from 0.021 to 0.162. Six one-factor sensitivity grids vary response width, process timescale, and noise. The mixing coefficient is not interpreted as a variance fraction.
+4. The central power grid now uses 3400 realizations, including separate 200 realization null calibration and evaluation samples. Power has Wilson intervals and lag bias and RMSE have bootstrap intervals. The false positive estimate is 0.075 with a 95% interval from 0.046 to 0.120. Six one factor sensitivity grids vary response width, process timescale, and noise. The mixing coefficient is not interpreted as a variance fraction.
 5. Incremental information was rerun after standardizing KSG marginals, increasing calibration to 100 surrogates, and defining validation segments from native gaps without boundary crossing. All directional scans remain non-significant, with global values from 0.525 to 1.000. The declared 60 day rule produces only two validation segments, so prediction is a limited diagnostic and does not refute physical transport.
-6. The manuscript text and tables were revised to match these corrected outputs and bounded interpretations. Sixteen unit tests pass. Final release verification remains open until clean checkout reproduction and visual review are complete.
+6. The manuscript text and tables were revised to match these corrected outputs and bounded interpretations. Sixteen unit tests pass. Clean checkout reproduction and visual review are complete.
 
 Release verification identified and corrected a missing explicit SciPy runtime
 dependency used by the KSG and interval calculations.  The final clean checkout
 run must use the updated pinned requirements file.
+
+Final closure update on 11 September 2026
+
+The independent null evaluation was increased to 200 calibration and 200 evaluation realizations. The central grid now contains 3400 realizations. The false positive estimate is 0.075 with a 95 percent Wilson interval from 0.046 to 0.120. Intended atom identification is recorded from the 100 realization synthetic positive controls. A temporal neighbour exclusion sensitivity was implemented for 1, 3 and 5 day exclusion windows. A four block contiguous date validation was added. Only two blocks satisfy the strict overlap requirement at the 15 day evaluation lag, and both show negative incremental R squared. These checks support a conservative nondetection statement and do not establish causal transport.
+
+The authoritative manuscript was updated with the final central grid values and closure checks. The July task record was updated with a colored response log. Optional future work includes simultaneous ultraviolet or X ray data, a larger AGN sample, and estimator independent atom decomposition.

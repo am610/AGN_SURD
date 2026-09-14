@@ -46,6 +46,11 @@ Hbeta_components_prediction_analysis.pdf
 V5.pdf
 overleaf_draft/V4.*
 scratch/
+qa_paper/
+qa_paper2/
+qa_tasks_jul21_final/
+qa_tasks_jul21_final_v2/
+archive/
 
 # Large legacy validation arrays retained locally but not required by the
 # adopted release pipeline.  Compact summaries and reconciled release outputs

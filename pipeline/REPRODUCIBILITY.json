@@ -11,12 +11,13 @@
     "999 surrogate continuum calibration",
     "all atom decomposition",
     "all target asymmetric lag scans",
-    "850 realization central detection power grid",
+    "3400 realization central detection power grid",
+    "temporal neighbour exclusion sensitivity and four block blocked validation",
     "100 surrogate incremental information scans"
   ],
   "rendering_note": "PNG byte hashes can differ across clean environments because Matplotlib font resolution and metadata are platform dependent. Numerical CSV outputs and plotted values were checked separately.",
   "pdf_visual_review": {
-    "pages": 21,
+    "pages": 22,
     "status": "passed",
     "compiler": "Tectonic 0.17.0",
     "checks": [
@@ -26,5 +27,11 @@
       "complete references",
       "consistent headers, footers and page numbering"
     ]
+  },
+  "final_closure_checks": {
+    "status": "passed",
+    "intended_atom_controls": "100 synthetic realizations with 99 to 100 percent identification for isolated controls",
+    "temporal_exclusion_days": [1, 3, 5],
+    "blocked_validation": "two usable strict overlap blocks at the 15 day evaluation lag, both with negative incremental R squared"
   }
 }

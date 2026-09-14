@@ -1,0 +1,12 @@
+{
+  "status": "Final closure checks completed",
+  "temporal_exclusion_days": [
+    0,
+    1,
+    3,
+    5
+  ],
+  "blocked_validation_blocks": 4,
+  "atom_source": "synthetic_validation_summary.csv",
+  "notes": "These are estimator and validation sensitivity checks. They do not turn observational information into causal evidence."
+}

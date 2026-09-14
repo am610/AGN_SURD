@@ -45,6 +45,10 @@ The incremental analysis now standardizes KSG marginals and uses 100 surrogates.
 
 The current paper text incorporates these corrections. Release status remains provisional until the revised working tree is committed and reproduced from a clean checkout.
 
+## Final closure completed on 11 September 2026
+
+The independent null evaluation was increased to 200 calibration and 200 evaluation realizations, giving 3400 central grid realizations. Intended atom identification is recorded from the 100 realization synthetic controls. Temporal neighbour exclusion was evaluated at 1, 3 and 5 days. A four block contiguous date validation was added, with two usable strict overlap blocks at the 15 day evaluation lag and negative incremental R squared in both. The authoritative manuscript now reflects these results. The remaining extensions are optional and include a larger AGN sample, simultaneous ultraviolet or X ray coverage, and estimator independent atom decomposition.
+
 ## Evidence
 
 The adopted manifests and data table are in `agn_surd_project/processed/reconciled/adopted`. Sampling counts are in `agn_surd_project/processed/reconciled/sampling`. The executed pilot is documented in `pipeline/BENCHMARK.md`. Archive conventions are checked against the [AGN Watch data descriptions](https://www.asc.ohio-state.edu/astronomy/agnwatch/n5548/lcv/) and the [Wanders and Peterson source paper](https://articles.adsabs.harvard.edu/pdf/1996ApJ...466..174W), especially sections 3.1 and 3.2 and corrected Table 1.
