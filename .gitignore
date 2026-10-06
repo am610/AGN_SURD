@@ -1,5 +1,15 @@
 # Git ignore patterns for AGN_SURD project
 
+# Active exploratory outputs and locally held source publications
+.pytest_cache/
+collaborator_rebuild/historical_results/
+collaborator_rebuild/reviewed_figures/
+collaborator_rebuild/support_review/
+collaborator_rebuild/prepared/
+collaborator_rebuild/sources/
+Instructions for prompt sept26.docx
+MartinezSanchez-alvaroms-MS-AeroAstro-2025-thesis 2.pdf
+
 # Datasets and large zip files
 agn_surd_project.zip
 agn_surd_project/agn_data/
