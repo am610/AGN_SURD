@@ -10,9 +10,13 @@ campaigns are a possible later extension.
 
 The historical run is exploratory, not a completed astrophysical result.
 Campaign assignments and decomposition arithmetic have been checked. Total
-H beta provenance and sparse sampling remain unresolved. Equation 3.18 predictor
+H beta now uses corrected published flux columns; exact profile integration
+reconstruction and estimation reliability remain unresolved. Equation 3.18 predictor
 construction is implemented and tested; expanded scientific results are not yet
-validated. The requested results section is pending.
+validated. A separate descriptive results section is drafted under
+`collaborator_rebuild/results_section`, with a compiled preview at
+`output/pdf/surd_campaign_results.pdf`. Scientific review and calibration
+remain pending.
 
 Start with [current progress](collaborator_rebuild/PROGRESS.md),
 [analysis specification](collaborator_rebuild/SPECIFICATION.md), and

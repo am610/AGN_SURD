@@ -1,0 +1,280 @@
+% Include this section with graphicx, amsmath, booktabs, float, and natbib available.
+% SURDResultsPath is the path to this folder from the compiling document.
+\providecommand{\SURDResultsPath}{collaborator_rebuild/results_section}
+
+\section{Campaign resolved SURD components and sampling sensitivity}
+\label{sec:campaign_surd_results}
+
+\subsection{Observed series and analysis scope}
+
+We analyze historical observations of NGC~5548 in five observing campaigns
+from 1989 through 1993. The adopted line sample contains 242 spectra on
+224 distinct dates. Corrected published total, blue, core, and red
+H$\beta$ measurements are used directly from the table accompanying
+\citet{CRWanders1996}, together with 557 original optical continuum
+measurements at 5100~\AA. Duplicate spectral dates are represented by equal
+means, with mean uncertainties obtained from the quadrature sum of quoted
+errors divided by the number of measurements. Shared calibration covariance
+is unavailable. The original continuum retains host starlight.
+All four line variables share spectra, and the total nearly equals the sum
+of the three components. We retain the published rounding and do not treat
+these measurements as independent observations of four physical regions.
+
+Campaign membership follows the intervals in Table~2 of
+\citet{CRPeterson2004}: JD less 2400000 from 47509 through 47809,
+47861 through 48179, 48225 through 48534, 48623 through 48898,
+and 48954 through 49255. The blue, core, and red definitions follow
+the observed wavelength intervals in source Section~3.2, respectively
+4870 through 4920, 4920 through 4960, and 4960 through 5010~\AA.
+The source figure caption gives a different blue lower boundary;
+using the published measurements avoids claiming an exact reconstruction
+of the integrations from the archived profile pixels.
+
+For each campaign, we analyze two variable sets: total, blue, core, and
+red H$\beta$; and continuum, blue, core, and red H$\beta$.
+Every variable in a set becomes the future target in turn, while all four
+past variables, including the target's own history, remain predictors.
+We use the unchanged SURD implementation of \citet{CRSURD2024}, with
+the averaging and normalization described by \citet{CRThesis2025}.
+For four predictors, the listed combinations give four unique,
+eleven redundant, and eleven synergistic components, hence 26 in total.
+
+For future target $Y(t)$ and predictor vector $\mathbf{X}_{\tau}(t)$,
+we write each normalized component as
+\begin{equation}
+ f_a(\tau)=\frac{I_a(Y;\mathbf{X}_{\tau})}
+ {I(Y;\mathbf{X}_{\tau})},
+ \qquad \sum_{a=1}^{26}f_a(\tau)=1,
+ \label{eq:cr_component_normalization}
+\end{equation}
+when joint mutual information is nonzero. Information leakage uses a
+separate denominator,
+\begin{equation}
+ \ell(\tau)=\frac{H(Y\mid\mathbf{X}_{\tau})}{H(Y)}.
+ \label{eq:cr_leakage}
+\end{equation}
+The component fractions therefore describe the allocation of available
+predictive information, while leakage describes the fraction of target
+entropy left unexplained. A large normalized component can coexist with
+substantial leakage.
+
+The saved exploratory scans cover base lags from zero through 30 observed
+days. Predictors are interpolated at native target dates within the same
+campaign, with no extrapolation and a maximum interpolation gap of ten days.
+We retain a minimum of 32 finite tuples as a numerical guard.
+Probability histograms use either two or three marginal quantile bins,
+whose boundaries are determined from each full native campaign series.
+The two additional scenarios place the blue or red predictor five days
+earlier than the common base lag. These stipulated offsets are sensitivity
+choices, not measured delays. Their construction gives one lag to each
+predictor; it does not execute the expanded predictor vector of thesis
+equation~3.18.
+
+\subsection{Campaign support and sensitivity to bin choice}
+
+Each bin setting contains 3720 configurations, with 1402 passing the
+numerical guard. At positive lags there are 1326 supported configurations.
+The native inputs, settings apart from bin count, tuple counts, and support
+status agree between the two scans. This permits a direct comparison of
+bin settings at each lag. It does not hold target dates fixed across lags.
+
+We quantify the change in the normalized component distribution using
+\begin{equation}
+ D_{\rm TV}(\tau)=\frac{1}{2}\sum_{a=1}^{26}
+ \left|f_a^{(2)}(\tau)-f_a^{(3)}(\tau)\right|.
+ \label{eq:cr_tv}
+\end{equation}
+The superscripts denote bin count. Leakage changes are reported as
+$|\ell^{(2)}-\ell^{(3)}|$. Both quantities are descriptive diagnostics;
+neither is a significance test or an uncertainty estimate.
+
+\begin{table}[H]
+\centering
+\caption{Native date counts and positive lag support by campaign.
+Each campaign has 720 positive lag configurations per bin setting.
+$N_{\rm line}$ is the number of native dates for each line series and
+$N_F$ is the continuum count. $N_{\rm usable}$ applies to the earlier
+support that changes with lag. The last column gives the range of retained
+date counts after intersection across all positive lags in each curve.}
+\label{tab:cr_campaign_support}
+\small
+\input{\SURDResultsPath/campaign_rows.tex}
+\end{table}
+
+Table~\ref{tab:cr_campaign_support} shows that numerical support differs
+strongly between campaigns. Only one positive lag configuration is usable
+in 1991. All 720 configurations in 1993 pass the guard, but the median
+$D_{\rm TV}$ is 0.515 and every supported configuration in that campaign
+has $D_{\rm TV}>0.2$. Across all campaigns, median $D_{\rm TV}$ is 0.484
+and median absolute leakage change is 0.182. Thus even the campaign with
+complete numerical coverage is sensitive to the probability discretization.
+Complete coverage under the tuple guard does not establish reliable
+estimation of the component fractions.
+
+\subsection{Holding target dates fixed across all positive lags}
+
+To remove changes in native target support along a lag curve, we retain
+only target dates at which every required predictor is finite at every
+base lag from one through 30 days. This intersection is computed separately
+for each campaign, variable set, target, and scenario. The resulting dates
+are used at every lag and for both bin settings. The lag range, interpolation
+gap limit, numerical guard, and full campaign quantile boundaries are
+unchanged. Zero lag is excluded from the intersection and comparison.
+
+Only four of 120 curves retain at least 32 target dates: the common
+continuum target in 1992, and the common, blue earlier, and red earlier
+continuum targets in 1993. Every future line target fails the guard under
+this stricter construction. The 116 excluded curves have no decomposition
+in this run. The four retained curves produce 240 decompositions across
+30 lags and two bin settings, with 6240 component rows.
+Normalization is defined in all executed cases, with maximum absolute
+component sum error $1.22\times10^{-15}$; this verifies arithmetic only.
+
+\begin{table}[H]
+\centering
+\caption{Sensitivity between bin settings with identical target dates
+across all positive lags. Every row has future continuum as the target.
+Each median uses 30 base lags. The last column counts components whose
+maximizing lag sets do not overlap between bin settings. All components,
+including weak ones, are counted; ties are retained within absolute
+tolerance $10^{-12}$.}
+\label{tab:cr_fixed_support}
+\small
+\input{\SURDResultsPath/fixed_rows.tex}
+\end{table}
+
+The sensitivity persists after fixing the target dates
+(Table~\ref{tab:cr_fixed_support}). Median $D_{\rm TV}$ ranges from
+0.523 to 0.610. In addition, changing the retained observations affects the
+estimates at a fixed bin count. For the 1993 common curve, median
+$D_{\rm TV}$ between the earlier varying support estimates and the new fixed
+support estimates is 0.475 for two bins and 0.391 for three bins.
+Across the four retained curves and both bin settings, these medians range
+from 0.272 to 0.475. This measures sensitivity to sample selection and can
+include temporal variation; it does not isolate estimator bias.
+
+The retained sample has 36 dates for the 1992 curve and 78 through 90
+dates for the 1993 curves. In the 1993 common case, median occupied
+histogram cell counts are 14.5 for two bins and 25 for three bins, with
+90 tuples. The corresponding medians of singleton cell counts are four
+and ten. Repeated or interpolated observations are not independent samples,
+and structural dependence can also leave cells empty. These occupancy
+counts are diagnostics rather than estimator validation.
+
+\subsection{Individual components and descriptive extrema}
+
+Figures~\ref{fig:cr_1992_common} through \ref{fig:cr_1993_red}
+show all individual components and leakage for the four retained curves.
+The notation uses $F$ for continuum, $B$ for blue, $C$ for core, and $R$
+for red; the outer operator identifies a unique, redundant, or synergistic
+component. Dotted curves use two bins and solid curves use three bins.
+All component panels share the joint information denominator in
+equation~\ref{eq:cr_component_normalization}, while the leakage panel uses
+equation~\ref{eq:cr_leakage}.
+
+The 1993 common case is selected as the example with the largest retained
+date count, rather than by the amplitude or location of a peak.
+Table~\ref{tab:cr_extrema} reports the largest component value within each
+information type over the declared positive lag range.
+The largest unique contribution comes from continuum history in both
+bin settings, but its maximizing lag changes from six days to one day.
+The largest redundancy changes from $R(B,C)$ at 25 days to $R(B,C,R)$
+at eleven days. The largest synergy changes from $S(F,R)$ at the
+30 day scan boundary to $S(F,C)$ at four days. The boundary maximum
+cannot identify an interior characteristic delay. Component identities,
+amplitudes, and maximizing lags therefore change with discretization
+despite identical native target support.
+
+\begin{table}[H]
+\centering
+\caption{Descriptive maxima in the 1993 common scenario with 90 fixed
+continuum target dates. Each row maximizes over all components of the
+specified type and all base lags from one through 30 days. These maxima
+have no null calibration or delay uncertainty and are not physical lag
+measurements.}
+\label{tab:cr_extrema}
+\small
+\input{\SURDResultsPath/extrema_rows.tex}
+\end{table}
+
+\subsection{Astrophysical scope and remaining analysis}
+
+The executed curves describe future continuum prediction from its own
+history and past line components. They do not provide a supported fixed
+date curve of future line response to past continuum in the declared lag
+range. A predictive association also requires consideration of a shared
+ionizing driver, measurement noise, temporal dependence, and the imperfect
+relation between observed optical continuum and illuminating radiation
+before it can receive a causal interpretation. Total and component line
+measurements retain their shared spectral provenance.
+
+\citet{CRLu2022} report emission line reverberation relative to the optical
+continuum in five modern seasons and changes in velocity resolved lag
+profiles. \citet{CRXi2025} extend the program to 2023 and report temporal
+evolution of the inferred gas kinematics. Those studies motivate analysis
+of separate campaigns. Their line response delays and kinematic
+interpretations are different quantities from the normalized information
+component extrema reported here. Our historical epochs, wavelength
+partitions, observed time frame, and retained target direction also differ.
+The present diagnostics therefore do not establish agreement or disagreement
+with their physical delay measurements or with an inflow or outflow model.
+
+The completed calculations establish substantial sensitivity to bin choice
+and retained dates. Neither bin setting is selected as reliable, and no
+stable physical delay or causal detection is claimed. No significance
+test or flux uncertainty propagation has been performed for these fixed
+support curves. Probability estimation calibration at comparable sample
+support remains pending. The expanded predictor construction of thesis
+equation~3.18 is implemented and tested, but only its support audit has
+been executed; an expanded scientific decomposition is not reported.
+These limitations delimit the present results section and the remaining
+collaborator analysis.
+
+\clearpage
+\begin{figure}[p]
+\centering
+\includegraphics[width=.96\textwidth]{\SURDResultsPath/figures/1992_common.png}
+\caption{Individual normalized SURD components and information leakage
+for the 1992 common scenario. The future target is continuum and predictors
+are past continuum, blue, core, and red H$\beta$. Every base lag uses the
+same 36 target dates. $F$, $B$, $C$, and $R$ denote those four variables.
+The outer $U$, $R$, and $S$ identify the information type. Dotted curves
+use two bins and solid curves use three bins. Leakage has its own target
+entropy denominator. The curves are descriptive estimates without
+significance or physical delay claims.}
+\label{fig:cr_1992_common}
+\end{figure}
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=.96\textwidth]{\SURDResultsPath/figures/1993_common.png}
+\caption{As in Figure~\ref{fig:cr_1992_common}, for the 1993 common
+scenario with 90 fixed continuum target dates. This is the retained curve
+with the largest native target support. The changes in individual maxima
+between bin settings are summarized in Table~\ref{tab:cr_extrema}.}
+\label{fig:cr_1993_common}
+\end{figure}
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=.96\textwidth]{\SURDResultsPath/figures/1993_blue_earlier.png}
+\caption{As in Figure~\ref{fig:cr_1992_common}, for the 1993 blue earlier
+scenario with 78 fixed continuum target dates. The blue predictor is
+evaluated five days earlier than the other predictors. This stipulated
+offset is a sensitivity choice, not a measured delay. Its retained dates
+differ from those in the common scenario, so scenario differences cannot
+be attributed solely to the predictor offset.}
+\label{fig:cr_1993_blue}
+\end{figure}
+
+\begin{figure}[p]
+\centering
+\includegraphics[width=.96\textwidth]{\SURDResultsPath/figures/1993_red_earlier.png}
+\caption{As in Figure~\ref{fig:cr_1992_common}, for the 1993 red earlier
+scenario with 78 fixed continuum target dates. The red predictor is
+evaluated five days earlier than the other predictors. This is a
+stipulated sensitivity choice. Dates are held fixed within this curve,
+but are not forced to match the other scenarios.}
+\label{fig:cr_1993_red}
+\end{figure}
+\clearpage

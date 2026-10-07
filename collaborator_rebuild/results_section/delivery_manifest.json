@@ -1,0 +1,20 @@
+{
+  "status": "Descriptive draft for scientific review",
+  "pages": 9,
+  "tables": 3,
+  "figures": 4,
+  "rendered_pages_inspected": 9,
+  "compilation_warnings": 0,
+  "sha256": {
+    "collaborator_rebuild/results_section/campaign_rows.tex": "f533acdbd200c1f22081180d0107c9e322d91558fcce2e2303afea76988339fb",
+    "collaborator_rebuild/results_section/results_section.tex": "e6b1370928c494f5794b39f68efab1fd164e0b8f4db97e0dcd459fe4d2da24b6",
+    "collaborator_rebuild/results_section/preview.tex": "0754714c087f8ed460570c7c27e01bc05ec280ae3bc854ebc6d46b344537d005",
+    "collaborator_rebuild/results_section/extrema_rows.tex": "397adbc94e9f36d8d02e4cca985146260fd076165da4ce690446b1fd65a25ea9",
+    "collaborator_rebuild/results_section/fixed_rows.tex": "81769f7aba56e020af2fd36c71edc5fd7bfca0bd954d01be301ca82a9b639ee3",
+    "collaborator_rebuild/results_section/references.tex": "f345bb53d670bf86b8c68be9aa66df891c993e81c6ea9d6f2d09eb8f93f59434",
+    "collaborator_rebuild/results_section/asset_manifest.json": "a0f5ef1af4878d80555a1a4c36cb94b9b1eabd09d2f6c2ae5b607a1fab6d3c2a",
+    "collaborator_rebuild/results_section/descriptive_extrema.csv": "e494e2454388273633edfc9d1875fd373bd2c8206496355487bdda2c257439c7",
+    "collaborator_rebuild/results_section/README.md": "126e946896067fac0189a98ed7e4ed1991f6202df77170d3604c97bfb2f6f2bc",
+    "output/pdf/surd_campaign_results.pdf": "4af453351f17114125a4dba65a1e09610f56bcb9e0735033437c4bc5243aa539"
+  }
+}

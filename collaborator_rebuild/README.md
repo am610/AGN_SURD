@@ -17,6 +17,26 @@ reliability remain open. Equation 3.18 construction passes tests, but only its
 support audit has run. No expanded scientific result or causal detection is
 claimed.
 
+Corrected published line columns are now available through
+`prepare_historical.py`. See `BINNING_REVIEW.md` for the new runs and substantial
+bin sensitivity. Use the explicit `--published` runner option for these inputs;
+the default runner remains the earlier profile based exploratory path.
+
+The saved scans now have a campaign review in `CAMPAIGN_REVIEW.md`, produced
+by `python -m collaborator_rebuild.review_campaigns`. Even the fully supported
+1993 campaign remains strongly sensitive to bin choice. The review includes
+individual component changes, tied peak sets, occupancy diagnostics, and a
+figure marking configurations that fail the numerical support guard.
+
+The next comparison holds target dates fixed across every positive lag from
+1 through 30 days. See `FIXED_SUPPORT_REVIEW.md` and run
+`python -m collaborator_rebuild.fixed_support` to reproduce it. Only four
+continuum target curves retain adequate numerical support, and their
+components remain strongly sensitive to bin choice. Estimation calibration
+remains pending. A separate descriptive LaTeX results section is now drafted
+under `results_section`, with three tables, four component figures, and a
+compiled PDF preview. See its README for reproduction and integration.
+
 Run from the repository root:
 
 ```sh

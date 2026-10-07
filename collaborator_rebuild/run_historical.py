@@ -1,6 +1,7 @@
 """Run individual SURD components within explicitly defined historical epochs."""
 
 import hashlib
+import argparse
 import json
 from pathlib import Path
 
@@ -43,13 +44,29 @@ def epoch(times):
 
 
 def main():
+    global OUT
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--published', action='store_true', help='Use corrected published Table 1 line fluxes')
+    parser.add_argument('--bins', type=int, choices=[2, 3], default=3)
+    parser.add_argument('--no-plots', action='store_true')
+    args = parser.parse_args()
+    CONFIG['bins'] = args.bins
+    if args.published:
+        from collaborator_rebuild.prepare_historical import prepare
+        sources = prepare()
+        OUT = BASE / 'published_results' / f'bins_{args.bins}'
+        CONFIG['total_definition'] = 'Corrected published Table 1 total column; shares spectra with component columns'
+        CONFIG.pop('velocity_km_s', None)
+        CONFIG['component_intervals_observed_angstrom'] = {'blue': [4870, 4920], 'core': [4920, 4960], 'red': [4960, 5010]}
+        CONFIG['prepared_manifest_sha256'] = hashlib.sha256((BASE / 'historical_prepared' / 'manifest.json').read_bytes()).hexdigest()
     OUT.mkdir(parents=True, exist_ok=True)
     # Freeze settings before computing information curves.
     (OUT / 'configuration.json').write_text(json.dumps(CONFIG, indent=2) + '\n')
-    lines, continuum = load_adopted()
-    sources = {'continuum': continuum.rename(columns={'continuum': 'value', 'continuum_error': 'error'})}
-    for name, column in [('total', 'profile_total'), ('blue', 'blue'), ('core', 'core'), ('red', 'red')]:
-        sources[name] = lines.rename(columns={column: 'value', column + '_error': 'error'})
+    if not args.published:
+        lines, continuum = load_adopted()
+        sources = {'continuum': continuum.rename(columns={'continuum': 'value', 'continuum_error': 'error'})}
+        for name, column in [('total', 'profile_total'), ('blue', 'blue'), ('core', 'core'), ('red', 'red')]:
+            sources[name] = lines.rename(columns={column: 'value', column + '_error': 'error'})
     sources = {n: f[['jd_offset', 'value', 'error']].assign(epoch=epoch(f.jd_offset)) for n, f in sources.items()}
     atoms, summaries, inventory = [], [], []
     for year in sorted(sources['total'].epoch.unique()):
@@ -59,7 +76,7 @@ def main():
         for name, frame in series.items():
             frame.to_csv(native / f'{name}.csv', index=False)
             inventory.append(dict(epoch=int(year), series=name, observations=len(frame)))
-        edges = {n: np.r_[-np.inf, np.unique(np.quantile(f.value, [1/3, 2/3])), np.inf]
+        edges = {n: np.r_[-np.inf, np.unique(np.quantile(f.value, np.arange(1, args.bins)/args.bins)), np.inf]
                  for n, f in series.items() if len(f)}
         for subset, names in [('total_wings', ['total', 'blue', 'core', 'red']),
                               ('continuum_wings', ['continuum', 'blue', 'core', 'red'])]:
@@ -91,7 +108,7 @@ def main():
     summary.to_csv(OUT / 'support_and_leakage.csv', index=False)
     components.to_csv(OUT / 'individual_components.csv', index=False)
     pd.DataFrame(inventory).to_csv(OUT / 'native_inventory.csv', index=False)
-    if not components.empty:
+    if not components.empty and not args.no_plots:
         for key, group in components.groupby(['epoch', 'subset', 'target', 'scenario']):
             fig, axs = plt.subplots(4, 1, figsize=(10, 12), sharex=True)
             for ax, kind in zip(axs[:3], ['U', 'R', 'S']):

@@ -1,5 +1,40 @@
 # Implementation progress
 
+Current active preparation now uses all four corrected published line columns.
+`prepare_historical.py` verifies 242 instrument and date records and exports
+five series per campaign. Two and three bin descriptive scans are complete
+in a separate local output area. Their strong sensitivity is documented in
+`BINNING_REVIEW.md`; no setting is promoted as a reliable physical result.
+
+The campaign review is complete in `CAMPAIGN_REVIEW.md`. It verifies identical
+native inputs and tuple support between the saved bin settings. All 720
+positive lag configurations in 1993 pass the numerical guard, but median
+component total variation is 0.515113 and 87.02 percent of individual component
+curves have disjoint peak sets. This remains descriptive sensitivity, not a
+physical delay result. Eight focused tests pass. Support is matched between
+bin settings at each lag, but still changes across lags within a curve.
+
+The subsequent fixed support scan is complete in `FIXED_SUPPORT_REVIEW.md`.
+Intersecting target dates across the declared 1 through 30 day lag range
+leaves four of 120 curves above the unchanged 32 tuple guard. All four have
+future F5100 as the target. Both bin settings were run, yielding 240 usable
+decompositions and 6240 component rows. Median component total variation
+ranges from 0.522899 through 0.609769. Twelve focused tests pass, and all four
+figures were visually checked. No stable physical delay is established.
+
+The separate LaTeX results section is now drafted under `results_section`.
+It contains three tables and four individual component figures, including
+descriptive extrema and a limited contextual comparison with Lu and Xi.
+The nine page PDF preview compiles without layout or unresolved reference
+warnings, and all pages have been visually checked. The section reports
+completed diagnostics and explicitly identifies unfinished scientific work.
+It has not been incorporated into the previous full manuscript.
+
+The additional total integration audit is implemented in `audit_total_flux.py`.
+See `TOTAL_FLUX_PROVENANCE.md`. The source section interval agrees much more
+closely with archive broad line daily means than the current velocity sum.
+No fitted calibration or scientific input replacement has been applied.
+
 Published campaign intervals now replace the calendar convention in the runner.
 Existing observation labels are unchanged. Existing result files remain intact;
 their saved configuration still documents the original run.
@@ -34,8 +69,11 @@ but adds markers, distinguishable component styles, unsupported lag shading,
 tuple counts, and explicit panels for cases with no supported lags. It renders
 all 120 requested combinations into a separate directory.
 
-Remaining work is the exposure and integration provenance of total H beta,
-selection and verification of probability estimation settings with adequate
-support, expanded scientific runs where justified, and the results section.
+The published total column supplies the current total flux input; exact
+exposure and integration reconstruction from the profile archive remains
+unresolved. Support held fixed across lags within each curve has now been
+evaluated. Remaining work includes calibration and verification of probability
+estimation settings with adequate support, expanded scientific runs where
+justified, and scientific review and revision of the drafted results section.
 The additional historical light curve is publicly available; using modern
 campaign data is not required to perform these checks.

@@ -1,0 +1,27 @@
+{
+  "build_source_sha256": "c0f056b2c13b1e91593643d123d740d61e66915af8ddd8b1023a142f7fbbf7dd",
+  "input_sha256": {
+    "collaborator_rebuild/published_results/campaign_review/campaign_summary.csv": "e1363a20becd6513c5c3764bd1f4a9da6d0e325ee07a743585df5112023b184c",
+    "collaborator_rebuild/published_results/fixed_support/curve_comparison.csv": "5068bc09405de36985876bc9731157b4e2388e165653cc0534a81a51c5ad0f7b",
+    "collaborator_rebuild/published_results/fixed_support/individual_components.csv": "652962c9b6f86cd1f44024344386e116726f7e2f0686503b2a252263760a0ad6",
+    "collaborator_rebuild/published_results/fixed_support/curve_support.csv": "c51ed0328d3ce159b0aee4761fac623bf696cb18400c6a22ed2a3dcbbfc4af48",
+    "collaborator_rebuild/published_results/fixed_support/support_change_summary.csv": "a6473c9b2c08946864e9c2e2488d8dfd57c2cfcfd5e92928a938ebd0535f883a",
+    "collaborator_rebuild/published_results/fixed_support/fixed_target_dates.csv": "12d4d1d44016b0059ef41c95b8ce46c2a55eb562809bf68fd0bf380c43df6137",
+    "collaborator_rebuild/published_results/bins_2/native_inventory.csv": "c181cecacf8e61ba3f44e6a0fbe8b3068b5a5f7157ab100454945d1fc7dedda3",
+    "collaborator_rebuild/historical_prepared/manifest.json": "f47af4c335aa83c1c4ccf8d067094a8b3c9cc5b5affd55ba9ad69a1ec1825d7e",
+    "collaborator_rebuild/published_results/fixed_support/configuration.json": "22fd4cbce47f0ed7845eff72e791b313be1426174366b20f18d9bb317a2eeff7",
+    "collaborator_rebuild/published_results/fixed_support/manifest.json": "f54956a0841fba045ece13d74605ea7789df67e6bb3e816b9451af9b8c627c33",
+    "collaborator_rebuild/published_results/fixed_support/component_peak_review.csv": "d765eb3e79b8ce306903bf935f2e4ee6a4267ace449d445773efaa0479fbae25"
+  },
+  "output_sha256": {
+    "collaborator_rebuild/results_section/campaign_rows.tex": "f533acdbd200c1f22081180d0107c9e322d91558fcce2e2303afea76988339fb",
+    "collaborator_rebuild/results_section/fixed_rows.tex": "81769f7aba56e020af2fd36c71edc5fd7bfca0bd954d01be301ca82a9b639ee3",
+    "collaborator_rebuild/results_section/extrema_rows.tex": "397adbc94e9f36d8d02e4cca985146260fd076165da4ce690446b1fd65a25ea9",
+    "collaborator_rebuild/results_section/descriptive_extrema.csv": "e494e2454388273633edfc9d1875fd373bd2c8206496355487bdda2c257439c7",
+    "collaborator_rebuild/results_section/figures/1992_common.png": "377a66c70437c2186feceb7a9ae167e0da6fd40524cfa688cc9d83257b2b87be",
+    "collaborator_rebuild/results_section/figures/1993_blue_earlier.png": "511750cae28bcad8c7c9e66dd5c86953e04a4f741fa0c6beb9c7c7c2ae2cd741",
+    "collaborator_rebuild/results_section/figures/1993_common.png": "55b6b950df2da4681c30ff09e4dd775d104001fa39256b0a3bc5c737bd38e832",
+    "collaborator_rebuild/results_section/figures/1993_red_earlier.png": "3d01d1a3ebbd6255ccf292535dabd0e4201d87fac63592968bce1225ed1f5a9b"
+  },
+  "purpose": "Draft descriptive results section; probability estimation calibration remains pending"
+}
