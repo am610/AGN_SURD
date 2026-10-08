@@ -1,0 +1,36 @@
+{
+  "bins": [
+    2,
+    3
+  ],
+  "sample_sizes": [
+    36,
+    78,
+    90,
+    512
+  ],
+  "repetitions": 200,
+  "seed": 20261007,
+  "predictors": [
+    "continuum",
+    "blue",
+    "core",
+    "red"
+  ],
+  "target": "future continuum",
+  "sample_size_rule": "36, 78, and 90 match retained curves; 512 is an artificial reference",
+  "sampling": "Independent draws from an exact categorical joint probability law",
+  "bin_rule": "Known discrete states; no fitted quantile boundaries",
+  "model_definitions": {
+    "independent": "All five variables mutually independent and uniform",
+    "unique": "Target equals blue; all four predictors independent and uniform",
+    "redundant": "Target equals blue equals core; continuum history and red independent",
+    "synergistic": "Target is blue plus core modulo bin count; predictors independent"
+  },
+  "interpretation": "Ideal finite sample calibration only; no AGN null test or delay recovery claim",
+  "limitations": [
+    "No time dependence, irregular observing dates, interpolation, or measurement errors",
+    "Two and three state laws are separate benchmarks, not rebinning of one continuous dataset",
+    "Perfect categorical signals do not represent realistic AGN effect sizes"
+  ]
+}

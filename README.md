@@ -18,6 +18,11 @@ validated. A separate descriptive results section is drafted under
 `output/pdf/surd_campaign_results.pdf`. Scientific review and calibration
 remain pending.
 
+The first categorical estimator calibration is complete. See
+`collaborator_rebuild/ESTIMATOR_CALIBRATION.md` for finite sample bias and
+reproducing examples of numerical component allocation sensitivity. The next
+step is to audit predictor axis order in the retained astronomical curves.
+
 Start with [current progress](collaborator_rebuild/PROGRESS.md),
 [analysis specification](collaborator_rebuild/SPECIFICATION.md), and
 [review findings](collaborator_rebuild/REVIEW.md).

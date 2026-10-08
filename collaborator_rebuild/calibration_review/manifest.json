@@ -1,0 +1,28 @@
+{
+  "source_sha256": "e8c550bbbca2efb9ef5dd576e817afea697ad62a892abf280e7926fac114b6b0",
+  "official_source_sha256": {
+    "surd.py": "c843b337d6e1fc4437d26ee1551980c21da973cf0fb1f3f5f1f82455773bd2bf",
+    "it_tools.py": "3a6c752e37961774cc951dbaf85d15e2fc39486c3d42efa8e07d0ede90554e18"
+  },
+  "sample_rows": 6400,
+  "exact_laws": 8,
+  "status_counts": {
+    "ok": 6400
+  },
+  "output_sha256": {
+    "configuration.json": "46f67f2fb07712b559c7c659879621b583b30d6b20c576664e75bb5fdeb3a629",
+    "repetitions.csv": "c1819242e5cd90f18d0f86c79da52e902a71678dabcfb07ff0f47ce4c63dcf21",
+    "summary.csv": "1e66ca7370830b4f00d890032bbb31bd97b2bdf02b4a3dd8a34c8d03a404ec69",
+    "exact_references.json": "8ff51c0c9b2f318a55c60235aeec1e7eed934698544a4b4657a51ee7b1fb9dba",
+    "allocation_witnesses.json": "502af80def3a1e8e586b54a3063a29b904cd48839ff16b0165897cd3cdc875c2",
+    "joint_information_calibration.png": "0ab594c77172caf373fea5d986f77699a07bb3f32730068134635f4c27cc49d1"
+  },
+  "local_full_repetitions": "collaborator_rebuild/published_results/estimator_calibration/repetitions.csv",
+  "snapshot_sha256": {
+    "joint_information_calibration.png": "0ab594c77172caf373fea5d986f77699a07bb3f32730068134635f4c27cc49d1",
+    "summary.csv": "1e66ca7370830b4f00d890032bbb31bd97b2bdf02b4a3dd8a34c8d03a404ec69",
+    "allocation_witnesses.json": "502af80def3a1e8e586b54a3063a29b904cd48839ff16b0165897cd3cdc875c2",
+    "configuration.json": "46f67f2fb07712b559c7c659879621b583b30d6b20c576664e75bb5fdeb3a629",
+    "exact_references.json": "8ff51c0c9b2f318a55c60235aeec1e7eed934698544a4b4657a51ee7b1fb9dba"
+  }
+}

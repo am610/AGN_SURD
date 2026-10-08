@@ -37,6 +37,13 @@ remains pending. A separate descriptive LaTeX results section is now drafted
 under `results_section`, with three tables, four component figures, and a
 compiled PDF preview. See its README for reproduction and integration.
 
+The initial categorical calibration is complete in
+`ESTIMATOR_CALIBRATION.md`. It records finite sample bias and reproducible
+numerical component allocation sensitivity in the unchanged official code.
+Compact evidence is under `calibration_review`. The next check is predictor
+axis order sensitivity on the retained astronomical histograms; realistic
+observation matched calibration remains pending.
+
 Run from the repository root:
 
 ```sh

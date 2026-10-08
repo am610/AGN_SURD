@@ -30,6 +30,17 @@ warnings, and all pages have been visually checked. The section reports
 completed diagnostics and explicitly identifies unfinished scientific work.
 It has not been incorporated into the previous full manuscript.
 
+The first estimator calibration is complete in `ESTIMATOR_CALIBRATION.md`.
+Eight exact categorical laws and 6400 sampled decompositions show substantial
+finite sample information bias under independence. Four saved witnesses
+also show component allocation changes when predictor axes and their labels
+are reordered together, while total information stays unchanged to numerical
+precision. Tracing the unchanged authors' routine records resets after
+differences around machine precision. All 22 active tests pass. An axis order
+audit of the four retained astronomical curves is now the immediate next
+step. Observation matched calibration and a revision of the descriptive
+results section remain pending.
+
 The additional total integration audit is implemented in `audit_total_flux.py`.
 See `TOTAL_FLUX_PROVENANCE.md`. The source section interval agrees much more
 closely with archive broad line daily means than the current velocity sum.
