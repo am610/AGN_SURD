@@ -1,0 +1,12 @@
+{
+  "source": "Instructions for prompt sept26.docx",
+  "source_sha256": "cc47862656b33ec703f94b6f9f1447f100155ed6574dc5fb25395a11d84d2b04",
+  "output": "output/docx/SURD_September_Instructions_With_Replies.docx",
+  "output_sha256": "26be523bf73af5c910b0e632465c11f74d3a1fb26420852358656cafc2c99018",
+  "responses": 21,
+  "pages": 7,
+  "all_pages_visually_verified": true,
+  "original_text_and_embedded_material_retained": true,
+  "trailing_empty_paragraphs_removed": true,
+  "analysis_status": "Frozen for collaborator review"
+}
