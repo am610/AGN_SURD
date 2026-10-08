@@ -1,0 +1,26 @@
+{
+  "source_sha256": "93cab5586e5f58f71365ea0ca24dca8f74c9055a3b51d2d941734550203c7158",
+  "official_source_sha256": {
+    "surd.py": "c843b337d6e1fc4437d26ee1551980c21da973cf0fb1f3f5f1f82455773bd2bf",
+    "it_tools.py": "3a6c752e37961774cc951dbaf85d15e2fc39486c3d42efa8e07d0ede90554e18"
+  },
+  "configurations": 240,
+  "order_evaluations": 5760,
+  "affected_configurations": 11,
+  "comparison_tolerance": 1e-08,
+  "maximum_total_variation": 0.1878142284666404,
+  "input_sha256": {
+    "fixed_support/configuration.json": "22fd4cbce47f0ed7845eff72e791b313be1426174366b20f18d9bb317a2eeff7",
+    "fixed_support/manifest.json": "f54956a0841fba045ece13d74605ea7789df67e6bb3e816b9451af9b8c627c33",
+    "fixed_support/individual_components.csv": "652962c9b6f86cd1f44024344386e116726f7e2f0686503b2a252263760a0ad6",
+    "fixed_support/support_and_leakage.csv": "1cd5e6cf35c89a716d7083861244f4e185df783b0bfb45fc6c74b7f7bafa80ff",
+    "fixed_support/curve_support.csv": "c51ed0328d3ce159b0aee4761fac623bf696cb18400c6a22ed2a3dcbbfc4af48"
+  },
+  "output_sha256": {
+    "configuration.json": "791942dd5bda063976b0bc079ed2e791f33f8fbf9118d89f1d783f3ef57d2bee",
+    "all_orders.csv": "063928ee8ea725c68425c27643bc07f58f1f29bda62e0fd1c018324e2a02b013",
+    "configuration_summary.csv": "3f2187a6eea4aa760f7fb39828f6b2653e4ee252082995b554d1bb42175bb1b3",
+    "curve_summary.csv": "151cbc9f9c3912de9ca96d475685773a244d97485d7e9a680f1f20bc90233e54",
+    "witnesses.json": "a3aea6796f2b8d4668ebe20007e14d7b2250828a3edfc13c54936bca3bfad762"
+  }
+}

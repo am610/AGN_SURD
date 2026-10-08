@@ -44,6 +44,10 @@ def main():
         'preparation': BASE / 'historical_prepared/manifest.json',
         'configuration': BASE / 'published_results/fixed_support/configuration.json',
         'scan_manifest': BASE / 'published_results/fixed_support/manifest.json',
+        'calibration': BASE / 'calibration_review/summary.csv',
+        'calibration_manifest': BASE / 'calibration_review/manifest.json',
+        'order_audit': BASE / 'order_review/curve_summary.csv',
+        'order_manifest': BASE / 'order_review/manifest.json',
     }
     campaign, fixed, atoms, support, inventory = [pd.read_csv(paths[name]) for name in
                                                  ['campaigns', 'fixed', 'atoms', 'support', 'inventory']]
@@ -89,6 +93,21 @@ def main():
     write_table('extrema_rows.tex', [[r.bins, r.kind, short_component(r.component), r.lag_days,
                                     f'{r.maximum_fraction:.3f}'] for r in representative.itertuples()],
                 'rllrr', r'Bins & Type & Component & Base lag (days) & Maximum fraction')
+    calibration = pd.read_csv(paths['calibration']).query('model == "independent"')
+    rows = []
+    for count in sorted(calibration.sample_size.unique()):
+        selected = calibration[calibration.sample_size == count].set_index('bins')
+        rows.append([count, f'{selected.loc[2, "median_joint_mi_bits"]:.3f}',
+                     f'{selected.loc[3, "median_joint_mi_bits"]:.3f}',
+                     f'{selected.loc[2, "median_leakage"]:.3f}',
+                     f'{selected.loc[3, "median_leakage"]:.3f}'])
+    write_table('calibration_rows.tex', rows, 'rrrrr',
+                r'Tuples & $I$, two states & $I$, three states & $\ell$, two states & $\ell$, three states')
+    order_audit = pd.read_csv(paths['order_audit'])
+    rows = [[r.epoch, SCENARIOS[r.scenario], r.bins, f'{r.affected_configurations}/30',
+             f'{r.maximum_total_variation:.3f}' if r.affected_configurations else r'$<10^{-8}$']
+            for r in order_audit.itertuples()]
+    write_table('order_rows.tex', rows, 'rlrrr', r'Campaign & Scenario & Bins & Affected lags & Maximum $D_{\rm TV}$')
     plt.rcParams.update({'font.family': 'DejaVu Sans', 'font.size': 9, 'axes.titlesize': 10,
                          'axes.labelsize': 9, 'legend.fontsize': 7, 'xtick.labelsize': 8, 'ytick.labelsize': 8})
     figures = []
@@ -126,11 +145,12 @@ def main():
         fig.savefig(path, dpi=240)
         plt.close(fig)
         figures.append(path)
-    generated = [OUT / name for name in ['campaign_rows.tex', 'fixed_rows.tex', 'extrema_rows.tex', 'descriptive_extrema.csv']] + figures
+    generated = [OUT / name for name in ['campaign_rows.tex', 'fixed_rows.tex', 'extrema_rows.tex',
+                                       'calibration_rows.tex', 'order_rows.tex', 'descriptive_extrema.csv']] + figures
     manifest = dict(build_source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
                     input_sha256={str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in paths.values()},
                     output_sha256={str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in generated},
-                    purpose='Draft descriptive results section; probability estimation calibration remains pending')
+                    purpose='Frozen descriptive results section; initial calibration and ordering audit complete; realistic observation calibration unperformed')
     (OUT / 'asset_manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
     print(f'Created {len(generated)} assets with verified source tables.')
 

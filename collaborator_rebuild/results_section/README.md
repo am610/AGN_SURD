@@ -3,11 +3,11 @@
 This folder contains the separate LaTeX results section requested by the
 collaborator. It reports the completed historical campaign scans and the
 comparison using identical target dates across lags. The section includes
-three tables, four individual component figures, descriptive extrema, and
+five tables, four individual component figures, descriptive extrema, and
 a limited astrophysical comparison with Lu and Xi.
 
-This is a descriptive draft for scientific review. Probability estimation
-calibration, flux uncertainty propagation, significance testing of the fixed
+This is a descriptive draft frozen for collaborator review. Initial categorical calibration and the ordering audit are complete. Realistic
+observation calibration, flux uncertainty propagation, significance testing of the fixed
 support curves, and expanded scientific runs under equation 3.18 remain
 pending. The historical observations do not supply a complete supported
 curve for every requested target under the retained lag range and guard.
@@ -18,14 +18,14 @@ The original full manuscript remains a separate previous study.
 `results_section.tex` is the section to integrate into a manuscript.
 `preview.tex` supplies a minimal document wrapper for review.
 `references.tex` supplies the six references used by the preview.
-The three table files and four images under `figures` are frozen exports
+The five table files and four images under `figures` are frozen exports
 from the completed scans. `descriptive_extrema.csv` records maxima for
 all four retained curves. `asset_manifest.json` identifies the numerical
 inputs and exported asset hashes. `delivery_manifest.json` records the
 delivered PDF and document source hashes.
 
 The compiled preview is at `output/pdf/surd_campaign_results.pdf` relative
-to the repository root. It has nine pages. All pages were rendered and
+to the repository root. It has ten pages. All pages were rendered and
 visually inspected, and the final compilation has no layout or unresolved
 reference warnings. Numerical export checks verify the full lag grids,
 invariant target dates, and normalized component sums.

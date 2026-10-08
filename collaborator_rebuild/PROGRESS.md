@@ -1,5 +1,21 @@
 # Implementation progress
 
+## Current review boundary
+
+The bounded diagnostic work is complete and the analysis is frozen for
+collaborator review. Initial categorical calibration and the predictor ordering
+audit are complete. The separate results section now has five tables, four
+figures, and a ten page PDF. All pages were visually inspected.
+
+Ordering changes component allocation in 11 of 240 configurations. The maximum
+total variation is 0.187814. Total information and leakage remain unchanged to
+numerical precision. The 1993 common curves are stable under ordering but remain
+strongly sensitive to bin choice. No stable physical delay is established.
+
+Read [review handoff](REVIEW_HANDOFF.md) for completed requirements, remaining
+gaps, and the stopping rule. Further scientific runs or changes to the authors'
+routine require a new agreed scope. Earlier progress entries below are history.
+
 Current active preparation now uses all four corrected published line columns.
 `prepare_historical.py` verifies 242 instrument and date records and exports
 five series per campaign. Two and three bin descriptive scans are complete

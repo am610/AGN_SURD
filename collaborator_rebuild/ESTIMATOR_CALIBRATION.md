@@ -103,11 +103,10 @@ or weak physical signals. The two and three state laws are separate
 benchmarks, not different binning of the same continuous observations.
 No physical delay recovery or AGN significance test is claimed.
 
-The immediate next step is an axis order audit on the four retained
-astronomical curves, with identical histogram counts and target dates.
-That will measure whether the numerical issue also changes their components.
-Observation matched calibration remains pending. Expanded predictor runs
-are not justified by the current checks.
+The subsequent astronomical ordering audit is complete in
+`PREDICTOR_ORDER_REVIEW.md`. The revised results section incorporates both
+diagnostics. Analysis is now frozen for collaborator review; realistic
+observation calibration remains unperformed. See `REVIEW_HANDOFF.md`.
 
 Reproduce from the repository root:
 
@@ -121,5 +120,5 @@ Full repetition tables remain local under
 exact laws, witness histograms, figure, and hashes are saved under
 `calibration_review`. Ten new analytic tests passed, and all 22 active
 collaborator tests pass. The calibration figure was visually inspected.
-The previous PDF is the descriptive draft prepared before this calibration;
-these additional diagnostics require incorporation in its next revision.
+The revised ten page PDF includes these diagnostics and the astronomical
+ordering audit.

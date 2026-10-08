@@ -8,20 +8,21 @@ campaigns are a possible later extension.
 
 ## Current status
 
-The historical run is exploratory, not a completed astrophysical result.
-Campaign assignments and decomposition arithmetic have been checked. Total
-H beta now uses corrected published flux columns; exact profile integration
-reconstruction and estimation reliability remain unresolved. Equation 3.18 predictor
-construction is implemented and tested; expanded scientific results are not yet
-validated. A separate descriptive results section is drafted under
-`collaborator_rebuild/results_section`, with a compiled preview at
-`output/pdf/surd_campaign_results.pdf`. Scientific review and calibration
-remain pending.
+## Current review boundary
 
-The first categorical estimator calibration is complete. See
-`collaborator_rebuild/ESTIMATOR_CALIBRATION.md` for finite sample bias and
-reproducing examples of numerical component allocation sensitivity. The next
-step is to audit predictor axis order in the retained astronomical curves.
+The bounded diagnostic work is complete and the analysis is frozen for
+collaborator review. Initial categorical calibration and the predictor ordering
+audit are complete. The separate results section now has five tables, four
+figures, and a ten page PDF. All pages were visually inspected.
+
+Ordering changes component allocation in 11 of 240 configurations. The maximum
+total variation is 0.187814. Total information and leakage remain unchanged to
+numerical precision. The 1993 common curves are stable under ordering but remain
+strongly sensitive to bin choice. No stable physical delay is established.
+
+Read [review handoff](collaborator_rebuild/REVIEW_HANDOFF.md) for completed requirements, remaining
+gaps, and the stopping rule. Further scientific runs or changes to the authors'
+routine require a new agreed scope. Earlier progress entries below are history.
 
 Start with [current progress](collaborator_rebuild/PROGRESS.md),
 [analysis specification](collaborator_rebuild/SPECIFICATION.md), and

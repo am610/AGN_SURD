@@ -28,21 +28,21 @@ by `python -m collaborator_rebuild.review_campaigns`. Even the fully supported
 individual component changes, tied peak sets, occupancy diagnostics, and a
 figure marking configurations that fail the numerical support guard.
 
-The next comparison holds target dates fixed across every positive lag from
-1 through 30 days. See `FIXED_SUPPORT_REVIEW.md` and run
-`python -m collaborator_rebuild.fixed_support` to reproduce it. Only four
-continuum target curves retain adequate numerical support, and their
-components remain strongly sensitive to bin choice. Estimation calibration
-remains pending. A separate descriptive LaTeX results section is now drafted
-under `results_section`, with three tables, four component figures, and a
-compiled PDF preview. See its README for reproduction and integration.
+## Current review boundary
 
-The initial categorical calibration is complete in
-`ESTIMATOR_CALIBRATION.md`. It records finite sample bias and reproducible
-numerical component allocation sensitivity in the unchanged official code.
-Compact evidence is under `calibration_review`. The next check is predictor
-axis order sensitivity on the retained astronomical histograms; realistic
-observation matched calibration remains pending.
+The bounded diagnostic work is complete and the analysis is frozen for
+collaborator review. Initial categorical calibration and the predictor ordering
+audit are complete. The separate results section now has five tables, four
+figures, and a ten page PDF. All pages were visually inspected.
+
+Ordering changes component allocation in 11 of 240 configurations. The maximum
+total variation is 0.187814. Total information and leakage remain unchanged to
+numerical precision. The 1993 common curves are stable under ordering but remain
+strongly sensitive to bin choice. No stable physical delay is established.
+
+Read [review handoff](REVIEW_HANDOFF.md) for completed requirements, remaining
+gaps, and the stopping rule. Further scientific runs or changes to the authors'
+routine require a new agreed scope. Earlier progress entries below are history.
 
 Run from the repository root:
 

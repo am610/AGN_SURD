@@ -197,6 +197,90 @@ measurements.}
 \input{\SURDResultsPath/extrema_rows.tex}
 \end{table}
 
+\subsection{Ideal categorical estimator calibration}
+
+We check the same four predictor estimator against eight exact categorical
+laws: independent variables, a target equal to one predictor, a target
+duplicated by two predictors, and a target given by the modular sum of two
+independent predictors, each with two or three states. The dependent laws
+have known unique, redundant, or synergistic information, respectively.
+Their exact joint information is the base two logarithm of state count
+and their leakage is zero. The independent law has zero joint information
+and unit leakage, so its exact normalized component fractions are undefined.
+The official routine reproduces these exact reference values in the
+declared predictor order.
+
+We draw 200 independent samples per law and sample size with fixed seed
+20261007, giving 6400 decompositions. Sizes of 36, 78, and 90 match
+the retained curve counts; 512 is an artificial reference.
+Table~\ref{tab:cr_calibration} shows substantial apparent information under
+independence, particularly with three states. This benchmark demonstrates
+finite sample bias and does not provide an AGN significance threshold.
+These are separate categorical laws, not rebinning of one continuous
+dataset. They omit temporal dependence, interpolation, measurement errors,
+and fitted quantile boundaries. The deterministic positive controls also
+do not represent weak physical signals.
+
+\begin{table}[H]
+\centering
+\caption{Median joint information $I$ in bits and normalized leakage
+$\ell$ under independent categorical variables, from 200 draws per setting.
+Exact truth is $I=0$ and $\ell=1$. The 512 tuple setting is an artificial
+reference. None of these values is a significance threshold for the AGN.}
+\label{tab:cr_calibration}
+\small
+\input{\SURDResultsPath/calibration_rows.tex}
+\end{table}
+
+Some binary positive controls also show unexpected component allocations.
+In four preserved examples, reordering predictor histogram axes together
+with their physical labels changes the normalized allocation substantially
+while leaving total information unchanged. An execution trace of the
+unchanged routine records resets to zero of positive specific information
+after strict comparison differences around machine precision. We assess
+the relevance of this numerical concern to the retained observations next.
+
+\subsection{Predictor ordering audit of the retained observations}
+
+For every retained curve, bin setting, and positive lag, we reconstruct
+the original histogram and verify reproduction of the saved components
+to absolute tolerance $10^{-10}$. Target dates and tuple counts also
+agree. We then evaluate all 24 orders of the four predictor axes, moving
+their names with their axes and keeping the target axis fixed. Components
+are matched by type and the set of named predictors. There are 5760 order
+evaluations across 240 lag and bin configurations. The histogram counts,
+target dates, bin boundaries, lag range, and algorithm are unchanged.
+
+An allocation is flagged when its total variation from the original order
+exceeds $10^{-8}$, a declared numerical comparison tolerance rather than a
+significance threshold. Eleven configurations exceed this tolerance
+(Table~\ref{tab:cr_order}). The largest total variation is 0.188 in the
+1993 red earlier scenario with three bins. Maximum absolute changes in
+joint information and leakage across the audit are
+$6.66\times10^{-16}$ bits and $1.83\times10^{-15}$, respectively.
+Thus stable total information and component sum normalization do not ensure
+stable allocation to named components.
+
+\begin{table}[H]
+\centering
+\caption{Predictor ordering sensitivity of the retained astronomical
+histograms. Each row contains 30 positive lag configurations, each checked
+in all 24 predictor orders. Affected lags have component total variation
+above $10^{-8}$ in at least one order. The final column is the maximum
+over all lags and orders in that row.}
+\label{tab:cr_order}
+\small
+\input{\SURDResultsPath/order_rows.tex}
+\end{table}
+
+Both 1993 common curves are stable to predictor ordering within this
+tolerance. Their strong bin sensitivity therefore cannot be attributed
+solely to this ordering issue. The figures and extrema retain the
+original saved ordering as computational diagnostics. We do not select a
+preferred permutation or alter the authors' routine to obtain a physical
+result. The ordering concern is present in a subset of the observed
+configurations and limits physical interpretation of individual allocations.
+
 \subsection{Astrophysical scope and remaining analysis}
 
 The executed curves describe future continuum prediction from its own
@@ -223,12 +307,17 @@ The completed calculations establish substantial sensitivity to bin choice
 and retained dates. Neither bin setting is selected as reliable, and no
 stable physical delay or causal detection is claimed. No significance
 test or flux uncertainty propagation has been performed for these fixed
-support curves. Probability estimation calibration at comparable sample
-support remains pending. The expanded predictor construction of thesis
+support curves. The initial categorical calibration and the complete
+ordering audit of the retained curves are finished. Calibration matching
+the temporal and observational properties remains unperformed. The
+expanded predictor construction of thesis
 equation~3.18 is implemented and tested, but only its support audit has
 been executed; an expanded scientific decomposition is not reported.
 These limitations delimit the present results section and the remaining
-collaborator analysis.
+collaborator analysis. The exploratory analysis is frozen at this stage
+for collaborator review. Further scientific runs, any change to the
+authors' routine, and any revised probability estimation or lag settings
+require a new agreed analysis scope.
 
 \clearpage
 \begin{figure}[p]

@@ -1,0 +1,6478 @@
+{
+  "1992_common_2": {
+    "epoch": 1992,
+    "subset": "continuum_wings",
+    "target": "continuum",
+    "scenario": "common",
+    "bins": 2,
+    "lag_days": 17,
+    "total_variation": 0.06469888497839188,
+    "predictor_order": [
+      "core",
+      "red",
+      "blue",
+      "continuum"
+    ],
+    "original_predictor_order": [
+      "continuum",
+      "blue",
+      "core",
+      "red"
+    ],
+    "counts": [
+      [
+        [
+          [
+            [
+              12,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            [
+              5,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              10
+            ]
+          ]
+        ]
+      ]
+    ],
+    "target_dates_sha256": "0dbfa6ffd3721bacefc10896cb447ec67b86b668f5442fe998b49a4befe3cb6e",
+    "original": {
+      "atoms": [
+        {
+          "kind": "U",
+          "predictors": [
+            "continuum"
+          ],
+          "bits": 0.39434665141844194,
+          "fraction": 0.6714720989004213
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "blue"
+          ],
+          "bits": 0.037996796417155025,
+          "fraction": 0.06469888497834958
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "core"
+          ],
+          "bits": 0.04134822461058215,
+          "fraction": 0.07040551521157214
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "core"
+          ],
+          "bits": 0.031890888881345024,
+          "fraction": 0.054302076652438934
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "blue",
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "blue",
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "blue",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "blue",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "blue",
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "blue",
+            "core"
+          ],
+          "bits": 2.414735078559715e-14,
+          "fraction": 4.111679979167532e-14
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "blue",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "blue",
+            "red"
+          ],
+          "bits": 5.0681681074138383e-14,
+          "fraction": 8.629801887310245e-14
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "core",
+            "red"
+          ],
+          "bits": 1.2490009027033009e-16,
+          "fraction": 2.1267310237073444e-16
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "core",
+            "red"
+          ],
+          "bits": 2.775557561562891e-16,
+          "fraction": 4.726068941571877e-16
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "blue",
+            "core",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "blue",
+            "core",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "blue",
+            "core",
+            "red"
+          ],
+          "bits": 0.08170416594550912,
+          "fraction": 0.13912142425706842
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "blue",
+            "core",
+            "red"
+          ],
+          "bits": 1.2601031329495524e-14,
+          "fraction": 2.1456352994736317e-14
+        }
+      ],
+      "joint_mi_bits": 0.5872867272731211,
+      "normalized_leakage": 0.4127132727268794,
+      "normalization_defined": true
+    },
+    "reordered": {
+      "atoms": [
+        {
+          "kind": "U",
+          "predictors": [
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "continuum"
+          ],
+          "bits": 0.3943466514184414,
+          "fraction": 0.6714720989004204
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "continuum"
+          ],
+          "bits": 0.04134822461058232,
+          "fraction": 0.07040551521157243
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "continuum"
+          ],
+          "bits": 0.0318908888813453,
+          "fraction": 0.054302076652439406
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "red",
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "red",
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "red",
+            "continuum"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "red",
+            "continuum"
+          ],
+          "bits": 0.037996796417155136,
+          "fraction": 0.06469888497834977
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "blue",
+            "continuum"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "blue",
+            "continuum"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "red",
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "red",
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "red",
+            "continuum"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "red",
+            "continuum"
+          ],
+          "bits": 2.4480417692984695e-14,
+          "fraction": 4.168392806466394e-14
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "blue",
+            "continuum"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "blue",
+            "continuum"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "red",
+            "blue",
+            "continuum"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "red",
+            "blue",
+            "continuum"
+          ],
+          "bits": 5.0681681074138383e-14,
+          "fraction": 8.629801887310245e-14
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "red",
+            "blue",
+            "continuum"
+          ],
+          "bits": 0.08170416594550925,
+          "fraction": 0.13912142425706864
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "red",
+            "blue",
+            "continuum"
+          ],
+          "bits": 1.2601031329495524e-14,
+          "fraction": 2.1456352994736317e-14
+        }
+      ],
+      "joint_mi_bits": 0.5872867272731211,
+      "normalized_leakage": 0.41271327272687897,
+      "normalization_defined": true
+    }
+  },
+  "1992_common_3": {
+    "epoch": 1992,
+    "subset": "continuum_wings",
+    "target": "continuum",
+    "scenario": "common",
+    "bins": 3,
+    "lag_days": 11,
+    "total_variation": 0.03999070716097826,
+    "predictor_order": [
+      "red",
+      "core",
+      "blue",
+      "continuum"
+    ],
+    "original_predictor_order": [
+      "continuum",
+      "blue",
+      "core",
+      "red"
+    ],
+    "counts": [
+      [
+        [
+          [
+            [
+              5,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              5,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            [
+              5,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              4,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              6,
+              1
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              5
+            ]
+          ]
+        ]
+      ]
+    ],
+    "target_dates_sha256": "0dbfa6ffd3721bacefc10896cb447ec67b86b668f5442fe998b49a4befe3cb6e",
+    "original": {
+      "atoms": [
+        {
+          "kind": "U",
+          "predictors": [
+            "continuum"
+          ],
+          "bits": 0.24381376757175452,
+          "fraction": 0.21425879243041346
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "core"
+          ],
+          "bits": 8.63506796930689e-16,
+          "fraction": 7.588329625863888e-16
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "blue"
+          ],
+          "bits": 0.03432201875544597,
+          "fraction": 0.030161521908936624
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "core"
+          ],
+          "bits": 0.0455070472027594,
+          "fraction": 0.03999070716081503
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "red"
+          ],
+          "bits": 0.023576028538205028,
+          "fraction": 0.020718154906548308
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "blue",
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "blue",
+            "core"
+          ],
+          "bits": 2.282125106173964e-15,
+          "fraction": 2.0054871154068845e-15
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "blue",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "blue",
+            "red"
+          ],
+          "bits": 0.002726757234819879,
+          "fraction": 0.002396221174062539
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "red"
+          ],
+          "bits": 0.14367420251633903,
+          "fraction": 0.1262580921542664
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "red"
+          ],
+          "bits": 3.2338329545054305e-13,
+          "fraction": 2.841829444886026e-13
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "blue",
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "blue",
+            "core"
+          ],
+          "bits": 1.8242197875729622e-13,
+          "fraction": 1.60308883581818e-13
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "blue",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "blue",
+            "red"
+          ],
+          "bits": 0.02379042172033711,
+          "fraction": 0.020906559461247684
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "core",
+            "red"
+          ],
+          "bits": 0.1932132087424865,
+          "fraction": 0.16979200641156253
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "core",
+            "red"
+          ],
+          "bits": 2.1782575743145536e-13,
+          "fraction": 1.914210350478607e-13
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "blue",
+            "core",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "blue",
+            "core",
+            "red"
+          ],
+          "bits": 1.807196367862085e-13,
+          "fraction": 1.5881289859843708e-13
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "blue",
+            "core",
+            "red"
+          ],
+          "bits": 0.4273170952484261,
+          "fraction": 0.3755179443911207
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "blue",
+            "core",
+            "red"
+          ],
+          "bits": 2.60890074975528e-13,
+          "fraction": 2.2926511893913396e-13
+        }
+      ],
+      "joint_mi_bits": 1.137940547531742,
+      "normalized_leakage": 0.2759081302549876,
+      "normalization_defined": true
+    },
+    "reordered": {
+      "atoms": [
+        {
+          "kind": "U",
+          "predictors": [
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "core"
+          ],
+          "bits": 8.635067969306889e-16,
+          "fraction": 7.588329625863889e-16
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "continuum"
+          ],
+          "bits": 0.2438137675717523,
+          "fraction": 0.21425879243041154
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "red",
+            "core"
+          ],
+          "bits": 0.14367420251634072,
+          "fraction": 0.12625809215426792
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "red",
+            "core"
+          ],
+          "bits": 3.2344497450746663e-13,
+          "fraction": 2.8423714684307305e-13
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "red",
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "red",
+            "blue"
+          ],
+          "bits": 0.00272675723481994,
+          "fraction": 0.0023962211740625934
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "red",
+            "continuum"
+          ],
+          "bits": 0.023576028538204938,
+          "fraction": 0.020718154906548235
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "red",
+            "continuum"
+          ],
+          "bits": 0.04550704720275928,
+          "fraction": 0.03999070716081493
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "blue"
+          ],
+          "bits": 2.2821251061739634e-15,
+          "fraction": 2.0054871154068845e-15
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "continuum"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "continuum"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "blue",
+            "continuum"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "blue",
+            "continuum"
+          ],
+          "bits": 0.03432201875544828,
+          "fraction": 0.03016152190893866
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "red",
+            "core",
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "red",
+            "core",
+            "blue"
+          ],
+          "bits": 1.805345996154376e-13,
+          "fraction": 1.586502915350257e-13
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "red",
+            "core",
+            "continuum"
+          ],
+          "bits": 0.19321320874248454,
+          "fraction": 0.16979200641156084
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "red",
+            "core",
+            "continuum"
+          ],
+          "bits": 2.1787510067699424e-13,
+          "fraction": 1.914643969314371e-13
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "red",
+            "blue",
+            "continuum"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "red",
+            "blue",
+            "continuum"
+          ],
+          "bits": 0.02379042172051843,
+          "fraction": 0.02090655946140703
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "blue",
+            "continuum"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "blue",
+            "continuum"
+          ],
+          "bits": 1.307596006780749e-15,
+          "fraction": 1.149089914773667e-15
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "red",
+            "core",
+            "blue",
+            "continuum"
+          ],
+          "bits": 0.4273170952484263,
+          "fraction": 0.37551794439112096
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "red",
+            "core",
+            "blue",
+            "continuum"
+          ],
+          "bits": 2.6063102293644873e-13,
+          "fraction": 2.29037469050358e-13
+        }
+      ],
+      "joint_mi_bits": 1.1379405475317417,
+      "normalized_leakage": 0.27590813025498734,
+      "normalization_defined": true
+    }
+  },
+  "1993_common_2": {
+    "epoch": 1993,
+    "subset": "continuum_wings",
+    "target": "continuum",
+    "scenario": "common",
+    "bins": 2,
+    "lag_days": 19,
+    "total_variation": 3.666121226042485e-15,
+    "predictor_order": [
+      "continuum",
+      "red",
+      "blue",
+      "core"
+    ],
+    "original_predictor_order": [
+      "continuum",
+      "blue",
+      "core",
+      "red"
+    ],
+    "counts": [
+      [
+        [
+          [
+            [
+              5,
+              0
+            ],
+            [
+              0,
+              15
+            ]
+          ],
+          [
+            [
+              1,
+              0
+            ],
+            [
+              3,
+              16
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              21
+            ]
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            [
+              10,
+              2
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              5,
+              3
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              1
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              4
+            ]
+          ]
+        ]
+      ]
+    ],
+    "target_dates_sha256": "461577f6bb5695368d538ce5add9ee4bca063b52031d7cec646e436cb28c6c0a",
+    "original": {
+      "atoms": [
+        {
+          "kind": "U",
+          "predictors": [
+            "continuum"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "core"
+          ],
+          "bits": 0.007292007111090101,
+          "fraction": 0.028378773893914935
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "core"
+          ],
+          "bits": 0.00023316899394951128,
+          "fraction": 0.0009074387966930548
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "red"
+          ],
+          "bits": 0.0012964958675200067,
+          "fraction": 0.005045656500086036
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "blue",
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "blue",
+            "core"
+          ],
+          "bits": 0.021666811084731293,
+          "fraction": 0.08432212467821353
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "blue",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "blue",
+            "red"
+          ],
+          "bits": 0.00412716837872333,
+          "fraction": 0.01606196709048405
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "red"
+          ],
+          "bits": 0.08067536692886722,
+          "fraction": 0.31396952334303013
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "red"
+          ],
+          "bits": 0.04107416790308431,
+          "fraction": 0.1598509856126668
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "blue",
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "blue",
+            "core"
+          ],
+          "bits": 0.008895096938357563,
+          "fraction": 0.03461762186081681
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "blue",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "blue",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "core",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "core",
+            "red"
+          ],
+          "bits": 0.003275957157156387,
+          "fraction": 0.012749253536478723
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "blue",
+            "core",
+            "red"
+          ],
+          "bits": 0.02633273519991115,
+          "fraction": 0.10248080217997745
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "blue",
+            "core",
+            "red"
+          ],
+          "bits": 0.008419259333701155,
+          "fraction": 0.032765773996841316
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "blue",
+            "core",
+            "red"
+          ],
+          "bits": 0.007989032181201002,
+          "fraction": 0.031091431268176657
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "blue",
+            "core",
+            "red"
+          ],
+          "bits": 0.045675592772134704,
+          "fraction": 0.17775864724262058
+        }
+      ],
+      "joint_mi_bits": 0.2569528598504277,
+      "normalized_leakage": 0.7127259003045644,
+      "normalization_defined": true
+    },
+    "reordered": {
+      "atoms": [
+        {
+          "kind": "U",
+          "predictors": [
+            "continuum"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "core"
+          ],
+          "bits": 0.00729200711109018,
+          "fraction": 0.028378773893915202
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "red"
+          ],
+          "bits": 0.00129649586752011,
+          "fraction": 0.00504565650008643
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "core"
+          ],
+          "bits": 0.00023316899394934282,
+          "fraction": 0.0009074387966923978
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "red",
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "red",
+            "blue"
+          ],
+          "bits": 0.004127168378723225,
+          "fraction": 0.016061967090483617
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "red",
+            "core"
+          ],
+          "bits": 0.08067536692886726,
+          "fraction": 0.31396952334302985
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "red",
+            "core"
+          ],
+          "bits": 0.041074167903084456,
+          "fraction": 0.15985098561266714
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "blue",
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "blue",
+            "core"
+          ],
+          "bits": 0.02166681108473119,
+          "fraction": 0.084322124678213
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "red",
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "red",
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "red",
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "red",
+            "core"
+          ],
+          "bits": 0.003275957157156518,
+          "fraction": 0.012749253536479214
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "blue",
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "blue",
+            "core"
+          ],
+          "bits": 0.008895096938357376,
+          "fraction": 0.034617621860816024
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "red",
+            "blue",
+            "core"
+          ],
+          "bits": 0.02633273519991096,
+          "fraction": 0.10248080217997654
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "red",
+            "blue",
+            "core"
+          ],
+          "bits": 0.008419259333701235,
+          "fraction": 0.03276577399684158
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "red",
+            "blue",
+            "core"
+          ],
+          "bits": 0.0079890321812015,
+          "fraction": 0.031091431268178548
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "red",
+            "blue",
+            "core"
+          ],
+          "bits": 0.045675592772134746,
+          "fraction": 0.17775864724262047
+        }
+      ],
+      "joint_mi_bits": 0.2569528598504281,
+      "normalized_leakage": 0.7127259003045643,
+      "normalization_defined": true
+    }
+  },
+  "1993_common_3": {
+    "epoch": 1993,
+    "subset": "continuum_wings",
+    "target": "continuum",
+    "scenario": "common",
+    "bins": 3,
+    "lag_days": 25,
+    "total_variation": 1.7017637299332478e-15,
+    "predictor_order": [
+      "red",
+      "core",
+      "blue",
+      "continuum"
+    ],
+    "original_predictor_order": [
+      "continuum",
+      "blue",
+      "core",
+      "red"
+    ],
+    "counts": [
+      [
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              2
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              4
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              3
+            ],
+            [
+              0,
+              0,
+              20
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              5,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              2,
+              6
+            ]
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            [
+              4,
+              2,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              6
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              2,
+              0
+            ],
+            [
+              0,
+              0,
+              3
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              12
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            [
+              2,
+              2,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              3,
+              1
+            ]
+          ]
+        ]
+      ]
+    ],
+    "target_dates_sha256": "461577f6bb5695368d538ce5add9ee4bca063b52031d7cec646e436cb28c6c0a",
+    "original": {
+      "atoms": [
+        {
+          "kind": "U",
+          "predictors": [
+            "continuum"
+          ],
+          "bits": 0.1199749142300076,
+          "fraction": 0.17440124239750118
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "blue"
+          ],
+          "bits": 0.030350175533417623,
+          "fraction": 0.044118458879351195
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "blue"
+          ],
+          "bits": 0.0778895700734845,
+          "fraction": 0.11322398417873046
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "core"
+          ],
+          "bits": 0.01294407942515734,
+          "fraction": 0.01881612958781967
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "core"
+          ],
+          "bits": 0.038781105821638635,
+          "fraction": 0.05637406019625304
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "red"
+          ],
+          "bits": 0.03490693501830561,
+          "fraction": 0.05074238122654712
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "blue",
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "blue",
+            "core"
+          ],
+          "bits": 0.015533312399901803,
+          "fraction": 0.022579961806830903
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "blue",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "blue",
+            "red"
+          ],
+          "bits": 0.028258763121248306,
+          "fraction": 0.04107828231086772
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "red"
+          ],
+          "bits": 0.02790065340607033,
+          "fraction": 0.04055771699400556
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "blue",
+            "core"
+          ],
+          "bits": 0.07782419784957116,
+          "fraction": 0.1131289560043663
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "blue",
+            "core"
+          ],
+          "bits": 0.02810973140087305,
+          "fraction": 0.040861642712857645
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "blue",
+            "red"
+          ],
+          "bits": 0.021192343993948638,
+          "fraction": 0.03080619932575409
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "blue",
+            "red"
+          ],
+          "bits": 0.03103837417906198,
+          "fraction": 0.04511885716750129
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "core",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "core",
+            "red"
+          ],
+          "bits": 0.015003655503734888,
+          "fraction": 0.021810027347375294
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "blue",
+            "core",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "blue",
+            "core",
+            "red"
+          ],
+          "bits": 0.012227468013452227,
+          "fraction": 0.017774429151360096
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "blue",
+            "core",
+            "red"
+          ],
+          "bits": 0.08436281119482092,
+          "fraction": 0.12263379539756024
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "blue",
+            "core",
+            "red"
+          ],
+          "bits": 0.03162656224205536,
+          "fraction": 0.04597387531531812
+        }
+      ],
+      "joint_mi_bits": 0.68792465340675,
+      "normalized_leakage": 0.523223468686276,
+      "normalization_defined": true
+    },
+    "reordered": {
+      "atoms": [
+        {
+          "kind": "U",
+          "predictors": [
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "continuum"
+          ],
+          "bits": 0.11997491423000795,
+          "fraction": 0.17440124239750174
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "red",
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "red",
+            "core"
+          ],
+          "bits": 0.027900653406070362,
+          "fraction": 0.04055771699400562
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "red",
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "red",
+            "blue"
+          ],
+          "bits": 0.028258763121248517,
+          "fraction": 0.04107828231086804
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "red",
+            "continuum"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "red",
+            "continuum"
+          ],
+          "bits": 0.0349069350183055,
+          "fraction": 0.050742381226546986
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "blue"
+          ],
+          "bits": 0.015533312399901812,
+          "fraction": 0.022579961806830924
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "continuum"
+          ],
+          "bits": 0.01294407942515728,
+          "fraction": 0.01881612958781959
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "continuum"
+          ],
+          "bits": 0.0387811058216385,
+          "fraction": 0.05637406019625286
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "blue",
+            "continuum"
+          ],
+          "bits": 0.03035017553341743,
+          "fraction": 0.044118458879350925
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "blue",
+            "continuum"
+          ],
+          "bits": 0.07788957007348457,
+          "fraction": 0.1132239841787306
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "red",
+            "core",
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "red",
+            "core",
+            "blue"
+          ],
+          "bits": 0.012227468013452146,
+          "fraction": 0.01777442915135998
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "red",
+            "core",
+            "continuum"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "red",
+            "core",
+            "continuum"
+          ],
+          "bits": 0.015003655503734937,
+          "fraction": 0.02181002734737537
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "red",
+            "blue",
+            "continuum"
+          ],
+          "bits": 0.021192343993948724,
+          "fraction": 0.030806199325754225
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "red",
+            "blue",
+            "continuum"
+          ],
+          "bits": 0.031038374179062172,
+          "fraction": 0.04511885716750158
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "blue",
+            "continuum"
+          ],
+          "bits": 0.0778241978495708,
+          "fraction": 0.11312895600436582
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "blue",
+            "continuum"
+          ],
+          "bits": 0.028109731400872764,
+          "fraction": 0.04086164271285725
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "red",
+            "core",
+            "blue",
+            "continuum"
+          ],
+          "bits": 0.08436281119482093,
+          "fraction": 0.1226337953975603
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "red",
+            "core",
+            "blue",
+            "continuum"
+          ],
+          "bits": 0.031626562242055414,
+          "fraction": 0.04597387531531821
+        }
+      ],
+      "joint_mi_bits": 0.6879246534067498,
+      "normalized_leakage": 0.523223468686276,
+      "normalization_defined": true
+    }
+  },
+  "1993_blue_earlier_2": {
+    "epoch": 1993,
+    "subset": "continuum_wings",
+    "target": "continuum",
+    "scenario": "blue_earlier",
+    "bins": 2,
+    "lag_days": 2,
+    "total_variation": 0.10700782665429256,
+    "predictor_order": [
+      "core",
+      "blue",
+      "continuum",
+      "red"
+    ],
+    "original_predictor_order": [
+      "continuum",
+      "blue",
+      "core",
+      "red"
+    ],
+    "counts": [
+      [
+        [
+          [
+            [
+              25,
+              0
+            ],
+            [
+              9,
+              0
+            ]
+          ],
+          [
+            [
+              9,
+              0
+            ],
+            [
+              1,
+              3
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            [
+              4,
+              2
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              6,
+              8
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          [
+            [
+              0,
+              2
+            ],
+            [
+              4,
+              0
+            ]
+          ]
+        ]
+      ]
+    ],
+    "target_dates_sha256": "bd2bcd752e51d4af67b3408a0b7f6b7e103a288197f4acc3e44180930733ee98",
+    "original": {
+      "atoms": [
+        {
+          "kind": "U",
+          "predictors": [
+            "continuum"
+          ],
+          "bits": 0.2633838881458876,
+          "fraction": 0.44995245166282255
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "blue"
+          ],
+          "bits": 0.016090381177999658,
+          "fraction": 0.027488038506061224
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "core"
+          ],
+          "bits": 1.7792035651044156e-16,
+          "fraction": 3.0395063713333136e-16
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "red"
+          ],
+          "bits": 0.1606602977318796,
+          "fraction": 0.2744643772943973
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "red"
+          ],
+          "bits": 0.03376868611601885,
+          "fraction": 0.0576888101026093
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "blue",
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "blue",
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "blue",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "blue",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "blue",
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "blue",
+            "core"
+          ],
+          "bits": 0.03777473946583213,
+          "fraction": 0.06453256026109329
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "blue",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "blue",
+            "red"
+          ],
+          "bits": 0.04654765389013356,
+          "fraction": 0.07951978814823009
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "core",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "core",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "blue",
+            "core",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "blue",
+            "core",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "blue",
+            "core",
+            "red"
+          ],
+          "bits": 0.0019080073792602404,
+          "fraction": 0.0032595486539912203
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "blue",
+            "core",
+            "red"
+          ],
+          "bits": 0.025225726117563733,
+          "fraction": 0.04309442537079471
+        }
+      ],
+      "joint_mi_bits": 0.5853593800245755,
+      "normalized_leakage": 0.37848625520096574,
+      "normalization_defined": true
+    },
+    "reordered": {
+      "atoms": [
+        {
+          "kind": "U",
+          "predictors": [
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "continuum"
+          ],
+          "bits": 0.26338388814588765,
+          "fraction": 0.4499524516628229
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "continuum"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "continuum"
+          ],
+          "bits": 0.016090381177999803,
+          "fraction": 0.027488038506061487
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "blue",
+            "continuum"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "blue",
+            "continuum"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "blue",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "blue",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "red"
+          ],
+          "bits": 0.16066029773187973,
+          "fraction": 0.2744643772943977
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "red"
+          ],
+          "bits": 0.03376868611601872,
+          "fraction": 0.057688810102609116
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "blue",
+            "continuum"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "blue",
+            "continuum"
+          ],
+          "bits": 0.03777473946583228,
+          "fraction": 0.06453256026109358
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "blue",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "blue",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "continuum",
+            "red"
+          ],
+          "bits": 1.5790431640301693e-16,
+          "fraction": 2.697561904558318e-16
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "continuum",
+            "red"
+          ],
+          "bits": 0.046547653890133475,
+          "fraction": 0.07951978814822999
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "blue",
+            "continuum",
+            "red"
+          ],
+          "bits": 6.72538947609471e-17,
+          "fraction": 1.1489334083639963e-16
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "blue",
+            "continuum",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "blue",
+            "continuum",
+            "red"
+          ],
+          "bits": 0.0019080073792596365,
+          "fraction": 0.0032595486539901903
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "blue",
+            "continuum",
+            "red"
+          ],
+          "bits": 0.025225726117563733,
+          "fraction": 0.04309442537079474
+        }
+      ],
+      "joint_mi_bits": 0.5853593800245752,
+      "normalized_leakage": 0.37848625520096674,
+      "normalization_defined": true
+    }
+  },
+  "1993_blue_earlier_3": {
+    "epoch": 1993,
+    "subset": "continuum_wings",
+    "target": "continuum",
+    "scenario": "blue_earlier",
+    "bins": 3,
+    "lag_days": 12,
+    "total_variation": 7.392957773744158e-15,
+    "predictor_order": [
+      "continuum",
+      "core",
+      "red",
+      "blue"
+    ],
+    "original_predictor_order": [
+      "continuum",
+      "blue",
+      "core",
+      "red"
+    ],
+    "counts": [
+      [
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              6,
+              1
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              8,
+              5
+            ],
+            [
+              0,
+              0,
+              3
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              5
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            [
+              5,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              4,
+              0,
+              0
+            ],
+            [
+              1,
+              10,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              4,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              4,
+              2,
+              1
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            [
+              2,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              2
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              3,
+              0
+            ]
+          ]
+        ]
+      ]
+    ],
+    "target_dates_sha256": "bd2bcd752e51d4af67b3408a0b7f6b7e103a288197f4acc3e44180930733ee98",
+    "original": {
+      "atoms": [
+        {
+          "kind": "U",
+          "predictors": [
+            "continuum"
+          ],
+          "bits": 0.1159307677142601,
+          "fraction": 0.12487235947071548
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "blue"
+          ],
+          "bits": 0.05786677160411094,
+          "fraction": 0.062329961645457996
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "core"
+          ],
+          "bits": 0.011092592601248405,
+          "fraction": 0.01194815007332094
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "blue"
+          ],
+          "bits": 0.012342082684065107,
+          "fraction": 0.013294011727244839
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "blue"
+          ],
+          "bits": 0.06043621655675497,
+          "fraction": 0.0650975845991643
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "core"
+          ],
+          "bits": 0.1013580483447551,
+          "fraction": 0.10917566490504282
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "red"
+          ],
+          "bits": 0.03857696662200663,
+          "fraction": 0.04155235869037089
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "blue",
+            "core"
+          ],
+          "bits": 0.035547615134215935,
+          "fraction": 0.03828935719900739
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "blue",
+            "core"
+          ],
+          "bits": 0.041481206885462946,
+          "fraction": 0.044680599288772736
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "blue",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "blue",
+            "red"
+          ],
+          "bits": 0.04083941302163547,
+          "fraction": 0.04398930468553596
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "red"
+          ],
+          "bits": 0.006026847987289853,
+          "fraction": 0.006491691059953573
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "red"
+          ],
+          "bits": 0.04268932032624248,
+          "fraction": 0.04598189297320909
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "blue",
+            "core"
+          ],
+          "bits": 0.029829390707546696,
+          "fraction": 0.03213009343995755
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "blue",
+            "core"
+          ],
+          "bits": 0.023470260276158457,
+          "fraction": 0.025280491416216255
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "blue",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "blue",
+            "red"
+          ],
+          "bits": 0.027947469474641225,
+          "fraction": 0.030103022030664728
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "core",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "core",
+            "red"
+          ],
+          "bits": 0.005629971128529621,
+          "fraction": 0.0060642035969630205
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "blue",
+            "core",
+            "red"
+          ],
+          "bits": 0.09198994547799651,
+          "fraction": 0.09908501225259234
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "blue",
+            "core",
+            "red"
+          ],
+          "bits": 0.056381409452285716,
+          "fraction": 0.06073003541168995
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "blue",
+            "core",
+            "red"
+          ],
+          "bits": 0.11088429445465264,
+          "fraction": 0.11943665818659863
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "blue",
+            "core",
+            "red"
+          ],
+          "bits": 0.018073557023170997,
+          "fraction": 0.019467547347521565
+        }
+      ],
+      "joint_mi_bits": 0.9283941474770298,
+      "normalized_leakage": 0.3735848240680846,
+      "normalization_defined": true
+    },
+    "reordered": {
+      "atoms": [
+        {
+          "kind": "U",
+          "predictors": [
+            "continuum"
+          ],
+          "bits": 0.11593076771425989,
+          "fraction": 0.12487235947071527
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "core"
+          ],
+          "bits": 0.011092592601250329,
+          "fraction": 0.011948150073323014
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "blue"
+          ],
+          "bits": 0.057866771604112285,
+          "fraction": 0.06232996164545945
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "core"
+          ],
+          "bits": 0.10135804834475505,
+          "fraction": 0.10917566490504277
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "red"
+          ],
+          "bits": 0.03857696662200727,
+          "fraction": 0.041552358690371584
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "blue"
+          ],
+          "bits": 0.012342082684065272,
+          "fraction": 0.013294011727245017
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "blue"
+          ],
+          "bits": 0.06043621655675571,
+          "fraction": 0.06509758459916512
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "red"
+          ],
+          "bits": 0.006026847987286672,
+          "fraction": 0.006491691059950147
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "red"
+          ],
+          "bits": 0.042689320326240066,
+          "fraction": 0.0459818929732065
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "blue"
+          ],
+          "bits": 0.03554761513421651,
+          "fraction": 0.038289357199008014
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "blue"
+          ],
+          "bits": 0.04148120688546289,
+          "fraction": 0.04468059928877268
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "red",
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "red",
+            "blue"
+          ],
+          "bits": 0.04083941302163486,
+          "fraction": 0.04398930468553531
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "core",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "core",
+            "red"
+          ],
+          "bits": 0.005629971128529533,
+          "fraction": 0.006064203596962926
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "core",
+            "blue"
+          ],
+          "bits": 0.029829390707546814,
+          "fraction": 0.03213009343995768
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "core",
+            "blue"
+          ],
+          "bits": 0.023470260276158523,
+          "fraction": 0.025280491416216327
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "red",
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "red",
+            "blue"
+          ],
+          "bits": 0.027947469474641277,
+          "fraction": 0.030103022030664787
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "red",
+            "blue"
+          ],
+          "bits": 0.09198994547799749,
+          "fraction": 0.0990850122525934
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "red",
+            "blue"
+          ],
+          "bits": 0.0563814094522858,
+          "fraction": 0.060730035411690045
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "core",
+            "red",
+            "blue"
+          ],
+          "bits": 0.11088429445465238,
+          "fraction": 0.11943665818659836
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "core",
+            "red",
+            "blue"
+          ],
+          "bits": 0.018073557023171143,
+          "fraction": 0.019467547347521725
+        }
+      ],
+      "joint_mi_bits": 0.9283941474770296,
+      "normalized_leakage": 0.3735848240680852,
+      "normalization_defined": true
+    }
+  },
+  "1993_red_earlier_2": {
+    "epoch": 1993,
+    "subset": "continuum_wings",
+    "target": "continuum",
+    "scenario": "red_earlier",
+    "bins": 2,
+    "lag_days": 22,
+    "total_variation": 6.29401045171285e-15,
+    "predictor_order": [
+      "red",
+      "continuum",
+      "blue",
+      "core"
+    ],
+    "original_predictor_order": [
+      "continuum",
+      "blue",
+      "core",
+      "red"
+    ],
+    "counts": [
+      [
+        [
+          [
+            [
+              2,
+              2
+            ],
+            [
+              1,
+              4
+            ]
+          ],
+          [
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              26
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              2,
+              11
+            ]
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            [
+              12,
+              1
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              6
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              4
+            ]
+          ]
+        ]
+      ]
+    ],
+    "target_dates_sha256": "bd2bcd752e51d4af67b3408a0b7f6b7e103a288197f4acc3e44180930733ee98",
+    "original": {
+      "atoms": [
+        {
+          "kind": "U",
+          "predictors": [
+            "continuum"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "blue"
+          ],
+          "bits": 0.01372805602066425,
+          "fraction": 0.051730608713481015
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "blue"
+          ],
+          "bits": 0.008164333368095553,
+          "fraction": 0.030765166913336344
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "core"
+          ],
+          "bits": 0.001439617542185566,
+          "fraction": 0.005424824291200796
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "red"
+          ],
+          "bits": 0.008376963761771064,
+          "fraction": 0.03156640925087228
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "blue",
+            "core"
+          ],
+          "bits": 0.041278344657070545,
+          "fraction": 0.15554670614549285
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "blue",
+            "core"
+          ],
+          "bits": 0.013925456136030235,
+          "fraction": 0.05247445970830669
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "blue",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "blue",
+            "red"
+          ],
+          "bits": 0.00748300313709716,
+          "fraction": 0.028197751138561697
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "red"
+          ],
+          "bits": 0.009141371342682194,
+          "fraction": 0.034446880411990025
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "blue",
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "blue",
+            "core"
+          ],
+          "bits": 0.009574364244869925,
+          "fraction": 0.036078501550851336
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "blue",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "blue",
+            "red"
+          ],
+          "bits": 0.005492639580842905,
+          "fraction": 0.020697583731670573
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "core",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "core",
+            "red"
+          ],
+          "bits": 0.014214719480091998,
+          "fraction": 0.053564473388633155
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "blue",
+            "core",
+            "red"
+          ],
+          "bits": 0.10018634762382186,
+          "fraction": 0.37752619449974717
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "blue",
+            "core",
+            "red"
+          ],
+          "bits": 0.01392543503954768,
+          "fraction": 0.052474380211698965
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "blue",
+            "core",
+            "red"
+          ],
+          "bits": 0.0019080073792596566,
+          "fraction": 0.0071898295731269764
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "blue",
+            "core",
+            "red"
+          ],
+          "bits": 0.01653722475297275,
+          "fraction": 0.06231623047103012
+        }
+      ],
+      "joint_mi_bits": 0.26537588406700335,
+      "normalized_leakage": 0.7182333364523644,
+      "normalization_defined": true
+    },
+    "reordered": {
+      "atoms": [
+        {
+          "kind": "U",
+          "predictors": [
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "continuum"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "blue"
+          ],
+          "bits": 0.01372805602066402,
+          "fraction": 0.051730608713480036
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "red",
+            "continuum"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "red",
+            "continuum"
+          ],
+          "bits": 0.008376963761771139,
+          "fraction": 0.03156640925087249
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "red",
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "red",
+            "blue"
+          ],
+          "bits": 0.0074830031370969885,
+          "fraction": 0.02819775113856099
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "red",
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "red",
+            "core"
+          ],
+          "bits": 0.009141371342682478,
+          "fraction": 0.034446880411991024
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "blue"
+          ],
+          "bits": 0.00816433336809571,
+          "fraction": 0.030765166913336868
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "core"
+          ],
+          "bits": 0.0014396175421854498,
+          "fraction": 0.005424824291200347
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "blue",
+            "core"
+          ],
+          "bits": 0.04127834465707095,
+          "fraction": 0.15554670614549404
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "blue",
+            "core"
+          ],
+          "bits": 0.013925456136030166,
+          "fraction": 0.05247445970830632
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "red",
+            "continuum",
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "red",
+            "continuum",
+            "blue"
+          ],
+          "bits": 0.005492639580843195,
+          "fraction": 0.020697583731671625
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "red",
+            "continuum",
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "red",
+            "continuum",
+            "core"
+          ],
+          "bits": 0.014214719480091936,
+          "fraction": 0.05356447338863281
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "red",
+            "blue",
+            "core"
+          ],
+          "bits": 0.10018634762382167,
+          "fraction": 0.37752619449974567
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "red",
+            "blue",
+            "core"
+          ],
+          "bits": 0.013925435039547514,
+          "fraction": 0.052474380211698236
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "blue",
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "blue",
+            "core"
+          ],
+          "bits": 0.009574364244869729,
+          "fraction": 0.036078501550850524
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "red",
+            "continuum",
+            "blue",
+            "core"
+          ],
+          "bits": 0.001908007379260293,
+          "fraction": 0.007189829573129359
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "red",
+            "continuum",
+            "blue",
+            "core"
+          ],
+          "bits": 0.016537224752972698,
+          "fraction": 0.06231623047102979
+        }
+      ],
+      "joint_mi_bits": 0.2653758840670039,
+      "normalized_leakage": 0.7182333364523638,
+      "normalization_defined": true
+    }
+  },
+  "1993_red_earlier_3": {
+    "epoch": 1993,
+    "subset": "continuum_wings",
+    "target": "continuum",
+    "scenario": "red_earlier",
+    "bins": 3,
+    "lag_days": 22,
+    "total_variation": 0.1878142284666404,
+    "predictor_order": [
+      "core",
+      "blue",
+      "red",
+      "continuum"
+    ],
+    "original_predictor_order": [
+      "continuum",
+      "blue",
+      "core",
+      "red"
+    ],
+    "counts": [
+      [
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              2
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              2
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              2
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              3,
+              18
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              2,
+              1
+            ]
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            [
+              3,
+              6,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              14
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              5
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              3
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            [
+              4,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              2
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ],
+          [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              3,
+              1
+            ]
+          ]
+        ]
+      ]
+    ],
+    "target_dates_sha256": "bd2bcd752e51d4af67b3408a0b7f6b7e103a288197f4acc3e44180930733ee98",
+    "original": {
+      "atoms": [
+        {
+          "kind": "U",
+          "predictors": [
+            "continuum"
+          ],
+          "bits": 0.12010218045497262,
+          "fraction": 0.1815991239364915
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "blue"
+          ],
+          "bits": 4.2273876706880677e-16,
+          "fraction": 6.391973023543002e-16
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "blue"
+          ],
+          "bits": 0.059067010771082,
+          "fraction": 0.08931159591725536
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "core"
+          ],
+          "bits": 0.0015724522369400733,
+          "fraction": 0.0023776083629668252
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "red"
+          ],
+          "bits": 0.025980233571266352,
+          "fraction": 0.039283114081148686
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "red"
+          ],
+          "bits": 0.09960202143825883,
+          "fraction": 0.15060209370863725
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "blue",
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "blue",
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "blue",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "blue",
+            "red"
+          ],
+          "bits": 0.012695670054558118,
+          "fraction": 0.019196342239255718
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "blue",
+            "core"
+          ],
+          "bits": 0.23064289046661587,
+          "fraction": 0.34874093619491364
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "blue",
+            "core"
+          ],
+          "bits": 2.355224277714127e-13,
+          "fraction": 3.5611898459011944e-13
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "blue",
+            "red"
+          ],
+          "bits": 2.3129646346358144e-17,
+          "fraction": 3.4972916374605285e-17
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "blue",
+            "red"
+          ],
+          "bits": 0.052449913763749106,
+          "fraction": 0.07930629031012738
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "core",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "core",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "blue",
+            "core",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "blue",
+            "core",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
+            "blue",
+            "core",
+            "red"
+          ],
+          "bits": 0.059246436973955194,
+          "fraction": 0.08958289524862127
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "continuum",
+            "blue",
+            "core",
+            "red"
+          ],
+          "bits": 1.4910152884430762e-13,
+          "fraction": 2.254472559377811e-13
+        }
+      ],
+      "joint_mi_bits": 0.6613588097317833,
+      "normalized_leakage": 0.5537615179090652,
+      "normalization_defined": true
+    },
+    "reordered": {
+      "atoms": [
+        {
+          "kind": "U",
+          "predictors": [
+            "core"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "U",
+          "predictors": [
+            "continuum"
+          ],
+          "bits": 0.12010218045497414,
+          "fraction": 0.1815991239364938
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "blue"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "red"
+          ],
+          "bits": 0.012695670054556359,
+          "fraction": 0.01919634223925306
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "continuum"
+          ],
+          "bits": 1.8076708221460778e-16,
+          "fraction": 2.733267925892128e-16
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "continuum"
+          ],
+          "bits": 0.06063946300802241,
+          "fraction": 0.09168920428022269
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "blue",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "blue",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "blue",
+            "continuum"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "blue",
+            "continuum"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "red",
+            "continuum"
+          ],
+          "bits": 0.02598023357126657,
+          "fraction": 0.03928311408114902
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "red",
+            "continuum"
+          ],
+          "bits": 0.09960202143825898,
+          "fraction": 0.1506020937086375
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "blue",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "blue",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "blue",
+            "continuum"
+          ],
+          "bits": 0.23064289046661537,
+          "fraction": 0.3487409361949129
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "blue",
+            "continuum"
+          ],
+          "bits": 2.352277916610314e-13,
+          "fraction": 3.556734834399937e-13
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "red",
+            "continuum"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "red",
+            "continuum"
+          ],
+          "bits": 0.052449913763749065,
+          "fraction": 0.07930629031012733
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "blue",
+            "red",
+            "continuum"
+          ],
+          "bits": 9.251858538543257e-18,
+          "fraction": 1.3989166549842113e-17
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "blue",
+            "red",
+            "continuum"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "blue",
+            "red",
+            "continuum"
+          ],
+          "bits": 0.05924643697395587,
+          "fraction": 0.0895828952486223
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "blue",
+            "red",
+            "continuum"
+          ],
+          "bits": 1.491385362784618e-13,
+          "fraction": 2.2550321260398049e-13
+        }
+      ],
+      "joint_mi_bits": 0.6613588097317833,
+      "normalized_leakage": 0.5537615179090649,
+      "normalization_defined": true
+    }
+  }
+}
