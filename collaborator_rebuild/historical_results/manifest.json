@@ -1,0 +1,8 @@
+{
+  "source_sha256": "3f5c03d45f5de1e3027ccfb02dc10f0b26df86b894ac640206f85ca874c5985b",
+  "config_sha256": "f78ecfce35edab25d74fea720ff203a1bfc48ae8708ad62498d6528d97ee56e9",
+  "native_inventory_rows": 25,
+  "scan_rows": 3720,
+  "usable_scan_rows": 1402,
+  "atom_rows": 36452
+}

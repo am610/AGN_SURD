@@ -1,0 +1,61 @@
+{
+  "source": "Lu et al. 2022 Table 2 and Xi et al. 2025 Table 1",
+  "doi": [
+    "10.3847/1538-4365/ac94d3",
+    "10.3847/1538-4357/ae1ccb"
+  ],
+  "source_sha256": "5e35a557eeacd0f11242bf0edfad384030f20219a7ca3571c94f2adedadd72f7",
+  "xi_source_sha256": "04bf0f8940d11d5f30878458fcf9b04cb5899bd0f8931f0e034fc50f131eb99a",
+  "native_observations": 389,
+  "seasons": [
+    2015,
+    2018,
+    2019,
+    2020,
+    2021,
+    2023
+  ],
+  "season_2023_definition": "All 74 observations in Xi Table 1, including December 2022",
+  "lu_campaign_boundaries": {
+    "2015": [
+      "2015-01-07",
+      "2015-08-01",
+      62
+    ],
+    "2018": [
+      "2018-03-12",
+      "2018-06-18",
+      40
+    ],
+    "2019": [
+      "2018-11-28",
+      "2019-06-20",
+      81
+    ],
+    "2020": [
+      "2020-01-11",
+      "2020-06-21",
+      52
+    ],
+    "2021": [
+      "2020-12-24",
+      "2021-08-06",
+      80
+    ]
+  },
+  "units": {
+    "f5100": "1e-15 erg/s/cm^2/Angstrom",
+    "hbeta_total": "1e-13 erg/s/cm^2"
+  },
+  "interpolation": "none",
+  "available_series": [
+    "f5100",
+    "hbeta_total"
+  ],
+  "missing_required_series": [
+    "hbeta_blue",
+    "hbeta_core",
+    "hbeta_red"
+  ],
+  "status": "incomplete for requested five variable SURD analysis"
+}

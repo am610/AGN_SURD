@@ -1,0 +1,81 @@
+{
+  "epoch_rule": "Observation year ending October 31; begins November 1 of preceding year; project convention",
+  "lag_days": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30
+  ],
+  "maximum_interpolation_gap_days": 10,
+  "bins": 3,
+  "minimum_native_targets": 32,
+  "target_sampling": "Native dates of the target; predictors interpolated within the same epoch",
+  "time_frame": "Observed days",
+  "total_definition": "Broad profile flux within adopted velocity windows; blue plus core plus red",
+  "velocity_km_s": {
+    "blue": [
+      -6000,
+      -2000
+    ],
+    "core": [
+      -2000,
+      2000
+    ],
+    "red": [
+      2000,
+      6000
+    ]
+  },
+  "unequal_offsets_days": {
+    "common": {
+      "total": 0,
+      "continuum": 0,
+      "blue": 0,
+      "core": 0,
+      "red": 0
+    },
+    "blue_earlier": {
+      "total": 0,
+      "continuum": 0,
+      "blue": 5,
+      "core": 0,
+      "red": 0
+    },
+    "red_earlier": {
+      "total": 0,
+      "continuum": 0,
+      "blue": 0,
+      "core": 0,
+      "red": 5
+    }
+  },
+  "unequal_scope": "Exploratory one delay per predictor; not the expanded vector of thesis equation 3.18",
+  "interpretation": "Descriptive SURD estimates; no significance or causal detection claim"
+}

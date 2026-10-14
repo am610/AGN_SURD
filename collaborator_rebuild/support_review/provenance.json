@@ -1,0 +1,12 @@
+{
+  "source_url": "https://www.asc.ohio-state.edu/astronomy/agnwatch/n5548/lcv/iw-hb.lcv",
+  "source_sha256": "dfd03297d82180271772ef433d732a24d0365c14c4097740f0671598910accbd",
+  "archive_rows": 312,
+  "matched_adopted_dates": 224,
+  "correlation": 0.998730229507487,
+  "ratio_min": 0.7644391042573766,
+  "ratio_max": 0.9749075479946079,
+  "selection": "Candidate only; no scientific total replacement",
+  "date_policy": "Add 40000, validated against all adopted dates; archive header differs",
+  "expanded_policy": "Equation 3.18 with one extra five day copy per variable; support only"
+}

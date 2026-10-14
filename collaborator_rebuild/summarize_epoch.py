@@ -80,23 +80,27 @@ CONFIG_TEXT = {'common': 'common predictor lags',
 SET_TEXT = {'total_wings': 'total, blue, core and red H$\\beta$', 'continuum_wings': 'F5100, blue, core and red H$\\beta$'}
 
 
+SELECTED = [('common', 1989, 'continuum_wings', 'core'), ('common', 1992, 'continuum_wings', 'red'),
+            ('common', 1993, 'total_wings', 'core'), ('blue_leading', 1992, 'continuum_wings', 'core')]
+
+
 def figure_list(summary):
-    """One atlas page per curve; page order matches plot_epoch.plot_all."""
+    """Example figures from the atlas pages; page order matches plot_epoch.plot_all."""
     lines = []
-    for config in CONFIG_TEXT:
+    for config, want_epoch, want_subset, want_target in SELECTED:
         keys = sorted(summary[summary.config == config][['epoch', 'subset', 'target']].drop_duplicates().itertuples(index=False))
-        lines.append('\\clearpage')
-        lines.append(f'\\subsection*{{Individual component figures: {CONFIG_TEXT[config]}}}')
         for page, (epoch, subset, target) in enumerate(keys, start=1):
+            if (epoch, subset, target) != (want_epoch, want_subset, want_target):
+                continue
             rows = summary[(summary.epoch == epoch) & (summary.subset == subset) & (summary.target == target) & (summary.config == config)]
             tuples = rows.drop_duplicates('lag_days').tuple_count
-            lines += ['\\begin{figure}[p]', '\\centering',
+            lines += ['\\begin{SURDfigure}', '\\centering',
                       f'\\includegraphics[page={page},width=\\textwidth]{{\\SURDEpochPath/figures/atlas_{config}.pdf}}',
                       f'\\caption{{Campaign {epoch}, variable set {SET_TEXT[subset]}, future target {TARGETS[target]}, {CONFIG_TEXT[config]}. '
                       f'The 26 normalized components (U, R, S panels) and normalized leakage against base lag. '
                       f'Solid curves use two bins and dotted curves three bins; the daily grid supplies {tuples.min()} to {tuples.max()} tuples per lag. '
                       f'B, C, R and H or F denote blue, core, red and total or continuum.}}',
-                      f'\\label{{fig:ep_{config}_{epoch}_{subset}_{target}}}', '\\end{figure}']
+                      f'\\label{{fig:ep_{config}_{epoch}_{subset}_{target}}}', '\\end{SURDfigure}']
     return '\n'.join(lines) + '\n'
 
 

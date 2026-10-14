@@ -1,15 +1,15 @@
 {
   "status": "Per season SURD results section for collaborator review (14 October 2026)",
-  "pages": 131,
-  "text_pages": 7,
+  "pages": 12,
+  "text_pages": 12,
   "tables": 8,
-  "figures": 120,
+  "figures": 4,
   "decompositions": 7200,
   "component_rows": 187200,
   "compilation_warnings": 0,
   "sha256": {
-    "collaborator_rebuild/results_section/results_section.tex": "eeff7d8b50e2e4e7100c6aacf870001ca22571f99be249be28a5a4ce865e53d6",
-    "collaborator_rebuild/results_section/preview.tex": "5e9f324c9bafa4f7fef5f463ef86d14dd90cb475ca45ad1a96448697cccb1686",
+    "collaborator_rebuild/results_section/results_section.tex": "def19562d729cc9f74e26491fff7f17b20c2d8889df95ceb42cf68f058f33cf2",
+    "collaborator_rebuild/results_section/preview.tex": "107f51f9ff5eb86d255091aacb789c426ce63bdc5b77afcf5fca735b7d952570",
     "collaborator_rebuild/results_section/references.tex": "6856646d7fc62659df0ebb98136c0af6c79e5424ec19a5c056fe474282d39150",
     "collaborator_rebuild/results_section/epoch_support_rows.tex": "ba3283fa15bc32c9a4592f183ca86bd0ea427d34aa39e5b22c9a33ba05523df1",
     "collaborator_rebuild/results_section/epoch_extrema_total_wings.tex": "29bec83dd259c97ba856f212272526adaa1e6ff0463b93688db596aed00c9341",
@@ -17,7 +17,7 @@
     "collaborator_rebuild/results_section/epoch_config_rows.tex": "c2798e3374dab6555bcb377761cb99ca2e4c69d59726eb4a668ea9f617fc451f",
     "collaborator_rebuild/results_section/epoch_lu_rows.tex": "b3d7307043c07271ae8e60aa51367bc539531931539f016dd69f7d3f418f313b",
     "collaborator_rebuild/results_section/epoch_bin_rows.tex": "8c3b9ed34c7716a62cde471ca293d58f6aa8c690edbed94caac03063c641f42b",
-    "collaborator_rebuild/results_section/epoch_figures.tex": "1e2614407be169831d0da3670d3d234282ddd26a712212a77c48c28646f5820a",
+    "collaborator_rebuild/results_section/epoch_figures.tex": "c8bd28459ec0a25471486d001b2229653700a87cfd24d73ac70fb0c1ff1b68c9",
     "collaborator_rebuild/results_section/calibration_rows.tex": "edaa2739a0782a45df85681dd64c23efba704c9b14ce915212264b51eaab3d87",
     "collaborator_rebuild/epoch_results/configuration.json": "a19f09af9811943514157f70e47141c918e80c3f922910b696c30f0168ee3d50",
     "collaborator_rebuild/epoch_results/manifest.json": "479a03670923c43f610232d8c27490582ab1b57f9e40b739a2de274d1b63243b",
@@ -27,8 +27,9 @@
     "collaborator_rebuild/epoch_results/figures/atlas_common.pdf": "4cb1a8df8632446c181b6ba235f669936cc3838d87a8d30c8e0a12d5d0f6500a",
     "collaborator_rebuild/epoch_results/figures/atlas_blue_leading.pdf": "87c046a2f7e46f3c287a1b199e98dc1881d82886f974fe722a01e55858b11f32",
     "collaborator_rebuild/epoch_results/figures/atlas_red_leading.pdf": "73c5904f09e9cad3c1ef0e513a1abb5c08e9e5a88e57a2e45c43418101b1b637",
-    "output/pdf/surd_epoch_results.pdf": "ed0930677c67a4641074f75daf15a86be7632b22e23f5d4c3ea46c624af217d6",
-    "main.tex": "0cd6f6381b51118698c726eac7505d2e454ea212070041cfa1f164a943b80efa",
-    "main.pdf": "242c8e95942b0124b81b781fc8125119ae7fb02b0cfbe4d4ec7afc0b3146cf37"
-  }
+    "output/pdf/surd_epoch_results.pdf": "d31a5d7947c179325f6804a4ccb6726ae0daec8d04b553ae70903336d23e4b35",
+    "main.tex": "ef224f3b37ca8beb42772003b7ff6b7e00ba70d7d53855a27ee46051ab6abc29",
+    "main.pdf": "c3fa5ef844122863c9d4ca7f18f29053b1c4927eae95a0dac7d13152433d38a3"
+  },
+  "figures_in_atlas": 120
 }

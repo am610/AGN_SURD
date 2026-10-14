@@ -55,8 +55,8 @@ REPLIES = {
          'From Lu et al. 2022: Table 6. The references are listed at the end of the results section.']),
     9: ('green', 'Completed',
         ['The deliverable is the LaTeX section collaborator_rebuild/results_section/results_section.tex, not a paper. It contains '
-         'eight tables, seven pages of text and 120 figures. The compiled review copy is output/pdf/surd_epoch_results.pdf '
-         '(131 pages). It has not been inserted into main.tex.']),
+         'eight tables and four example figures; all 120 figures are in three atlas PDFs. The compiled review copy is '
+         'output/pdf/surd_epoch_results.pdf (12 pages). It has not been inserted into main.tex.']),
     10: ('amber', 'SURD only; extra diagnostics condensed',
          ['SURD is the only decomposition. Published Lu and Xi results are used for comparison only. The comparison of two and '
           'three histogram bins is a setting of the SURD estimate itself. The categorical benchmark (independent variables give '
@@ -113,8 +113,8 @@ REPLIES = {
           'Moving one wing back changes mean leakage by at most 0.08 but changes the component allocation by a median total '
           'variation of 0.30.']),
     25: ('green', 'Completed',
-         ['There are 120 figures: 5 seasons, 2 sets, 4 targets and 3 lag configurations. They are in the results section and in '
-          'the three atlas files collaborator_rebuild/epoch_results/figures/atlas_common.pdf, atlas_blue_leading.pdf and '
+         ['There are 120 figures: 5 seasons, 2 sets, 4 targets and 3 lag configurations. Four examples are in the results section; '
+          'all 120 are in the three atlas files collaborator_rebuild/epoch_results/figures/atlas_common.pdf, atlas_blue_leading.pdf and '
           'atlas_red_leading.pdf (one page per curve).']),
     26: ('green', 'Completed',
          ['Each season is analysed independently, with bin boundaries taken from its own native series. No season or target '

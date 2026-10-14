@@ -3,7 +3,6 @@
 % SURDEpochPath is the path to collaborator_rebuild/epoch_results from the compiling document.
 \providecommand{\SURDResultsPath}{collaborator_rebuild/results_section}
 \providecommand{\SURDEpochPath}{collaborator_rebuild/epoch_results}
-\providecommand{\SURDonecolumn}{}
 
 \section{SURD components in the five historical NGC~5548 seasons}
 \label{sec:epoch_surd_results}
@@ -94,10 +93,13 @@ five epochs: 7200 decompositions, 120 figures.
 
 \subsection{Common lags: leakage and dominant components}
 
-Figures~\ref{fig:ep_common_1989_continuum_wings_blue} to
-\ref{fig:ep_common_1993_total_wings_total} (the first group of figures at the end
-of this section) show the 26 normalized components and the leakage against lag for
-each epoch, variable set and target. Tables~\ref{tab:ep_extrema_total} and
+Figures~\ref{fig:ep_common_1989_continuum_wings_core},
+\ref{fig:ep_common_1992_continuum_wings_red} and \ref{fig:ep_common_1993_total_wings_core}
+show three examples of the 26 normalized components and the leakage against lag. The 120
+curves of every epoch, variable set, target and lag configuration are in the three atlas
+files \texttt{atlas\_common.pdf}, \texttt{atlas\_blue\_leading.pdf} and
+\texttt{atlas\_red\_leading.pdf} in \texttt{collaborator\_rebuild/epoch\_results/figures} of the
+repository, one page per curve. Tables~\ref{tab:ep_extrema_total} and
 \ref{tab:ep_extrema_cont} give the extrema of all 40 common lag curves (two bins).
 
 \begin{SURDtable}
@@ -168,8 +170,8 @@ epochs mainly reflect sample size.
 
 Table~\ref{tab:ep_config} gives the mean leakage of the three lag configurations
 (two bins, all lags, all four targets of each set) and the change of the allocation.
-The component figures for every configuration are in the second and third group of
-figures at the end of the section.
+Figure~\ref{fig:ep_blue_leading_1992_continuum_wings_core} shows an example; the component
+figures for every configuration are in the atlas files.
 
 \begin{SURDtable}
 \centering
@@ -336,6 +338,5 @@ The regular grid above replaces it so that every variable can be a target in eve
 epoch.
 
 % Individual component figures: one per epoch, variable set, target and configuration.
-\SURDonecolumn
 \input{\SURDResultsPath/epoch_figures.tex}
 \clearpage

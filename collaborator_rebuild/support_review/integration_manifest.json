@@ -1,0 +1,25 @@
+{
+  "source_sha256": "dfd03297d82180271772ef433d732a24d0365c14c4097740f0671598910accbd",
+  "code_sha256": "5662cf8e786671365159fd027f687129e7c0666fde0375ca8158bd36ffa5bc81",
+  "intervals_angstrom": {
+    "paper_section_3_2": [
+      4870,
+      5010
+    ],
+    "caption_alternative": [
+      4840,
+      5010
+    ],
+    "complete_file": [
+      4840,
+      5162
+    ]
+  },
+  "pixel_policy": "Lower inclusive, upper exclusive",
+  "status": "Diagnostic only; no fitted flux correction or scientific input replacement",
+  "caveats": [
+    "Archive duplicates cannot be linked to individual instruments by date alone",
+    "Profile units are arbitrary; similarity is not proof of absolute calibration",
+    "Source section and caption disagree on the lower boundary"
+  ]
+}
