@@ -8,7 +8,7 @@
   "component_rows": 187200,
   "compilation_warnings": 0,
   "sha256": {
-    "collaborator_rebuild/results_section/results_section.tex": "a1a0b2a110b676c14d389256cc2192909c78c9adf674cb156c58d9c218ff3e3b",
+    "collaborator_rebuild/results_section/results_section.tex": "9861fb311c9ffc73180014fc7b2d7c1bbd5c4f362ec8857a7ddf1f4a1b541875",
     "collaborator_rebuild/results_section/preview.tex": "05ca4740dc30fcb41b1654b2385d10463c174ef610207da1b95943fb2745fbfa",
     "collaborator_rebuild/results_section/references.tex": "f345bb53d670bf86b8c68be9aa66df891c993e81c6ea9d6f2d09eb8f93f59434",
     "collaborator_rebuild/results_section/epoch_support_rows.tex": "ba3283fa15bc32c9a4592f183ca86bd0ea427d34aa39e5b22c9a33ba05523df1",
@@ -27,6 +27,6 @@
     "collaborator_rebuild/epoch_results/figures/atlas_common.pdf": "8a305356654e93c66cc1a26eb2e0f1c35516cb76aa74c6a52f4bc4bc6eba2511",
     "collaborator_rebuild/epoch_results/figures/atlas_blue_leading.pdf": "2b19390032eca1fb2b8087a766e5a17b0ce3da3a55bbc5e931cf00b19a75f753",
     "collaborator_rebuild/epoch_results/figures/atlas_red_leading.pdf": "6045aac0b7f264933930f82ad89558fbcec95edd6c77309f683bcae77ed470a6",
-    "output/pdf/surd_epoch_results.pdf": "c518c183d50b27575a9635dd9c1296225c563fc7783789574ee0d04247d73bec"
+    "output/pdf/surd_epoch_results.pdf": "5d6d2bfb3feea38697d9a59d89c43b592678a988a5b71d8676520a20a3c8951b"
   }
 }
