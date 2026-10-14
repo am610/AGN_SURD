@@ -8,7 +8,7 @@ import pandas as pd
 from collaborator_rebuild.epoch_scan import OUT
 
 plt.rcParams.update({'font.size': 12, 'axes.labelsize': 12, 'xtick.labelsize': 11, 'ytick.labelsize': 11})
-LABELS = {'total': 'Htot', 'continuum': 'F5100', 'blue': 'Hb', 'core': 'Hc', 'red': 'Hr'}
+LABELS = {'total': 'H', 'continuum': 'F', 'blue': 'B', 'core': 'C', 'red': 'R'}
 TITLES = {'common': 'common lag', 'blue_leading': 'blue wing 5 d further back',
           'red_leading': 'red wing 5 d further back'}
 

@@ -99,7 +99,7 @@ def figure_list(summary):
                       f'\\caption{{Campaign {epoch}, variable set {SET_TEXT[subset]}, future target {TARGETS[target]}, {CONFIG_TEXT[config]}. '
                       f'The 26 normalized components (U, R, S panels) and normalized leakage against base lag. '
                       f'Solid curves use two bins and dotted curves three bins; the daily grid supplies {tuples.min()} to {tuples.max()} tuples per lag. '
-                      f'B, C, R and H or F denote blue, core, red and total or continuum.}}',
+                      f'B, C, R, H and F denote blue, core, red, total and continuum, in the legends as in the tables.}}',
                       f'\\label{{fig:ep_{config}_{epoch}_{subset}_{target}}}', '\\end{SURDfigure}']
     return '\n'.join(lines) + '\n'
 
@@ -162,6 +162,14 @@ def main():
         rows.append(f'{epoch} & ' + ' & '.join(cells) + ' \\\\')
     write_tabular(SECTION / 'epoch_bin_rows.tex', 'rcccccc',
                   ' & \\multicolumn{3}{c}{F5100 set} & \\multicolumn{3}{c}{Total set} \\\\\n\\cmidrule(lr){2-4}\\cmidrule(lr){5-7}\nEpoch & Common & Blue lead & Red lead & Common & Blue lead & Red lead \\\\', rows)
+    calibration = pd.read_csv(OUT.parent / 'calibration_review' / 'summary.csv').query('model == "independent"')
+    rows = []
+    for size, part in calibration.groupby('sample_size'):
+        two, three = part[part.bins == 2].iloc[0], part[part.bins == 3].iloc[0]
+        rows.append(f'{size} & {two.median_joint_mi_bits:.3f} & {three.median_joint_mi_bits:.3f} & '
+                    f'{two.median_leakage:.3f} & {three.median_leakage:.3f} \\\\')
+    write_tabular(SECTION / 'calibration_rows.tex', 'rrrrr',
+                  'Tuples & $I$, two states & $I$, three states & $\\ell$, two states & $\\ell$, three states \\\\', rows)
     (SECTION / 'epoch_figures.tex').write_text(figure_list(summary))
     peaks = continuum_peaks(components)
     peaks.to_csv(OUT / 'continuum_peak_lags.csv', index=False)

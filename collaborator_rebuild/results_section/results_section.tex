@@ -54,7 +54,7 @@ leak of equation 3.6 is normalized by the entropy of the target,
 and shown in its own panel. The component sums equal one to within
 $1.6\times10^{-15}$ in all 7200 decompositions.
 
-\paragraph{Regular grid and lags.} Every series is linearly interpolated onto a
+\textbf{Regular grid and lags.} Every series is linearly interpolated onto a
 daily grid that spans its epoch. Interpolation never extrapolates and never
 bridges a gap between neighbouring observations longer than 15 days. The target
 is $Y(t)$ and the predictors are $X_i(t-L-\delta_i)$, with base lag $L$ from 1
@@ -77,7 +77,7 @@ two bins).}
 \input{\SURDResultsPath/epoch_support_rows.tex}
 \end{SURDtable}
 
-\paragraph{Uncommon predictor lags (equation 3.18).} Equation 3.18 of the thesis
+\textbf{Uncommon predictor lags (equation 3.18).} Equation 3.18 of the thesis
 builds the predictor vector from copies of each variable at different past
 times. We give every predictor variable its own lag $L+\delta_i$, so that the four
 predictors still define the 26 components. The common lag analysis has
@@ -101,6 +101,9 @@ files \texttt{atlas\_common.pdf}, \texttt{atlas\_blue\_leading.pdf} and
 \texttt{atlas\_red\_leading.pdf} in \texttt{collaborator\_rebuild/epoch\_results/figures} of the
 repository, one page per curve. Tables~\ref{tab:ep_extrema_total} and
 \ref{tab:ep_extrema_cont} give the extrema of all 40 common lag curves (two bins).
+
+% Four example component figures (the 120 curves are in the atlas PDFs).
+\input{\SURDResultsPath/epoch_figures.tex}
 
 \begin{SURDtable}
 \centering
@@ -133,8 +136,8 @@ and the core target of the F5100 set in 1991, whose leakage reaches zero to nume
 precision at 4 days. The leakage maximum lies at 20 days or longer in 35 of 40
 curves. Median minimum and maximum leakage are 0.12 and 0.70 for the F5100 set and
 0.09 and 0.89 for the total set. The leakage at the largest lags of the total set
-approaches the 0.86 to 0.98 that independent categorical variables produce in the
-calibration below for 90 to 512 tuples. Little predictive information remains at
+approaches the 0.90 to 0.98 that independent two-state categorical variables produce in the
+calibration below for 118 to 512 tuples. Little predictive information remains at
 such lags relative to the bias level of the estimator.
 
 \textbf{Largest components.} At the leakage minimum the largest component is the
@@ -337,6 +340,4 @@ retained only four of 120 curves under a common date requirement across all lags
 The regular grid above replaces it so that every variable can be a target in every
 epoch.
 
-% Individual component figures: one per epoch, variable set, target and configuration.
-\input{\SURDResultsPath/epoch_figures.tex}
 \clearpage

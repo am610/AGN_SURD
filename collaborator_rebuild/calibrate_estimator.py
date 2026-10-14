@@ -15,12 +15,12 @@ import pandas as pd
 from collaborator_rebuild.official_decomposition import HASHES, decompose_counts, official_module
 
 BASE = Path(__file__).resolve().parent
-OUT = BASE / 'published_results' / 'estimator_calibration'
+OUT = BASE / 'calibration_review'
 NAMES = ['continuum', 'blue', 'core', 'red']
 MODELS = ['independent', 'unique', 'redundant', 'synergistic']
-CONFIG = dict(bins=[2, 3], sample_sizes=[36, 78, 90, 512], repetitions=200,
+CONFIG = dict(bins=[2, 3], sample_sizes=[118, 190, 261, 512], repetitions=200,
               seed=20261007, predictors=NAMES, target='future continuum',
-              sample_size_rule='36, 78, and 90 match retained curves; 512 is an artificial reference',
+              sample_size_rule='118 and 261 are the smallest and largest daily grid tuple counts of the season scans, 190 lies between them; 512 is an artificial reference',
               sampling='Independent draws from an exact categorical joint probability law',
               bin_rule='Known discrete states; no fitted quantile boundaries',
               model_definitions={'independent': 'All five variables mutually independent and uniform',

@@ -4,9 +4,9 @@
     3
   ],
   "sample_sizes": [
-    36,
-    78,
-    90,
+    118,
+    190,
+    261,
     512
   ],
   "repetitions": 200,
@@ -18,7 +18,7 @@
     "red"
   ],
   "target": "future continuum",
-  "sample_size_rule": "36, 78, and 90 match retained curves; 512 is an artificial reference",
+  "sample_size_rule": "118 and 261 are the smallest and largest daily grid tuple counts of the season scans, 190 lies between them; 512 is an artificial reference",
   "sampling": "Independent draws from an exact categorical joint probability law",
   "bin_rule": "Known discrete states; no fitted quantile boundaries",
   "model_definitions": {

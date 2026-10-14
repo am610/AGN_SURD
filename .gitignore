@@ -10,6 +10,8 @@ audit/*.ps
 Instructions for prompt sept26.docx
 MartinezSanchez-alvaroms-MS-AeroAstro-2025-thesis 2.pdf
 
+collaborator_rebuild/calibration_review/repetitions.csv
+
 # Figure pages are in the atlas PDFs
 collaborator_rebuild/epoch_results/figures/common/
 collaborator_rebuild/epoch_results/figures/blue_leading/

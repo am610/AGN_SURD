@@ -1,640 +1,4 @@
 {
-  "unique_2_90": {
-    "model": "unique",
-    "bins": 2,
-    "sample_size": 90,
-    "repetition": 4,
-    "expected_component": "U(blue)",
-    "counts": [
-      [
-        [
-          [
-            [
-              7,
-              6
-            ],
-            [
-              7,
-              3
-            ]
-          ],
-          [
-            [
-              0,
-              0
-            ],
-            [
-              0,
-              0
-            ]
-          ]
-        ],
-        [
-          [
-            [
-              2,
-              4
-            ],
-            [
-              4,
-              6
-            ]
-          ],
-          [
-            [
-              0,
-              0
-            ],
-            [
-              0,
-              0
-            ]
-          ]
-        ]
-      ],
-      [
-        [
-          [
-            [
-              0,
-              0
-            ],
-            [
-              0,
-              0
-            ]
-          ],
-          [
-            [
-              6,
-              7
-            ],
-            [
-              5,
-              6
-            ]
-          ]
-        ],
-        [
-          [
-            [
-              0,
-              0
-            ],
-            [
-              0,
-              0
-            ]
-          ],
-          [
-            [
-              8,
-              2
-            ],
-            [
-              9,
-              8
-            ]
-          ]
-        ]
-      ]
-    ],
-    "result": {
-      "atoms": [
-        {
-          "kind": "U",
-          "predictors": [
-            "continuum"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        },
-        {
-          "kind": "U",
-          "predictors": [
-            "blue"
-          ],
-          "bits": 2.2204460492503128e-16,
-          "fraction": 2.249378057346356e-16
-        },
-        {
-          "kind": "U",
-          "predictors": [
-            "core"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        },
-        {
-          "kind": "U",
-          "predictors": [
-            "red"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        },
-        {
-          "kind": "R",
-          "predictors": [
-            "continuum",
-            "blue"
-          ],
-          "bits": 0.009182349057970714,
-          "fraction": 0.009301993395816978
-        },
-        {
-          "kind": "S",
-          "predictors": [
-            "continuum",
-            "blue"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        },
-        {
-          "kind": "R",
-          "predictors": [
-            "continuum",
-            "core"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        },
-        {
-          "kind": "S",
-          "predictors": [
-            "continuum",
-            "core"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        },
-        {
-          "kind": "R",
-          "predictors": [
-            "continuum",
-            "red"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        },
-        {
-          "kind": "S",
-          "predictors": [
-            "continuum",
-            "red"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        },
-        {
-          "kind": "R",
-          "predictors": [
-            "blue",
-            "core"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        },
-        {
-          "kind": "S",
-          "predictors": [
-            "blue",
-            "core"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        },
-        {
-          "kind": "R",
-          "predictors": [
-            "blue",
-            "red"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        },
-        {
-          "kind": "S",
-          "predictors": [
-            "blue",
-            "red"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        },
-        {
-          "kind": "R",
-          "predictors": [
-            "core",
-            "red"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        },
-        {
-          "kind": "S",
-          "predictors": [
-            "core",
-            "red"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        },
-        {
-          "kind": "R",
-          "predictors": [
-            "continuum",
-            "blue",
-            "core"
-          ],
-          "bits": 1.2189323624530362e-16,
-          "fraction": 1.2348148293974266e-16
-        },
-        {
-          "kind": "S",
-          "predictors": [
-            "continuum",
-            "blue",
-            "core"
-          ],
-          "bits": 0.49180463359056387,
-          "fraction": 0.49821275850110514
-        },
-        {
-          "kind": "R",
-          "predictors": [
-            "continuum",
-            "blue",
-            "red"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        },
-        {
-          "kind": "S",
-          "predictors": [
-            "continuum",
-            "blue",
-            "red"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        },
-        {
-          "kind": "R",
-          "predictors": [
-            "continuum",
-            "core",
-            "red"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        },
-        {
-          "kind": "S",
-          "predictors": [
-            "continuum",
-            "core",
-            "red"
-          ],
-          "bits": 0.04357144883289619,
-          "fraction": 0.04413917688502126
-        },
-        {
-          "kind": "R",
-          "predictors": [
-            "blue",
-            "core",
-            "red"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        },
-        {
-          "kind": "S",
-          "predictors": [
-            "blue",
-            "core",
-            "red"
-          ],
-          "bits": 0.44164694997652226,
-          "fraction": 0.44740152939385497
-        },
-        {
-          "kind": "R",
-          "predictors": [
-            "continuum",
-            "blue",
-            "core",
-            "red"
-          ],
-          "bits": 0.0009323929141435644,
-          "fraction": 0.0009445418242014346
-        },
-        {
-          "kind": "S",
-          "predictors": [
-            "continuum",
-            "blue",
-            "core",
-            "red"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        }
-      ],
-      "joint_mi_bits": 0.9871377743720968,
-      "normalized_leakage": 9.042499790531533e-14,
-      "normalization_defined": true
-    },
-    "permutations": [
-      {
-        "predictor_order": [
-          "continuum",
-          "blue",
-          "core",
-          "red"
-        ],
-        "total_variation_from_original": 0.0,
-        "joint_mi_change_bits": 0.0
-      },
-      {
-        "predictor_order": [
-          "continuum",
-          "blue",
-          "red",
-          "core"
-        ],
-        "total_variation_from_original": 0.49821275850110525,
-        "joint_mi_change_bits": 0.0
-      },
-      {
-        "predictor_order": [
-          "continuum",
-          "core",
-          "blue",
-          "red"
-        ],
-        "total_variation_from_original": 0.9897534647799813,
-        "joint_mi_change_bits": 0.0
-      },
-      {
-        "predictor_order": [
-          "continuum",
-          "core",
-          "red",
-          "blue"
-        ],
-        "total_variation_from_original": 0.4659736610483363,
-        "joint_mi_change_bits": 0.0
-      },
-      {
-        "predictor_order": [
-          "continuum",
-          "red",
-          "blue",
-          "core"
-        ],
-        "total_variation_from_original": 0.9897534647799815,
-        "joint_mi_change_bits": 0.0
-      },
-      {
-        "predictor_order": [
-          "continuum",
-          "red",
-          "core",
-          "blue"
-        ],
-        "total_variation_from_original": 0.9641864195494415,
-        "joint_mi_change_bits": 0.0
-      },
-      {
-        "predictor_order": [
-          "blue",
-          "continuum",
-          "core",
-          "red"
-        ],
-        "total_variation_from_original": 0.9897534647799814,
-        "joint_mi_change_bits": 2.220446049250313e-16
-      },
-      {
-        "predictor_order": [
-          "blue",
-          "continuum",
-          "red",
-          "core"
-        ],
-        "total_variation_from_original": 0.9897534647799814,
-        "joint_mi_change_bits": 2.220446049250313e-16
-      },
-      {
-        "predictor_order": [
-          "blue",
-          "core",
-          "continuum",
-          "red"
-        ],
-        "total_variation_from_original": 0.9897534647799814,
-        "joint_mi_change_bits": 1.1102230246251565e-16
-      },
-      {
-        "predictor_order": [
-          "blue",
-          "core",
-          "red",
-          "continuum"
-        ],
-        "total_variation_from_original": 0.9897534647799814,
-        "joint_mi_change_bits": 1.1102230246251565e-16
-      },
-      {
-        "predictor_order": [
-          "blue",
-          "red",
-          "continuum",
-          "core"
-        ],
-        "total_variation_from_original": 0.9897534647799814,
-        "joint_mi_change_bits": 2.220446049250313e-16
-      },
-      {
-        "predictor_order": [
-          "blue",
-          "red",
-          "core",
-          "continuum"
-        ],
-        "total_variation_from_original": 0.9897534647799814,
-        "joint_mi_change_bits": 1.1102230246251565e-16
-      },
-      {
-        "predictor_order": [
-          "core",
-          "continuum",
-          "blue",
-          "red"
-        ],
-        "total_variation_from_original": 0.9897534647799814,
-        "joint_mi_change_bits": 2.220446049250313e-16
-      },
-      {
-        "predictor_order": [
-          "core",
-          "continuum",
-          "red",
-          "blue"
-        ],
-        "total_variation_from_original": 0.9897534647799814,
-        "joint_mi_change_bits": 2.220446049250313e-16
-      },
-      {
-        "predictor_order": [
-          "core",
-          "blue",
-          "continuum",
-          "red"
-        ],
-        "total_variation_from_original": 0.9897534647799814,
-        "joint_mi_change_bits": 2.220446049250313e-16
-      },
-      {
-        "predictor_order": [
-          "core",
-          "blue",
-          "red",
-          "continuum"
-        ],
-        "total_variation_from_original": 0.9897534647799814,
-        "joint_mi_change_bits": 2.220446049250313e-16
-      },
-      {
-        "predictor_order": [
-          "core",
-          "red",
-          "continuum",
-          "blue"
-        ],
-        "total_variation_from_original": 0.9897534647799814,
-        "joint_mi_change_bits": 2.220446049250313e-16
-      },
-      {
-        "predictor_order": [
-          "core",
-          "red",
-          "blue",
-          "continuum"
-        ],
-        "total_variation_from_original": 0.9897534647799814,
-        "joint_mi_change_bits": 2.220446049250313e-16
-      },
-      {
-        "predictor_order": [
-          "red",
-          "continuum",
-          "blue",
-          "core"
-        ],
-        "total_variation_from_original": 0.9897534647799814,
-        "joint_mi_change_bits": 2.220446049250313e-16
-      },
-      {
-        "predictor_order": [
-          "red",
-          "continuum",
-          "core",
-          "blue"
-        ],
-        "total_variation_from_original": 0.9897534647799813,
-        "joint_mi_change_bits": 2.220446049250313e-16
-      },
-      {
-        "predictor_order": [
-          "red",
-          "blue",
-          "continuum",
-          "core"
-        ],
-        "total_variation_from_original": 0.9897534647799814,
-        "joint_mi_change_bits": 2.220446049250313e-16
-      },
-      {
-        "predictor_order": [
-          "red",
-          "blue",
-          "core",
-          "continuum"
-        ],
-        "total_variation_from_original": 0.9897534647799814,
-        "joint_mi_change_bits": 2.220446049250313e-16
-      },
-      {
-        "predictor_order": [
-          "red",
-          "core",
-          "continuum",
-          "blue"
-        ],
-        "total_variation_from_original": 0.9897534647799813,
-        "joint_mi_change_bits": 2.220446049250313e-16
-      },
-      {
-        "predictor_order": [
-          "red",
-          "core",
-          "blue",
-          "continuum"
-        ],
-        "total_variation_from_original": 0.9897534647799814,
-        "joint_mi_change_bits": 2.220446049250313e-16
-      }
-    ],
-    "strict_resets": [
-      {
-        "target_state": 0,
-        "lower_order": 1,
-        "reset_specific_information": 1.206450877467322,
-        "comparison_maximum": 1.2064508774673224,
-        "difference": 4.440892098500626e-16
-      },
-      {
-        "target_state": 0,
-        "lower_order": 1,
-        "reset_specific_information": 1.2064508774673222,
-        "comparison_maximum": 1.2064508774673224,
-        "difference": 2.220446049250313e-16
-      },
-      {
-        "target_state": 0,
-        "lower_order": 1,
-        "reset_specific_information": 1.2064508774673222,
-        "comparison_maximum": 1.2064508774673224,
-        "difference": 2.220446049250313e-16
-      },
-      {
-        "target_state": 1,
-        "lower_order": 1,
-        "reset_specific_information": 0.8194277543581008,
-        "comparison_maximum": 0.819427754358101,
-        "difference": 2.220446049250313e-16
-      },
-      {
-        "target_state": 1,
-        "lower_order": 1,
-        "reset_specific_information": 0.8194277543581009,
-        "comparison_maximum": 0.819427754358101,
-        "difference": 1.1102230246251565e-16
-      },
-      {
-        "target_state": 1,
-        "lower_order": 1,
-        "reset_specific_information": 0.8194277543581009,
-        "comparison_maximum": 0.819427754358101,
-        "difference": 1.1102230246251565e-16
-      }
-    ]
-  },
   "unique_2_512": {
     "model": "unique",
     "bins": 2,
@@ -646,12 +10,12 @@
         [
           [
             [
-              34,
-              35
+              35,
+              33
             ],
             [
-              36,
-              34
+              29,
+              36
             ]
           ],
           [
@@ -668,12 +32,12 @@
         [
           [
             [
-              28,
-              30
+              22,
+              29
             ],
             [
-              33,
-              26
+              26,
+              34
             ]
           ],
           [
@@ -702,12 +66,12 @@
           ],
           [
             [
-              33,
-              22
+              37,
+              35
             ],
             [
-              36,
-              23
+              32,
+              33
             ]
           ]
         ],
@@ -724,12 +88,12 @@
           ],
           [
             [
-              48,
-              26
+              27,
+              31
             ],
             [
-              34,
-              34
+              35,
+              38
             ]
           ]
         ]
@@ -750,8 +114,8 @@
           "predictors": [
             "blue"
           ],
-          "bits": 0.4965517417620945,
-          "fraction": 0.49655174176210265
+          "bits": 0.48844924279674506,
+          "fraction": 0.4892249446905836
         },
         {
           "kind": "U",
@@ -775,8 +139,8 @@
             "continuum",
             "blue"
           ],
-          "bits": 0.0024378169770755513,
-          "fraction": 0.002437816977075591
+          "bits": 0.00018876824318928362,
+          "fraction": 0.00018906802435569528
         },
         {
           "kind": "S",
@@ -784,8 +148,8 @@
             "continuum",
             "blue"
           ],
-          "bits": 1.1102230246251565e-16,
-          "fraction": 1.1102230246251748e-16
+          "bits": 0.0,
+          "fraction": 0.0
         },
         {
           "kind": "R",
@@ -856,8 +220,8 @@
             "blue",
             "red"
           ],
-          "bits": 1.1102230246251565e-16,
-          "fraction": 1.1102230246251748e-16
+          "bits": 0.0,
+          "fraction": 0.0
         },
         {
           "kind": "R",
@@ -904,8 +268,8 @@
             "blue",
             "red"
           ],
-          "bits": 0.004409391297267504,
-          "fraction": 0.004409391297267577
+          "bits": 0.0006355562737580085,
+          "fraction": 0.0006365655950180276
         },
         {
           "kind": "S",
@@ -965,8 +329,8 @@
             "core",
             "red"
           ],
-          "bits": 4.402800650326428e-05,
-          "fraction": 4.402800650326501e-05
+          "bits": 4.983337182892492e-06,
+          "fraction": 4.9912511763061625e-06
         },
         {
           "kind": "S",
@@ -976,12 +340,12 @@
             "core",
             "red"
           ],
-          "bits": 0.49655702195704277,
-          "fraction": 0.4965570219570509
+          "bits": 0.5091358762865552,
+          "fraction": 0.5099444304388665
         }
       ],
-      "joint_mi_bits": 0.9999999999999836,
-      "normalized_leakage": 1.687538997430238e-14,
+      "joint_mi_bits": 0.9984144269374303,
+      "normalized_leakage": 1.645739516690876e-14,
       "normalization_defined": true
     },
     "permutations": [
@@ -1002,8 +366,8 @@
           "red",
           "core"
         ],
-        "total_variation_from_original": 3.018418848199653e-16,
-        "joint_mi_change_bits": 0.0
+        "total_variation_from_original": 0.5099444304388668,
+        "joint_mi_change_bits": -2.220446049250313e-16
       },
       {
         "predictor_order": [
@@ -1012,8 +376,8 @@
           "blue",
           "red"
         ],
-        "total_variation_from_original": 0.4965570219570511,
-        "joint_mi_change_bits": 0.0
+        "total_variation_from_original": 0.5099444304388667,
+        "joint_mi_change_bits": -1.1102230246251565e-16
       },
       {
         "predictor_order": [
@@ -1022,8 +386,8 @@
           "red",
           "blue"
         ],
-        "total_variation_from_original": 0.49655702195705115,
-        "joint_mi_change_bits": 0.0
+        "total_variation_from_original": 0.509944430438867,
+        "joint_mi_change_bits": -1.1102230246251565e-16
       },
       {
         "predictor_order": [
@@ -1032,8 +396,8 @@
           "blue",
           "core"
         ],
-        "total_variation_from_original": 0.4965570219570511,
-        "joint_mi_change_bits": 0.0
+        "total_variation_from_original": 0.5099444304388667,
+        "joint_mi_change_bits": -1.1102230246251565e-16
       },
       {
         "predictor_order": [
@@ -1042,8 +406,8 @@
           "core",
           "blue"
         ],
-        "total_variation_from_original": 0.4965570219570512,
-        "joint_mi_change_bits": 0.0
+        "total_variation_from_original": 0.5099444304388672,
+        "joint_mi_change_bits": 1.1102230246251565e-16
       },
       {
         "predictor_order": [
@@ -1052,8 +416,8 @@
           "core",
           "red"
         ],
-        "total_variation_from_original": 0.4965517417621029,
-        "joint_mi_change_bits": 0.0
+        "total_variation_from_original": 0.020719485748283275,
+        "joint_mi_change_bits": 1.1102230246251565e-16
       },
       {
         "predictor_order": [
@@ -1062,8 +426,8 @@
           "red",
           "core"
         ],
-        "total_variation_from_original": 4.4083660333260837e-16,
-        "joint_mi_change_bits": 0.0
+        "total_variation_from_original": 0.5099444304388665,
+        "joint_mi_change_bits": 1.1102230246251565e-16
       },
       {
         "predictor_order": [
@@ -1072,8 +436,8 @@
           "continuum",
           "red"
         ],
-        "total_variation_from_original": 0.4965517417621028,
-        "joint_mi_change_bits": 0.0
+        "total_variation_from_original": 0.5099444304388667,
+        "joint_mi_change_bits": 1.1102230246251565e-16
       },
       {
         "predictor_order": [
@@ -1082,7 +446,7 @@
           "red",
           "continuum"
         ],
-        "total_variation_from_original": 4.2652513465579882e-16,
+        "total_variation_from_original": 0.509944430438867,
         "joint_mi_change_bits": -1.1102230246251565e-16
       },
       {
@@ -1092,8 +456,8 @@
           "continuum",
           "core"
         ],
-        "total_variation_from_original": 0.4965570219570513,
-        "joint_mi_change_bits": 0.0
+        "total_variation_from_original": 0.5099444304388667,
+        "joint_mi_change_bits": 1.1102230246251565e-16
       },
       {
         "predictor_order": [
@@ -1102,8 +466,8 @@
           "core",
           "continuum"
         ],
-        "total_variation_from_original": 0.4965570219570512,
-        "joint_mi_change_bits": 0.0
+        "total_variation_from_original": 0.5099444304388667,
+        "joint_mi_change_bits": 1.1102230246251565e-16
       },
       {
         "predictor_order": [
@@ -1112,8 +476,8 @@
           "blue",
           "red"
         ],
-        "total_variation_from_original": 0.4965570219570512,
-        "joint_mi_change_bits": -1.1102230246251565e-16
+        "total_variation_from_original": 0.02071948574828312,
+        "joint_mi_change_bits": 0.0
       },
       {
         "predictor_order": [
@@ -1122,7 +486,7 @@
           "red",
           "blue"
         ],
-        "total_variation_from_original": 0.496557021957051,
+        "total_variation_from_original": 0.509944430438867,
         "joint_mi_change_bits": 0.0
       },
       {
@@ -1132,8 +496,8 @@
           "continuum",
           "red"
         ],
-        "total_variation_from_original": 5.280194948483656e-06,
-        "joint_mi_change_bits": -1.1102230246251565e-16
+        "total_variation_from_original": 0.5099444304388667,
+        "joint_mi_change_bits": 0.0
       },
       {
         "predictor_order": [
@@ -1142,7 +506,7 @@
           "red",
           "continuum"
         ],
-        "total_variation_from_original": 4.937456693499001e-16,
+        "total_variation_from_original": 5.5649302304955e-16,
         "joint_mi_change_bits": 0.0
       },
       {
@@ -1152,7 +516,7 @@
           "continuum",
           "blue"
         ],
-        "total_variation_from_original": 0.496557021957051,
+        "total_variation_from_original": 0.5099444304388668,
         "joint_mi_change_bits": 0.0
       },
       {
@@ -1162,7 +526,7 @@
           "blue",
           "continuum"
         ],
-        "total_variation_from_original": 3.3415110956003335e-16,
+        "total_variation_from_original": 0.5099444304388667,
         "joint_mi_change_bits": 0.0
       },
       {
@@ -1172,7 +536,7 @@
           "blue",
           "core"
         ],
-        "total_variation_from_original": 0.4965570219570513,
+        "total_variation_from_original": 0.5099444304388667,
         "joint_mi_change_bits": -1.1102230246251565e-16
       },
       {
@@ -1182,8 +546,8 @@
           "core",
           "blue"
         ],
-        "total_variation_from_original": 0.9931087637191537,
-        "joint_mi_change_bits": 0.0
+        "total_variation_from_original": 0.509944430438867,
+        "joint_mi_change_bits": 1.1102230246251565e-16
       },
       {
         "predictor_order": [
@@ -1192,8 +556,8 @@
           "continuum",
           "core"
         ],
-        "total_variation_from_original": 0.4965570219570514,
-        "joint_mi_change_bits": -1.1102230246251565e-16
+        "total_variation_from_original": 0.509944430438867,
+        "joint_mi_change_bits": -3.3306690738754696e-16
       },
       {
         "predictor_order": [
@@ -1202,8 +566,8 @@
           "core",
           "continuum"
         ],
-        "total_variation_from_original": 0.496551741762103,
-        "joint_mi_change_bits": 0.0
+        "total_variation_from_original": 0.5099444304388667,
+        "joint_mi_change_bits": -1.1102230246251565e-16
       },
       {
         "predictor_order": [
@@ -1212,8 +576,8 @@
           "continuum",
           "blue"
         ],
-        "total_variation_from_original": 0.4965570219570511,
-        "joint_mi_change_bits": 0.0
+        "total_variation_from_original": 0.509944430438867,
+        "joint_mi_change_bits": -1.1102230246251565e-16
       },
       {
         "predictor_order": [
@@ -1222,666 +586,58 @@
           "blue",
           "continuum"
         ],
-        "total_variation_from_original": 5.481726184086719e-16,
-        "joint_mi_change_bits": 0.0
+        "total_variation_from_original": 0.5099444304388667,
+        "joint_mi_change_bits": -1.1102230246251565e-16
       }
     ],
     "strict_resets": [
       {
         "target_state": 0,
-        "lower_order": 1,
-        "reset_specific_information": 0.9999999999999836,
-        "comparison_maximum": 0.9999999999999837,
-        "difference": 1.1102230246251565e-16
-      },
-      {
-        "target_state": 0,
         "lower_order": 2,
-        "reset_specific_information": 0.9999999999999836,
-        "comparison_maximum": 0.9999999999999838,
+        "reset_specific_information": 1.0692626624370962,
+        "comparison_maximum": 1.0692626624370964,
         "difference": 2.220446049250313e-16
       },
       {
         "target_state": 0,
         "lower_order": 2,
-        "reset_specific_information": 0.9999999999999836,
-        "comparison_maximum": 0.9999999999999838,
+        "reset_specific_information": 1.0692626624370962,
+        "comparison_maximum": 1.0692626624370964,
         "difference": 2.220446049250313e-16
       },
       {
         "target_state": 0,
         "lower_order": 2,
-        "reset_specific_information": 0.9999999999999836,
-        "comparison_maximum": 0.9999999999999838,
+        "reset_specific_information": 1.0692626624370962,
+        "comparison_maximum": 1.0692626624370964,
         "difference": 2.220446049250313e-16
       },
       {
         "target_state": 1,
+        "lower_order": 1,
+        "reset_specific_information": 0.9339108095422116,
+        "comparison_maximum": 0.9339108095422122,
+        "difference": 5.551115123125783e-16
+      },
+      {
+        "target_state": 1,
         "lower_order": 2,
-        "reset_specific_information": 0.9999999999999835,
-        "comparison_maximum": 0.9999999999999838,
+        "reset_specific_information": 0.9339108095422118,
+        "comparison_maximum": 0.9339108095422122,
         "difference": 3.3306690738754696e-16
       },
       {
         "target_state": 1,
         "lower_order": 2,
-        "reset_specific_information": 0.9999999999999836,
-        "comparison_maximum": 0.9999999999999838,
+        "reset_specific_information": 0.933910809542212,
+        "comparison_maximum": 0.9339108095422122,
         "difference": 2.220446049250313e-16
       },
       {
         "target_state": 1,
-        "lower_order": 2,
-        "reset_specific_information": 0.9999999999999837,
-        "comparison_maximum": 0.9999999999999838,
-        "difference": 1.1102230246251565e-16
-      }
-    ]
-  },
-  "synergistic_2_90": {
-    "model": "synergistic",
-    "bins": 2,
-    "sample_size": 90,
-    "repetition": 41,
-    "expected_component": "S(blue,core)",
-    "counts": [
-      [
-        [
-          [
-            [
-              6,
-              8
-            ],
-            [
-              0,
-              0
-            ]
-          ],
-          [
-            [
-              0,
-              0
-            ],
-            [
-              5,
-              8
-            ]
-          ]
-        ],
-        [
-          [
-            [
-              4,
-              4
-            ],
-            [
-              0,
-              0
-            ]
-          ],
-          [
-            [
-              0,
-              0
-            ],
-            [
-              9,
-              8
-            ]
-          ]
-        ]
-      ],
-      [
-        [
-          [
-            [
-              0,
-              0
-            ],
-            [
-              6,
-              6
-            ]
-          ],
-          [
-            [
-              6,
-              3
-            ],
-            [
-              0,
-              0
-            ]
-          ]
-        ],
-        [
-          [
-            [
-              0,
-              0
-            ],
-            [
-              4,
-              2
-            ]
-          ],
-          [
-            [
-              5,
-              6
-            ],
-            [
-              0,
-              0
-            ]
-          ]
-        ]
-      ]
-    ],
-    "result": {
-      "atoms": [
-        {
-          "kind": "U",
-          "predictors": [
-            "continuum"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        },
-        {
-          "kind": "U",
-          "predictors": [
-            "blue"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        },
-        {
-          "kind": "U",
-          "predictors": [
-            "core"
-          ],
-          "bits": 0.001690002953353936,
-          "fraction": 0.0017201501556057337
-        },
-        {
-          "kind": "U",
-          "predictors": [
-            "red"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        },
-        {
-          "kind": "R",
-          "predictors": [
-            "continuum",
-            "blue"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        },
-        {
-          "kind": "S",
-          "predictors": [
-            "continuum",
-            "blue"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        },
-        {
-          "kind": "R",
-          "predictors": [
-            "continuum",
-            "core"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        },
-        {
-          "kind": "S",
-          "predictors": [
-            "continuum",
-            "core"
-          ],
-          "bits": 0.025871689517491525,
-          "fraction": 0.02633320294557853
-        },
-        {
-          "kind": "R",
-          "predictors": [
-            "continuum",
-            "red"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        },
-        {
-          "kind": "S",
-          "predictors": [
-            "continuum",
-            "red"
-          ],
-          "bits": 0.003317851041096722,
-          "fraction": 0.00337703669291986
-        },
-        {
-          "kind": "R",
-          "predictors": [
-            "blue",
-            "core"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        },
-        {
-          "kind": "S",
-          "predictors": [
-            "blue",
-            "core"
-          ],
-          "bits": 0.4409824185165233,
-          "fraction": 0.4488489054561591
-        },
-        {
-          "kind": "R",
-          "predictors": [
-            "blue",
-            "red"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        },
-        {
-          "kind": "S",
-          "predictors": [
-            "blue",
-            "red"
-          ],
-          "bits": 0.0002036304256267146,
-          "fraction": 0.00020726289716400104
-        },
-        {
-          "kind": "R",
-          "predictors": [
-            "core",
-            "red"
-          ],
-          "bits": 0.00402556919006042,
-          "fraction": 0.004097379507498333
-        },
-        {
-          "kind": "S",
-          "predictors": [
-            "core",
-            "red"
-          ],
-          "bits": 0.002397721102317658,
-          "fraction": 0.002440492970184232
-        },
-        {
-          "kind": "R",
-          "predictors": [
-            "continuum",
-            "blue",
-            "core"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        },
-        {
-          "kind": "S",
-          "predictors": [
-            "continuum",
-            "blue",
-            "core"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        },
-        {
-          "kind": "R",
-          "predictors": [
-            "continuum",
-            "blue",
-            "red"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        },
-        {
-          "kind": "S",
-          "predictors": [
-            "continuum",
-            "blue",
-            "red"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        },
-        {
-          "kind": "R",
-          "predictors": [
-            "continuum",
-            "core",
-            "red"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        },
-        {
-          "kind": "S",
-          "predictors": [
-            "continuum",
-            "core",
-            "red"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        },
-        {
-          "kind": "R",
-          "predictors": [
-            "blue",
-            "core",
-            "red"
-          ],
-          "bits": 0.0010346936298462463,
-          "fraction": 0.0010531510639387232
-        },
-        {
-          "kind": "S",
-          "predictors": [
-            "blue",
-            "core",
-            "red"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        },
-        {
-          "kind": "R",
-          "predictors": [
-            "continuum",
-            "blue",
-            "core",
-            "red"
-          ],
-          "bits": 0.0007893056282862448,
-          "fraction": 0.0008033856962335842
-        },
-        {
-          "kind": "S",
-          "predictors": [
-            "continuum",
-            "blue",
-            "core",
-            "red"
-          ],
-          "bits": 0.502161204833949,
-          "fraction": 0.511119032614718
-        }
-      ],
-      "joint_mi_bits": 0.9824740868385518,
-      "normalized_leakage": 9.130624572334979e-14,
-      "normalization_defined": true
-    },
-    "permutations": [
-      {
-        "predictor_order": [
-          "continuum",
-          "blue",
-          "core",
-          "red"
-        ],
-        "total_variation_from_original": 0.0,
-        "joint_mi_change_bits": 0.0
-      },
-      {
-        "predictor_order": [
-          "continuum",
-          "blue",
-          "red",
-          "core"
-        ],
-        "total_variation_from_original": 0.0,
-        "joint_mi_change_bits": 0.0
-      },
-      {
-        "predictor_order": [
-          "continuum",
-          "core",
-          "blue",
-          "red"
-        ],
-        "total_variation_from_original": 0.0,
-        "joint_mi_change_bits": 0.0
-      },
-      {
-        "predictor_order": [
-          "continuum",
-          "core",
-          "red",
-          "blue"
-        ],
-        "total_variation_from_original": 0.0,
-        "joint_mi_change_bits": 0.0
-      },
-      {
-        "predictor_order": [
-          "continuum",
-          "red",
-          "blue",
-          "core"
-        ],
-        "total_variation_from_original": 0.0,
-        "joint_mi_change_bits": 0.0
-      },
-      {
-        "predictor_order": [
-          "continuum",
-          "red",
-          "core",
-          "blue"
-        ],
-        "total_variation_from_original": 0.0,
-        "joint_mi_change_bits": 0.0
-      },
-      {
-        "predictor_order": [
-          "blue",
-          "continuum",
-          "core",
-          "red"
-        ],
-        "total_variation_from_original": 9.138190006523979e-17,
-        "joint_mi_change_bits": -2.220446049250313e-16
-      },
-      {
-        "predictor_order": [
-          "blue",
-          "continuum",
-          "red",
-          "core"
-        ],
-        "total_variation_from_original": 9.138190006523979e-17,
-        "joint_mi_change_bits": -2.220446049250313e-16
-      },
-      {
-        "predictor_order": [
-          "blue",
-          "core",
-          "continuum",
-          "red"
-        ],
-        "total_variation_from_original": 2.308374045011878e-16,
-        "joint_mi_change_bits": -2.220446049250313e-16
-      },
-      {
-        "predictor_order": [
-          "blue",
-          "core",
-          "red",
-          "continuum"
-        ],
-        "total_variation_from_original": 2.618184815799611e-16,
-        "joint_mi_change_bits": -2.220446049250313e-16
-      },
-      {
-        "predictor_order": [
-          "blue",
-          "red",
-          "continuum",
-          "core"
-        ],
-        "total_variation_from_original": 0.5111190326147179,
-        "joint_mi_change_bits": -2.220446049250313e-16
-      },
-      {
-        "predictor_order": [
-          "blue",
-          "red",
-          "core",
-          "continuum"
-        ],
-        "total_variation_from_original": 0.5111190326147179,
-        "joint_mi_change_bits": -2.220446049250313e-16
-      },
-      {
-        "predictor_order": [
-          "core",
-          "continuum",
-          "blue",
-          "red"
-        ],
-        "total_variation_from_original": 1.3950971454457228e-16,
-        "joint_mi_change_bits": 0.0
-      },
-      {
-        "predictor_order": [
-          "core",
-          "continuum",
-          "red",
-          "blue"
-        ],
-        "total_variation_from_original": 1.981921571303502e-16,
-        "joint_mi_change_bits": -2.220446049250313e-16
-      },
-      {
-        "predictor_order": [
-          "core",
-          "blue",
-          "continuum",
-          "red"
-        ],
-        "total_variation_from_original": 1.7215496191540986e-16,
-        "joint_mi_change_bits": 0.0
-      },
-      {
-        "predictor_order": [
-          "core",
-          "blue",
-          "red",
-          "continuum"
-        ],
-        "total_variation_from_original": 2.6171006136271255e-16,
-        "joint_mi_change_bits": -2.220446049250313e-16
-      },
-      {
-        "predictor_order": [
-          "core",
-          "red",
-          "continuum",
-          "blue"
-        ],
-        "total_variation_from_original": 1.8710618991668593e-16,
-        "joint_mi_change_bits": -2.220446049250313e-16
-      },
-      {
-        "predictor_order": [
-          "core",
-          "red",
-          "blue",
-          "continuum"
-        ],
-        "total_variation_from_original": 2.1975143728752353e-16,
-        "joint_mi_change_bits": -2.220446049250313e-16
-      },
-      {
-        "predictor_order": [
-          "red",
-          "continuum",
-          "blue",
-          "core"
-        ],
-        "total_variation_from_original": 0.5111190326147182,
-        "joint_mi_change_bits": 0.0
-      },
-      {
-        "predictor_order": [
-          "red",
-          "continuum",
-          "core",
-          "blue"
-        ],
-        "total_variation_from_original": 0.5111190326147182,
-        "joint_mi_change_bits": 0.0
-      },
-      {
-        "predictor_order": [
-          "red",
-          "blue",
-          "continuum",
-          "core"
-        ],
-        "total_variation_from_original": 0.5111190326147181,
-        "joint_mi_change_bits": 0.0
-      },
-      {
-        "predictor_order": [
-          "red",
-          "blue",
-          "core",
-          "continuum"
-        ],
-        "total_variation_from_original": 0.5111190326147179,
-        "joint_mi_change_bits": 0.0
-      },
-      {
-        "predictor_order": [
-          "red",
-          "core",
-          "continuum",
-          "blue"
-        ],
-        "total_variation_from_original": 3.0739842095395264e-16,
-        "joint_mi_change_bits": -2.220446049250313e-16
-      },
-      {
-        "predictor_order": [
-          "red",
-          "core",
-          "blue",
-          "continuum"
-        ],
-        "total_variation_from_original": 0.5111190326147179,
-        "joint_mi_change_bits": 0.0
-      }
-    ],
-    "strict_resets": [
-      {
-        "target_state": 1,
-        "lower_order": 2,
-        "reset_specific_information": 1.243925582885982,
-        "comparison_maximum": 1.2439255828859825,
-        "difference": 4.440892098500626e-16
-      },
-      {
-        "target_state": 1,
-        "lower_order": 2,
-        "reset_specific_information": 1.2439255828859823,
-        "comparison_maximum": 1.2439255828859825,
+        "lower_order": 3,
+        "reset_specific_information": 0.933910809542212,
+        "comparison_maximum": 0.9339108095422122,
         "difference": 2.220446049250313e-16
       }
     ]
@@ -1890,15 +646,15 @@
     "model": "synergistic",
     "bins": 2,
     "sample_size": 512,
-    "repetition": 16,
+    "repetition": 2,
     "expected_component": "S(blue,core)",
     "counts": [
       [
         [
           [
             [
-              35,
-              39
+              26,
+              35
             ],
             [
               0,
@@ -1912,15 +668,15 @@
             ],
             [
               34,
-              25
+              27
             ]
           ]
         ],
         [
           [
             [
-              28,
-              42
+              21,
+              43
             ],
             [
               0,
@@ -1933,8 +689,8 @@
               0
             ],
             [
-              35,
-              30
+              28,
+              37
             ]
           ]
         ]
@@ -1947,14 +703,14 @@
               0
             ],
             [
-              33,
-              28
+              17,
+              36
             ]
           ],
           [
             [
-              33,
-              31
+              35,
+              40
             ],
             [
               0,
@@ -1969,14 +725,14 @@
               0
             ],
             [
-              27,
-              27
+              34,
+              30
             ]
           ],
           [
             [
-              31,
-              34
+              39,
+              30
             ],
             [
               0,
@@ -2001,16 +757,16 @@
           "predictors": [
             "blue"
           ],
-          "bits": 0.0029531581929562118,
-          "fraction": 0.002957848077190579
+          "bits": 0.0,
+          "fraction": 0.0
         },
         {
           "kind": "U",
           "predictors": [
             "core"
           ],
-          "bits": 0.0,
-          "fraction": 0.0
+          "bits": 0.0002974623442177342,
+          "fraction": 0.00029754422533545923
         },
         {
           "kind": "U",
@@ -2026,8 +782,8 @@
             "continuum",
             "blue"
           ],
-          "bits": 8.383738749850509e-06,
-          "fraction": 8.397052890719007e-06
+          "bits": 0.0,
+          "fraction": 0.0
         },
         {
           "kind": "S",
@@ -2035,8 +791,8 @@
             "continuum",
             "blue"
           ],
-          "bits": 0.00024604886962944345,
-          "fraction": 0.00024643961764873727
+          "bits": 0.0006318602369585892,
+          "fraction": 0.0006320341662758755
         },
         {
           "kind": "R",
@@ -2053,8 +809,8 @@
             "continuum",
             "core"
           ],
-          "bits": 0.0,
-          "fraction": 0.0
+          "bits": 0.00010756181656927865,
+          "fraction": 0.000107591424625345
         },
         {
           "kind": "R",
@@ -2071,12 +827,67 @@
             "continuum",
             "red"
           ],
-          "bits": 0.0,
-          "fraction": 0.0
+          "bits": 0.0028207447989607526,
+          "fraction": 0.0028215212526579874
         },
         {
           "kind": "R",
           "predictors": [
+            "blue",
+            "core"
+          ],
+          "bits": 0.00033957413089889755,
+          "fraction": 0.000339667603938188
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "blue",
+            "core"
+          ],
+          "bits": 1.65449251521288e-16,
+          "fraction": 1.654947939904599e-16
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "blue",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "blue",
+            "red"
+          ],
+          "bits": 0.0004114717039893081,
+          "fraction": 0.00041158496794923373
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "core",
+            "red"
+          ],
+          "bits": 0.0,
+          "fraction": 0.0
+        },
+        {
+          "kind": "S",
+          "predictors": [
+            "core",
+            "red"
+          ],
+          "bits": 0.007211083188369407,
+          "fraction": 0.00721306815071153
+        },
+        {
+          "kind": "R",
+          "predictors": [
+            "continuum",
             "blue",
             "core"
           ],
@@ -2086,51 +897,6 @@
         {
           "kind": "S",
           "predictors": [
-            "blue",
-            "core"
-          ],
-          "bits": 0.4855408547070249,
-          "fraction": 0.4863119378156315
-        },
-        {
-          "kind": "R",
-          "predictors": [
-            "blue",
-            "red"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        },
-        {
-          "kind": "S",
-          "predictors": [
-            "blue",
-            "red"
-          ],
-          "bits": 0.003620016454731194,
-          "fraction": 0.0036257653706340694
-        },
-        {
-          "kind": "R",
-          "predictors": [
-            "core",
-            "red"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        },
-        {
-          "kind": "S",
-          "predictors": [
-            "core",
-            "red"
-          ],
-          "bits": 0.0,
-          "fraction": 0.0
-        },
-        {
-          "kind": "R",
-          "predictors": [
             "continuum",
             "blue",
             "core"
@@ -2139,24 +905,14 @@
           "fraction": 0.0
         },
         {
-          "kind": "S",
-          "predictors": [
-            "continuum",
-            "blue",
-            "core"
-          ],
-          "bits": 5.811323644522304e-17,
-          "fraction": 5.820552555864153e-17
-        },
-        {
           "kind": "R",
           "predictors": [
             "continuum",
             "blue",
             "red"
           ],
-          "bits": 0.0001227269550922191,
-          "fraction": 0.00012292185667696717
+          "bits": 0.0,
+          "fraction": 0.0
         },
         {
           "kind": "S",
@@ -2195,8 +951,8 @@
             "core",
             "red"
           ],
-          "bits": 0.0,
-          "fraction": 0.0
+          "bits": 0.0014360630427907041,
+          "fraction": 0.0014364583413868223
         },
         {
           "kind": "S",
@@ -2205,8 +961,8 @@
             "core",
             "red"
           ],
-          "bits": 5.811323644522304e-17,
-          "fraction": 5.820552555864153e-17
+          "bits": 0.0,
+          "fraction": 0.0
         },
         {
           "kind": "R",
@@ -2216,8 +972,8 @@
             "core",
             "red"
           ],
-          "bits": 5.377835414527687e-05,
-          "fraction": 5.3863759070708134e-05
+          "bits": 1.3750662524769586e-05,
+          "fraction": 1.3754447607617462e-05
         },
         {
           "kind": "S",
@@ -2227,12 +983,12 @@
             "core",
             "red"
           ],
-          "bits": 0.5058694596651011,
-          "fraction": 0.5066728264502567
+          "bits": 0.9864552383356735,
+          "fraction": 0.9867267754195119
         }
       ],
-      "joint_mi_bits": 0.9984144269374302,
-      "normalized_leakage": 1.690218963087927e-14,
+      "joint_mi_bits": 0.999724810260953,
+      "normalized_leakage": 1.6880035186780256e-14,
       "normalization_defined": true
     },
     "permutations": [
@@ -2253,8 +1009,8 @@
           "red",
           "core"
         ],
-        "total_variation_from_original": 0.5066728264502576,
-        "joint_mi_change_bits": 2.220446049250313e-16
+        "total_variation_from_original": 0.9867267754195128,
+        "joint_mi_change_bits": 1.1102230246251565e-16
       },
       {
         "predictor_order": [
@@ -2263,7 +1019,7 @@
           "blue",
           "red"
         ],
-        "total_variation_from_original": 2.0280679262699164e-16,
+        "total_variation_from_original": 0.4891876202360563,
         "joint_mi_change_bits": 0.0
       },
       {
@@ -2273,8 +1029,8 @@
           "red",
           "blue"
         ],
-        "total_variation_from_original": 0.5066728264502574,
-        "joint_mi_change_bits": 2.220446049250313e-16
+        "total_variation_from_original": 0.9867267754195121,
+        "joint_mi_change_bits": 1.1102230246251565e-16
       },
       {
         "predictor_order": [
@@ -2283,7 +1039,7 @@
           "blue",
           "core"
         ],
-        "total_variation_from_original": 0.5066728264502576,
+        "total_variation_from_original": 0.49753915518345676,
         "joint_mi_change_bits": 0.0
       },
       {
@@ -2293,8 +1049,8 @@
           "core",
           "blue"
         ],
-        "total_variation_from_original": 0.5066728264502576,
-        "joint_mi_change_bits": 0.0
+        "total_variation_from_original": 0.9867267754195121,
+        "joint_mi_change_bits": 1.1102230246251565e-16
       },
       {
         "predictor_order": [
@@ -2303,8 +1059,8 @@
           "core",
           "red"
         ],
-        "total_variation_from_original": 3.824429989818419e-16,
-        "joint_mi_change_bits": 0.0
+        "total_variation_from_original": 0.9867267754195121,
+        "joint_mi_change_bits": 1.1102230246251565e-16
       },
       {
         "predictor_order": [
@@ -2313,8 +1069,8 @@
           "red",
           "core"
         ],
-        "total_variation_from_original": 0.5066728264502578,
-        "joint_mi_change_bits": 0.0
+        "total_variation_from_original": 0.9867267754195126,
+        "joint_mi_change_bits": 1.1102230246251565e-16
       },
       {
         "predictor_order": [
@@ -2323,8 +1079,8 @@
           "continuum",
           "red"
         ],
-        "total_variation_from_original": 0.5066728264502574,
-        "joint_mi_change_bits": 2.220446049250313e-16
+        "total_variation_from_original": 0.49753915518345615,
+        "joint_mi_change_bits": 0.0
       },
       {
         "predictor_order": [
@@ -2333,8 +1089,8 @@
           "red",
           "continuum"
         ],
-        "total_variation_from_original": 0.5066728264502576,
-        "joint_mi_change_bits": 2.220446049250313e-16
+        "total_variation_from_original": 0.9867267754195126,
+        "joint_mi_change_bits": 0.0
       },
       {
         "predictor_order": [
@@ -2343,8 +1099,8 @@
           "continuum",
           "core"
         ],
-        "total_variation_from_original": 0.506672826450258,
-        "joint_mi_change_bits": 0.0
+        "total_variation_from_original": 0.9867267754195125,
+        "joint_mi_change_bits": 1.1102230246251565e-16
       },
       {
         "predictor_order": [
@@ -2353,8 +1109,8 @@
           "core",
           "continuum"
         ],
-        "total_variation_from_original": 8.567060260341122e-16,
-        "joint_mi_change_bits": 0.0
+        "total_variation_from_original": 0.9867267754195121,
+        "joint_mi_change_bits": 1.1102230246251565e-16
       },
       {
         "predictor_order": [
@@ -2363,8 +1119,8 @@
           "blue",
           "red"
         ],
-        "total_variation_from_original": 2.011919055741352e-16,
-        "joint_mi_change_bits": 0.0
+        "total_variation_from_original": 0.9867267754195124,
+        "joint_mi_change_bits": 1.1102230246251565e-16
       },
       {
         "predictor_order": [
@@ -2373,8 +1129,8 @@
           "red",
           "blue"
         ],
-        "total_variation_from_original": 0.5066728264502572,
-        "joint_mi_change_bits": 0.0
+        "total_variation_from_original": 0.9867267754195121,
+        "joint_mi_change_bits": 1.1102230246251565e-16
       },
       {
         "predictor_order": [
@@ -2383,8 +1139,8 @@
           "continuum",
           "red"
         ],
-        "total_variation_from_original": 0.5066728264502574,
-        "joint_mi_change_bits": 2.220446049250313e-16
+        "total_variation_from_original": 0.9867267754195124,
+        "joint_mi_change_bits": 0.0
       },
       {
         "predictor_order": [
@@ -2393,8 +1149,8 @@
           "red",
           "continuum"
         ],
-        "total_variation_from_original": 0.5066728264502576,
-        "joint_mi_change_bits": 2.220446049250313e-16
+        "total_variation_from_original": 0.9867267754195129,
+        "joint_mi_change_bits": 1.1102230246251565e-16
       },
       {
         "predictor_order": [
@@ -2403,8 +1159,8 @@
           "continuum",
           "blue"
         ],
-        "total_variation_from_original": 0.5066728264502574,
-        "joint_mi_change_bits": 0.0
+        "total_variation_from_original": 0.9867267754195121,
+        "joint_mi_change_bits": 1.1102230246251565e-16
       },
       {
         "predictor_order": [
@@ -2413,58 +1169,58 @@
           "blue",
           "continuum"
         ],
-        "total_variation_from_original": 7.81425125813939e-16,
-        "joint_mi_change_bits": 0.0
-      },
-      {
-        "predictor_order": [
-          "red",
-          "continuum",
-          "blue",
-          "core"
-        ],
-        "total_variation_from_original": 0.5066728264502575,
-        "joint_mi_change_bits": 0.0
-      },
-      {
-        "predictor_order": [
-          "red",
-          "continuum",
-          "core",
-          "blue"
-        ],
-        "total_variation_from_original": 0.5066728264502576,
-        "joint_mi_change_bits": 0.0
-      },
-      {
-        "predictor_order": [
-          "red",
-          "blue",
-          "continuum",
-          "core"
-        ],
-        "total_variation_from_original": 0.5066728264502574,
-        "joint_mi_change_bits": 3.3306690738754696e-16
-      },
-      {
-        "predictor_order": [
-          "red",
-          "blue",
-          "core",
-          "continuum"
-        ],
-        "total_variation_from_original": 0.5066728264502574,
+        "total_variation_from_original": 0.9867267754195127,
         "joint_mi_change_bits": 1.1102230246251565e-16
       },
       {
         "predictor_order": [
           "red",
+          "continuum",
+          "blue",
+          "core"
+        ],
+        "total_variation_from_original": 0.9867267754195126,
+        "joint_mi_change_bits": 1.1102230246251565e-16
+      },
+      {
+        "predictor_order": [
+          "red",
+          "continuum",
+          "core",
+          "blue"
+        ],
+        "total_variation_from_original": 0.9867267754195121,
+        "joint_mi_change_bits": 1.1102230246251565e-16
+      },
+      {
+        "predictor_order": [
+          "red",
+          "blue",
+          "continuum",
+          "core"
+        ],
+        "total_variation_from_original": 0.9867267754195127,
+        "joint_mi_change_bits": 0.0
+      },
+      {
+        "predictor_order": [
+          "red",
+          "blue",
+          "core",
+          "continuum"
+        ],
+        "total_variation_from_original": 0.9867267754195124,
+        "joint_mi_change_bits": 0.0
+      },
+      {
+        "predictor_order": [
+          "red",
           "core",
           "continuum",
           "blue"
         ],
-        "total_variation_from_original": 0.5066728264502574,
-        "joint_mi_change_bits": 4.440892098500626e-16
+        "total_variation_from_original": 0.9867267754195123,
+        "joint_mi_change_bits": 0.0
       },
       {
         "predictor_order": [
@@ -2473,24 +1229,38 @@
           "blue",
           "continuum"
         ],
-        "total_variation_from_original": 0.5066728264502571,
-        "joint_mi_change_bits": 1.1102230246251565e-16
+        "total_variation_from_original": 0.9867267754195128,
+        "joint_mi_change_bits": 0.0
       }
     ],
     "strict_resets": [
       {
-        "target_state": 1,
+        "target_state": 0,
         "lower_order": 2,
-        "reset_specific_information": 1.0692626624370958,
-        "comparison_maximum": 1.0692626624370962,
-        "difference": 4.440892098500626e-16
+        "reset_specific_information": 1.0284564460492107,
+        "comparison_maximum": 1.028456446049211,
+        "difference": 2.220446049250313e-16
+      },
+      {
+        "target_state": 0,
+        "lower_order": 2,
+        "reset_specific_information": 1.0284564460492107,
+        "comparison_maximum": 1.028456446049211,
+        "difference": 2.220446049250313e-16
       },
       {
         "target_state": 1,
         "lower_order": 2,
-        "reset_specific_information": 1.069262662437096,
-        "comparison_maximum": 1.0692626624370962,
-        "difference": 2.220446049250313e-16
+        "reset_specific_information": 0.9720940034300994,
+        "comparison_maximum": 0.9720940034300996,
+        "difference": 1.1102230246251565e-16
+      },
+      {
+        "target_state": 1,
+        "lower_order": 2,
+        "reset_specific_information": 0.9720940034300994,
+        "comparison_maximum": 0.9720940034300996,
+        "difference": 1.1102230246251565e-16
       }
     ]
   }
