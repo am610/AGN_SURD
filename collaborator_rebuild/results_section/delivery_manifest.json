@@ -8,9 +8,9 @@
   "component_rows": 187200,
   "compilation_warnings": 0,
   "sha256": {
-    "collaborator_rebuild/results_section/results_section.tex": "9861fb311c9ffc73180014fc7b2d7c1bbd5c4f362ec8857a7ddf1f4a1b541875",
-    "collaborator_rebuild/results_section/preview.tex": "05ca4740dc30fcb41b1654b2385d10463c174ef610207da1b95943fb2745fbfa",
-    "collaborator_rebuild/results_section/references.tex": "f345bb53d670bf86b8c68be9aa66df891c993e81c6ea9d6f2d09eb8f93f59434",
+    "collaborator_rebuild/results_section/results_section.tex": "15f7dab6c4535aef0f4376ca2d482d48da4d3748328286d7db536069ce50925d",
+    "collaborator_rebuild/results_section/preview.tex": "5e9f324c9bafa4f7fef5f463ef86d14dd90cb475ca45ad1a96448697cccb1686",
+    "collaborator_rebuild/results_section/references.tex": "6856646d7fc62659df0ebb98136c0af6c79e5424ec19a5c056fe474282d39150",
     "collaborator_rebuild/results_section/epoch_support_rows.tex": "ba3283fa15bc32c9a4592f183ca86bd0ea427d34aa39e5b22c9a33ba05523df1",
     "collaborator_rebuild/results_section/epoch_extrema_total_wings.tex": "29bec83dd259c97ba856f212272526adaa1e6ff0463b93688db596aed00c9341",
     "collaborator_rebuild/results_section/epoch_extrema_continuum_wings.tex": "aaeed9bf4de1a55f7203e23a7bf5c8a428d3e33c26cf7be367f2a2b7d204cb2b",
@@ -27,6 +27,8 @@
     "collaborator_rebuild/epoch_results/figures/atlas_common.pdf": "8a305356654e93c66cc1a26eb2e0f1c35516cb76aa74c6a52f4bc4bc6eba2511",
     "collaborator_rebuild/epoch_results/figures/atlas_blue_leading.pdf": "2b19390032eca1fb2b8087a766e5a17b0ce3da3a55bbc5e931cf00b19a75f753",
     "collaborator_rebuild/epoch_results/figures/atlas_red_leading.pdf": "6045aac0b7f264933930f82ad89558fbcec95edd6c77309f683bcae77ed470a6",
-    "output/pdf/surd_epoch_results.pdf": "5d6d2bfb3feea38697d9a59d89c43b592678a988a5b71d8676520a20a3c8951b"
+    "output/pdf/surd_epoch_results.pdf": "338f339171f34a52e3c685548258c1bb1d3a779e33d14d7118d2a816d8f58e6c",
+    "main.tex": "0cd6f6381b51118698c726eac7505d2e454ea212070041cfa1f164a943b80efa",
+    "main.pdf": "730de85bf9b05c20c6121fa8c49c2094f4076f9cc71b20f6cf5079927a1b005e"
   }
 }

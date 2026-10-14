@@ -47,9 +47,7 @@ Start with [current progress](collaborator_rebuild/PROGRESS.md),
 | `docs/` | Repository guidance and previous release documentation |
 | `history/` | Earlier exploratory notebooks, documents, figures, and utilities |
 | `SURD/` | Locally fetched, unchanged official SURD source, ignored by Git |
-| `paper_epoch.tex` | New MNRAS paper: per season SURD analysis of NGC 5548 (review PDF `output/pdf/surd_epoch_paper.pdf`) |
-| `main.tex`, `main.pdf` | Earlier validation study (pooled window), kept as released; Lu et al. 2022 citation added |
-| `refs.bib` | Bibliography shared by both papers |
+| `main.tex`, `main.pdf`, `refs.bib` | The paper: per season SURD analysis of NGC 5548. Compile `main.tex` (MNRAS class). It inputs `collaborator_rebuild/results_section` and the figure atlases in `collaborator_rebuild/epoch_results/figures`. The earlier validation study is the git tag `validation-study-main-tex` |
 
 ## Setup and verification
 

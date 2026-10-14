@@ -2,7 +2,7 @@
 
 This is the analysis that answers the September instructions. It replaces the
 native date scans for the main results; those remain in
-`previous_native_date_analysis.tex` and the earlier review notes.
+the earlier review notes (`REVIEW_HANDOFF.md`, `FIXED_SUPPORT_REVIEW.md`).
 
 ## Design
 
