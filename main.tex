@@ -45,31 +45,31 @@ galaxies: active -- galaxies: nuclei -- galaxies: individual: NGC 5548 -- galaxi
 
 \section{Introduction}
 
-Active galactic nuclei (AGN) are powered by accretion onto supermassive black holes and radiate over a broad range of wavelengths through a compact but highly structured central engine. The standard observational picture includes an accretion disk that produces much of the optical and ultraviolet continuum, a hot corona responsible for the X-ray emission, a broad-line region (BLR) composed of dense photoionized gas moving at velocities of order \(10^3\) to \(10^4\) km s\(^{-1}\), and more distant dusty material that reprocesses the radiation field at infrared wavelengths \cite{Peterson2004,Netzer2013,Cackett2021}. Because these regions are too compact to resolve directly in most AGN, temporal variability provides one of the few effective ways to infer their sizes, structure, and coupling.
+Active galactic nuclei (AGN) are powered by accretion onto supermassive black holes and radiate over a broad range of wavelengths through a compact but highly structured central engine. The standard observational picture includes an accretion disk that produces much of the optical and ultraviolet continuum, a hot corona responsible for the X-ray emission, a broad-line region (BLR) composed of dense photoionized gas moving at velocities of order \(10^3\) to \(10^4\) km s\(^{-1}\), and more distant dusty material that reprocesses the radiation field at infrared wavelengths \citep{Peterson2004,Netzer2013,Cackett2021}. Because these regions are too compact to resolve directly in most AGN, temporal variability provides one of the few effective ways to infer their sizes, structure, and coupling.
 
 Reverberation mapping exploits the fact that fluctuations in the central ionizing source are echoed by delayed responses in remote reprocessing or emission-line regions. In its simplest linearized form, the response of an emission line \(L(t)\) to a driving continuum \(C(t)\) may be written as
 \begin{equation}
 L(t) = \int \Psi(\tau)\,C(t-\tau)\,d\tau,
 \end{equation}
-where \(\Psi(\tau)\) is the transfer function or delay distribution. The classical use of this formalism has been to derive a characteristic lag \(\tau\), associate it with a BLR radius \(R \sim c\tau\), and combine that scale with the line width to estimate the black-hole mass under a virial assumption \cite{Peterson2004,BentzKatz2015}. This framework has been extremely successful and remains foundational to AGN black-hole mass scaling relations.
+where \(\Psi(\tau)\) is the transfer function or delay distribution. The classical use of this formalism has been to derive a characteristic lag \(\tau\), associate it with a BLR radius \(R \sim c\tau\), and combine that scale with the line width to estimate the black-hole mass under a virial assumption \citep{Peterson2004,BentzKatz2015}. This framework has been extremely successful and remains foundational to AGN black-hole mass scaling relations.
 
-Nevertheless, the astrophysical interpretation of reverberation data has become progressively more subtle. The quantity that drives the broad emission lines is the ionizing continuum, particularly in the extreme ultraviolet and soft X-ray bands, whereas the continuum actually monitored in many optical reverberation campaigns is a more accessible proxy, often the flux near \(5100\) \AA. As a result, the measured lag between an observed continuum band and an emission line need not correspond to a direct causal connection between those two observables alone. Instead, both may be responding, with different delays and different filtering, to a latent radiation field that is only imperfectly traced by the observed bands \cite{Cackett2021}. The question is therefore not merely what the lag is, but whether the monitored continuum contains the relevant information needed to explain the line response.
+Nevertheless, the astrophysical interpretation of reverberation data has become progressively more subtle. The quantity that drives the broad emission lines is the ionizing continuum, particularly in the extreme ultraviolet and soft X-ray bands, whereas the continuum actually monitored in many optical reverberation campaigns is a more accessible proxy, often the flux near \(5100\) \AA. As a result, the measured lag between an observed continuum band and an emission line need not correspond to a direct causal connection between those two observables alone. Instead, both may be responding, with different delays and different filtering, to a latent radiation field that is only imperfectly traced by the observed bands \citep{Cackett2021}. The question is therefore not merely what the lag is, but whether the monitored continuum contains the relevant information needed to explain the line response.
 
-This issue is underscored by continuum reverberation mapping. A series of high-cadence monitoring programs has revealed that ultraviolet and optical continuum bands in AGN are delayed with respect to one another, with delays that often grow systematically with wavelength as expected for a thermally stratified accretion disk. However, the measured lags are frequently larger than predicted by the simplest geometrically thin, optically thick accretion-disk models \cite{Fausnaugh2016,Fausnaugh2017,Edelson2019,Cackett2021}. These results suggest that the observed continuum variability is not fully described by a minimal reprocessing picture and may involve additional processes such as intrinsic accretion-rate fluctuations, diffuse continuum emission, complex irradiation geometry, or nontrivial radiative transfer. From the standpoint of BLR reverberation, this implies that optical continuum light curves may not be interpreted as pristine drivers without further caution.
+This issue is underscored by continuum reverberation mapping. A series of high-cadence monitoring programs has revealed that ultraviolet and optical continuum bands in AGN are delayed with respect to one another, with delays that often grow systematically with wavelength as expected for a thermally stratified accretion disk. However, the measured lags are frequently larger than predicted by the simplest geometrically thin, optically thick accretion-disk models \citep{Fausnaugh2016,Fausnaugh2017,Edelson2019,Cackett2021}. These results suggest that the observed continuum variability is not fully described by a minimal reprocessing picture and may involve additional processes such as intrinsic accretion-rate fluctuations, diffuse continuum emission, complex irradiation geometry, or nontrivial radiative transfer. From the standpoint of BLR reverberation, this implies that optical continuum light curves may not be interpreted as pristine drivers without further caution.
 
-NGC~5548 is the canonical source in which these concerns become impossible to ignore. It is one of the most intensively monitored Seyfert galaxies and has served as a cornerstone of reverberation mapping for decades. It has played a major role in calibrating broad-line lags, virial mass estimates, and radius--luminosity relations, while more recent campaigns have transformed it into a benchmark for multiwavelength and velocity-resolved reverberation analysis \cite{Peterson2002,BentzKatz2015,Cackett2021}. In particular, the AGN STORM campaign delivered one of the richest reverberation datasets ever obtained, including optical and ultraviolet continuum monitoring, extensive spectroscopy, and detailed velocity-delay information for several broad lines \cite{DeRosa2015,Pei2017,Horne2021}.
+NGC~5548 is the canonical source in which these concerns become impossible to ignore. It is one of the most intensively monitored Seyfert galaxies and has served as a cornerstone of reverberation mapping for decades. It has played a major role in calibrating broad-line lags, virial mass estimates, and radius--luminosity relations, while more recent campaigns have transformed it into a benchmark for multiwavelength and velocity-resolved reverberation analysis \citep{Peterson2002,BentzKatz2015,Cackett2021}. In particular, the AGN STORM campaign delivered one of the richest reverberation datasets ever obtained, including optical and ultraviolet continuum monitoring, extensive spectroscopy, and detailed velocity-delay information for several broad lines \citep{DeRosa2015,Pei2017,Horne2021}.
 
-These observations revealed that NGC~5548 is not well described by a stationary one-zone BLR driven by a single observed continuum proxy. Velocity-resolved reverberation results showed clear structure across the H$\beta$ profile, with the line wings and core participating differently in the reverberation pattern \cite{Pei2017,Horne2021}. The interpretation of these data points toward a BLR that is radially stratified and kinematically complex, possibly including multiple components or zones rather than a single homogeneous distribution of clouds \cite{Horne2021,LongDexter2025}. This immediately motivates a shift away from purely integrated-line analyses. If the blue wing, line core, and red wing carry different dynamical information, then treating H$\beta$ as a single scalar time series necessarily compresses part of the astrophysical content of the data.
+These observations revealed that NGC~5548 is not well described by a stationary one-zone BLR driven by a single observed continuum proxy. Velocity-resolved reverberation results showed clear structure across the H$\beta$ profile, with the line wings and core participating differently in the reverberation pattern \citep{Pei2017,Horne2021}. The interpretation of these data points toward a BLR that is radially stratified and kinematically complex, possibly including multiple components or zones rather than a single homogeneous distribution of clouds \citep{Horne2021,LongDexter2025}. This immediately motivates a shift away from purely integrated-line analyses. If the blue wing, line core, and red wing carry different dynamical information, then treating H$\beta$ as a single scalar time series necessarily compresses part of the astrophysical content of the data.
 
-An even more striking complication emerged during the same source's monitoring history: the so-called ``holiday'' in NGC~5548. During part of the AGN STORM campaign, the broad emission lines became partially decorrelated from the observed UV continuum, even though they had previously tracked it closely. The leading interpretation is that an obscuring wind or shielding structure modified the ionizing spectral energy distribution reaching the BLR while leaving the observed UV continuum comparatively unaffected \cite{Dehghanian2019}. The importance of this result cannot be overstated. It demonstrates directly that an observed continuum channel may cease to be a faithful tracer of the radiation field relevant for BLR photoionization. Consequently, a line--continuum lag analysis may look physically incomplete not because the line has stopped reverberating, but because the monitored continuum is no longer the appropriate driver proxy.
+An even more striking complication emerged during the same source's monitoring history: the so-called ``holiday'' in NGC~5548. During part of the AGN STORM campaign, the broad emission lines became partially decorrelated from the observed UV continuum, even though they had previously tracked it closely. The leading interpretation is that an obscuring wind or shielding structure modified the ionizing spectral energy distribution reaching the BLR while leaving the observed UV continuum comparatively unaffected \citep{Dehghanian2019}. The importance of this result cannot be overstated. It demonstrates directly that an observed continuum channel may cease to be a faithful tracer of the radiation field relevant for BLR photoionization. Consequently, a line--continuum lag analysis may look physically incomplete not because the line has stopped reverberating, but because the monitored continuum is no longer the appropriate driver proxy.
 
-This broader lesson is now reinforced by work across the reverberation-mapping literature. Velocity-resolved H$\beta$ studies increasingly show that BLR kinematics are diverse across AGN and may evolve over time, with some sources displaying signatures consistent with inflow, others with outflow, and others with virialized or mixed dynamics \cite{Du2018,Wang2025,Feng2024}. In parallel, changing-look AGN have demonstrated that the relation between continuum state and broad-line emission can undergo dramatic reorganization on humanly accessible timescales \cite{RicciTrakhtenbrot2023}. Although changing-look phenomena are not the focus of the present study, they help establish a wider astrophysical principle: the mapping between observed continuum, ionizing continuum, and line-emitting gas is not guaranteed to be stationary.
+This broader lesson is now reinforced by work across the reverberation-mapping literature. Velocity-resolved H$\beta$ studies increasingly show that BLR kinematics are diverse across AGN and may evolve over time, with some sources displaying signatures consistent with inflow, others with outflow, and others with virialized or mixed dynamics \citep{Du2018,Wang2025,Feng2024}. In parallel, changing-look AGN have demonstrated that the relation between continuum state and broad-line emission can undergo dramatic reorganization on humanly accessible timescales \citep{RicciTrakhtenbrot2023}. Although changing-look phenomena are not the focus of the present study, they help establish a wider astrophysical principle: the mapping between observed continuum, ionizing continuum, and line-emitting gas is not guaranteed to be stationary.
 
 Within this context, NGC~5548 is particularly well suited for a conservative test of multivariate reverberation analysis. The source offers high-quality continuum monitoring, extensive H$\beta$ spectroscopy, and a rich legacy of prior lag measurements against which information-based diagnostics can be checked. Treating the blue wing, core, and red wing as distinct observables permits questions about joint predictability that an integrated line curve cannot address. It also creates substantial statistical risk: autocorrelation, seasonal gaps, interpolation, multiple lag searches, and high-dimensional density estimation can all generate apparent structure. NGC~5548 therefore provides both an astrophysical application and a demanding stress test of the method.
 
-These questions are not purely methodological. They arise naturally from long-standing astrophysical uncertainties about the BLR and the continuum source. The BLR is expected to be sensitive to the ionizing continuum, but in practice the ionizing continuum is usually unobserved. The optical continuum is measurable but is itself part of a reverberating accretion-flow system and may therefore contain both intrinsic and reprocessed variability components \cite{Fausnaugh2017,Cackett2021}. The H$\beta$ line is observable with high fidelity, but its integrated flux merges together multiple kinematic regions whose relative responses may differ. Once velocity-resolved spectroscopy is available, the astrophysical challenge becomes one of causal disentanglement among observables that are neither independent nor trivially ordered in a simple driver--response chain.
+These questions are not purely methodological. They arise naturally from long-standing astrophysical uncertainties about the BLR and the continuum source. The BLR is expected to be sensitive to the ionizing continuum, but in practice the ionizing continuum is usually unobserved. The optical continuum is measurable but is itself part of a reverberating accretion-flow system and may therefore contain both intrinsic and reprocessed variability components \citep{Fausnaugh2017,Cackett2021}. The H$\beta$ line is observable with high fidelity, but its integrated flux merges together multiple kinematic regions whose relative responses may differ. Once velocity-resolved spectroscopy is available, the astrophysical challenge becomes one of causal disentanglement among observables that are neither independent nor trivially ordered in a simple driver--response chain.
 
-A number of established approaches address parts of this challenge. Interpolated cross-correlation methods and related lag estimators remain the standard tools for continuum--line reverberation analysis and continue to provide essential baseline measurements \cite{Peterson2004,WhitePeterson1994}. JAVELIN and related stochastic-process approaches model reverberation as a damped random walk continuum filtered by a transfer function, thereby improving lag estimation and uncertainty quantification in many cases \cite{Zu2011,Zu2013}. Velocity-delay mapping and dynamical modeling aim to reconstruct the geometry and kinematics of the BLR directly from the line-profile response \cite{Pancoast2014,Horne2021}. Continuum reverberation studies focus on interband disk lags and the thermal structure of the accretion flow \cite{Fausnaugh2016,Fausnaugh2017,Edelson2019}. Each of these approaches has been productive, but they are typically tailored to a specific projection of the problem: pairwise lags, transfer-function fitting, dynamical inversion, or continuum size scaling.
+A number of established approaches address parts of this challenge. Interpolated cross-correlation methods and related lag estimators remain the standard tools for continuum--line reverberation analysis and continue to provide essential baseline measurements \citep{Peterson2004,WhitePeterson1994}. JAVELIN and related stochastic-process approaches model reverberation as a damped random walk continuum filtered by a transfer function, thereby improving lag estimation and uncertainty quantification in many cases \citep{Zu2011,Zu2013}. Velocity-delay mapping and dynamical modeling aim to reconstruct the geometry and kinematics of the BLR directly from the line-profile response \citep{Pancoast2014,Horne2021}. Continuum reverberation studies focus on interband disk lags and the thermal structure of the accretion flow \citep{Fausnaugh2016,Fausnaugh2017,Edelson2019}. Each of these approaches has been productive, but they are typically tailored to a specific projection of the problem: pairwise lags, transfer-function fitting, dynamical inversion, or continuum size scaling.
 
 What remains comparatively underexplored is the specific astrophysical question of how multiple simultaneously observed channels jointly constrain the future evolution of one chosen component of the system, especially when those channels include both the continuum and velocity-resolved line segments. In other words, once the H$\beta$ profile has been decomposed into blue wing, core, and red wing light curves, and once a conservative common time interval is imposed, the natural problem is no longer simply ``what is the lag?'' It becomes: how much of the future behavior of one velocity component is already encoded in the continuum, how much is encoded in another part of the line profile, and how much lies beyond the information available in the monitored observables? That is the astrophysical problem motivating the present paper.
 
@@ -95,7 +95,7 @@ sampled at discrete times \(t=t_n\). For a chosen target index \(j\), the goal i
 \begin{equation}
 Q_j^+ \equiv Q_j(t+\Delta T)
 \end{equation}
-is contained in the observed variables at time \(t\) and, crucially, to decompose that predictive information into \emph{redundant}, \emph{unique}, and \emph{synergistic} contributions \cite{MartinezSanchez2024SURD}.
+is contained in the observed variables at time \(t\) and, crucially, to decompose that predictive information into \emph{redundant}, \emph{unique}, and \emph{synergistic} contributions \citep{MartinezSanchez2024SURD}.
 
 The central motivation is that in multivariate systems, pairwise predictive measures such as Granger causality or transfer entropy can establish that a variable is informative about a target, but they do not in general distinguish whether that information is:
 \begin{enumerate}
@@ -103,7 +103,7 @@ The central motivation is that in multivariate systems, pairwise predictive meas
     \item duplicated across several predictors, or
     \item available only from a joint observation of several predictors.
 \end{enumerate}
-SURD is designed precisely to perform that decomposition in a time-series setting \cite{MartinezSanchez2024SURD,Schreiber2000,WilliamsBeer2010}.
+SURD is designed precisely to perform that decomposition in a time-series setting \citep{MartinezSanchez2024SURD,Schreiber2000,WilliamsBeer2010}.
 
 \subsection{Information-theoretic preliminaries}
 
@@ -122,7 +122,7 @@ I(Y;\mathbf{X})=H(Y)-H(Y\mid \mathbf{X})
 \log_2\frac{p(y,\mathbf{x})}{p(y)p(\mathbf{x})}.
 \label{eq:mi_total}
 \end{equation}
-This quantity measures the total predictive information about the future target that is available in the observed present state \cite{Shannon1948,CoverThomas2006}.
+This quantity measures the total predictive information about the future target that is available in the observed present state \citep{Shannon1948,CoverThomas2006}.
 
 In SURD, the unexplained part of the future is interpreted as an \emph{information leak},
 \begin{equation}
@@ -135,7 +135,7 @@ H(Y)=I(Y;\mathbf{X})+\Delta I_{\mathrm{leak}\to j}.
 \label{eq:forward_balance}
 \end{equation}
 
-Equation \eqref{eq:forward_balance} is one of the core ideas of SURD: the future uncertainty of the target splits into an observed part, explained by the measured variables, and an unobserved part, attributed to hidden or unmeasured influences \cite{MartinezSanchez2024SURD}.
+Equation \eqref{eq:forward_balance} is one of the core ideas of SURD: the future uncertainty of the target splits into an observed part, explained by the measured variables, and an unobserved part, attributed to hidden or unmeasured influences \citep{MartinezSanchez2024SURD}.
 
 \subsection{From total predictive information to information-decomposition components}
 
@@ -174,7 +174,7 @@ H(Y)=
 \label{eq:full_surd_balance}
 \end{equation}
 
-The three information-decomposition types have the following interpretation \cite{MartinezSanchez2024SURD}:
+The three information-decomposition types have the following interpretation \citep{MartinezSanchez2024SURD}:
 \begin{itemize}
 \item{Redundant:}  
 the same predictive information is shared across several predictors,\\
@@ -192,7 +192,7 @@ are the quantities shown in the primary lag scans.
 \iffalse
 \subsection{Specific mutual information and statewise decomposition}
 
-A key feature of SURD is that the source of predictability may depend on which \emph{particular future event} \(y\) occurs. To resolve this dependence, SURD works first at the level of \emph{specific mutual information} \cite{DeWeeseMeister1999,Butts2003,MartinezSanchez2024SURD}.
+A key feature of SURD is that the source of predictability may depend on which \emph{particular future event} \(y\) occurs. To resolve this dependence, SURD works first at the level of \emph{specific mutual information} \citep{DeWeeseMeister1999,Butts2003,MartinezSanchez2024SURD}.
 
 For a particular target state \(Y=y\), the specific mutual information between \(y\) and a predictor set \(\mathbf{X}_{\mathcal{A}}\) is
 \begin{equation}
@@ -214,7 +214,7 @@ I\bigl(Y;\mathbf{X}_{\mathcal{A}}\bigr)
 \label{eq:mi_from_specific}
 \end{equation}
 
-The conceptual reason for introducing \(\tilde{\imath}_{\mathcal{A}}(y)\) is that different predictors may be informative for different target outcomes. A predictor may, for example, strongly constrain large positive target excursions while another may mainly constrain negative or low-amplitude states. A decomposition performed only at the level of the average mutual information can obscure this state dependence. SURD therefore computes the information contributions for each \(y\), decomposes them into redundant, unique, and synergistic increments, and only afterwards averages over \(y\) \cite{MartinezSanchez2024SURD}.
+The conceptual reason for introducing \(\tilde{\imath}_{\mathcal{A}}(y)\) is that different predictors may be informative for different target outcomes. A predictor may, for example, strongly constrain large positive target excursions while another may mainly constrain negative or low-amplitude states. A decomposition performed only at the level of the average mutual information can obscure this state dependence. SURD therefore computes the information contributions for each \(y\), decomposes them into redundant, unique, and synergistic increments, and only afterwards averages over \(y\) \citep{MartinezSanchez2024SURD}.
 
 \subsection{Statewise incremental construction of SURD}
 
@@ -224,7 +224,7 @@ Let \(\mathfrak{P}^\ast(\{1,\dots,M\})\) denote the set of all non-empty subsets
 =
 \tilde{\imath}\bigl(y;\mathbf{X}_{\mathcal{A}}\bigr).
 \end{equation}
-SURD then considers the collection of all these values for a fixed target state \(y\) and identifies the \emph{increments} in predictive information that arise as one moves from smaller to larger subsets of predictors \cite{MartinezSanchez2024SURD}. Denoting these statewise increments schematically by
+SURD then considers the collection of all these values for a fixed target state \(y\) and identifies the \emph{increments} in predictive information that arise as one moves from smaller to larger subsets of predictors \citep{MartinezSanchez2024SURD}. Denoting these statewise increments schematically by
 \begin{equation}
 \Delta \tilde{\imath}_{\mathcal{A}}(y),
 \end{equation}
@@ -311,7 +311,7 @@ Q_1(t),Q_1(t-\Delta T),Q_2(t),Q_2(t-\Delta T)
 \bigr].
 \label{eq:lagged_vector_two}
 \end{equation}
-SURD then treats each lagged component as one predictor channel and applies the same decomposition machinery to the enlarged predictor set \cite{MartinezSanchez2024SURD}. In this way, the method can distinguish:
+SURD then treats each lagged component as one predictor channel and applies the same decomposition machinery to the enlarged predictor set \citep{MartinezSanchez2024SURD}. In this way, the method can distinguish:
 \begin{itemize}
     \item self-causation from \(Q_j(t-\Delta T_k)\) to \(Q_j(t+\Delta T)\),
     \item cross-causation from \(Q_i(t-\Delta T_k)\) to \(Q_j(t+\Delta T)\),
@@ -319,11 +319,11 @@ SURD then treats each lagged component as one predictor channel and applies the 
     \item synergy between variables and lags.
 \end{itemize}
 
-This is particularly important when several lagged channels may encode overlapping predictive content. For example, adding \(Q_j(t)\) and \(Q_j(t-\Delta T)\) can increase redundancy rather than revealing new independent predictive pathways. SURD is expressly designed to make that distinction \cite{MartinezSanchez2024SURD}.
+This is particularly important when several lagged channels may encode overlapping predictive content. For example, adding \(Q_j(t)\) and \(Q_j(t-\Delta T)\) can increase redundancy rather than revealing new independent predictive pathways. SURD is expressly designed to make that distinction \citep{MartinezSanchez2024SURD}.
 
 \subsection{Contemporaneous and mixed lagged dependencies}
 
-A further advantage of the formalism is that the predictor vector can include variables at time \(t+\Delta T\) other than the target itself, thereby allowing the analysis of contemporaneous or effectively sub-resolution interactions \cite{MartinezSanchez2024SURD}. In practice, one excludes the target variable from the contemporaneous predictor set to avoid trivial self-determination, but permits other variables measured on the same time slice. Thus, a generic predictor vector may mix present, lagged, and contemporaneous channels:
+A further advantage of the formalism is that the predictor vector can include variables at time \(t+\Delta T\) other than the target itself, thereby allowing the analysis of contemporaneous or effectively sub-resolution interactions \citep{MartinezSanchez2024SURD}. In practice, one excludes the target variable from the contemporaneous predictor set to avoid trivial self-determination, but permits other variables measured on the same time slice. Thus, a generic predictor vector may mix present, lagged, and contemporaneous channels:
 \begin{equation}
 \begin{split}
 \mathbf{X}(t) = \bigl[ & \text{past lags}, \text{ present variables}, \\
@@ -375,7 +375,7 @@ Hence:
 
 \subsection{Practical estimation}
 
-In applications, the probabilities entering Eq.~\eqref{eq:mi_total} and the statewise SURD construction must be estimated from finite data. The original SURD work uses histogram-based and transport-map-based estimators depending on dimensionality and sample size \cite{MartinezSanchez2024SURD}. In a histogram implementation, one discretizes the predictor-target space into bins and estimates
+In applications, the probabilities entering Eq.~\eqref{eq:mi_total} and the statewise SURD construction must be estimated from finite data. The original SURD work uses histogram-based and transport-map-based estimators depending on dimensionality and sample size \citep{MartinezSanchez2024SURD}. In a histogram implementation, one discretizes the predictor-target space into bins and estimates
 \begin{equation}
 p(y,\mathbf{x}) \approx \frac{n(y,\mathbf{x})}{N_{\mathrm{samples}}},
 \end{equation}
@@ -395,7 +395,7 @@ Algorithmically, the SURD workflow for a target \(Q_j^+\) is:
 \iffalse
 \subsection{Properties and assumptions}
 
-SURD has several properties that are important in time-series applications \cite{MartinezSanchez2024SURD}:
+SURD has several properties that are important in time-series applications \citep{MartinezSanchez2024SURD}:
 \begin{enumerate}
     \item \textbf{Non-negativity:} all redundant, unique, synergistic, and leak terms are non-negative.
     \item \textbf{Additivity:} the observable predictive information is exactly partitioned into \(R\), \(U\), and \(S\) terms.
@@ -414,7 +414,7 @@ The main assumptions are those common to observational information-theoretic ana
 
 \subsection{Summary}
 
-SURD starts from the predictive information \(I(Q_j^+;\mathbf{X})\) between a future target and a multivariate predictor state. It then decomposes that predictive information into state-averaged unique, redundant, and synergistic contributions, while retaining the conditional entropy \(H(Q_j^+\mid \mathbf{X})\) as an explicit measure of hidden or unobserved influence. Its time-series extension is straightforward: past lags, present variables, and even contemporaneous non-target channels are simply incorporated into the predictor vector. For multivariate dynamical systems, this yields a decomposition that is richer than pairwise lag measures because it distinguishes direct predictive effects from duplicated information and from genuinely joint multivariate effects \cite{MartinezSanchez2024SURD,WilliamsBeer2010}.
+SURD starts from the predictive information \(I(Q_j^+;\mathbf{X})\) between a future target and a multivariate predictor state. It then decomposes that predictive information into state-averaged unique, redundant, and synergistic contributions, while retaining the conditional entropy \(H(Q_j^+\mid \mathbf{X})\) as an explicit measure of hidden or unobserved influence. Its time-series extension is straightforward: past lags, present variables, and even contemporaneous non-target channels are simply incorporated into the predictor vector. For multivariate dynamical systems, this yields a decomposition that is richer than pairwise lag measures because it distinguishes direct predictive effects from duplicated information and from genuinely joint multivariate effects \citep{MartinezSanchez2024SURD,WilliamsBeer2010}.
 
 \fi
 \section{Adopted Data, Spectral Processing, and Sampling Validation}
@@ -465,7 +465,7 @@ Lag (days) & Daily & Limited gaps & Within seasons & Native \\
 
 The exploratory information pilot scans 201 lags from zero through 200 days for three line targets. Each target uses continuum and the other two line components at a common lag as predictors; the target component is excluded at every lag. Four marginal quantile bins are defined from native observations and held fixed across methods and lags within each dataset. The identical rule defines bins for each simulated dataset. A minimum of 32 tuples is a numerical guard, not evidence of adequate statistical support. Joint mutual information, individual SURD atoms, total synergy in bits, synergy divided by joint information, and histogram occupancy are saved separately.
 
-Eight simulated datasets have exercised this complete execution path, using independent signals and a delayed shared continuum driver. The process parameters are stipulated and have not been fitted to the observed campaign. This is a runtime and correctness pilot, not significance calibration or a detection power measurement. The present scans do not replace the historical numerical results elsewhere in the draft. Those results must be recomputed on the adopted sample or explicitly identified as historical diagnostics before submission.
+Eight simulated datasets have exercised this complete execution path, using independent signals and a delayed shared continuum driver. The process parameters are stipulated and have not been fitted to the observed campaign. This is a runtime and correctness pilot, not significance calibration or a detection power measurement. These pilot scans are separate from the results of the next section, which are computed on the adopted sample.
 
 \begin{figure*}
 \centering
@@ -558,7 +558,7 @@ Figure~\ref{fig:iccf_vs_surd} makes the main contrast visually explicit: pairwis
 \subsection{Stored JAVELIN Chain Behavior}
 \label{sec:javelin_comparison}
 
-To supplement the cross-correlation analysis, we inspected previously generated JAVELIN lag chains for the three velocity components \cite{Zu2011}. Unlike the ICCF curves, the archived JAVELIN outputs are not cleanly single-peaked. The blue-wing chain is concentrated near \(\sim 22.5\)~d with a smaller \(\sim 19.5\)~d mode, the core chain is bimodal with strong modes near \(\sim 11.5\) and \(\sim 22.5\)~d, and the red-wing chain is clearly multimodal with substantial probability extending to \(\sim 80\)~d. These features are visible directly in Figure~\ref{fig:javelin_posteriors}.
+To supplement the cross-correlation analysis, we inspected previously generated JAVELIN lag chains for the three velocity components \citep{Zu2011}. Unlike the ICCF curves, the archived JAVELIN outputs are not cleanly single-peaked. The blue-wing chain is concentrated near \(\sim 22.5\)~d with a smaller \(\sim 19.5\)~d mode, the core chain is bimodal with strong modes near \(\sim 11.5\) and \(\sim 22.5\)~d, and the red-wing chain is clearly multimodal with substantial probability extending to \(\sim 80\)~d. These features are visible directly in Figure~\ref{fig:javelin_posteriors}.
 
 Because the stored JAVELIN chains do not support a unique, well-behaved single-lag summary under the present configuration, we do not use them as a primary quantitative validation of the ICCF peaks in this draft. Instead, we retain them as a cautionary comparison showing that transfer-function fits can also become alias-prone when the sampling window is difficult.
 
@@ -993,7 +993,7 @@ The results in Section~\ref{sec:results} reveal a discrepancy between native-cad
 
 \subsection{The Multi-Component Broad-Line Region}
 
-The H\(\beta\) reverberation lag of NGC~5548 is historically reported near tens of days (e.g., $15.6 \pm 0.5$ days during the high-cadence AGN STORM campaign \cite{Pei2017}). Our blue and core ICCF centroid distributions are prompt, while the red-wing function has a 15-d peak but a broad shoulder that moves its centroid to approximately 30~d. These summaries support a prompt reverberating response but do not by themselves determine BLR geometry or a velocity ordering. More detailed line-shape and delay-profile modelling motivates multicomponent descriptions \citep{LongDexter2025}.
+The H\(\beta\) reverberation lag of NGC~5548 is historically reported near tens of days (e.g., $15.6 \pm 0.5$ days during the high-cadence AGN STORM campaign \citep{Pei2017}). Our blue and core ICCF centroid distributions are prompt, while the red-wing function has a 15-d peak but a broad shoulder that moves its centroid to approximately 30~d. These summaries support a prompt reverberating response but do not by themselves determine BLR geometry or a velocity ordering. More detailed line-shape and delay-profile modelling motivates multicomponent descriptions \citep{LongDexter2025}.
 
 Our one-predictor continuum baseline identifies prompt peaks at 16~d for the Blue Wing and 15~d for the Line Core. With 999 surrogates, their lag-scan global values are $0.009$ and $0.001$, and their three-target adjusted values are $0.0135$ and $0.003$. The long three-predictor maxima require interpretation against estimator and sampling effects rather than as physical delays:
 \begin{enumerate}
@@ -1006,9 +1006,9 @@ Our one-predictor continuum baseline identifies prompt peaks at 16~d for the Blu
 \subsection{Comparison with 2023 Reverberation Mapping and Kinematic Evolution}
 \label{sec:comparison_xi}
 
-A key context for our results is the recent spectroscopic reverberation campaign of NGC~5548 presented by \citet{Xi2025}. They measure an integrated H\(\beta\) rest-frame delay of \(15.6_{-2.9}^{+2.6}\)~days. This is consistent with the prompt peak structure in our ICCFs and continuum baseline mutual information, although our velocity-resolved centroids are not measurements of the same integrated quantity.
+A key context for our results is the recent spectroscopic reverberation campaign of NGC~5548 presented by \citet{Xi2025} and the five seasons that precede it \citep{Lu2022}. The pooled window used here spans the five historical campaigns, whose individual H\(\beta\) lags in the compilation of \citet{Lu2022} range from 11.0 to 19.7~days. \citet{Xi2025} measure an integrated H\(\beta\) rest-frame delay of \(15.6_{-2.9}^{+2.6}\)~days. This is consistent with the prompt peak structure in our ICCFs and continuum baseline mutual information, although our velocity-resolved centroids are not measurements of the same integrated quantity.
 
-However, \citet{Xi2025} show that the velocity-resolved H\(\beta\) lag profile of NGC~5548 is highly non-stationary and changes substantially from season to season:
+However, \citet{Lu2022} and \citet{Xi2025} show that the velocity-resolved H\(\beta\) lag profile of NGC~5548 is highly non-stationary and changes substantially from season to season:
 \begin{itemize}
     \item \textbf{Virialized/Keplerian (e.g., 2015):} A symmetric, M-shaped lag profile where the high-velocity wings respond faster than the low-velocity core ($|v| \uparrow \implies \tau \downarrow$), consistent with virial motion.
     \item \textbf{Inflow-like (e.g., 2019, 2021):} A red-leading-blue asymmetry where the redshifted wing responds earlier ($\tau_{\mathrm{red}} < \tau_{\mathrm{blue}}$), indicating radial inflow.

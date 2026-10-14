@@ -47,7 +47,9 @@ Start with [current progress](collaborator_rebuild/PROGRESS.md),
 | `docs/` | Repository guidance and previous release documentation |
 | `history/` | Earlier exploratory notebooks, documents, figures, and utilities |
 | `SURD/` | Locally fetched, unchanged official SURD source, ignored by Git |
-| `main.tex`, `main.pdf`, `refs.bib` | Previous released manuscript, not the new deliverable |
+| `paper_epoch.tex` | New MNRAS paper: per season SURD analysis of NGC 5548 (review PDF `output/pdf/surd_epoch_paper.pdf`) |
+| `main.tex`, `main.pdf` | Earlier validation study (pooled window), kept as released; Lu et al. 2022 citation added |
+| `refs.bib` | Bibliography shared by both papers |
 
 ## Setup and verification
 

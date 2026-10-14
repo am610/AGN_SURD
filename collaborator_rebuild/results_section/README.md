@@ -34,7 +34,9 @@ cp tmp/pdfs/surd_section_build/preview.pdf output/pdf/surd_epoch_results.pdf
 
 ## Manuscript integration
 
-The host document needs `graphicx`, `amsmath`, `booktabs`, `float` and `natbib`.
+The host document needs `graphicx`, `amsmath`, `booktabs`, `float` and `natbib`, and must define
+the environment `SURDtable` (a `table` or `table*` float) and may define `\SURDonecolumn`
+(for example `\clearpage\onecolumn`) to run before the figure pages. See `paper_epoch.tex`.
 Set `\SURDResultsPath` to this folder and `\SURDEpochPath` to
 `collaborator_rebuild/epoch_results` relative to the compiling document (the
 defaults assume the repository root). Add the six `CR` citation keys to the host

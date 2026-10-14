@@ -3,27 +3,28 @@
 % SURDEpochPath is the path to collaborator_rebuild/epoch_results from the compiling document.
 \providecommand{\SURDResultsPath}{collaborator_rebuild/results_section}
 \providecommand{\SURDEpochPath}{collaborator_rebuild/epoch_results}
+\providecommand{\SURDonecolumn}{}
 
 \section{SURD components in the five historical NGC~5548 seasons}
 \label{sec:epoch_surd_results}
 
 \subsection{Series, epochs and analysis design}
 
-We apply the seasonal strategy of \citet{CRLu2022} and \citet{CRXi2025} to the
+We apply the seasonal strategy of \citet{Lu2022} and \citet{Xi2025} to the
 historical monitoring of NGC~5548 between 1988 and 1993. Their seasons are
 analysed independently; we do the same for the five historical seasons, which
-carry the labels Year~1 to Year~5 in Table~6 of \citet{CRLu2022}. The epochs are the
-intervals of Table~2 of \citet{CRPeterson2004}: JD less 2400000 from 47509
+carry the labels Year~1 to Year~5 in Table~6 of \citet{Lu2022}. The epochs are the
+intervals of Table~2 of \citet{Peterson2004ApJ}: JD less 2400000 from 47509
 through 47809 (1989), 47861 through 48179 (1990), 48225 through 48534 (1991),
 48623 through 48898 (1992) and 48954 through 49255 (1993).
 
 Five observed series are prepared for each epoch: the 5100~\AA\ continuum
 (F5100), the total broad H$\beta$ flux, and its blue, core and red components.
 The line measurements are the corrected published columns of
-\citet{CRWanders1996}, with blue, core and red defined over the observed
+\citet{WandersPeterson1996}, with blue, core and red defined over the observed
 wavelength intervals 4870--4920, 4920--4960 and 4960--5010~\AA. These fixed
 wavelength intervals play the role of the equal flux velocity bins that
-\citet{CRXi2025} construct over 4700--5050~\AA; they are not equal flux bins.
+\citet{Xi2025} construct over 4700--5050~\AA; they are not equal flux bins.
 Observations on the same date are combined by their mean. The continuum retains
 its host galaxy contribution. Total and component fluxes come from the same
 spectra, and the total is the sum of its components, so they are not four
@@ -33,11 +34,11 @@ Two variable sets are analysed, each with four members: total, blue, core and
 red H$\beta$; and F5100, blue, core and red H$\beta$. Each member becomes the
 future target $Y$ in turn. All four members, including the past of the target
 itself, are the predictors $\mathbf{X}$. The unchanged SURD implementation of
-\citet{CRSURD2024} is used throughout. For four predictors the decomposition has
+\citet{MartinezSanchez2024SURD} is used throughout. For four predictors the decomposition has
 four unique components $U$, eleven redundant components $R$ (six pairs, four
 triples and one set of four predictors) and eleven synergistic components $S$
 with the same combinations. These are 26 components rather than 25. Following
-Figure~4.1 of \citet{CRThesis2025}, each component is divided by the joint mutual
+Figure~4.1 of \citet{MartinezSanchez2025Thesis}, each component is divided by the joint mutual
 information between the future target and the whole predictor vector,
 \begin{equation}
  f_a(\tau)=\frac{I_a(Y;\mathbf{X}_{\tau})}{I(Y;\mathbf{X}_{\tau})},
@@ -65,7 +66,7 @@ of each full native epoch series. Table~\ref{tab:ep_support} lists the data
 support. Every lag of every curve retains at least 118 tuples. Grid tuples are
 interpolated and autocorrelated, so they are not independent samples.
 
-\begin{table}[H]
+\begin{SURDtable}
 \centering
 \caption{Data support per epoch. $N_F$ and $N_{\rm line}$ are the numbers of
 native continuum and spectroscopic dates; the line number is the same for the
@@ -75,7 +76,7 @@ two bins).}
 \label{tab:ep_support}
 \small
 \input{\SURDResultsPath/epoch_support_rows.tex}
-\end{table}
+\end{SURDtable}
 
 \paragraph{Uncommon predictor lags (equation 3.18).} Equation 3.18 of the thesis
 builds the predictor vector from copies of each variable at different past
@@ -85,7 +86,7 @@ $\delta_i=0$. In the \emph{blue leading} configuration the blue wing is sampled
 $\delta=5$ days further back and in the \emph{red leading} configuration the red
 wing is. The component that responds earlier to a continuum event carries that
 event further in its past, so this is the arrangement that aligns the wings
-under the two kinematic patterns that \citet{CRXi2025} describe. The five day
+under the two kinematic patterns that \citet{Xi2025} describe. The five day
 offset is a stipulated analysis choice of the size of the uncertainties of
 published H$\beta$ lags (two to three days); it is not a measured delay. Every
 configuration and lag is analysed for both variable sets, all four targets and all
@@ -99,7 +100,7 @@ of this section) show the 26 normalized components and the leakage against lag f
 each epoch, variable set and target. Tables~\ref{tab:ep_extrema_total} and
 \ref{tab:ep_extrema_cont} give the extrema of all 40 common lag curves (two bins).
 
-\begin{table}[H]
+\begin{SURDtable}
 \centering
 \caption{Variable set total, blue, core and red H$\beta$ with common lags and two
 bins. Leakage minimum and maximum, with the lag in days in parentheses, followed by
@@ -110,9 +111,9 @@ The maxima are descriptive and have no null calibration or lag uncertainty.}
 \footnotesize
 \setlength{\tabcolsep}{3pt}
 \input{\SURDResultsPath/epoch_extrema_total_wings.tex}
-\end{table}
+\end{SURDtable}
 
-\begin{table}[H]
+\begin{SURDtable}
 \centering
 \caption{As Table~\ref{tab:ep_extrema_total} for the variable set F5100, blue, core and red
 H$\beta$. F denotes the continuum.}
@@ -120,7 +121,7 @@ H$\beta$. F denotes the continuum.}
 \footnotesize
 \setlength{\tabcolsep}{3pt}
 \input{\SURDResultsPath/epoch_extrema_continuum_wings.tex}
-\end{table}
+\end{SURDtable}
 
 \textbf{Leakage.} In 36 of 40 curves the leakage minimum is at the shortest lag of
 one day, where the history of the target itself predicts its own future. The
@@ -170,7 +171,7 @@ Table~\ref{tab:ep_config} gives the mean leakage of the three lag configurations
 The component figures for every configuration are in the second and third group of
 figures at the end of the section.
 
-\begin{table}[H]
+\begin{SURDtable}
 \centering
 \caption{Mean leakage over the 30 lags and four targets for common lags and for the
 blue leading and red leading uncommon lags (two bins). The next column is the
@@ -179,7 +180,7 @@ column counts line targets for which blue leading has the lower mean leakage.}
 \label{tab:ep_config}
 \small
 \input{\SURDResultsPath/epoch_config_rows.tex}
-\end{table}
+\end{SURDtable}
 
 Sampling the blue wing five days further back lowers the mean leakage relative to
 common lags in eight of the ten epoch and set combinations; the red wing does so in
@@ -196,21 +197,21 @@ and the target's own history, so it is not a velocity resolved delay measurement
 
 \subsection{Comparison with Lu et al. and Xi et al.}
 
-\citet{CRLu2022} compile the H$\beta$ lags of the five historical campaigns in their
+\citet{Lu2022} compile the H$\beta$ lags of the five historical campaigns in their
 Table~6. Table~\ref{tab:ep_lu} lists them beside the lag at which the unique
 continuum component of the blue, core and red targets is largest.
 
-\begin{table}[H]
+\begin{SURDtable}
 \centering
 \caption{Published H$\beta$ lag against continuum ($\tau_{\rm H\beta}$, days;
-\citealt{CRLu2022}, Table~6) and lag in days of the maximum of $U(F)$, with its
+\citealt{Lu2022}, Table~6) and lag in days of the maximum of $U(F)$, with its
 normalized value in parentheses, for the blue, core and red targets of the F5100 set
 with common lags. A dash means $U(F)<0.05$ at every lag.}
 \label{tab:ep_lu}
 \footnotesize
 \setlength{\tabcolsep}{3pt}
 \input{\SURDResultsPath/epoch_lu_rows.tex}
-\end{table}
+\end{SURDtable}
 
 The median peak lag over the detected line targets is 23, 27, 20.5, 17 and 23 days
 (two bins) against the published 19.7, 18.6, 15.9, 11.0 and 13.0 days. It exceeds
@@ -225,7 +226,7 @@ longer apparent lag is expected when the response is spread over time. The compa
 therefore supports a continuum driven response with a delay of the right order in
 the bright historical state, not an independent lag measurement.
 
-\citet{CRXi2025} measure much shorter H$\beta$ lags in the modern low luminosity
+\citet{Xi2025} measure much shorter H$\beta$ lags in the modern low luminosity
 seasons (Table~\ref{tab:ep_xi}) and show that the velocity resolved lag profile
 changes between them: an M-shaped profile in 2015, a red-leads-blue pattern in 2019
 and 2021 interpreted as inflow, and a blue-leads-red pattern in 2020 and 2023
@@ -237,23 +238,23 @@ in 1990 (blue 23, core 27, red 29 d). With three bins the red peak is again earl
 in 1989, 1992 and 1993, and is tied with the blue peak in 1990. A red-leads-blue
 ordering is therefore found in four of the five historical seasons and survives the
 change of bins in 1989, 1992 and 1993, similar to the signature that
-\citet{CRXi2025} identify in 2019 and 2021; the season 1990 resembles their
+\citet{Xi2025} identify in 2019 and 2021; the season 1990 resembles their
 blue-leads-red seasons but is not robust to the bin count. The differences between
 wings are five to seven days, a handful of grid steps, and have no uncertainty.
 They do not by themselves establish radial inflow: the Wanders and Peterson
 intervals are fixed wavelength bands and not equal flux bins, the three line
 series share spectra, and the uncommon lag test of the previous subsection does
 not single out one wing ordering. The velocity ordering is nevertheless the
-information theoretic counterpart of the quantity on which \citet{CRXi2025} base
+information theoretic counterpart of the quantity on which \citet{Xi2025} base
 their kinematic classification, and it varies between seasons in our data as in
 theirs.
 
-\begin{table}[H]
+\begin{SURDtable}
 \centering
 \caption{Published H$\beta$ lags of the modern seasons and the kinematic
-classification of their velocity resolved lag profiles (\citealt{CRXi2025},
-Table~3 and Section~5.2; seasons before 2023 from \citealt{CRLu2022}, updated by
-\citealt{CRXi2025} with a common method; for 2020 \citealt{CRLu2022} found no credible
+classification of their velocity resolved lag profiles (\citealt{Xi2025},
+Table~3 and Section~5.2; seasons before 2023 from \citealt{Lu2022}, updated by
+\citealt{Xi2025} with a common method; for 2020 \citealt{Lu2022} found no credible
 profile because of the very low variability).}
 \label{tab:ep_xi}
 \small
@@ -269,10 +270,10 @@ Season & $\tau_{\rm H\beta}$ (days) & Velocity resolved lag profile \\
 2023 & $15.6^{+2.6}_{-2.9}$ & blue leads red, outflow-like \\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{SURDtable}
 
-The historical lags of 11 to 20 days \citep{CRLu2022} are longer than the 7 to 10
-days of 2015 to 2021 and comparable with the 15.6 days of 2023. \citet{CRXi2025}
+The historical lags of 11 to 20 days \citep{Lu2022} are longer than the 7 to 10
+days of 2015 to 2021 and comparable with the 15.6 days of 2023. \citet{Xi2025}
 show that the broad line region radius follows the optical luminosity with a delay of
 3.5 years: the radius fell with the luminosity after the decline that reached its
 minimum around 2005 and 2010, and approached its typical historical value only by
@@ -283,7 +284,7 @@ line targets remains between 0.15 and 0.71 (median 0.54, two bins), so about hal
 the entropy of a line target is not accounted for by the monitored observables. A
 driving continuum that differs from the observed 5100~\AA\ flux, as in the disc wind
 shielding proposed for the 2014 `BLR holiday' (cited in the introduction of
-\citealt{CRXi2025}), is one possible reason; the noise of the fluxes and the coarse two and three state description are
+\citealt{Xi2025}), is one possible reason; the noise of the fluxes and the coarse two and three state description are
 others.
 
 \subsection{Sensitivity to the number of bins}
@@ -297,7 +298,7 @@ sample information of sparse histograms. The position of the main peaks can move
 ten days or more (Table~\ref{tab:ep_lu}), so the quantities that depend on a single
 peak lag should be read with this resolution.
 
-\begin{table}[H]
+\begin{SURDtable}
 \centering
 \caption{Median total variation between two and three bin allocations over lags and
 targets, per epoch, for the F5100 set (first three columns) and the total set
@@ -305,7 +306,7 @@ targets, per epoch, for the F5100 set (first three columns) and the total set
 \label{tab:ep_bins}
 \small
 \input{\SURDResultsPath/epoch_bin_rows.tex}
-\end{table}
+\end{SURDtable}
 
 \subsection{Limits of the interpretation}
 
@@ -319,7 +320,7 @@ line series are not included in that benchmark. Lag choices ($1$--$30$ d, five d
 offsets) and the 15 day interpolation limit are fixed in advance and were not
 tuned. No significance level has been computed for the scans.
 
-\begin{table}[H]
+\begin{SURDtable}
 \centering
 \caption{Median joint information $I$ in bits and normalized leakage $\ell$ for
 independent categorical variables (200 draws per setting). The exact values are $I=0$
@@ -327,7 +328,7 @@ and $\ell=1$. These are not significance thresholds for the AGN data.}
 \label{tab:ep_calibration}
 \small
 \input{\SURDResultsPath/calibration_rows.tex}
-\end{table}
+\end{SURDtable}
 
 A separate audit of the earlier native date analysis (the previous version of this
 section, kept in \texttt{previous\_native\_date\_analysis.tex}) found that eleven of
@@ -339,5 +340,6 @@ requirement across all lags; the regular grid above replaces it so that every
 variable can be a target in every epoch.
 
 % Individual component figures: one per epoch, variable set, target and configuration.
+\SURDonecolumn
 \input{\SURDResultsPath/epoch_figures.tex}
 \clearpage
