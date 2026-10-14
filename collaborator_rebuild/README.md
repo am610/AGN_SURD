@@ -9,6 +9,7 @@ subsets, every future target including its own history, individual normalized
 SURD components and leakage, common and unequal lags, thesis equation 3.18,
 and a LaTeX results section. Use the unchanged authors' SURD decomposition.
 
+The current analysis is described in [EPOCH_ANALYSIS.md](EPOCH_ANALYSIS.md).
 Read [progress](PROGRESS.md), [specification](SPECIFICATION.md),
 [review](REVIEW.md), and [data search](DATA_SEARCH.md).
 

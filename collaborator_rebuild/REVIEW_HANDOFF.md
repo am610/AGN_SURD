@@ -1,3 +1,8 @@
+> Superseded on 14 October 2026 by [EPOCH_ANALYSIS.md](EPOCH_ANALYSIS.md): the
+> per season scans on a regular daily grid cover every variable, target, epoch and
+> lag configuration, including the uncommon predictor lags. This file describes
+> the earlier native date analysis.
+
 # Frozen analysis and collaborator review handoff
 
 The bounded roadmap is complete: audit ordering on the four retained curves,

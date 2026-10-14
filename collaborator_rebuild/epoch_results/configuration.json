@@ -1,0 +1,108 @@
+{
+  "epochs": {
+    "1989": [
+      47509,
+      47809
+    ],
+    "1990": [
+      47861,
+      48179
+    ],
+    "1991": [
+      48225,
+      48534
+    ],
+    "1992": [
+      48623,
+      48898
+    ],
+    "1993": [
+      48954,
+      49255
+    ]
+  },
+  "native_input": "published_results/bins_2/<epoch>/native/<series>.csv",
+  "grid": "Daily integer grid of JD less 2400000 spanning the epoch; one value per day",
+  "interpolation": "Linear; no extrapolation; no bridging of a bracketing gap above the limit",
+  "maximum_interpolation_gap_days": 15,
+  "lag_days": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30
+  ],
+  "bins": [
+    2,
+    3
+  ],
+  "bin_edges": "Marginal quantiles of each full native epoch series, shared by target and predictor roles",
+  "minimum_tuples": 32,
+  "predictor_lag": "base lag + delta of that predictor, in observed days",
+  "predictor_offsets_days": {
+    "common": {
+      "total": 0,
+      "continuum": 0,
+      "blue": 0,
+      "core": 0,
+      "red": 0
+    },
+    "blue_leading": {
+      "total": 0,
+      "continuum": 0,
+      "blue": 5,
+      "core": 0,
+      "red": 0
+    },
+    "red_leading": {
+      "total": 0,
+      "continuum": 0,
+      "blue": 0,
+      "core": 0,
+      "red": 5
+    }
+  },
+  "subsets": {
+    "total_wings": [
+      "total",
+      "blue",
+      "core",
+      "red"
+    ],
+    "continuum_wings": [
+      "continuum",
+      "blue",
+      "core",
+      "red"
+    ]
+  },
+  "targets": "Every member of each subset in turn; all four members are past predictors",
+  "normalization": "Atoms divided by joint mutual information; leakage divided by target entropy",
+  "estimator": "Unchanged authors SURD routine at the pinned source hashes",
+  "interpretation": "Descriptive SURD estimates; no significance or causal detection claim"
+}

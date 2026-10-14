@@ -8,7 +8,15 @@ campaigns are a possible later extension.
 
 ## Current status
 
-## Current review boundary
+The September instructions are answered by the per season analysis in
+[collaborator_rebuild/EPOCH_ANALYSIS.md](collaborator_rebuild/EPOCH_ANALYSIS.md): five
+historical seasons, both four variable sets, every target, 26 components and
+leakage against lag, common and uncommon predictor lags, 7200 decompositions and
+120 figures. The results section is `collaborator_rebuild/results_section/results_section.tex`
+and its compiled review copy is `output/pdf/surd_epoch_results.pdf`. The replies to
+each instruction are in `output/docx/SURD_September_Instructions_With_Replies.docx`.
+
+## Earlier review boundary (native date analysis, 7 October)
 
 The bounded diagnostic work is complete and the analysis is frozen for
 collaborator review. Initial categorical calibration and the predictor ordering

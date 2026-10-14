@@ -1,0 +1,41 @@
+{
+  "source_sha256": "66b6d84d23ec1d9bc86bdb87f70148c5243bad6d7f83e4b0643b30b0e0b05958",
+  "configuration_sha256": "fd3e89738994953dcb1a516f73615ee87314a947bba40472e84c6035529a995e",
+  "official_source_sha256": {
+    "surd.py": "c843b337d6e1fc4437d26ee1551980c21da973cf0fb1f3f5f1f82455773bd2bf",
+    "it_tools.py": "3a6c752e37961774cc951dbaf85d15e2fc39486c3d42efa8e07d0ede90554e18"
+  },
+  "input_sha256": {
+    "1989/native/blue.csv": "31a2287a2b2a3d34278d73c6356ac34ccb7e7094c5d03cb2a9af0a0ced43b482",
+    "1989/native/continuum.csv": "e1c1ac9afb4e44add361f2c9d3e59207206856cdb65eb76e97f039aea5f3d296",
+    "1989/native/core.csv": "45c0f56240c51fe173e5f5050e8b0d2c63571587185f2b13d2c262c15e54931e",
+    "1989/native/red.csv": "95e8bed72efb42bfcfb58371961976b8df3619ac3f8982613072964481ab4632",
+    "1989/native/total.csv": "bc4a7b32560846abe136e9f6a55f2ff094d34ef7f5bc36ecd516db6d0720d418",
+    "1990/native/blue.csv": "91659e933adb070635a2973e502562e1559e58cec6df872b848925f41a855fa0",
+    "1990/native/continuum.csv": "bfa0c8df7655beb6f622b5ef3f21f4731c4423f640e76ab5f76c18e249983f18",
+    "1990/native/core.csv": "148a5f8b7eb242347962d8025f8b9ad4b10607679ae627928f73f34fc8152329",
+    "1990/native/red.csv": "909f0ee3fbd113ccb7f037e7b9adce1d866aa5b1ec48d176e04c5cbf8d0b4418",
+    "1990/native/total.csv": "11d0f572d0c0921b434aaead94ae9a8556fe4dad0f2e055ada30197164ebf389",
+    "1991/native/blue.csv": "90134ebc0c08e5f50a5dca8b182443fcbe5bbb5fa4e3dd0f3f5b2ba4561f02d8",
+    "1991/native/continuum.csv": "7ac6eaff61df1730bda0e9e308b3ff2be8a9a8fa8846090ec43f65aa87d78451",
+    "1991/native/core.csv": "186f2b5788bbb48d49367608494eb2c01f6f4d1c7e8511597bb7b001e757e337",
+    "1991/native/red.csv": "48b13c6d48b2b2798cdeb6daa1548f0427761f58f6490263e318dfa3b21da8dd",
+    "1991/native/total.csv": "9976a44e3021a9e02264a3914bc3620820b82686e41a8ca845de8676c204d09a",
+    "1992/native/blue.csv": "d3b80e679e7dd86e85fa7f8e13957e22f702774ac4f1c96afe8c4519635117ce",
+    "1992/native/continuum.csv": "27983e2fff6c223a0160bab92c1dfddbeda24c1f28641fe5a91ced4798d87519",
+    "1992/native/core.csv": "70df6c930b1b2ff060a2c2eaca0a047ea416b9e4eb48f3a6500c159d44412125",
+    "1992/native/red.csv": "580017774f08ecc5e6aecce0c8e9121712b63840079f85687354996e751dabf5",
+    "1992/native/total.csv": "ecf888002d52cacdda62d41d4fd5ab688c5aa2e21b4783e6205eeb594c53f28f",
+    "1993/native/blue.csv": "62a019949128250a7027cd28a143439d3b3ffd9453a0ac58eb00db0d167f130f",
+    "1993/native/continuum.csv": "d6a9117cc335992b0a702dca4f932d822b0211f9dbff80d629a643b8b02b5c53",
+    "1993/native/core.csv": "3635346a64cbd35e619e4da4b850234010ee1d52aeca9d5d2d71e4698b83e942",
+    "1993/native/red.csv": "0a98ce64f590f7a5d59bb30c1ccb06e50f2a0940b10cd5ccb5c307be0726ae70",
+    "1993/native/total.csv": "5c47e11957ebbcdbc9a37161bf3c2e21183de0d853792f9c117cf27be3514d0b"
+  },
+  "scan_rows": 7200,
+  "usable_scan_rows": 7200,
+  "atom_rows": 187200,
+  "status_counts": {
+    "ok": 7200
+  }
+}

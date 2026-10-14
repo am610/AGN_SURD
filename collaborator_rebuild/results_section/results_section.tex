@@ -1,369 +1,341 @@
 % Include this section with graphicx, amsmath, booktabs, float, and natbib available.
 % SURDResultsPath is the path to this folder from the compiling document.
+% SURDEpochPath is the path to collaborator_rebuild/epoch_results from the compiling document.
 \providecommand{\SURDResultsPath}{collaborator_rebuild/results_section}
+\providecommand{\SURDEpochPath}{collaborator_rebuild/epoch_results}
 
-\section{Campaign resolved SURD components and sampling sensitivity}
-\label{sec:campaign_surd_results}
+\section{SURD components in the five historical NGC~5548 seasons}
+\label{sec:epoch_surd_results}
 
-\subsection{Observed series and analysis scope}
+\subsection{Series, epochs and analysis design}
 
-We analyze historical observations of NGC~5548 in five observing campaigns
-from 1989 through 1993. The adopted line sample contains 242 spectra on
-224 distinct dates. Corrected published total, blue, core, and red
-H$\beta$ measurements are used directly from the table accompanying
-\citet{CRWanders1996}, together with 557 original optical continuum
-measurements at 5100~\AA. Duplicate spectral dates are represented by equal
-means, with mean uncertainties obtained from the quadrature sum of quoted
-errors divided by the number of measurements. Shared calibration covariance
-is unavailable. The original continuum retains host starlight.
-All four line variables share spectra, and the total nearly equals the sum
-of the three components. We retain the published rounding and do not treat
-these measurements as independent observations of four physical regions.
+We apply the seasonal strategy of \citet{CRLu2022} and \citet{CRXi2025} to the
+historical monitoring of NGC~5548 between 1988 and 1993. Their seasons are
+analysed independently; we do the same for the five historical seasons, which
+carry the labels Year~1 to Year~5 in Table~6 of \citet{CRLu2022}. The epochs are the
+intervals of Table~2 of \citet{CRPeterson2004}: JD less 2400000 from 47509
+through 47809 (1989), 47861 through 48179 (1990), 48225 through 48534 (1991),
+48623 through 48898 (1992) and 48954 through 49255 (1993).
 
-Campaign membership follows the intervals in Table~2 of
-\citet{CRPeterson2004}: JD less 2400000 from 47509 through 47809,
-47861 through 48179, 48225 through 48534, 48623 through 48898,
-and 48954 through 49255. The blue, core, and red definitions follow
-the observed wavelength intervals in source Section~3.2, respectively
-4870 through 4920, 4920 through 4960, and 4960 through 5010~\AA.
-The source figure caption gives a different blue lower boundary;
-using the published measurements avoids claiming an exact reconstruction
-of the integrations from the archived profile pixels.
+Five observed series are prepared for each epoch: the 5100~\AA\ continuum
+(F5100), the total broad H$\beta$ flux, and its blue, core and red components.
+The line measurements are the corrected published columns of
+\citet{CRWanders1996}, with blue, core and red defined over the observed
+wavelength intervals 4870--4920, 4920--4960 and 4960--5010~\AA. These fixed
+wavelength intervals play the role of the equal flux velocity bins that
+\citet{CRXi2025} construct over 4700--5050~\AA; they are not equal flux bins.
+Observations on the same date are combined by their mean. The continuum retains
+its host galaxy contribution. Total and component fluxes come from the same
+spectra, and the total is the sum of its components, so they are not four
+independent measurements.
 
-For each campaign, we analyze two variable sets: total, blue, core, and
-red H$\beta$; and continuum, blue, core, and red H$\beta$.
-Every variable in a set becomes the future target in turn, while all four
-past variables, including the target's own history, remain predictors.
-We use the unchanged SURD implementation of \citet{CRSURD2024}, with
-the averaging and normalization described by \citet{CRThesis2025}.
-For four predictors, the listed combinations give four unique,
-eleven redundant, and eleven synergistic components, hence 26 in total.
-
-For future target $Y(t)$ and predictor vector $\mathbf{X}_{\tau}(t)$,
-we write each normalized component as
+Two variable sets are analysed, each with four members: total, blue, core and
+red H$\beta$; and F5100, blue, core and red H$\beta$. Each member becomes the
+future target $Y$ in turn. All four members, including the past of the target
+itself, are the predictors $\mathbf{X}$. The unchanged SURD implementation of
+\citet{CRSURD2024} is used throughout. For four predictors the decomposition has
+four unique components $U$, eleven redundant components $R$ (six pairs, four
+triples and one set of four predictors) and eleven synergistic components $S$
+with the same combinations. These are 26 components rather than 25. Following
+Figure~4.1 of \citet{CRThesis2025}, each component is divided by the joint mutual
+information between the future target and the whole predictor vector,
 \begin{equation}
- f_a(\tau)=\frac{I_a(Y;\mathbf{X}_{\tau})}
- {I(Y;\mathbf{X}_{\tau})},
- \qquad \sum_{a=1}^{26}f_a(\tau)=1,
- \label{eq:cr_component_normalization}
+ f_a(\tau)=\frac{I_a(Y;\mathbf{X}_{\tau})}{I(Y;\mathbf{X}_{\tau})},
+ \qquad \sum_{a=1}^{26}f_a(\tau)=1 ,
+ \label{eq:ep_component_normalization}
 \end{equation}
-when joint mutual information is nonzero. Information leakage uses a
-separate denominator,
+where $I_a$ is the contribution of component $a$ averaged over the states of the
+target (equations 3.16 of the thesis, ordered as in equation 3.17). The causality
+leak of equation 3.6 is normalized by the entropy of the target,
 \begin{equation}
- \ell(\tau)=\frac{H(Y\mid\mathbf{X}_{\tau})}{H(Y)}.
- \label{eq:cr_leakage}
+ \ell(\tau)=\frac{H(Y\mid\mathbf{X}_{\tau})}{H(Y)} ,
+ \label{eq:ep_leakage}
 \end{equation}
-The component fractions therefore describe the allocation of available
-predictive information, while leakage describes the fraction of target
-entropy left unexplained. A large normalized component can coexist with
-substantial leakage.
+and shown in its own panel. The component sums equal one to within
+$1.6\times10^{-15}$ in all 7200 decompositions.
 
-The saved exploratory scans cover base lags from zero through 30 observed
-days. Predictors are interpolated at native target dates within the same
-campaign, with no extrapolation and a maximum interpolation gap of ten days.
-We retain a minimum of 32 finite tuples as a numerical guard.
-Probability histograms use either two or three marginal quantile bins,
-whose boundaries are determined from each full native campaign series.
-The two additional scenarios place the blue or red predictor five days
-earlier than the common base lag. These stipulated offsets are sensitivity
-choices, not measured delays. Their construction gives one lag to each
-predictor; it does not execute the expanded predictor vector of thesis
-equation~3.18.
-
-\subsection{Campaign support and sensitivity to bin choice}
-
-Each bin setting contains 3720 configurations, with 1402 passing the
-numerical guard. At positive lags there are 1326 supported configurations.
-The native inputs, settings apart from bin count, tuple counts, and support
-status agree between the two scans. This permits a direct comparison of
-bin settings at each lag. It does not hold target dates fixed across lags.
-
-We quantify the change in the normalized component distribution using
-\begin{equation}
- D_{\rm TV}(\tau)=\frac{1}{2}\sum_{a=1}^{26}
- \left|f_a^{(2)}(\tau)-f_a^{(3)}(\tau)\right|.
- \label{eq:cr_tv}
-\end{equation}
-The superscripts denote bin count. Leakage changes are reported as
-$|\ell^{(2)}-\ell^{(3)}|$. Both quantities are descriptive diagnostics;
-neither is a significance test or an uncertainty estimate.
+\paragraph{Regular grid and lags.} Every series is linearly interpolated onto a
+daily grid that spans its epoch. Interpolation never extrapolates and never
+bridges a gap between neighbouring observations longer than 15 days. The target
+is $Y(t)$ and the predictors are $X_i(t-L-\delta_i)$, with base lag $L$ from 1
+through 30 days in one day steps. The 30 day span covers the common lag ranges
+proposed for the modern seasons. Probabilities are histograms with two bins and,
+as a sensitivity setting, three bins. Bin boundaries are the marginal quantiles
+of each full native epoch series. Table~\ref{tab:ep_support} lists the data
+support. Every lag of every curve retains at least 118 tuples. Grid tuples are
+interpolated and autocorrelated, so they are not independent samples.
 
 \begin{table}[H]
 \centering
-\caption{Native date counts and positive lag support by campaign.
-Each campaign has 720 positive lag configurations per bin setting.
-$N_{\rm line}$ is the number of native dates for each line series and
-$N_F$ is the continuum count. $N_{\rm usable}$ applies to the earlier
-support that changes with lag. The last column gives the range of retained
-date counts after intersection across all positive lags in each curve.}
-\label{tab:cr_campaign_support}
+\caption{Data support per epoch. $N_F$ and $N_{\rm line}$ are the numbers of
+native continuum and spectroscopic dates; the line number is the same for the
+total, blue, core and red series. The last column gives the range over lags and
+targets of the daily grid tuples with all five series available (common lags,
+two bins).}
+\label{tab:ep_support}
 \small
-\input{\SURDResultsPath/campaign_rows.tex}
+\input{\SURDResultsPath/epoch_support_rows.tex}
 \end{table}
 
-Table~\ref{tab:cr_campaign_support} shows that numerical support differs
-strongly between campaigns. Only one positive lag configuration is usable
-in 1991. All 720 configurations in 1993 pass the guard, but the median
-$D_{\rm TV}$ is 0.515 and every supported configuration in that campaign
-has $D_{\rm TV}>0.2$. Across all campaigns, median $D_{\rm TV}$ is 0.484
-and median absolute leakage change is 0.182. Thus even the campaign with
-complete numerical coverage is sensitive to the probability discretization.
-Complete coverage under the tuple guard does not establish reliable
-estimation of the component fractions.
+\paragraph{Uncommon predictor lags (equation 3.18).} Equation 3.18 of the thesis
+builds the predictor vector from copies of each variable at different past
+times. We give every predictor variable its own lag $L+\delta_i$, so that the four
+predictors still define the 26 components. The common lag analysis has
+$\delta_i=0$. In the \emph{blue leading} configuration the blue wing is sampled
+$\delta=5$ days further back and in the \emph{red leading} configuration the red
+wing is. The component that responds earlier to a continuum event carries that
+event further in its past, so this is the arrangement that aligns the wings
+under the two kinematic patterns that \citet{CRXi2025} describe. The five day
+offset is a stipulated analysis choice of the size of the uncertainties of
+published H$\beta$ lags (two to three days); it is not a measured delay. Every
+configuration and lag is analysed for both variable sets, all four targets and all
+five epochs: 7200 decompositions, 120 figures.
 
-\subsection{Holding target dates fixed across all positive lags}
+\subsection{Common lags: leakage and dominant components}
 
-To remove changes in native target support along a lag curve, we retain
-only target dates at which every required predictor is finite at every
-base lag from one through 30 days. This intersection is computed separately
-for each campaign, variable set, target, and scenario. The resulting dates
-are used at every lag and for both bin settings. The lag range, interpolation
-gap limit, numerical guard, and full campaign quantile boundaries are
-unchanged. Zero lag is excluded from the intersection and comparison.
-
-Only four of 120 curves retain at least 32 target dates: the common
-continuum target in 1992, and the common, blue earlier, and red earlier
-continuum targets in 1993. Every future line target fails the guard under
-this stricter construction. The 116 excluded curves have no decomposition
-in this run. The four retained curves produce 240 decompositions across
-30 lags and two bin settings, with 6240 component rows.
-Normalization is defined in all executed cases, with maximum absolute
-component sum error $1.22\times10^{-15}$; this verifies arithmetic only.
+Figures~\ref{fig:ep_common_1989_continuum_wings_blue} to
+\ref{fig:ep_common_1993_total_wings_total} (the first group of figures at the end
+of this section) show the 26 normalized components and the leakage against lag for
+each epoch, variable set and target. Tables~\ref{tab:ep_extrema_total} and
+\ref{tab:ep_extrema_cont} give the extrema of all 40 common lag curves (two bins).
 
 \begin{table}[H]
 \centering
-\caption{Sensitivity between bin settings with identical target dates
-across all positive lags. Every row has future continuum as the target.
-Each median uses 30 base lags. The last column counts components whose
-maximizing lag sets do not overlap between bin settings. All components,
-including weak ones, are counted; ties are retained within absolute
-tolerance $10^{-12}$.}
-\label{tab:cr_fixed_support}
-\small
-\input{\SURDResultsPath/fixed_rows.tex}
+\caption{Variable set total, blue, core and red H$\beta$ with common lags and two
+bins. Leakage minimum and maximum, with the lag in days in parentheses, followed by
+the largest unique, redundant and synergistic component over lags 1 to 30 d, with its
+normalized value and lag. H, B, C and R denote the total, blue, core and red series.
+The maxima are descriptive and have no null calibration or lag uncertainty.}
+\label{tab:ep_extrema_total}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\input{\SURDResultsPath/epoch_extrema_total_wings.tex}
 \end{table}
 
-The sensitivity persists after fixing the target dates
-(Table~\ref{tab:cr_fixed_support}). Median $D_{\rm TV}$ ranges from
-0.523 to 0.610. In addition, changing the retained observations affects the
-estimates at a fixed bin count. For the 1993 common curve, median
-$D_{\rm TV}$ between the earlier varying support estimates and the new fixed
-support estimates is 0.475 for two bins and 0.391 for three bins.
-Across the four retained curves and both bin settings, these medians range
-from 0.272 to 0.475. This measures sensitivity to sample selection and can
-include temporal variation; it does not isolate estimator bias.
-
-The retained sample has 36 dates for the 1992 curve and 78 through 90
-dates for the 1993 curves. In the 1993 common case, median occupied
-histogram cell counts are 14.5 for two bins and 25 for three bins, with
-90 tuples. The corresponding medians of singleton cell counts are four
-and ten. Repeated or interpolated observations are not independent samples,
-and structural dependence can also leave cells empty. These occupancy
-counts are diagnostics rather than estimator validation.
-
-\subsection{Individual components and descriptive extrema}
-
-Figures~\ref{fig:cr_1992_common} through \ref{fig:cr_1993_red}
-show all individual components and leakage for the four retained curves.
-The notation uses $F$ for continuum, $B$ for blue, $C$ for core, and $R$
-for red; the outer operator identifies a unique, redundant, or synergistic
-component. Dotted curves use two bins and solid curves use three bins.
-All component panels share the joint information denominator in
-equation~\ref{eq:cr_component_normalization}, while the leakage panel uses
-equation~\ref{eq:cr_leakage}.
-
-The 1993 common case is selected as the example with the largest retained
-date count, rather than by the amplitude or location of a peak.
-Table~\ref{tab:cr_extrema} reports the largest component value within each
-information type over the declared positive lag range.
-The largest unique contribution comes from continuum history in both
-bin settings, but its maximizing lag changes from six days to one day.
-The largest redundancy changes from $R(B,C)$ at 25 days to $R(B,C,R)$
-at eleven days. The largest synergy changes from $S(F,R)$ at the
-30 day scan boundary to $S(F,C)$ at four days. The boundary maximum
-cannot identify an interior characteristic delay. Component identities,
-amplitudes, and maximizing lags therefore change with discretization
-despite identical native target support.
-
 \begin{table}[H]
 \centering
-\caption{Descriptive maxima in the 1993 common scenario with 90 fixed
-continuum target dates. Each row maximizes over all components of the
-specified type and all base lags from one through 30 days. These maxima
-have no null calibration or delay uncertainty and are not physical lag
-measurements.}
-\label{tab:cr_extrema}
-\small
-\input{\SURDResultsPath/extrema_rows.tex}
+\caption{As Table~\ref{tab:ep_extrema_total} for the variable set F5100, blue, core and red
+H$\beta$. F denotes the continuum.}
+\label{tab:ep_extrema_cont}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\input{\SURDResultsPath/epoch_extrema_continuum_wings.tex}
 \end{table}
 
-\subsection{Ideal categorical estimator calibration}
+\textbf{Leakage.} In 36 of 40 curves the leakage minimum is at the shortest lag of
+one day, where the history of the target itself predicts its own future. The
+exceptions are the blue and core targets of the F5100 set in 1989 (minima at 8 and
+24 days, leakage 0.12 and 0.05), the total target of the total set in 1990 (3 days)
+and the core target of the F5100 set in 1991, whose leakage reaches zero to numerical
+precision at 4 days. The leakage maximum lies at 20 days or longer in 35 of 40
+curves. Median minimum and maximum leakage are 0.12 and 0.70 for the F5100 set and
+0.09 and 0.89 for the total set. The leakage at the largest lags of the total set
+approaches the 0.86 to 0.98 that independent categorical variables produce in the
+calibration below for 90 to 512 tuples. Little predictive information remains at
+such lags relative to the bias level of the estimator.
 
-We check the same four predictor estimator against eight exact categorical
-laws: independent variables, a target equal to one predictor, a target
-duplicated by two predictors, and a target given by the modular sum of two
-independent predictors, each with two or three states. The dependent laws
-have known unique, redundant, or synergistic information, respectively.
-Their exact joint information is the base two logarithm of state count
-and their leakage is zero. The independent law has zero joint information
-and unit leakage, so its exact normalized component fractions are undefined.
-The official routine reproduces these exact reference values in the
-declared predictor order.
+\textbf{Largest components.} At the leakage minimum the largest component is the
+four-way redundancy $R(H,B,C,R)$ in 16 of the 20 curves of the total set: the
+components share the same spectra and sum to the total, so their past states carry
+the same information about the future. In the F5100 set it is a unique component
+(11 curves, mostly $U(F)$ and the target's own history) or a redundancy among the
+line components (9 curves). At the leakage maximum the largest component is a
+synergy in 11 of 20 total set curves and a unique component in five; in the F5100 set
+it is $U(F)$ in 10 curves and a synergy in seven. The largest component then carries
+on average 0.32 (total set) and 0.36 (F5100 set) of the joint information, against
+0.55 and 0.57 at the leakage minimum.
 
-We draw 200 independent samples per law and sample size with fixed seed
-20261007, giving 6400 decompositions. Sizes of 36, 78, and 90 match
-the retained curve counts; 512 is an artificial reference.
-Table~\ref{tab:cr_calibration} shows substantial apparent information under
-independence, particularly with three states. This benchmark demonstrates
-finite sample bias and does not provide an AGN significance threshold.
-These are separate categorical laws, not rebinning of one continuous
-dataset. They omit temporal dependence, interpolation, measurement errors,
-and fitted quantile boundaries. The deterministic positive controls also
-do not represent weak physical signals.
+\textbf{Continuum to line information.} The F5100 set isolates what the continuum
+adds to a line target beyond the line components: the unique term $U(F)$. For the
+blue, core and red targets it rises to a maximum of 0.29 to 0.87 (two bins) at lags
+of 16 to 29 days in 13 of 15 curves (Table~\ref{tab:ep_lu}). The two exceptions
+have no continuum term above 0.05: the core target in 1991 and the red target in
+1993. With three bins the exceptions are the blue and core targets in 1991. A unique continuum component that
+peaks at a lag of tens of days and leaves leakage near its minimum (0.05 for the
+1989 core target at 24 days) is what a delayed response to the continuum would
+produce. The same peaks give a velocity ordering of the response that we compare
+with the published seasons below.
+
+\textbf{Epoch comparison.} Mean leakage over lags and targets (common lags, two bins)
+is 0.49, 0.53, 0.43, 0.58 and 0.65 for 1989 to 1993. These follow the ordering of
+the grid tuple counts (minimum 134, 161, 133, 211 and 231, respectively), with rank
+correlation one. Our categorical calibration shows that fewer tuples give a lower
+estimated leakage even for independent variables, so differences of leakage between
+epochs mainly reflect sample size.
+
+\subsection{Uncommon lags}
+
+Table~\ref{tab:ep_config} gives the mean leakage of the three lag configurations
+(two bins, all lags, all four targets of each set) and the change of the allocation.
+The component figures for every configuration are in the second and third group of
+figures at the end of the section.
 
 \begin{table}[H]
 \centering
-\caption{Median joint information $I$ in bits and normalized leakage
-$\ell$ under independent categorical variables, from 200 draws per setting.
-Exact truth is $I=0$ and $\ell=1$. The 512 tuple setting is an artificial
-reference. None of these values is a significance threshold for the AGN.}
-\label{tab:cr_calibration}
+\caption{Mean leakage over the 30 lags and four targets for common lags and for the
+blue leading and red leading uncommon lags (two bins). The next column is the
+mean difference blue leading minus red leading over the three line targets. The last
+column counts line targets for which blue leading has the lower mean leakage.}
+\label{tab:ep_config}
+\small
+\input{\SURDResultsPath/epoch_config_rows.tex}
+\end{table}
+
+Sampling the blue wing five days further back lowers the mean leakage relative to
+common lags in eight of the ten epoch and set combinations; the red wing does so in
+four (1989 and 1990), and raises it in 1991 to 1993. The mean differences are small,
+at most 0.08, but the allocation among components changes substantially: the median
+total variation $\frac12\sum_a|f_a^{\rm uncommon}-f_a^{\rm common}|$ is 0.30 for both
+configurations (0.23 to 0.24 for the F5100 set and 0.36 to 0.40 for the total set),
+and ranges from 0.22 in 1993 to 0.46 in 1989. The lag assigned to each predictor
+therefore matters for which components receive the information even when the total
+information changes little. Blue leading gives the lower mean leakage for all three line
+targets in 1991 and 1992 (both sets) and in the F5100 set in 1990 and 1993; in 1989 it is
+higher for most targets. This test uses all targets, including the continuum
+and the target's own history, so it is not a velocity resolved delay measurement.
+
+\subsection{Comparison with Lu et al. and Xi et al.}
+
+\citet{CRLu2022} report H$\beta$ lags for the five historical campaigns in their
+Table~6. Table~\ref{tab:ep_lu} lists them beside the lag at which the unique
+continuum component of the blue, core and red targets is largest.
+
+\begin{table}[H]
+\centering
+\caption{Published H$\beta$ lag against continuum ($\tau_{\rm H\beta}$, days;
+\citealt{CRLu2022}, Table~6) and lag in days of the maximum of $U(F)$, with its
+normalized value in parentheses, for the blue, core and red targets of the F5100 set
+with common lags. A dash means $U(F)<0.05$ at every lag.}
+\label{tab:ep_lu}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\input{\SURDResultsPath/epoch_lu_rows.tex}
+\end{table}
+
+The median peak lag over the detected line targets is 23, 27, 20.5, 17 and 23 days
+(two bins) against the published 19.7, 18.6, 15.9, 11.0 and 13.0 days. It exceeds
+the published lag in every season by a median of 6.0 days (5.3 days with three
+bins). The rank correlation between the two sets of lags is 0.67 for two bins and
+0.36 for three (five points, not significant). Both show shorter lags in 1991 and
+1992 than in 1989 and 1990, and a longer lag in 1993 than in 1992 (17 to 23 days for
+two bins, 19 to 20 days for three bins). A maximum of a unique information fraction on a one day grid is
+not the centroid of a cross-correlation function; the information term also
+depends on the history of the target and on the broad transfer function, and a
+longer apparent lag is expected when the response is spread over time. The comparison
+therefore supports a continuum driven response with a delay of the right order in
+the bright historical state, not an independent lag measurement.
+
+\citet{CRXi2025} measure much shorter H$\beta$ lags in the modern low luminosity
+seasons (Table~\ref{tab:ep_xi}) and show that the velocity resolved lag profile
+changes between them: an M-shaped profile in 2015, a red-leads-blue pattern in 2019
+and 2021 interpreted as inflow, and a blue-leads-red pattern in 2020 and 2023
+interpreted as outflow. We read the same ordering from the peak lags of
+Table~\ref{tab:ep_lu}. With two bins the red wing peaks earlier than the blue wing in
+1989 (20 against 27 d), 1991 (18 against 23 d) and 1992 (16 against 21 d), the core
+peaks earlier than the blue wing in 1993 (20 against 26 d), and the order is reversed
+in 1990 (blue 23, core 27, red 29 d). With three bins the red peak is again earlier
+in 1989, 1992 and 1993, and is tied with the blue peak in 1990. A red-leads-blue
+ordering is therefore found in four of the five historical seasons and survives the
+change of bins in 1989, 1992 and 1993, similar to the signature that
+\citet{CRXi2025} identify in 2019 and 2021; the season 1990 resembles their
+blue-leads-red seasons but is not robust to the bin count. The differences between
+wings are five to seven days, a handful of grid steps, and have no uncertainty.
+They do not by themselves establish radial inflow: the Wanders and Peterson
+intervals are fixed wavelength bands and not equal flux bins, the three line
+series share spectra, and the uncommon lag test of the previous subsection does
+not single out one wing ordering. The velocity ordering is nevertheless the
+information theoretic counterpart of the quantity on which \citet{CRXi2025} base
+their kinematic classification, and it varies between seasons in our data as in
+theirs.
+
+\begin{table}[H]
+\centering
+\caption{Published H$\beta$ lags of the modern seasons and the kinematic
+classification of their velocity resolved lag profiles (\citealt{CRXi2025},
+Table~3 and Section~5.2; seasons before 2023 from \citealt{CRLu2022}).}
+\label{tab:ep_xi}
+\small
+\begin{tabular}{rll}
+\toprule
+Season & $\tau_{\rm H\beta}$ (days) & Velocity resolved lag profile \\
+\midrule
+2015 & $7.2^{+1.3}_{-0.4}$ & wings respond before the core (`M' shape), disk-like \\
+2018 & $7.0^{+2.3}_{-3.4}$ & no strong ordering \\
+2019 & $8.9^{+2.0}_{-1.1}$ & red leads blue, inflow-like \\
+2020 & $10.0^{+3.3}_{-3.3}$ & blue leads red, outflow-like \\
+2021 & $9.0^{+1.9}_{-2.5}$ & red leads blue, inflow-like \\
+2023 & $15.6^{+2.6}_{-2.9}$ & blue leads red, outflow-like \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The historical lags of 11 to 20 days \citep{CRLu2022} are longer than the 7 to 10
+days of 2015 to 2021 and comparable with the 15.6 days of 2023. \citet{CRXi2025}
+show that the broad line region radius follows the optical luminosity with a delay of
+3.5 years: the radius fell with the luminosity after the decline that reached its
+minimum around 2005 and 2010, and approached its typical historical value only by
+2023. The short lags of 2015 to 2021 therefore belong to a contracted line region
+that has not yet recovered, and the historical seasons correspond to the typical
+radius to which it returned. At the lag of the continuum peak, the leakage of the
+line targets remains between 0.15 and 0.71 (median 0.54, two bins), so about half of
+the entropy of a line target is not accounted for by the monitored observables. A
+driving continuum that differs from the observed 5100~\AA\ flux, as in the
+shielding discussed by \citet{CRXi2025} for the `holiday' period, is one possible
+reason; the noise of the fluxes and the coarse two and three state description are
+others.
+
+\subsection{Sensitivity to the number of bins}
+
+Changing the histograms from two to three bins changes the allocation substantially
+(Table~\ref{tab:ep_bins}). The median total variation $D_{\rm TV}=\frac12\sum_a|f_a^{(2)}-f_a^{(3)}|$
+between the bin settings is between 0.27 and 0.58 in all epochs and
+configurations. For common lags the mean leakage is lower for three bins (0.34 and 0.46
+for the F5100 and total sets against 0.46 and 0.61), consistent with the larger finite
+sample information of sparse histograms. The position of the main peaks can move by
+ten days or more (Table~\ref{tab:ep_lu}), so the quantities that depend on a single
+peak lag should be read with this resolution.
+
+\begin{table}[H]
+\centering
+\caption{Median total variation between two and three bin allocations over lags and
+targets, per epoch, for the F5100 set (first three columns) and the total set
+(last three), with common, blue leading and red leading lags.}
+\label{tab:ep_bins}
+\small
+\input{\SURDResultsPath/epoch_bin_rows.tex}
+\end{table}
+
+\subsection{Limits of the interpretation}
+
+The component fractions describe how the available predictive information is
+distributed; they do not by themselves identify causal coupling or a physical delay.
+The independent categorical benchmark below shows that finite samples of
+independent variables produce substantial apparent information, particularly with
+three states, and that leakage is biased low at small sample sizes. Observation
+dates, interpolation across the gaps, flux errors, and the shared spectra of the
+line series are not included in that benchmark. Lag choices ($1$--$30$ d, five day
+offsets) and the 15 day interpolation limit are fixed in advance and were not
+tuned. No significance level has been computed for the scans.
+
+\begin{table}[H]
+\centering
+\caption{Median joint information $I$ in bits and normalized leakage $\ell$ for
+independent categorical variables (200 draws per setting). The exact values are $I=0$
+and $\ell=1$. These are not significance thresholds for the AGN data.}
+\label{tab:ep_calibration}
 \small
 \input{\SURDResultsPath/calibration_rows.tex}
 \end{table}
 
-Some binary positive controls also show unexpected component allocations.
-In four preserved examples, reordering predictor histogram axes together
-with their physical labels changes the normalized allocation substantially
-while leaving total information unchanged. An execution trace of the
-unchanged routine records resets to zero of positive specific information
-after strict comparison differences around machine precision. We assess
-the relevance of this numerical concern to the retained observations next.
+A separate audit of the earlier native date analysis (the previous version of this
+section, kept in \texttt{previous\_native\_date\_analysis.tex}) found that eleven of
+240 retained configurations change their allocation among named components when the
+order of the predictors is permuted (largest total variation 0.19), while total
+information and leakage do not change. That analysis used native target dates
+without interpolation, and retained only four of 120 curves under a common date
+requirement across all lags; the regular grid above replaces it so that every
+variable can be a target in every epoch.
 
-\subsection{Predictor ordering audit of the retained observations}
-
-For every retained curve, bin setting, and positive lag, we reconstruct
-the original histogram and verify reproduction of the saved components
-to absolute tolerance $10^{-10}$. Target dates and tuple counts also
-agree. We then evaluate all 24 orders of the four predictor axes, moving
-their names with their axes and keeping the target axis fixed. Components
-are matched by type and the set of named predictors. There are 5760 order
-evaluations across 240 lag and bin configurations. The histogram counts,
-target dates, bin boundaries, lag range, and algorithm are unchanged.
-
-An allocation is flagged when its total variation from the original order
-exceeds $10^{-8}$, a declared numerical comparison tolerance rather than a
-significance threshold. Eleven configurations exceed this tolerance
-(Table~\ref{tab:cr_order}). The largest total variation is 0.188 in the
-1993 red earlier scenario with three bins. Maximum absolute changes in
-joint information and leakage across the audit are
-$6.66\times10^{-16}$ bits and $1.83\times10^{-15}$, respectively.
-Thus stable total information and component sum normalization do not ensure
-stable allocation to named components.
-
-\begin{table}[H]
-\centering
-\caption{Predictor ordering sensitivity of the retained astronomical
-histograms. Each row contains 30 positive lag configurations, each checked
-in all 24 predictor orders. Affected lags have component total variation
-above $10^{-8}$ in at least one order. The final column is the maximum
-over all lags and orders in that row.}
-\label{tab:cr_order}
-\small
-\input{\SURDResultsPath/order_rows.tex}
-\end{table}
-
-Both 1993 common curves are stable to predictor ordering within this
-tolerance. Their strong bin sensitivity therefore cannot be attributed
-solely to this ordering issue. The figures and extrema retain the
-original saved ordering as computational diagnostics. We do not select a
-preferred permutation or alter the authors' routine to obtain a physical
-result. The ordering concern is present in a subset of the observed
-configurations and limits physical interpretation of individual allocations.
-
-\subsection{Astrophysical scope and remaining analysis}
-
-The executed curves describe future continuum prediction from its own
-history and past line components. They do not provide a supported fixed
-date curve of future line response to past continuum in the declared lag
-range. A predictive association also requires consideration of a shared
-ionizing driver, measurement noise, temporal dependence, and the imperfect
-relation between observed optical continuum and illuminating radiation
-before it can receive a causal interpretation. Total and component line
-measurements retain their shared spectral provenance.
-
-\citet{CRLu2022} report emission line reverberation relative to the optical
-continuum in five modern seasons and changes in velocity resolved lag
-profiles. \citet{CRXi2025} extend the program to 2023 and report temporal
-evolution of the inferred gas kinematics. Those studies motivate analysis
-of separate campaigns. Their line response delays and kinematic
-interpretations are different quantities from the normalized information
-component extrema reported here. Our historical epochs, wavelength
-partitions, observed time frame, and retained target direction also differ.
-The present diagnostics therefore do not establish agreement or disagreement
-with their physical delay measurements or with an inflow or outflow model.
-
-The completed calculations establish substantial sensitivity to bin choice
-and retained dates. Neither bin setting is selected as reliable, and no
-stable physical delay or causal detection is claimed. No significance
-test or flux uncertainty propagation has been performed for these fixed
-support curves. The initial categorical calibration and the complete
-ordering audit of the retained curves are finished. Calibration matching
-the temporal and observational properties remains unperformed. The
-expanded predictor construction of thesis
-equation~3.18 is implemented and tested, but only its support audit has
-been executed; an expanded scientific decomposition is not reported.
-These limitations delimit the present results section and the remaining
-collaborator analysis. The exploratory analysis is frozen at this stage
-for collaborator review. Further scientific runs, any change to the
-authors' routine, and any revised probability estimation or lag settings
-require a new agreed analysis scope.
-
-\clearpage
-\begin{figure}[p]
-\centering
-\includegraphics[width=.96\textwidth]{\SURDResultsPath/figures/1992_common.png}
-\caption{Individual normalized SURD components and information leakage
-for the 1992 common scenario. The future target is continuum and predictors
-are past continuum, blue, core, and red H$\beta$. Every base lag uses the
-same 36 target dates. $F$, $B$, $C$, and $R$ denote those four variables.
-The outer $U$, $R$, and $S$ identify the information type. Dotted curves
-use two bins and solid curves use three bins. Leakage has its own target
-entropy denominator. The curves are descriptive estimates without
-significance or physical delay claims.}
-\label{fig:cr_1992_common}
-\end{figure}
-
-\begin{figure}[p]
-\centering
-\includegraphics[width=.96\textwidth]{\SURDResultsPath/figures/1993_common.png}
-\caption{As in Figure~\ref{fig:cr_1992_common}, for the 1993 common
-scenario with 90 fixed continuum target dates. This is the retained curve
-with the largest native target support. The changes in individual maxima
-between bin settings are summarized in Table~\ref{tab:cr_extrema}.}
-\label{fig:cr_1993_common}
-\end{figure}
-
-\begin{figure}[p]
-\centering
-\includegraphics[width=.96\textwidth]{\SURDResultsPath/figures/1993_blue_earlier.png}
-\caption{As in Figure~\ref{fig:cr_1992_common}, for the 1993 blue earlier
-scenario with 78 fixed continuum target dates. The blue predictor is
-evaluated five days earlier than the other predictors. This stipulated
-offset is a sensitivity choice, not a measured delay. Its retained dates
-differ from those in the common scenario, so scenario differences cannot
-be attributed solely to the predictor offset.}
-\label{fig:cr_1993_blue}
-\end{figure}
-
-\begin{figure}[p]
-\centering
-\includegraphics[width=.96\textwidth]{\SURDResultsPath/figures/1993_red_earlier.png}
-\caption{As in Figure~\ref{fig:cr_1992_common}, for the 1993 red earlier
-scenario with 78 fixed continuum target dates. The red predictor is
-evaluated five days earlier than the other predictors. This is a
-stipulated sensitivity choice. Dates are held fixed within this curve,
-but are not forced to match the other scenarios.}
-\label{fig:cr_1993_red}
-\end{figure}
+% Individual component figures: one per epoch, variable set, target and configuration.
+\input{\SURDResultsPath/epoch_figures.tex}
 \clearpage

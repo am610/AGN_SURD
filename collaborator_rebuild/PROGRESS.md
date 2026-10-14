@@ -104,3 +104,12 @@ estimation settings with adequate support, expanded scientific runs where
 justified, and scientific review and revision of the drafted results section.
 The additional historical light curve is publicly available; using modern
 campaign data is not required to perform these checks.
+
+## 14 October 2026: per season scans
+
+The collaborator's September instructions were re-read against the delivered
+results. Only four of 120 native date curves had survived, no line target or total
+set curve existed, and equation 3.18 had not been run. `epoch_scan.py` now
+analyses every epoch, set, target and lag configuration on a regular daily grid
+(15 day interpolation limit), with common lags and one lag per predictor variable.
+All 7200 decompositions are defined. See [EPOCH_ANALYSIS.md](EPOCH_ANALYSIS.md).
