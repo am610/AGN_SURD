@@ -46,9 +46,11 @@ REPLIES = {
          'must be recalculated with our own velocity definitions.']),
     7: ('green', 'Completed',
         ['Each season has its own five series. Native dates: 1989, 124 continuum and 48 spectra; 1990, 94 and 38; 1991, 65 and 32; '
-         '1992, 83 and 46; 1993, 191 and 60. For the analysis each series is placed on a daily grid within its season '
-         '(linear interpolation, no extrapolation, no gap above 15 days bridged), which gives between 118 and 261 tuples at '
-         'every lag of every curve.']),
+         '1992, 83 and 46; 1993, 191 and 60. Explicit sampling assumption: the spectra are 3 to 7 days apart in the median, too '
+         'sparse for a five dimensional histogram at 30 lags on native dates. Within each season independently, every series is '
+         'therefore linearly interpolated onto a daily grid between its observed endpoints, without extrapolation and without '
+         'bridging gaps longer than 15 days. This gives 133 to 261 five variable tuples per lag for common lags (118 at the '
+         'smallest for the uncommon lags). The tuples are interpolated and autocorrelated, so they are not independent samples.']),
     8: ('green', 'Reference use documented',
         ['The instruction names two PDF files and then three works. We used all three. From the thesis: equations 3.6, 3.16, '
          '3.17 and 3.18 and Figures 4.1 to 4.3. From Xi et al. 2025: Table 3, Section 5.2 and the radius luminosity discussion. '
@@ -91,19 +93,25 @@ REPLIES = {
           'and all four members are past predictors, including the history of the target. This is done for each of the five '
           'seasons.']),
     21: ('amber', 'Completed; lag values chosen by us',
-         ['The specific mutual information components and the leakage are computed and normalized as in Figure 4.1. The lag '
-          'placeholders are not filled in the instructions. We use base lags of 1 to 30 days in one day steps for both sets, '
-          'which covers the 20 to 30 day seasonal ranges proposed for the modern seasons. Histograms use two bins (primary) and '
-          'three bins (sensitivity). Please confirm or replace the lag range.']),
+         ['The specific mutual information components and the leakage are computed and normalized as in Figure 4.1: every unique, '
+          'redundant and synergistic component is divided by the joint mutual information between the future target and the four '
+          'predictors, so the 26 components sum to one, and leakage is divided by the target entropy. The two subsets are '
+          '{total, blue, core, red} and {F5100, blue, core, red}. The lag placeholders are not filled in the instructions, so these '
+          'are our assumptions: base lags of 1 to 30 days in one day steps for both subsets, which covers the 20 to 30 day seasonal '
+          'ranges proposed for the modern seasons and the published historical H beta lags of 11 to 20 days. Histograms use two bins '
+          '(2^5 = 32 cells, primary) and three bins (3^5 = 243 cells, sensitivity), with quantile boundaries taken from each season\u2019s '
+          'own native series. With 133 to 261 tuples the three bin histograms are sparse. Please confirm or replace the lag range.']),
     22: ('green', 'Completed with a counting correction',
          ['The listed combinations give four unique, eleven redundant and eleven synergistic components: 26, not 25. All 26 are '
           'kept. Each figure has U, R and S panels with one curve per component, and a leakage panel, all against lag. There are '
           'no total unique or total synergy curves. The 26 fractions sum to one to within 1.6e-15 in all 7200 decompositions.']),
     23: ('green', 'Completed',
          ['Both sets are run for all four targets in all five seasons: 7200 decompositions, all with defined normalization and '
-          'none dropped for support. In the total set the four way redundancy dominates at short lags because the total is '
-          'the sum of the components. Mean leakage over lags and targets is 0.61 for the total set and 0.46 for the F5100 set '
-          '(two bins).']),
+          'none dropped for support. Table 2 of the paper summarizes the 20 curves (5 seasons, 4 targets) of the total set and Table 3 '
+          'the 20 curves of the F5100 set. Figure 3 is an example of the total set; Figures 1, 2 and 4 are examples of the F5100 set. '
+          'All 40 common lag curves are in atlas_common.pdf. In the total set the four way redundancy dominates at short lags because '
+          'the total is the sum of the components. Mean leakage over lags and targets is 0.61 for the total set and 0.46 for the '
+          'F5100 set (two bins).']),
     24: ('amber', 'Completed with a declared interpretation; offsets need confirmation',
          ['Each predictor variable gets its own lag L plus an offset, so the four predictors still give 26 components. Blue '
           'leading samples the blue wing five days further back; red leading does the same for the red wing. Both are run for '
