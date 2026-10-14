@@ -2,7 +2,7 @@
 
 ## Local findings
 
-`history/documents/Tasks.docx` and `history/documents/Tasks_2.docx`
+The earlier task documents (`Tasks.docx`, `Tasks_2.docx`; git tag `pre-cleanup-oct14`, folder `history/documents`)
 contain an appendix with the following
 recommended common lag ranges. These are local analysis recommendations,
 not measurements published by Xi.

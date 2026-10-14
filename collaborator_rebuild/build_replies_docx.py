@@ -29,8 +29,6 @@ REPLIES = {
         ['All decompositions call the authors’ unchanged SURD routine, pinned to commit 79dbdea85e6754ec2b5457b3e37204c5d53d1815. '
          'The wrapper checks the hashes of both official source files before importing them. The preparation, interpolation, '
          'binning and plotting code is supporting code. No ICCF, JAVELIN or nearest neighbour result enters the analysis. '
-         'An earlier audit of the previous native date curves found that 11 of 240 configurations change their allocation '
-         'among named components when the predictor order is permuted, while total information and leakage do not change. '
          'The authors’ routine was not modified.']),
     5: ('green', 'Completed',
         ['The five series were prepared before the analysis, with python -m collaborator_rebuild.prepare_historical. F5100 comes '

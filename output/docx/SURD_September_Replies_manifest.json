@@ -2,7 +2,7 @@
   "source": "Instructions for prompt sept26.docx",
   "source_sha256": "cc47862656b33ec703f94b6f9f1447f100155ed6574dc5fb25395a11d84d2b04",
   "output": "output/docx/SURD_September_Instructions_With_Replies.docx",
-  "output_sha256": "7be71b17b2d5bae8781255d9a6aff54743141255feb1f67745d2cc4dd0af8256",
+  "output_sha256": "9d9824a25e203c9fff492021d6f3a941a022dd0da89482f40dc079bf67b6e53c",
   "responses": 22,
   "original_text_and_embedded_material_retained": true,
   "analysis_status": "Per season analysis complete; lag values and astrophysical review need confirmation"

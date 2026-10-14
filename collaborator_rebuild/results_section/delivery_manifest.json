@@ -8,7 +8,7 @@
   "component_rows": 187200,
   "compilation_warnings": 0,
   "sha256": {
-    "collaborator_rebuild/results_section/results_section.tex": "15f7dab6c4535aef0f4376ca2d482d48da4d3748328286d7db536069ce50925d",
+    "collaborator_rebuild/results_section/results_section.tex": "eeff7d8b50e2e4e7100c6aacf870001ca22571f99be249be28a5a4ce865e53d6",
     "collaborator_rebuild/results_section/preview.tex": "5e9f324c9bafa4f7fef5f463ef86d14dd90cb475ca45ad1a96448697cccb1686",
     "collaborator_rebuild/results_section/references.tex": "6856646d7fc62659df0ebb98136c0af6c79e5424ec19a5c056fe474282d39150",
     "collaborator_rebuild/results_section/epoch_support_rows.tex": "ba3283fa15bc32c9a4592f183ca86bd0ea427d34aa39e5b22c9a33ba05523df1",
@@ -19,16 +19,16 @@
     "collaborator_rebuild/results_section/epoch_bin_rows.tex": "8c3b9ed34c7716a62cde471ca293d58f6aa8c690edbed94caac03063c641f42b",
     "collaborator_rebuild/results_section/epoch_figures.tex": "1e2614407be169831d0da3670d3d234282ddd26a712212a77c48c28646f5820a",
     "collaborator_rebuild/results_section/calibration_rows.tex": "edaa2739a0782a45df85681dd64c23efba704c9b14ce915212264b51eaab3d87",
-    "collaborator_rebuild/epoch_results/configuration.json": "fd3e89738994953dcb1a516f73615ee87314a947bba40472e84c6035529a995e",
-    "collaborator_rebuild/epoch_results/manifest.json": "bcd8894e5da0d7191c6ebe5936c95afa159bea633f954e118fb275a065d54408",
+    "collaborator_rebuild/epoch_results/configuration.json": "a19f09af9811943514157f70e47141c918e80c3f922910b696c30f0168ee3d50",
+    "collaborator_rebuild/epoch_results/manifest.json": "479a03670923c43f610232d8c27490582ab1b57f9e40b739a2de274d1b63243b",
     "collaborator_rebuild/epoch_results/support_and_leakage.csv": "9a1ad459692bffbb5779697fb00f0250d9eef4c4905853dca1ae461096ee9eab",
-    "collaborator_rebuild/epoch_results/individual_components.csv.gz": "e4c5d0bfd33438b640c57a03685eb645f89c65ae886ee12274480720079f774e",
+    "collaborator_rebuild/epoch_results/individual_components.csv.gz": "96d09493e277aaad5f30e4c99046c21533dd3347954c95ac92a8bb9481af0bc5",
     "collaborator_rebuild/epoch_results/descriptive_extrema.csv": "34153dbafe3f4dc87c3715cbc8b0d127b678978da81a07940a61d6da1733c489",
-    "collaborator_rebuild/epoch_results/figures/atlas_common.pdf": "8a305356654e93c66cc1a26eb2e0f1c35516cb76aa74c6a52f4bc4bc6eba2511",
-    "collaborator_rebuild/epoch_results/figures/atlas_blue_leading.pdf": "2b19390032eca1fb2b8087a766e5a17b0ce3da3a55bbc5e931cf00b19a75f753",
-    "collaborator_rebuild/epoch_results/figures/atlas_red_leading.pdf": "6045aac0b7f264933930f82ad89558fbcec95edd6c77309f683bcae77ed470a6",
-    "output/pdf/surd_epoch_results.pdf": "338f339171f34a52e3c685548258c1bb1d3a779e33d14d7118d2a816d8f58e6c",
+    "collaborator_rebuild/epoch_results/figures/atlas_common.pdf": "4cb1a8df8632446c181b6ba235f669936cc3838d87a8d30c8e0a12d5d0f6500a",
+    "collaborator_rebuild/epoch_results/figures/atlas_blue_leading.pdf": "87c046a2f7e46f3c287a1b199e98dc1881d82886f974fe722a01e55858b11f32",
+    "collaborator_rebuild/epoch_results/figures/atlas_red_leading.pdf": "73c5904f09e9cad3c1ef0e513a1abb5c08e9e5a88e57a2e45c43418101b1b637",
+    "output/pdf/surd_epoch_results.pdf": "ed0930677c67a4641074f75daf15a86be7632b22e23f5d4c3ea46c624af217d6",
     "main.tex": "0cd6f6381b51118698c726eac7505d2e454ea212070041cfa1f164a943b80efa",
-    "main.pdf": "730de85bf9b05c20c6121fa8c49c2094f4076f9cc71b20f6cf5079927a1b005e"
+    "main.pdf": "242c8e95942b0124b81b781fc8125119ae7fb02b0cfbe4d4ec7afc0b3146cf37"
   }
 }

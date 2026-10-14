@@ -1,76 +1,32 @@
-# Git ignore patterns for AGN_SURD project
-
-# Active exploratory outputs and locally held source publications
-.pytest_cache/
-collaborator_rebuild/historical_results/
-collaborator_rebuild/reviewed_figures/
-collaborator_rebuild/support_review/
-collaborator_rebuild/prepared/
+# Local inputs and third party sources
+SURD/
+agn_surd_project/agn_data/
+agn_surd_project/processed/
 collaborator_rebuild/historical_prepared/
 collaborator_rebuild/published_results/
 collaborator_rebuild/sources/
-collaborator_rebuild/epoch_results/figures/common/
-collaborator_rebuild/epoch_results/figures/blue_leading/
-collaborator_rebuild/epoch_results/figures/red_leading/
+audit/*.pdf
+audit/*.ps
 Instructions for prompt sept26.docx
 MartinezSanchez-alvaroms-MS-AeroAstro-2025-thesis 2.pdf
 
-# Datasets and large zip files
-agn_surd_project.zip
-agn_surd_project/agn_data/
-agn_surd_presentation_figures-20260528T215535Z-3-001.zip
-AGNs_and_SURD_algorithm.zip
-completed_overleaf_draft.zip
+# Figure pages are in the atlas PDFs
+collaborator_rebuild/epoch_results/figures/common/
+collaborator_rebuild/epoch_results/figures/blue_leading/
+collaborator_rebuild/epoch_results/figures/red_leading/
 
-# External repositories
-SURD/
-PyCCF/
-javelin/
-
-# OS / Python files
-.DS_Store
-.ipynb_checkpoints/
-
-# Local environments and build products
-.venv/
-tmp/
+# Build products and caches
 *.aux
+*.bbl
 *.blg
+*.log
+*.out
 *.fdb_latexmk
 *.fls
-*.out
-*.log
-~$*
-
-# Downloaded source documents
-audit/wanders_peterson_1996.pdf
-audit/wanders_peterson_1996.txt
-audit/iw_bp_96_tab.ps
-
-# Keep only the published benchmark run under version control
-agn_surd_project/processed/reconciled/information_pilot/*
-!agn_surd_project/processed/reconciled/information_pilot/04dde4b289c6ac42/
+tmp/
+.venv/
+.pytest_cache/
 __pycache__/
 *.pyc
-*.pyo
-*.pyd
-.ipynb_checkpoints/
-
-# Historical local review exports and scratch analyses
-Hbeta_components_prediction_analysis.pdf
-V5.pdf
-overleaf_draft/V4.*
-scratch/
-qa_paper/
-qa_paper2/
-qa_tasks_jul21_final/
-qa_tasks_jul21_final_v2/
-archive/
-
-# Large legacy validation arrays retained locally but not required by the
-# adopted release pipeline.  Compact summaries and reconciled release outputs
-# remain version controlled.
-agn_surd_project/processed/knn_mi_surrogate_curves.csv
-agn_surd_project/processed/knn_cmi_surrogate_curves.csv
-agn_surd_project/processed/mrk817_knn_surrogate_curves.csv
-agn_surd_project/processed/round_robin_surrogate_scans.npz
+.DS_Store
+~$*

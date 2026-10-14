@@ -21,7 +21,7 @@
       49255
     ]
   },
-  "native_input": "published_results/bins_2/<epoch>/native/<series>.csv",
+  "native_input": "historical_prepared/<epoch>/<series>.csv (python -m collaborator_rebuild.prepare_historical)",
   "grid": "Daily integer grid of JD less 2400000 spanning the epoch; one value per day",
   "interpolation": "Linear; no extrapolation; no bridging of a bracketing gap above the limit",
   "maximum_interpolation_gap_days": 15,

@@ -59,4 +59,5 @@ normalizations. Analytic verification is a software check; it is not an AGN
 result. The authorized historical study has an exploratory run, with published
 campaign intervals now encoded in `lag_design.py`. Equation 3.18 construction
 is implemented and tested, but only its support audit has run. Total flux
-provenance and estimation reliability remain open; see `PROGRESS.md`.
+provenance and estimation reliability remain open. The analysis that answers
+this specification is described in `EPOCH_ANALYSIS.md`.

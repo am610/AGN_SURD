@@ -2,7 +2,7 @@
 
 This is the analysis that answers the September instructions. It replaces the
 native date scans for the main results; those remain in
-the earlier review notes (`REVIEW_HANDOFF.md`, `FIXED_SUPPORT_REVIEW.md`).
+the earlier review notes, which are in the git tag `pre-cleanup-oct14`.
 
 ## Design
 
@@ -36,8 +36,8 @@ It is implemented in `lag_design.expanded_predictors` but is not used here.
 
 ## Reproduce
 
-From the repository root, with `collaborator_rebuild/published_results/bins_2`
-available (`python -m collaborator_rebuild.run_historical --published --bins 2`):
+From the repository root, after `python -m collaborator_rebuild.prepare_historical`
+(writes `collaborator_rebuild/historical_prepared`):
 
 ```sh
 python -m collaborator_rebuild.epoch_scan        # scans and figures, about 90 s

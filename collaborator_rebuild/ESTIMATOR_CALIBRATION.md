@@ -103,10 +103,7 @@ or weak physical signals. The two and three state laws are separate
 benchmarks, not different binning of the same continuous observations.
 No physical delay recovery or AGN significance test is claimed.
 
-The subsequent astronomical ordering audit is complete in
-`PREDICTOR_ORDER_REVIEW.md`. The revised results section incorporates both
-diagnostics. Analysis is now frozen for collaborator review; realistic
-observation calibration remains unperformed. See `REVIEW_HANDOFF.md`.
+Realistic observation calibration remains unperformed.
 
 Reproduce from the repository root:
 

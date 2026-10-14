@@ -21,7 +21,7 @@ from collaborator_rebuild.lag_design import CAMPAIGNS
 from pipeline.sampling import interpolate
 
 BASE = Path(__file__).resolve().parent
-NATIVE = BASE / 'published_results' / 'bins_2'
+NATIVE = BASE / 'historical_prepared'
 OUT = BASE / 'epoch_results'
 SUBSETS = {'total_wings': ['total', 'blue', 'core', 'red'],
            'continuum_wings': ['continuum', 'blue', 'core', 'red']}
@@ -34,7 +34,7 @@ CONFIGS = {
 }
 CONFIG = {
     'epochs': CAMPAIGNS,
-    'native_input': 'published_results/bins_2/<epoch>/native/<series>.csv',
+    'native_input': 'historical_prepared/<epoch>/<series>.csv (python -m collaborator_rebuild.prepare_historical)',
     'grid': 'Daily integer grid of JD less 2400000 spanning the epoch; one value per day',
     'interpolation': 'Linear; no extrapolation; no bridging of a bracketing gap above the limit',
     'maximum_interpolation_gap_days': 15,
@@ -53,7 +53,7 @@ CONFIG = {
 
 
 def load_epoch(year):
-    return {name: pd.read_csv(NATIVE / str(year) / 'native' / f'{name}.csv')
+    return {name: pd.read_csv(NATIVE / str(year) / f'{name}.csv')
             for name in ['continuum', 'total', 'blue', 'core', 'red']}
 
 
@@ -125,7 +125,7 @@ def main():
     summary.to_csv(OUT / 'support_and_leakage.csv', index=False)
     components.to_csv(OUT / 'individual_components.csv.gz', index=False)
     pd.DataFrame(inventory).to_csv(OUT / 'native_inventory.csv', index=False)
-    inputs = sorted(NATIVE.glob('*/native/*.csv'))
+    inputs = sorted(NATIVE.glob('*/*.csv'))
     manifest = dict(source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
                     configuration_sha256=hashlib.sha256((OUT / 'configuration.json').read_bytes()).hexdigest(),
                     official_source_sha256=HASHES,
